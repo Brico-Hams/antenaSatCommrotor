@@ -37,7 +37,7 @@
 | R33 | Actualizar PCB/Gerbers y documentacion del conjunto | Nueva revision condicionada a seleccion de modulos y SBC | ERC/DRC, huellas/pinout, corriente, audio, RF y mecanica; no reutilizar aprobacion del carrier ESP32 |
 | R34 | Tercer eje POL de giro axial limitado | Diseno mecanico/control de tres motores en desarrollo | Recorrido, homing, limites NC, encoder, cables, masa/CG y par verificados |
 | R35 | Conmutacion RF RHCP/LHCP | Independiente del giro POL y condicionada a antena circular compatible | Fase/amplitud, relacion axial, aislamiento y conmutacion sin TX en ambas bandas |
-| R36 | Masa completa <=5 kg | Sustituye limite anterior de 3 kg con exclusiones | Pesar antena, tres ejes, radio/SBC, caja, sensores, bateria, cables y tripode juntos |
+| R36 | Masa completa <=5 kg | Sustituye limite anterior de 3 kg con exclusiones | Pesar conjunto operativo: antena, tres ejes, radio/SBC, caja, sensores, cables y tripode juntos; EXCLUIR solo la bateria externa (R47) |
 | R37 | GNSS, brujula e inclinacion en variante nueva | GNSS/UTC, magnetometro e IMU, mas encoders AZ/EL/POL | Calibracion, declinacion/norte verdadero, interferencias, validez visible y reaccion segura ante fallos |
 | R38 | Conectores RF SMA 50 ohm | Antena, radio, diplexor y redes RHCP/LHCP; excluir RP-SMA y adaptadores BNC/N en variante nueva | Genero/contacto, huella, potencia, coaxial, alivio de tension y masa verificados; audio/energia no usan SMA |
 | R39 | CM5 + LimeSDR Mini, sin ESP32 | Arquitectura elegida posteriormente; un modulo RF full-duplex reemplazable | Portadora, USB, recursos, potencia/bateria, refrigeracion y parada independientes ensayados |

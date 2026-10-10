@@ -1,7 +1,12 @@
 # Registro de validacion de la entrega
 
-Fecha: 2026-10-10. Estado: base ESP32 digital validada; ampliacion CM5
-incompleta y aceptacion fisica pendiente.
+Fecha: 2026-10-10. Estado: base ESP32 digital validada; auxiliar CM5 rutada
+(revision digital) pero BLOQUEADA para fabricacion y energizacion; aceptacion
+fisica pendiente. Digital, fabricable y seguro operacionalmente son hitos distintos.
+
+## Matriz de variantes
+
+Los resultados de la base ESP32 (29 pruebas JVM) y los de CM5 (58 pruebas JVM, 377 contratos) pertenecen a generaciones distintas; ver la matriz en [README](../README.md). Los heredados no cuentan como aceptacion CM5.
 
 ## Ampliacion CM5: limites vigentes
 
@@ -11,7 +16,7 @@ no validan la nueva auxiliar CM5 ni su guard independiente.
 | Superficie nueva | Evidencia | Limite |
 | --- | --- | --- |
 | Documentacion modular y precios | Tres pruebas Node de enlaces y coherencia de precios aprobadas | No constituye presupuesto completo ni ensayo fisico |
-| Auxiliar CM5 y guard | Mapa de interfaces; 11 pruebas de contrato reportadas | Sin esquema/PCB enrutado, ERC/DRC ni Gerbers/BOM/CPL nuevos |
+| Auxiliar CM5 y guard | Revision digital ENRUTADA (KiCad 10.0.7; ERC 0, DRC 0, 0 conexiones pendientes, 377 comprobaciones de contrato; ver `hardware/cm5/reports/validation-summary.json`) con Gerbers/BOM/CPL generados. Revision anterior (solo mapa GPIO, 11 pruebas de contrato) superada | ERC/DRC con comprobaciones opcionales ignoradas (listadas en el JSON): no prueba ausencia de fallos. Potencia DNP, fusibles sin cualificar, convertidores externos sin seleccionar, sin ensayo fisico. **DO NOT ORDER / NO FABRICAR / NO ENERGIZAR** |
 | Radio y rotor | Conexion al adaptador existente y nueve rutas reportadas; 57 pruebas offline reportadas con controlador explicito de prueba | Proveedor/BSP CM5 real y guard pendientes; no demuestra seguimiento fisico ni permiso TX |
 | Controlador rotor CM5 | 29 pruebas offline reportadas, incluido enlace open_adapter y rechazo de proveedor ausente | No existe proveedor CM5 comisionado; no sustituirlo por simulacion en produccion |
 | Receta BricoHams OS | Repeticion local: nueve pruebas OS aprobadas y una prueba Linux/Python omitida; agregado con documentos/precios 12 aprobadas, cero fallos, una omitida | Sin construccion pi-gen ni arranque CM5; servicio OS integrado deliberadamente no habilitado |

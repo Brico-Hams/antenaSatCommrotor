@@ -40,8 +40,8 @@ return a real `RotorController` composed with real sensors, drivers, and the
 normally-off power gate. The adapter starts the controller's 50 ms service
 loop. There is no built-in simulated or guessed hardware composition. The
 revision-A software pin map is frozen in `hardware/cm5/interface.json`, but
-the AUX NC/E-stop/watchdog/power-gate safety circuits are not yet designed or
-released and the compass/IMU BSP is not selected. Until those are verified and
+the AUX NC/E-stop/watchdog/power-gate safety circuits are routed in the digital review
+(hardware/cm5/DESIGN-REVIEW.md) but not qualified, fabricated or released and the compass/IMU BSP is not selected. Until those are verified and
 a production BSP provider is installed, startup fails explicitly; this
 package is installable without radio software, but physical operation is not
 yet commissioned.
@@ -193,7 +193,7 @@ watchdog, E-stop, and normally-off enable chain have been designed, built,
 released, and their physical permit/feedback return paths have been validated.
 Until then `hardwareCommissioned`/`verifiedHealthy` must remain false; inhibit
 all motor motion and all PTT/transmit. The revision-A contract identifies the
-hardware as not yet designed or fabricated, so a local calibration
+hardware as routed digital review, not fabricated and not commissioned, so a local calibration
 confirmation cannot commission it. Measure/qualify the driver's actual internal clock before
 configuring its ramp formulas; do not substitute a nominal oscillator
 frequency.

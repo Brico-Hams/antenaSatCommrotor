@@ -70,7 +70,7 @@ class DriverTests(unittest.TestCase):
         self.assertEqual(
             contract["safety"]["limitInputs"]["openWireLevel"], "HIGH"
         )
-        self.assertEqual(contract["board"]["hardwareStatus"], "not yet designed or fabricated")
+        self.assertEqual(contract["board"]["hardwareStatus"], "routed digital review; not fabricated; power front-end DNP; not commissioned; DO NOT ORDER")
         self.assertTrue(contract["softwareContract"]["unverifiedHardwareMustRemainDisabled"])
 
     def test_cm5_axis_transport_opens_the_frozen_spidev_select(self):

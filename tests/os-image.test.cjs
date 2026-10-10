@@ -41,7 +41,7 @@ test("boot setup maps only the frozen auxiliary-board buses", () => {
   assert.match(pcb, /ID_SD\/ID_SC/);
   assert.equal(contract.board.revision, "A");
   assert.equal(contract.board.gpioContractStatus, "frozen for software integration");
-  assert.equal(contract.board.hardwareStatus, "not yet designed or fabricated");
+  assert.equal(contract.board.hardwareStatus, "routed digital review; not fabricated; power front-end DNP; not commissioned; DO NOT ORDER");
   assert.equal(contract.peripherals.spi.bus, "SPI1");
   assert.equal(contract.peripherals.i2c.bus, "I2C1");
   assert.equal(contract.softwareContract.bootSafety.gnssUart, "UART0");

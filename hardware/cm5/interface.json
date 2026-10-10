@@ -3,7 +3,8 @@
     "name": "PortableSat CM5IO Auxiliary Control",
     "revision": "A",
     "gpioContractStatus": "frozen for software integration",
-    "hardwareStatus": "not yet designed or fabricated",
+    "hardwareStatus": "routed digital review; not fabricated; power front-end DNP; not commissioned; DO NOT ORDER",
+    "hardwareStatusDetail": {"routed": true, "fabricated": false, "powerFrontEndDnp": true, "commissioned": false, "physicalValidation": false, "capabilitiesEnabledByInference": false},
     "host": "Raspberry Pi CM5IO revision 2",
     "hostModuleCandidate": "CM5104016",
     "moduleSkuConfirmed": false,
@@ -88,7 +89,7 @@
         "dcRatedIndependentMotorEstopRequired": true
       },
       "emiPowerIntegrity": {
-        "status": "pre-layout requirement; no input-filter schematic, component values, or PCB routing implemented",
+        "status": "routed digital candidates only (see hardware/cm5/DESIGN-REVIEW.md); input-filter values and EMI/power integrity NOT qualified or measured",
         "batteryEntrySequence": [
           "Powerpole battery harness",
           "pack-adjacent main DC-rated fuse",

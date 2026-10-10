@@ -37,7 +37,7 @@ megerősített, ott nem vontuk le.
 | GPS | 1 | 25,93 | Normalizált átlag |
 | ASA | 1 referencia-orsó | 23,46 | Átlag áfa nélkül; a tényleges felhasználás függőben |
 | BAT | 1 külső | 99,99 | Feltüntetett ár; az áfa beszámítása nem megerősített |
-| PP-PACK | 1 referenciacsomag | 15,16 | Tíz teljes piros/fekete érintkező; importadók előtt |
+| PP-PACK | 1 referenciacsomag | 15,16 | Tíz teljes piros/fekete véglezárás (20 érintkező = öt összekapcsolt pár); importadók előtt |
 | PP-TOOL | 1 opcionális szerszám | 35,69 | Újrahasználható krimpelőfogó; külön költségkeret |
 
 A CM5, CM5IO, két SDR, három meghajtó, három enkóder, iránytű, IMU és GPS

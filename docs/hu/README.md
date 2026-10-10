@@ -172,10 +172,10 @@ szerint tiltaniuk kell a mozgást és a TX-et.
 
 ### Frissített tömegkorlát
 
-**Érvényes követelmény: <=5,000 kg a teljes, üzemkész összeállításra**,
+**Érvényes követelmény: <=5,000 kg a teljes, üzemkész összeállításra (külső akkumulátor nélkül)**,
 beleértve az antennát, AZ/EL/POL-rotort, rádiót, számítógépet, dobozt,
-érzékelőket, akkumulátort, kábeleket/csatlakozókat és állványt. Az összes
-elemet kivétel nélkül mérd le; a javasolt munkacél <=4,500 kg, hogy 500 g
+érzékelőket, kábeleket/csatlakozókat és állványt; **kizárólag a külső
+akkumulátor van kizárva** (R47). Az összes többi elemet mérd le; a javasolt munkacél <=4,500 kg, hogy 500 g
 tartalék maradjon — ez nem mérési eredmény. Az új változat még nem bizonyítja
 a határ teljesítését. Az SMA csak RF-csatlakozó; táp és érzékelők megfelelő
 csatlakozót kapnak, a külső mikrofon/hangszóró pedig ellenőrzött audio-

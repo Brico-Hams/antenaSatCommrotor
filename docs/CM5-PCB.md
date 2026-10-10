@@ -1,5 +1,14 @@
 ﻿# CM5IO auxiliary control PCB
 
+> **Estado (AUD-05):** la revision digital de la auxiliar CM5 esta *disenada y
+> rutada* (`hardware/cm5/DESIGN-REVIEW.md`, `hardware/cm5/reports/validation-summary.json`):
+> logica NC cableada, watchdog, rearme manual y candidatos de proteccion. Esto
+> significa **disenado/rutado**, NO *cualificado* ni *probado fisicamente*. Las
+> descripciones de circuitos de esta guia que dependan de GPIO o de bloques "por
+> dibujar" son de la guia inicial; en caso de conflicto prevalece DESIGN-REVIEW.md.
+> Potencia DNP, fusibles sin cualificar. **DO NOT ORDER / NO ENERGIZAR.**
+
+
 ## Scope and release status
 
 This is an original auxiliary control-board design for the official

@@ -36,7 +36,7 @@ deducted when its inclusion has not been confirmed.
 | GPS | 1 | 25.93 | Normalized mean |
 | ASA | 1 reference spool | 23.46 | Pre-VAT mean; actual consumption pending |
 | BAT | 1 external | 99.99 | Displayed price; VAT inclusion unconfirmed |
-| PP-PACK | 1 reference pack | 15.16 | Ten complete red/black pairs; before import |
+| PP-PACK | 1 reference pack | 15.16 | Ten complete red/black ends (20 contacts = five mated pairs); before import |
 | PP-TOOL | 1 optional tool | 35.69 | Reusable crimper; budget separately |
 
 The CM5, CM5IO, two SDRs, three drivers, three encoders, compass, IMU, and
@@ -72,8 +72,8 @@ budget. The tripod, cables, radio, connectors, and installed filters remain
 included. Two-hour runtime must be measured with the real RX/TX and motor
 duty cycle.
 
-WP30-10 contains ten complete red/black pairs and twenty contacts: five
-mated pairs. One pair requires two ends; do not count the pack and the
+WP30-10 contains ten complete red/black ends (housings) and twenty contacts:
+five mated pairs; one mated pair needs two ends. One pair requires two ends; do not count the pack and the
 allocations of its same contacts twice. Use a tool and wire compatible with
 the exact contacts. Install a main fuse close to battery positive and branch
 fuses for computing, motors, and RF. The BMS does not replace these fuses.

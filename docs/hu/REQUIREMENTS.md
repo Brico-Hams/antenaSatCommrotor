@@ -37,7 +37,7 @@
 | R33 | PCB/Gerber és teljes dokumentáció frissítése | Új revízió a modulok/SBC kiválasztásához kötve | ERC/DRC, lábnyom/lábkiosztás, áram, audio, RF, mechanika; a korábbi ESP32-panel jóváhagyása nem használható |
 | R34 | Harmadik, korlátozott POL-tengely | Hárommotoros mechanikai/vezérlési terv fejlesztés alatt | Út, homing, NC-határok, encoder, kábelek, tömeg/CG és nyomaték validálva |
 | R35 | RHCP/LHCP RF-kapcsolás | A POL-forgástól független, kompatibilis körpolarizált antennához kötött | Fázis/amplitúdó, tengelyarány, leválasztás és adás nélküli kapcsolás mindkét sávon |
-| R36 | Teljes tömeg <=5 kg | Felváltja a korábbi, kizárásokat tartalmazó 3 kg-os korlátot | Antenna, három tengely, rádió/SBC, doboz, érzékelők, akku, kábelek és állvány együtt mérve |
+| R36 | Teljes tömeg <=5 kg | Felváltja a korábbi, kizárásokat tartalmazó 3 kg-os korlátot | Üzemkész egység: antenna, három tengely, rádió/SBC, doboz, érzékelők, kábelek és állvány együtt mérve; CSAK a külső akkumulátor kizárva (R47) |
 | R37 | GNSS, iránytű és dőlés az új változatban | GNSS/UTC, magnetométer és IMU, valamint AZ/EL/POL encoderek | Kalibráció, deklináció/valódi észak, interferencia, látható érvényesség és biztonságos hibareakció |
 | R38 | 50 ohmos SMA RF-csatlakozók | Antenna, rádió, diplexer és RHCP/LHCP-hálózatok; RP-SMA és BNC/N adapterlánc kizárva az új változatból | Nem, érintkező, lábnyom, teljesítmény, koax, húzásmentesítés és tömeg ellenőrizve; audio/táp nem SMA |
 | R39 | CM5 + LimeSDR Mini, ESP32 nélkül | Később kiválasztott architektúra; cserélhető, teljes duplex RF-modul | Hordozópanel, USB, erőforrás, teljesítmény/akku, hűtés és független leállítás tesztelve |

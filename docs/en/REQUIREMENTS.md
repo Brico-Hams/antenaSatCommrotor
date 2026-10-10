@@ -37,7 +37,7 @@
 | R33 | Update PCB/Gerbers and system documentation | New revision conditioned on module/SBC selection | ERC/DRC, footprints/pinout, current, audio, RF, mechanics; do not reuse ESP32 carrier approval |
 | R34 | Limited axial-rotation third POL axis | Three-motor mechanical/control design in development | Verify travel, homing, NC limits, encoder, cables, mass/CG, torque |
 | R35 | RHCP/LHCP RF switching | Independent of POL rotation; requires compatible circular antenna | Measure phase/amplitude, axial ratio, isolation, and TX-inhibited switching on both bands |
-| R36 | Complete mass <=5 kg | Replaces earlier 3 kg limit with exclusions | Weigh antenna, three axes, radio/SBC, enclosure, sensors, battery, cables, and tripod together |
+| R36 | Complete mass <=5 kg | Replaces earlier 3 kg limit with exclusions | Weigh the operational set: antenna, three axes, radio/SBC, enclosure, sensors, cables, and tripod together; EXCLUDE only the external battery (R47) |
 | R37 | GNSS, compass, and tilt in new variant | GNSS/UTC, magnetometer and IMU, plus AZ/EL/POL encoders | Calibration, declination/true north, interference, visible validity, safe fault response |
 | R38 | 50-ohm SMA RF connectors | Antenna, radio, diplexer, and RHCP/LHCP networks; exclude RP-SMA and BNC/N adapter chains in new variant | Verify gender/contact, footprint, power, coax, strain relief, and ground; audio/power do not use SMA |
 | R39 | CM5 + LimeSDR Mini, no ESP32 | Subsequently selected architecture; one replaceable full-duplex RF module | Test carrier, USB, resources, power/battery, cooling, independent stop |

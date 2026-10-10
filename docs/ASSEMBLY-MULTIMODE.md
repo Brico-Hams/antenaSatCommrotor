@@ -335,7 +335,7 @@ The E-stop auxiliary monitor is BCM GPIO10 / physical header pin 19
 is the common motor-arm **request**; MCP23017 GPA0/GPA1/GPA2 are AZ/EL/POL
 enable requests. These software/expander signals are not hardware permits
 and cannot cut motor power. The revision-A JSON explicitly says the PCB
-hardware is not yet designed or fabricated, the NC inputs are not an
+hardware is a routed digital review, not fabricated or commissioned, the NC inputs are not an
 independent hard stop, and the external hard-limit/watchdog/E-stop guard
 circuits remain release blockers. The separately rated, latching E-stop
 power-cut path and independent hard-limit/driver-stop path must be designed,
@@ -1053,7 +1053,7 @@ evidence; it is not required to exercise any one module independently.
     RF shielding/attenuation, temperature monitoring, and an operator
     immediately able to release physical PTT and remove power. The PTT path
     must deassert on operator release, watchdog expiry, disconnect, fault,
-    and reboot; its circuit is not yet designed. Start at the lowest approved
+    and reboot; its circuit is routed in the digital review but not qualified. Start at the lowest approved
     power. Then test receive desensitization     with both receive channels active and the one-permitted-TX interlock
     exercised. Verify the Bluetooth selector routes one RX channel only.
     Test each RF handedness state only with PTT

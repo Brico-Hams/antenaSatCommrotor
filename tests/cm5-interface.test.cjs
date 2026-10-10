@@ -75,7 +75,7 @@ test('CM5 candidate, CM5IO voltage and occupied native USB3 ports are explicit',
   assert.equal(iface.board.hostHeaderVoltageV, 3.3);
   assert.equal(iface.board.usb3RouteOnAuxiliaryBoard, false);
   assert.equal(iface.board.gpioContractStatus, 'frozen for software integration');
-  assert.equal(iface.board.hardwareStatus, 'not yet designed or fabricated');
+  assert.equal(iface.board.hardwareStatus, 'routed digital review; not fabricated; power front-end DNP; not commissioned; DO NOT ORDER');
   assert.match(readme, /VIO jumper to \*\*3\.3 V\*\*/);
   assert.match(readme, /two native USB 3 ports/);
 });
@@ -150,7 +150,7 @@ test('external battery is excluded from mass and 2-hour sizing is not inferred f
   ));
   assert.ok(battery.protectionRequired.includes('controlled inrush'));
   const emi = battery.emiPowerIntegrity;
-  assert.match(emi.status, /pre-layout requirement/);
+  assert.match(emi.status, /routed digital candidates only/);
   assert.deepEqual(emi.batteryEntrySequence, [
     'Powerpole battery harness',
     'pack-adjacent main DC-rated fuse',

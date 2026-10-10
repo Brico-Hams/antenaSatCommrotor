@@ -130,7 +130,18 @@ anterior; sus drivers, limites y presupuesto no cubren el nuevo eje.
 
 La primera entrega ESP32, su firmware/WebFlash, la APK y Gerbers anteriores
 siguen siendo la variante documentada de referencia, no una implementacion
-de la radio nueva. Si se adopta Raspberry Pi, su instalacion/aprovisionamiento
+de la radio nueva. ### Matriz de variantes y evidencia (AUD-06)
+
+| Generacion | Contenido | Pruebas que le aplican | Estado |
+| --- | --- | --- | --- |
+| ESP32 + RT3S (primera entrega) | ESP32 SGP4, WebFlash, APK ESP32 | 29 pruebas JVM, Node, firmware | Referencia historica; NO es aceptacion de CM5 |
+| Intermedia (1-2 SDR) | Etapas del ADR-024 a ADR-026 | Pruebas de contrato de la etapa | Superada |
+| CM5 + 2 LimeSDR Mini + AZ/EL/POL | Auxiliar CM5 rutada, Android CM5 | 58 pruebas JVM, 377 comprobaciones de contrato, ERC/DRC 0/0 | Prototipo DIGITAL; NO FABRICAR, NO ENERGIZAR, NO HABILITAR PTT |
+
+Digital, fabricable y seguro operacionalmente son hitos distintos. Resultados
+heredados de una generacion no se presentan como aceptacion de otra.
+
+Si se adopta Raspberry Pi, su instalacion/aprovisionamiento
 sera distinto de WebFlash ESP32. Consulte las decisiones
 [ADR-024 a ADR-026](docs/ARCHITECTURE.md) y la trazabilidad
 [R25 a R33](docs/REQUIREMENTS.md).
@@ -283,5 +294,5 @@ las aprobaciones documentadas y no significa aprobacion del hardware.
 El controlador implementa calibracion web guiada y protocolo BLE.
 La app Android incorpora descarga TLE por HTTPS y transferencia al
 rotor; los pases y el seguimiento se calculan en el ESP32, no en el
-telefono. APK debug compilada, 29 pruebas JVM, lint y firma verificados;
+telefono. APK debug (generacion ESP32) compilada, 29 pruebas JVM, lint y firma verificados (no aplican a la variante CM5, que registra 58);
 no se ha probado interoperabilidad con un telefono y rotor fisicos.

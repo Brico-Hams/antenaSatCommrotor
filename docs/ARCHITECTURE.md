@@ -6,6 +6,8 @@ El objetivo es una estacion amateur de FM en 145/435 MHz, no un terminal
 SATCOM comercial ni acceso a satelites militares. Los nombres de las
 referencias comerciales no implican sus prestaciones.
 
+> **Variante ESP32 (historica)**: el diagrama siguiente es la primera entrega; ver la matriz de variantes del README. CM5 = ADR-024 a ADR-026.
+
 ```text
                          navegador local
                               |
