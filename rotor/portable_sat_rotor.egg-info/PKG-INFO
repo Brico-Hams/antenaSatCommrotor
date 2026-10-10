@@ -1,0 +1,9 @@
+Metadata-Version: 2.2
+Name: portable-sat-rotor
+Version: 0.1.0
+Summary: Fail-closed CM5 Linux autonomous satellite rotor controller
+Requires-Python: >=3.11
+Requires-Dist: sgp4==2.25
+Requires-Dist: smbus2==0.5.0
+Requires-Dist: pyserial==3.5
+Requires-Dist: spidev==3.8; sys_platform == "linux"

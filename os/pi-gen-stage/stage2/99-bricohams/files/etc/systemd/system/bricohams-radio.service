@@ -1,0 +1,38 @@
+[Unit]
+Description=BricoHams PortableSatStation radio host
+Documentation=file:/usr/share/doc/bricohams-os/docs/BRICOHAMS-OS.md
+ConditionPathExists=/etc/bricohams/radio-host.json
+After=dbus.service bluetooth.service bricohams-gpio-safe-state.service
+Requires=bricohams-gpio-safe-state.service
+Wants=bluetooth.service
+
+[Service]
+Type=simple
+User=bricohams-radio
+Group=bricohams-radio
+SupplementaryGroups=gpio i2c spi dialout
+StateDirectory=bricohams
+StateDirectoryMode=0700
+WorkingDirectory=/var/lib/bricohams
+Environment=HOME=/var/lib/bricohams
+Environment=PYTHONNOUSERSITE=1
+ExecStart=/usr/local/libexec/bricohams-radio-start
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+ProtectHostname=yes
+LockPersonality=yes
+RestrictSUIDSGID=yes
+
+[Install]
+WantedBy=multi-user.target

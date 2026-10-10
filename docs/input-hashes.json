@@ -1,0 +1,37 @@
+﻿[
+    {
+        "name":  "SatelliteStationPart1.pdf",
+        "bytes":  268272,
+        "sha256":  "fa4b4d3c84f1c6041e4c9f8c205502d2a643e9a5498750a4109df0fd511a1dd5"
+    },
+    {
+        "name":  "RotatorControllerPCBInstructionManual.pdf",
+        "bytes":  2204963,
+        "sha256":  "b1be1733d1ad053665ae5ceb33bff1d353be14520cbde4c5fffbf5d469914824"
+    },
+    {
+        "name":  "PartIVCrossPolarizedYagis.pdf",
+        "bytes":  8796197,
+        "sha256":  "8f4f71a389c932cd954c3b1bc72b843bc154ce74c688505f769b852561595819"
+    },
+    {
+        "name":  "PartIIRotatorcontrol (1).pdf",
+        "bytes":  1685913,
+        "sha256":  "1b83a27693bfddca2a0b64d79eec93e51b9511e06590a552703ddf5f0ebf8c47"
+    },
+    {
+        "name":  "PartIIRotatorcontrol.pdf",
+        "bytes":  1685913,
+        "sha256":  "1b83a27693bfddca2a0b64d79eec93e51b9511e06590a552703ddf5f0ebf8c47"
+    },
+    {
+        "name":  "PartIIIDualAxisRotator.pdf",
+        "bytes":  1389115,
+        "sha256":  "51490950898de1100cf48cfe8a64b4ee634a814dd213b8b82fdffc3f735e8213"
+    },
+    {
+        "name":  "SatelliteTargets.pdf",
+        "bytes":  63043,
+        "sha256":  "512b45064ee9ae332a899005cbe554082310428508ae44e190465b8741142cd9"
+    }
+]

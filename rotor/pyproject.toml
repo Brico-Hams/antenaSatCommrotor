@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools==75.8.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portable-sat-rotor"
+version = "0.1.0"
+description = "Fail-closed CM5 Linux autonomous satellite rotor controller"
+requires-python = ">=3.11"
+dependencies = [
+  "sgp4==2.25",
+  "smbus2==0.5.0",
+  "pyserial==3.5",
+  "spidev==3.8; sys_platform == 'linux'",
+]
+
+[project.scripts]
+portable-sat-rotor = "rotor.cli:main"
+
+[tool.setuptools]
+packages = ["rotor"]
+package-dir = {rotor = "."}

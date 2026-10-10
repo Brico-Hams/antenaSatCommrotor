@@ -1,0 +1,18 @@
+Copyright (c) 2026 Anatol EA5KAO, Diego EA5JEF y Pedro Roca Molina.
+
+Original hardware design sources, schematic, PCB, custom footprints, symbols,
+design rules, connectivity specification, BOM, fabrication exports and original
+hardware technical documentation: CERN-OHL-S-2.0.
+See ..\LICENSES\CERN-OHL-S-2.0.txt for the full license, source obligations,
+notices and disclaimer.
+
+Original executable generator generate-carrier.cjs, validate-export.ps1 and
+tests\pcb.test.cjs are software under MIT; see ..\LICENSES\MIT.txt.
+
+Manufacturer documents and KiCad software/libraries retain their own rights
+and licenses. Official reference URLs are listed in ..\docs\PCB.md.
+No manufacturer sponsorship, endorsement or safety approval is claimed.
+Attribution of current project authors does not transfer third-party rights.
+
+Fabrication data is CAD-verified only. Production, assembly and operation
+remain HOLD until physical/thermal/electrical commissioning blockers are closed.

@@ -1,0 +1,7 @@
+(version 1)
+(rule "Power_and_motor_minimum_width"
+  (condition "A.Type == 'Track' && (A.NetName == 'RAW12' || A.NetName == 'PROTECTED12' || A.NetName == 'FUSED12' || A.NetName == 'STOP_SEND' || A.NetName == 'VMOT' || A.NetName == 'BUCK12' || A.NetName == 'AZ_M2B' || A.NetName == 'AZ_M2A' || A.NetName == 'AZ_M1A' || A.NetName == 'AZ_M1B' || A.NetName == 'EL_M2B' || A.NetName == 'EL_M2A' || A.NetName == 'EL_M1A' || A.NetName == 'EL_M1B')")
+  (constraint track_width (min 1.5)))
+(rule "Ground_minimum_width"
+  (condition "A.Type == 'Track' && A.NetName == 'GND'")
+  (constraint track_width (min 1.0)))

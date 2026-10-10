@@ -1,0 +1,121 @@
+﻿[
+    {
+        "step":  "ERC all severities",
+        "exitCode":  0,
+        "executable":  "C:\\Users\\anatol.lopez\\.copilot\\session-state\\93e9ed63-2da0-4d79-90a4-39add6c2b259\\files\\tools\\kicad\\bin\\kicad-cli.exe",
+        "arguments":  [
+                          "sch",
+                          "erc",
+                          "--severity-all",
+                          "--format",
+                          "json",
+                          "--exit-code-violations",
+                          "-o",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\reports\\erc.json",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\cm5-guard-A.kicad_sch"
+                      ]
+    },
+    {
+        "step":  "Netlist",
+        "exitCode":  0,
+        "executable":  "C:\\Users\\anatol.lopez\\.copilot\\session-state\\93e9ed63-2da0-4d79-90a4-39add6c2b259\\files\\tools\\kicad\\bin\\kicad-cli.exe",
+        "arguments":  [
+                          "sch",
+                          "export",
+                          "netlist",
+                          "--format",
+                          "kicadxml",
+                          "-o",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\reports\\cm5-guard-A.net.xml",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\cm5-guard-A.kicad_sch"
+                      ]
+    },
+    {
+        "step":  "DRC all tracks + parity + zone refill",
+        "exitCode":  0,
+        "executable":  "C:\\Users\\anatol.lopez\\.copilot\\session-state\\93e9ed63-2da0-4d79-90a4-39add6c2b259\\files\\tools\\kicad\\bin\\kicad-cli.exe",
+        "arguments":  [
+                          "pcb",
+                          "drc",
+                          "--schematic-parity",
+                          "--all-track-errors",
+                          "--severity-all",
+                          "--refill-zones",
+                          "--save-board",
+                          "--format",
+                          "json",
+                          "--exit-code-violations",
+                          "-o",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\reports\\drc.json",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\cm5-guard-A.kicad_pcb"
+                      ]
+    },
+    {
+        "step":  "PDF",
+        "exitCode":  0,
+        "executable":  "C:\\Users\\anatol.lopez\\.copilot\\session-state\\93e9ed63-2da0-4d79-90a4-39add6c2b259\\files\\tools\\kicad\\bin\\kicad-cli.exe",
+        "arguments":  [
+                          "sch",
+                          "export",
+                          "pdf",
+                          "-o",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\reports\\cm5-guard-A.pdf",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\cm5-guard-A.kicad_sch"
+                      ]
+    },
+    {
+        "step":  "Gerber review snapshot",
+        "exitCode":  0,
+        "executable":  "C:\\Users\\anatol.lopez\\.copilot\\session-state\\93e9ed63-2da0-4d79-90a4-39add6c2b259\\files\\tools\\kicad\\bin\\kicad-cli.exe",
+        "arguments":  [
+                          "pcb",
+                          "export",
+                          "gerbers",
+                          "-l",
+                          "F.Cu,B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts",
+                          "-o",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\fabrication\\NOT_FOR_MANUFACTURE\\gerber\\",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\cm5-guard-A.kicad_pcb"
+                      ]
+    },
+    {
+        "step":  "Excellon review snapshot",
+        "exitCode":  0,
+        "executable":  "C:\\Users\\anatol.lopez\\.copilot\\session-state\\93e9ed63-2da0-4d79-90a4-39add6c2b259\\files\\tools\\kicad\\bin\\kicad-cli.exe",
+        "arguments":  [
+                          "pcb",
+                          "export",
+                          "drill",
+                          "--format",
+                          "excellon",
+                          "--excellon-units",
+                          "mm",
+                          "--excellon-separate-th",
+                          "--generate-map",
+                          "-o",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\fabrication\\NOT_FOR_MANUFACTURE\\gerber\\",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\cm5-guard-A.kicad_pcb"
+                      ]
+    },
+    {
+        "step":  "SMT positions (exclude DNP/net-tie/THT)",
+        "exitCode":  0,
+        "executable":  "C:\\Users\\anatol.lopez\\.copilot\\session-state\\93e9ed63-2da0-4d79-90a4-39add6c2b259\\files\\tools\\kicad\\bin\\kicad-cli.exe",
+        "arguments":  [
+                          "pcb",
+                          "export",
+                          "pos",
+                          "--format",
+                          "csv",
+                          "--units",
+                          "mm",
+                          "--side",
+                          "front",
+                          "--smd-only",
+                          "--exclude-dnp",
+                          "-o",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\fabrication\\NOT_FOR_MANUFACTURE\\positions-kicad.csv",
+                          "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\cm5\\cm5-guard-A.kicad_pcb"
+                      ]
+    }
+]

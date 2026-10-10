@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="860" viewBox="0 0 1480 860" role="img" aria-labelledby="title desc">
+  <title id="title">PortableSatStation three-axis multimode architecture</title>
+  <desc id="desc">Conceptual architecture separating fixed CM5 on the official CM5 I/O board, separate custom auxiliary PCB, two replaceable LimeSDR Mini modules, GNSS, remote compass, RF handedness selector and power from a rotating AZ, EL and limited POL assembly. Two USB 3 paths are reserved directly for one SDR each. USB audio via a qualified powered hub or documented USB 2 host remains unselected and unverified. The wireless 4 GB RAM, 16 GB eMMC CM5 is a candidate. POL driver candidate is Watterott TMC5160 v1.5 with SPI1, ramp jumper open and EN high=disabled; exact interface/pin mapping awaits PCB freeze. Intended dual-band VHF/UHF RX; both SDRs are TX-capable but hardware safety permits only one active TX path. Bluetooth audio selects one RX channel without mixing or decoding both. Conditional 5 W FM carrier, 5 W PEP USB and 1 W AM carrier objectives are not tested; native SDR output is low power. GNSS provides site and UTC, not stationary heading. RHCP/LHCP selection is independent of mechanical POL roll.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2f5d8a"/></marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#58743e"/></marker>
+    <marker id="arrow-rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a54b17"/></marker>
+    <marker id="arrow-audio" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6b4b8e"/></marker>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#172b43}
+      .title{font-size:26px;font-weight:700}
+      .subtitle{font-size:14px;fill:#455a70}
+      .head{font-size:18px;font-weight:700}
+      .body{font-size:14px}
+      .small{font-size:12px}
+      .fixed{fill:#eef4fb;stroke:#2f5d8a;stroke-width:2}
+      .moving{fill:#f3f6ee;stroke:#58743e;stroke-width:2}
+      .hold{fill:#fff4e7;stroke:#b05a16;stroke-width:2;stroke-dasharray:8 5}
+      .path{fill:none;stroke:#2f5d8a;stroke-width:3;marker-end:url(#arrow-blue)}
+      .mechanical{fill:none;stroke:#58743e;stroke-width:4;marker-end:url(#arrow-green)}
+      .rf{fill:none;stroke:#a54b17;stroke-width:4;marker-start:url(#arrow-rf);marker-end:url(#arrow-rf)}
+      .audio{fill:none;stroke:#6b4b8e;stroke-width:3;stroke-dasharray:8 5;marker-start:url(#arrow-audio);marker-end:url(#arrow-audio)}
+      .warn{fill:#8b310d;font-weight:700}
+    </style>
+  </defs>
+  <rect width="1480" height="860" fill="#f7f9fc"/>
+  <text x="30" y="40" class="title">FIG-01 - PortableSatStation three-axis architecture</text>
+  <text x="30" y="67" class="subtitle">Concept only. Official CM5 I/O + separate auxiliary PCB; revision-A GPIO software map exists, but auxiliary hardware is not released.</text>
+
+  <rect x="24" y="96" width="850" height="622" rx="18" class="fixed"/>
+  <text x="48" y="130" class="head">FIXED BASE - tripod / tray (computer, battery and shielded RF stay here)</text>
+
+  <rect x="48" y="157" width="374" height="116" rx="12" class="hold"/>
+  <text x="68" y="188" class="head">CM5 (wireless / 4 GB / 16 GB candidate)</text>
+  <text x="68" y="213" class="body">Official CM5 I/O board + separate aux PCB</text>
+  <text x="68" y="237" class="small">Two USB 3 paths direct: one to each LimeSDR</text>
+  <text x="68" y="259" class="small warn">Audio USB hub or USB 2 host: TBD / unverified</text>
+
+  <rect x="452" y="157" width="398" height="116" rx="12" class="hold"/>
+  <text x="472" y="188" class="head">3-axis motion + safety interface</text>
+  <text x="472" y="213" class="body">Aux PCB: 3 motors / sensors / audio / safety</text>
+  <text x="472" y="237" class="small">POL: Watterott TMC5160 v1.5; SPI1 / ramp</text>
+  <text x="472" y="259" class="small warn">Jumper open; EN high=off; pin map TBD</text>
+  <path d="M422 214H452" class="path"/>
+
+  <rect x="48" y="301" width="374" height="142" rx="12" class="hold"/>
+  <text x="68" y="332" class="head">Two replaceable LimeSDR Mini modules</text>
+  <text x="68" y="357" class="body">SDR-A VHF + SDR-B UHF; dual RX</text>
+  <text x="68" y="381" class="small">Two direct USB 3 links; concurrent dual RX to verify</text>
+  <text x="68" y="405" class="small">Both TX-capable; one active TX path maximum</text>
+  <text x="68" y="429" class="small warn">Goals untested: 5 W FM / 5 W PEP USB / 1 W AM</text>
+
+  <rect x="452" y="301" width="398" height="142" rx="12" class="hold"/>
+  <text x="472" y="332" class="head">Independent RF handedness selector</text>
+  <text x="472" y="357" class="body">145 MHz feed/phase path: RHCP / LHCP</text>
+  <text x="472" y="381" class="body">435 MHz feed/phase path: RHCP / LHCP</text>
+  <text x="472" y="405" class="body">All RF ports: conventional 50-ohm SMA</text>
+  <text x="472" y="429" class="small warn">Check contact/gender; PTT off -> switch -> TX permit</text>
+  <path d="M422 371H452" class="rf"/>
+
+  <rect x="48" y="471" width="374" height="105" rx="12" class="hold"/>
+  <text x="68" y="502" class="head">Audio / data processing</text>
+  <text x="68" y="527" class="small">BT selects one RX; bidirectional PCM under development</text>
+  <text x="68" y="551" class="small">K1 dual-plug 3.5/2.5 audio/PTT target; model TBD</text>
+  <text x="68" y="570" class="small warn">USB audio via powered hub or USB 2 host: TBD</text>
+  <path d="M235 471V443" class="audio"/>
+
+  <rect x="452" y="471" width="398" height="105" rx="12" class="fixed"/>
+  <text x="472" y="502" class="head">Protected power + physical controls</text>
+  <text x="472" y="527" class="body">Battery, branch fuses, latching stop TBD</text>
+  <text x="472" y="551" class="body">Watchdog and stop cover all 3 motor channels</text>
+  <path d="M651 471V273" class="path"/>
+
+  <rect x="48" y="607" width="802" height="83" rx="12" class="hold"/>
+  <text x="68" y="635" class="head">GNSS receiver/antenna + remote compass / base-inclination IMU</text>
+  <text x="68" y="658" class="body">GNSS UART/PPS and compass pins TBD until carrier PCB freeze; sensors unimplemented.</text>
+  <text x="68" y="680" class="small warn">Stationary GNSS is not heading; field-check calibrated compass against manual true heading.</text>
+
+  <rect x="902" y="96" width="554" height="622" rx="18" class="moving"/>
+  <text x="926" y="130" class="head">MOVING ASSEMBLY - light antenna payload only</text>
+  <rect x="944" y="157" width="470" height="126" rx="12" class="hold"/>
+  <text x="966" y="190" class="head">Compatible circular antenna + feeds</text>
+  <text x="966" y="216" class="body">145 MHz and 435 MHz band-specific orthogonal feed paths</text>
+  <text x="966" y="240" class="body">Each band: characterize RHCP and LHCP independently</text>
+  <text x="966" y="265" class="small warn">Measure axial ratio in each hand/state; no result assumed</text>
+
+  <rect x="944" y="322" width="470" height="91" rx="12" class="moving"/>
+  <text x="966" y="354" class="head">POL - limited axial roll (third axis)</text>
+  <text x="966" y="379" class="body">Model-defined travel TBD; +/-90 deg is a proposal only</text>
+  <text x="966" y="401" class="small warn">Roll does not invert circular handedness</text>
+
+  <rect x="944" y="444" width="470" height="78" rx="12" class="moving"/>
+  <text x="966" y="477" class="head">EL elevation yoke / drive</text>
+  <text x="966" y="502" class="body">Moving mass includes POL motor, encoder and cable</text>
+
+  <rect x="944" y="553" width="470" height="78" rx="12" class="moving"/>
+  <text x="966" y="586" class="head">AZ azimuth base / drive</text>
+  <text x="966" y="611" class="body">BASE belt concept; physical assembly/load untested</text>
+  <path d="M1179 322V283" class="mechanical"/>
+  <path d="M1179 444V413" class="mechanical"/>
+  <path d="M1179 553V522" class="mechanical"/>
+
+  <path d="M850 214H944" class="mechanical"/>
+  <text x="856" y="198" class="small">3-axis motor / encoder</text>
+  <path d="M850 371H944" class="rf"/>
+  <text x="858" y="354" class="small">50-ohm RF feed harness</text>
+  <path d="M850 391C893 435 897 232 944 219" fill="none" stroke="#a54b17" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="857" y="433" class="small warn">POL-limited torsion loop; no continuous rotation</text>
+  <text x="857" y="451" class="small">No unrated RF slip ring</text>
+
+  <rect x="24" y="744" width="1432" height="108" rx="12" fill="#fff1e8" stroke="#b05a16" stroke-width="2"/>
+  <text x="48" y="777" class="head warn">HOLD: the legacy ESP32 carrier is AZ/EL only (two driver channels); it is not the new 3-axis controller.</text>
+  <text x="48" y="805" class="body">Do not fabricate, wire, or transmit from this concept. RF switching stays independent of POL and inhibited during TX; all sensors and limits require approved interfaces and measured tests.</text>
+  <text x="48" y="834" class="body warn">GPIO/expander enable and E-stop monitor signals are requests/monitors, not hardware permits; external hard-stop/watchdog/E-stop guard is not designed/released.</text>
+</svg>

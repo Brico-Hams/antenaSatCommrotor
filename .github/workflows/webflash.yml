@@ -1,0 +1,130 @@
+name: Build prototype web flasher
+
+on:
+  pull_request:
+    paths:
+      - 'firmware/**'
+      - 'web/**'
+      - 'webflash/**'
+      - 'scripts/build-webflash*'
+      - 'tests/webflash*'
+      - '.github/workflows/webflash.yml'
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      deploy_pages:
+        description: 'Deploy public prototype to Pages (requires webflash-pages approval)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: webflash-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned build tools
+        shell: pwsh
+        run: |
+          python -m pip install --disable-pip-version-check platformio==6.1.18
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Push-Location webflash
+          npm ci --ignore-scripts --registry=https://registry.npmjs.org
+          $npmResult = $LASTEXITCODE
+          Pop-Location
+          if ($npmResult -ne 0) { exit $npmResult }
+      - name: Refuse embedded provisioning secrets before compilation
+        shell: pwsh
+        run: node -e "require('./scripts/build-webflash.cjs').assertPublicConfiguration()"
+      - name: Preserve upstream source and license
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force build\webflash-upstream | Out-Null
+          $downloads = @{
+            'ARDUINO-ESP32-LGPL-2.1.md' = 'https://raw.githubusercontent.com/espressif/arduino-esp32/2.0.17/LICENSE.md'
+            'ESP-IDF-APACHE-2.0.txt' = 'https://raw.githubusercontent.com/espressif/esp-idf/v4.4.7/LICENSE'
+            'arduino-esp32-2.0.17.tar.gz' = 'https://codeload.github.com/espressif/arduino-esp32/tar.gz/refs/tags/2.0.17'
+            'esp-idf-v4.4.7.tar.gz' = 'https://codeload.github.com/espressif/esp-idf/tar.gz/refs/tags/v4.4.7'
+          }
+          foreach ($entry in $downloads.GetEnumerator()) {
+            curl.exe --fail --location --silent --show-error --retry 2 --connect-timeout 20 --max-time 180 $entry.Value --output (Join-Path build\webflash-upstream $entry.Key)
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+      - name: Compile actual ESP32 firmware and record uploader
+        shell: pwsh
+        env:
+          PLATFORMIO_EXTRA_SCRIPTS: 'post:../scripts/build-webflash-proof.py'
+          PLATFORMIO_PLATFORM_PACKAGES: |
+            platformio/framework-arduinoespressif32@3.20017.241212
+            espressif/toolchain-xtensa-esp32@8.4.0+2021r2-patch5
+            platformio/tool-esptoolpy@1.40501.0
+            platformio/tool-mklittlefs@1.203.210628
+        run: |
+          python -m platformio run -d firmware -e esp32
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m platformio run -d firmware -e esp32 -t webflash-proof
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m platformio run -d firmware -e esp32 -t buildfs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Generate and validate distributable binaries and local JS bundle
+        shell: pwsh
+        env:
+          WEBFLASH_VERSION: ${{ github.ref_name }}
+          WEBFLASH_VALIDATE_COMPILED: 'true'
+        run: |
+          # Branch/PR ref names can contain slashes; use the source SHA label.
+          if ($env:GITHUB_REF_TYPE -ne 'tag') {
+            $env:WEBFLASH_VERSION = "prototype-$($env:GITHUB_SHA.Substring(0,12))"
+          }
+          if ($env:GITHUB_EVENT_NAME -eq 'pull_request') {
+            $env:WEBFLASH_VERSION = "pr-$env:GITHUB_SHA"
+          }
+          node scripts\build-webflash.cjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          node --test tests\webflash.test.cjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          node scripts\build-webflash.cjs --validate build\webflash
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: webflash-${{ github.sha }}
+          path: build/webflash/
+          if-no-files-found: error
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: build/webflash/
+
+  deploy:
+    needs: build
+    # Tags build release-labelled artifacts but NEVER grant a tag publisher Pages access.
+    if: >-
+      vars.WEBFLASH_PAGES_APPROVED == 'prototype-only' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' ||
+       (github.event_name == 'workflow_dispatch' && inputs.deploy_pages))
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: webflash-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy only after environment approval
+        id: deployment
+        uses: actions/deploy-pages@v4

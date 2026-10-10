@@ -1,0 +1,86 @@
+id,description,qty,unit,material,selector,estimate_eur_low,estimate_eur_high,notes
+P01,Sol etapa 1,2,pieza,ASA,sun1,0,0,Motor eje 5 mm provisional; inserto M3
+P02,Sol etapa 2,2,pieza,ASA,sun2,0,0,Pasador M3 y eje acero 8 mm
+P03,Planeta 27 dientes,12,pieza,ASA,planet,0,0,Casquillo metal OD6 ID4 L12
+P04,Corona fija 72 dientes,4,pieza,ASA,ring,0,0,OD124; nunca gira
+P05,Portaplanetas etapa 1,2,pieza,ASA,carrier1,0,0,Pasador transversal M3
+P06,Portaplanetas etapa 2,2,pieza,ASA,carrier2,0,0,Salida 10 mm
+P07,Placa motor,2,pieza,ASA,motor_plate,0,0,NEMA14 verificar taladros26 mm
+P08,Placa intermedia 608,2,pieza,ASA,intermediate_plate,0,0,Asiento22.25 mm calibrar
+P09,Placa salida 6000,4,pieza,ASA,output_plate,0,0,Dos apoyos por eje separados19 mm
+P10,Retenedor608,2,pieza,ASA,keeper608,0,0,No comprimir aro interior
+P11,Retenedor6000,4,pieza,ASA,keeper6000,0,0,Calibrar holgura axial
+P12,Separador15,24,pieza,ASA,spacer15,0,0,Dos niveles por eje seis posiciones
+P13,Separador9,24,pieza,ASA,spacer9,0,0,Dos niveles por eje seis posiciones
+P14,Separador38,6,pieza,ASA,spacer38,0,0,Libera motor AZ sobre base
+P15,Base tripode,1,pieza,ASA,tripod_base,0,0,140x140x12; tuerca metal real
+P16,Brida salida,2,pieza,ASA,output_flange,0,0,4 M4 patron31.11x31.11
+P17,Soporte EL,1,pieza,ASA,elevation_bracket,0,0,Abertura motor38x38
+P18,Silla boom20,1,pieza,ASA,saddle20,0,0,Alternativas25 y32 NO sumar tres; elegir tubo real correspondiente
+P19,Adaptador plano opcional,1,pieza,ASA,flat_adapter,0,0,Alternativa a silla
+P20,Soporte final NC,4,pieza,ASA,limit_bracket,0,0,Patron18 mm provisional verificar interruptor
+P21,Portaiman,2,pieza,ASA,magnet_holder,0,0,Iman diametral6x2 mm
+P22,Soporte AS5600,2,pieza,ASA,sensor_bracket,0,0,Patron PCB16x16 provisional; pie2 M3 en placa fija salida
+P23,Cuna RT3S,1,pieza,ASA,radio_cradle,0,0,Medidas provisionales y correas
+P24,Caja electronica,1,pieza,ASA,enclosure,0,0,130x70x45
+P25,Tapa electronica,1,pieza,ASA,enclosure_lid,0,0,130x70x3
+P26,Caja diplexor desmontable,1,pieza,ASA,diplexor_box,0,0,80x70x35; forro METAL separado
+P27,Tapa diplexor,1,pieza,ASA,diplexor_lid,0,0,Forro metal conectado a caja
+P28,Cubo bisagra antena,4,pieza,ASA,antenna_hub,0,0,2 por banda; booms20
+P29,Brazo bisagra antena,16,pieza,ASA,arm_socket,0,0,M4 pivote M3 bloqueo y puente RF flexible
+P30,Puente dos booms RF y boom estructural,1,pieza,ASA,band_bridge,0,0,Tres bores20 separados40 mm; pernos M4 pasantes
+M01,Motor NEMA14,2,pieza,metal,,30,70,Total linea estimativo NO precio proveedor; corriente y par segun modelo
+M02,Rodamiento608,2,pieza,acero,,4,12,8x22x7 mm
+M03,Rodamiento6000,4,pieza,acero,,12,28,10x26x8 mm
+M04,Eje intermedio8 mm L36,2,pieza,acero,,6,16,Extremos taladrados M3 centros10 y32 desde extremo
+M05,Eje salida10 mm L77,2,pieza,acero,,8,20,Taladros M3 a10 60 y73 mm desde extremo
+M06,Perno hombro4 mm tramo23 mm,12,pieza,acero,,12,30,Hombro liso; adaptar cabeza arandelas y tuerca fuera engrane
+M07,Casquillo6x4x12 mm,12,pieza,bronce,,10,24,No usar rosca de tornillo como cojinete
+M08,Varilla roscada M3 AZ180 y EL130,12,pieza,acero,,8,18,Seis por eje; cortar tras montaje real
+M09,Pasadores o tornillos transversales M3,10,pieza,acero,,2,6,8 transmisiones mas2 imanes; no sustituir por pegamento
+M10,Tornilleria arandelas tuercas e insertos M3 M4 M5,1,lote,metal,,18,40,Incluye montaje motor y retencion; longitudes revisar apilado
+M11,Tuerca capturada1/4-20 UNC,1,pieza,acero,,1,4,AF11.1 altura5.6 provisional medir
+M12,Adaptador metal3/8-16 a1/4-20,1,pieza,laton,,3,10,Comprar; ninguna rosca impresa
+M13,U-bolts M5 boom20,2,pieza,acero,,4,12,Luz interior30 mm; elegir25 o32 y patas >=45 mm segun silla
+M14,Final carrera NC,4,pieza,metal,,4,12,Patron18 mm provisional; leva y tope independientes ajustar
+M15,Imanes diametrales6x2,2,pieza,metal,,4,12,No axial; sensor externo BOM electronica
+M16,Forro diplexor pared y tapa0.3 mm,1,lote,aluminio,,3,10,Interior74x64x32; continuidad metal EMC no estanqueidad garantizada
+M17,Correas velcro radio y seguridad,3,pieza,textil,,3,8,Correa fija al tripode; radio no va en antena
+M18,Varillas RF diametro4 mm,1,lote,aluminio o cobre,,12,30,~4.2 m mas10% recorte; tabla por banda en docs
+M19,Manguitos conductores8 OD 4 ID L50,8,pieza,laton o aluminio,,6,18,Empalme a tope y dos pasadores positivos; VHF
+M20,Trenza RF flexible y puentes reflector,1,lote,cobre,,4,12,16 puentes bisagra mas4 continuidad reflector; mantener repetible
+M21,Boombase dielectrico20 mm desmontable,3,pieza,fibra vidrio,,8,24,VHF ~490 dividido dos tramos; UHF180; estructural175
+M22,Balun match50ohm e hibrido90 grados POR BANDA,2,juego,RF externo,,30,100,Estimacion conjunta ambas bandas no disenado impreso ni validado
+M23,Diplexor145435 coaxial y conectores,1,lote,RF externo,,25,80,Dimensionar caja al componente real; no incluido radio
+M24,Filamento ASA,1,lote,ASA,,25,55,Presupuesto compra1-2 bobinas segun masa exportada y soportes; no sumar costes Pxx
+M25,Placas refuerzo y bandeja fija,1,lote,aluminio,,6,20,Bandeja radio/cajas al tripode no en voladizo de base
+B01,BASE ligera impresa,1,pieza,ASA,belt:base,0,0,51.826cm3 solidos; Pxx/Mxx anteriores LEGACY opcional
+B02,Copa608 variante correa,4,pieza,ASA,belt:cup608,0,0,Asientos calibrables22.25; cerrar con placa METAL
+B03,Copa6000 variante correa,4,pieza,ASA,belt:cup6000,0,0,Asientos26.25; apoyos separados40 mm
+B04,Soporte encoder variante correa,2,pieza,ASA,belt:encoder_support,0,0,Fijo a carcasa sobre espaciadores20 mm no a brida
+B05,Brida salida compartida,2,pieza,ASA,output_flange,0,0,Reutilizar STL legacy; 10 mm acero y pinM3
+B06,Silla20 compartida,1,pieza,ASA,saddle20,0,0,Desplazada35 mm para encoder
+B07,Cuna RT3S fija compartida,1,pieza,ASA,radio_cradle,0,0,Provisional medir unidad
+B08,Caja carrier180x130 y diplexor separado,1,lote,ASA,,0,0,carrier:base1 lid1 port40x2 port30x2 masdiplexor_box1 diplexor_lid1; antigua124x64INCOMPATIBLE
+B09,Cubos antena y bisagras compartidos,1,lote,ASA,,0,0,4antenna_hub 16arm_socket 1band_bridge
+B10,Soportes NC compartidos y portaimanes,1,lote,ASA,,0,0,4limit_bracket 2magnet_holder
+B11,Motor NEMA14 con eje saliente>=26 mm,2,pieza,metal,,30,70,Verificar paso26 y curva torque; masa plan240-360g conjunto
+B12,Polea METAL GT2 20t agujero5,2,pieza,aluminio,,6,16,6mm correa ancho conjunto<=12; fijacionDflat insertometal
+B13,Polea METAL GT2 100t agujero8,2,pieza,aluminio,,12,32,GT2paso2 no HTD; flangeOD<=66.66 ancho<=12 hubOD<=30
+B14,Polea METAL GT2 20t agujero8,2,pieza,aluminio,,6,16,HubOD<=18 ancho<=12; llave/pasador no plastico
+B15,Polea METAL GT2 100t agujero10,2,pieza,aluminio,,12,32,GT2paso2 flangeOD<=66.66 ancho<=12 hubOD<=30
+B16,Correa GT2 126t252 mm ancho6,4,pieza,elastomero refuerzo,,8,20,Continua no empalmada; tension fabricante y centros60.563
+B17,Aluminio6082 placas3mm 187.13x86,4,pieza,aluminio,,12,30,2frontDXF 2rearDXF; no imprimir ASA
+B18,Espaciadores metal OD8 ID4.5 L51,8,pieza,aluminio,,4,12,Housing seis? CUATRO por eje; pernosM4 pasantes
+B19,Rodamientos608 y6000,1,lote,acero,,16,40,4x608 4x6000 peso plan130-150g
+B20,Ejes intermedios8x60 salida10x89,1,lote,acero,,14,30,2de cada; peso geometrico169g; collarines y llaves extra
+B21,SoporteEL aluminio3mm y bandejaAZ,1,lote,aluminio,,10,25,Soporte plegado/reforzado; bandeja fija y 4separadores36 mm
+B22,Herrajes collarines llaves Ubolts adaptadores NC imanes,1,lote,metal,,25,60,Plan150-250g; no dependencia prisionero unico en eje redondo
+B23,RF aluminio fibra coax redes y diplexor,1,lote,RF,,90,260,Plan360-580g; herencia geometria RF no garantia500g
+B24,ASA para varianteBASE,1,lote,ASA,,20,35,Compra1bobina orientativa; slicer y masa real pendientes
+B25,Control y bateria portatil,1,lote,electronica,,0,0,Referir BOM electronico sin duplicar coste; plan350-580g
+B26,Bandeja estacionaria carrier180x130,1,pieza,aluminio,,4,12,FINALDXFcarrier-metal-mount2mm240x196 masa254g nominal; NO omitir delpresupuesto
+B27,Reserva carrierPCB ensamblada reportadahardware,1,pieza,electronica,,0,0,150-220g NOmedido sustituyeobjetivo100g; buckstopcablesextraTBD; no sumarcondicionBuildLightcomoaprobado
+L01,Motor candidato Pololu1207 SOYO SY35ST26-0284A,2,pieza,metal,,0,0,Fabricante130g cada200step280mA7.4V; eje21mm INCOMPATIBLE montajeBASE actual>=26; revision obligatoria
+L02,Bateria candidata TalentCell YB1203000-USB,1,pieza,bateria comercial,,0,0,Fabricante about190g11.1V3000mAh; salida9-12.6V3Amax; compatibleelectrico pendientePCB
+L03,BuildLight objetivos por grupo NO compra aprobada,1,lote,mixto,,0,0,Ver docsMECHANICAL masssheet2.679kg nominal condicionado; no sumarL aB oM

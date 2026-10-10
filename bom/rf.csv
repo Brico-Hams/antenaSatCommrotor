@@ -1,0 +1,25 @@
+id,subconjunto,cantidad,valor_o_modelo,estado,banda_o_limite,justificacion,fuente
+D-L13,diplexor_opcional,2,68 nH 0805 alta Q,REFERENCIA_NO_PEDIR_SIN_FICHA,144-146 MHz rama LPF,Verificar Q SRF corriente y tolerancia del ejemplar,D BOM_SMA/BNC f5c7dc375ed7b9882f52bd7757deaf44cd422b81
+D-L2,diplexor_opcional,1,100 nH 0805 alta Q,REFERENCIA_NO_PEDIR_SIN_FICHA,144-146 MHz rama LPF,No deducir rating RF de tamaño 0805,D BOM_SMA/BNC
+D-L45,diplexor_opcional,2,15 nH 0805 alta Q,REFERENCIA_NO_PEDIR_SIN_FICHA,430-440 MHz rama HPF,Verificar SRF ESR corriente y temperatura,D BOM_SMA/BNC
+D-C12,diplexor_opcional,2,18 pF C0G NP0 0805 >=100 V,REFERENCIA,144-146 MHz rama LPF,Esquema original ambiguo 10/18 pF autor eligio 18 pF,D README/BOM
+D-C35,diplexor_opcional,2,8.2 pF C0G NP0 0805 >=100 V,REFERENCIA_OPTIMIZADA,430-440 MHz rama HPF,No confundir con valor historico 4.7 pF,D README/BOM
+D-C4,diplexor_opcional,1,4.7 pF C0G NP0 0805 >=100 V,REFERENCIA_OPTIMIZADA,430-440 MHz rama HPF,No confundir con valor historico 2.7 pF,D README/BOM
+D-SMA,diplexor_variante_alternativa,3,Amphenol 132289 SMA hembra canto bulkhead,MEDIR_ANTES_CAD,PCB 1.6 mm,Alternativa a BNC no sumar ambas variantes,D README/MONTAJE/BOM
+D-BNC,diplexor_variante_alternativa,3,Amphenol B6252HB-NPP3G-50 BNC acodado,MEDIR_ANTES_CAD,Patillas <=2.5 mm bajo PCB,Alternativa a SMA no sumar ambas variantes,D README/MONTAJE/BOM
+D-CASE-SMA,diplexor_variante_alternativa,1,Exterior publicado 45.2x27.6x14.1 mm PCB37x23 mm,INTERFAZ_PUBLICADA_NO_MEDIDA,No incluye plug ni radio de coaxial,Parametros de brida estimados por autor,D README/MONTAJE
+D-CASE-BNC,diplexor_variante_alternativa,1,Exterior publicado 59.9x37.6x23.5 mm PCB55.5x33 mm,INTERFAZ_PUBLICADA_NO_MEDIDA,No incluye plug ni radio de coaxial,Parametros de cuerpo y frontal estimados por autor,D README/MONTAJE
+D-SCREW-SMA,diplexor_variante_alternativa,2,M2x10 autorroscante,REFERENCIA,Variante SMA,No usar tornillos para inferir coordenadas PCB,D BOM_SMA
+D-SCREW-BNC,diplexor_variante_alternativa,2,M2x12 autorroscante,REFERENCIA,Variante BNC,No usar tornillos para inferir coordenadas PCB,D BOM_BNC
+HY-VHF,polarizacion_opcional,1,Hibrido90grados o red de fase a definir,BLOQUEADO_SIN_SELECCION,Debe cubrir al menos144-146MHz,Medir amplitud fase adaptacion puerto aislado y potencia,RF-AND-RADIO.md
+HY-UHF,polarizacion_opcional,1,Hibrido90grados o red de fase a definir,BLOQUEADO_SIN_SELECCION,Debe cubrir al menos430-440MHz,Seleccion separada de VHF no hibrido dualband supuesto,RF-AND-RADIO.md
+HY-QCN,referencia_no_compra,0,QCN-3+ Mini-Circuits,EXCLUIDO_VHF_CANDIDATO_UHF,220-470MHz fabricante,145MHz fuera de banda sufijo mas no identificado en README H,https://www.minicircuits.com/WebStore/dashboard.html?model=QCN-3%2B
+HY-CMX,referencia_no_compra,0,CMX03A03,BLOQUEADO_SIN_FICHA,Banda desconocida 200W solo afirmacion README,No seleccionar con potencia sin banda,H README master consulta2026-10-10
+HY-ANAREN,referencia_no_compra,0,Anaren10260-3,BLOQUEADO_SIN_FICHA,Banda desconocida 250W solo afirmacion README,Referencia antigua fabricante inaccesible en consulta,H README master consulta2026-10-10
+HY-RFPOWER,referencia_no_compra,0,RF Power identidad incierta,EXCLUIDO,Banda desconocida 200W solo afirmacion README,No comprar sin numero de parte y ficha,H README
+HY-TERM,polarizacion_opcional,2,Carga RF50ohm para puerto aislado,PENDIENTE_DIMENSIONAR,Potencia peor caso y banda de cada hibrido,2resistencias100ohm2W no prueban15W ni impedancia435MHz,RF-AND-RADIO.md
+COAX-VHF,alimentacion,1,Coax50ohm y conectores compatibles longitud a medir,PENDIENTE_GEOMETRIA,Perdida VF radio minimo y cable-wrap segun fabricante,Longitud final despues de recorrido completo AZ/EL,RF-AND-RADIO.md
+COAX-UHF,alimentacion,1,Coax50ohm y conectores compatibles longitud a medir,PENDIENTE_GEOMETRIA,Perdida435MHz VF radio minimo y cable-wrap,No heredar50piesLMR400 de estacion PDF,RF-AND-RADIO.md
+VNA-LOAD,ensayo,3,Carga50ohm calibrada RF,INSTRUMENTACION_NO_PIEZA_ROTOR,144-146 y430-440MHz y potencia de ensayo,Terminar puertos libres para S11 S21 y aislamiento,D PRUEBAS
+VNA-CAL,ensayo,1,Kit SOL thru y cables50ohm,INSTRUMENTACION_NO_PIEZA_ROTOR,Calibrar100-500MHz en planos de medida,GuardarTouchstone y dynamic range,RF-AND-RADIO.md
+RADIO,radio_usuario,1,Retevis RT-3S con OpenGD77 build por verificar,EXISTENTE_VERIFICACION_LOCAL,FM/DMR no CAT ni full-duplex acreditado,Doppler Satellite integrado solo build comprobado guiaO1,LibreDMR OpenGD77_UserGuide2289ba75afebd044b85d38f03b6e279defe3645d

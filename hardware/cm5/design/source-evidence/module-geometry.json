@@ -1,0 +1,14 @@
+﻿{
+  "source": "https://raw.githubusercontent.com/Watterott/SilentStepStick/098b7518b0de31e6a12fda78c68ae2666b81fbb6/hardware/SilentStepStick-TMC5160_v15.brd",
+  "accessed": "2026-10-10",
+  "revision": "v1.5 at pinned commit",
+  "module_outline_mm": [15.24,20.32],
+  "original_eagle_connectors": {"P1": {"x":1.27,"y":10.14,"rotation":270},"P2":{"x":13.97,"y":10.14,"rotation":270}},
+  "column_spacing_mm":12.7,
+  "pad_pitch_mm":2.54,
+  "top_view_left_top_to_bottom":["EN","SDI","SCK","CSN","SDO","DCO","STEP","DIR"],
+  "top_view_right_top_to_bottom":["VM","GND","M2B","M2A","M1A","M1B","VIO","GND"],
+  "original_eagle_numbering_top_to_bottom":[8,7,6,5,4,3,2,1],
+  "guard_socket_numbering_top_to_bottom":[1,2,3,4,5,6,7,8],
+  "notes":"Socket numbering deliberately differs from original Eagle pads; match net names/top-view, never equate pad numbers. Geometry extracted, not physical test. Module y-origin/edges need final mechanical confirmation."
+}

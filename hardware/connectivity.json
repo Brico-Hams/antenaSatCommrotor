@@ -1,0 +1,2104 @@
+{
+  "board_mm": [
+    180,
+    130
+  ],
+  "holes_mm": [
+    [
+      5,
+      5
+    ],
+    [
+      175,
+      5
+    ],
+    [
+      5,
+      125
+    ],
+    [
+      175,
+      125
+    ]
+  ],
+  "nets": [
+    "GND",
+    "RAW12",
+    "PROTECTED12",
+    "FUSED12",
+    "STOP_SEND",
+    "VMOT",
+    "BUCK12",
+    "BUCK5",
+    "FUSED5",
+    "ESP5",
+    "3V3",
+    "AZ_STEP",
+    "AZ_DIR",
+    "EL_STEP",
+    "EL_DIR",
+    "ENABLE_N",
+    "STOP_N",
+    "AZ_MIN_N",
+    "AZ_MAX_N",
+    "EL_MIN_N",
+    "EL_MAX_N",
+    "GNSS_TX",
+    "GNSS_RX",
+    "AZ_SDA",
+    "AZ_SCL",
+    "EL_SDA",
+    "EL_SCL",
+    "AZ_M2B",
+    "AZ_M2A",
+    "AZ_M1A",
+    "AZ_M1B",
+    "EL_M2B",
+    "EL_M2A",
+    "EL_M1A",
+    "EL_M1B",
+    "unconnected-(U1-NC-Pad2)",
+    "unconnected-(U1-NC-Pad8)",
+    "unconnected-(U1-NC-Pad13)",
+    "unconnected-(U1-NC-Pad16)",
+    "unconnected-(U1-NC-Pad17)",
+    "unconnected-(U1-NC-Pad18)",
+    "unconnected-(U1-NC-Pad21)",
+    "unconnected-(U1-NC-Pad23)",
+    "unconnected-(U1-NC-Pad24)",
+    "unconnected-(U1-NC-Pad29)",
+    "unconnected-(U1-NC-Pad32)",
+    "unconnected-(U1-NC-Pad33)",
+    "unconnected-(U1-NC-Pad34)",
+    "unconnected-(U1-NC-Pad35)",
+    "unconnected-(U1-NC-Pad36)",
+    "unconnected-(U1-NC-Pad37)",
+    "unconnected-(U1-NC-Pad38)",
+    "unconnected-(U2-NC-Pad5)",
+    "unconnected-(U2-NC-Pad6)",
+    "unconnected-(U3-NC-Pad5)",
+    "unconnected-(U3-NC-Pad6)"
+  ],
+  "parts": [
+    {
+      "ref": "J1",
+      "value": "DC_IN_12V",
+      "x": 12,
+      "y": 18,
+      "pins": [
+        {
+          "num": 1,
+          "net": "RAW12",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "pitch": 5.08,
+      "pad": 3.2,
+      "drill": 1.3,
+      "mpn": "Phoenix 1715721 MKDS 1,5/2-5.08",
+      "kind": "terminal",
+      "id": "e0d95a8a-7819-44b5-8a9d-c667403d6d28",
+      "footprint": "PortableSatCarrier:J1_terminal"
+    },
+    {
+      "ref": "D1",
+      "value": "SB560_REVERSE_BLOCK",
+      "x": 22,
+      "y": 18,
+      "pins": [
+        {
+          "num": 1,
+          "net": "RAW12",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "PROTECTED12",
+          "x": 15.24,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          15.24,
+          0
+        ]
+      ],
+      "pad": 2.8,
+      "drill": 1.3,
+      "mpn": "onsemi SB560",
+      "kind": "diode",
+      "id": "6c681a30-a02f-4afb-a80d-ee8f80d76359",
+      "footprint": "PortableSatCarrier:D1_diode"
+    },
+    {
+      "ref": "D2",
+      "value": "SMBJ15A_TVS",
+      "x": 44,
+      "y": 18,
+      "pins": [
+        {
+          "num": 1,
+          "net": "GND",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "FUSED12",
+          "x": 4.3,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          4.3,
+          0
+        ]
+      ],
+      "smd": true,
+      "pad": 2.4,
+      "mpn": "Littelfuse SMBJ15A",
+      "kind": "tvs",
+      "id": "12222337-a51b-45c4-b673-295b52ff2bba",
+      "footprint": "PortableSatCarrier:D2_tvs"
+    },
+    {
+      "ref": "F1",
+      "value": "T3.15A_MAIN",
+      "x": 12,
+      "y": 33,
+      "pins": [
+        {
+          "num": 1,
+          "net": "PROTECTED12",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "FUSED12",
+          "x": 22.5,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          22.5,
+          0
+        ]
+      ],
+      "pad": 3.4,
+      "drill": 1.4,
+      "mpn": "Schurter 0031.8201 + SPT 0001.2509",
+      "kind": "fuse",
+      "id": "59ec06ff-1996-44e6-bcc7-338ea0d70e81",
+      "footprint": "PortableSatCarrier:F1_fuse"
+    },
+    {
+      "ref": "F2",
+      "value": "T2.5A_MOTOR",
+      "x": 12,
+      "y": 48,
+      "pins": [
+        {
+          "num": 1,
+          "net": "FUSED12",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "STOP_SEND",
+          "x": 22.5,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          22.5,
+          0
+        ]
+      ],
+      "pad": 3.4,
+      "drill": 1.4,
+      "mpn": "Schurter 0031.8201 + SPT 0001.2508",
+      "kind": "fuse",
+      "id": "d642ad8e-da68-4849-9bcc-769bfd623d12",
+      "footprint": "PortableSatCarrier:F2_fuse"
+    },
+    {
+      "ref": "J2",
+      "value": "LATCHED_STOP_POWER_OUT_RETURN",
+      "x": 12,
+      "y": 62,
+      "pins": [
+        {
+          "num": 1,
+          "net": "STOP_SEND",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "VMOT",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "pitch": 5.08,
+      "pad": 3.2,
+      "drill": 1.3,
+      "mpn": "Phoenix 1715721 MKDS 1,5/2-5.08",
+      "kind": "terminal",
+      "id": "2606df08-e598-4d36-a60c-fa617f44d646",
+      "footprint": "PortableSatCarrier:J2_terminal"
+    },
+    {
+      "ref": "F4",
+      "value": "T1A_BUCK_INPUT",
+      "x": 42,
+      "y": 34,
+      "pins": [
+        {
+          "num": 1,
+          "net": "FUSED12",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "BUCK12",
+          "x": 22.5,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          22.5,
+          0
+        ]
+      ],
+      "pad": 3.4,
+      "drill": 1.4,
+      "mpn": "Schurter 0031.8201 + SPT 0001.2504",
+      "kind": "fuse",
+      "id": "959e9322-eb62-4dd8-a2bd-d4b0e6a51a3a",
+      "footprint": "PortableSatCarrier:F4_fuse"
+    },
+    {
+      "ref": "J4",
+      "value": "EXTERNAL_BUCK_INPUT",
+      "x": 45,
+      "y": 48,
+      "pins": [
+        {
+          "num": 1,
+          "net": "BUCK12",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "pitch": 5.08,
+      "pad": 3.2,
+      "drill": 1.3,
+      "mpn": "Phoenix 1715721 MKDS 1,5/2-5.08",
+      "kind": "terminal",
+      "id": "3628d309-29d9-4d5d-b46e-b67cdf56c790",
+      "footprint": "PortableSatCarrier:J4_terminal"
+    },
+    {
+      "ref": "J5",
+      "value": "EXTERNAL_BUCK_5V_RETURN",
+      "x": 45,
+      "y": 62,
+      "pins": [
+        {
+          "num": 1,
+          "net": "BUCK5",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "pitch": 5.08,
+      "pad": 3.2,
+      "drill": 1.3,
+      "mpn": "Phoenix 1715721 MKDS 1,5/2-5.08",
+      "kind": "terminal",
+      "id": "5fbedb74-2974-4ca8-bde2-a75a4387eb51",
+      "footprint": "PortableSatCarrier:J5_terminal"
+    },
+    {
+      "ref": "F3",
+      "value": "T1A_LOGIC_5V",
+      "x": 12,
+      "y": 77,
+      "pins": [
+        {
+          "num": 1,
+          "net": "BUCK5",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "FUSED5",
+          "x": 22.5,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          22.5,
+          0
+        ]
+      ],
+      "pad": 3.4,
+      "drill": 1.4,
+      "mpn": "Schurter 0031.8201 + SPT 0001.2504",
+      "kind": "fuse",
+      "id": "97715dee-4a4b-4f23-9498-1016a1edd68d",
+      "footprint": "PortableSatCarrier:F3_fuse"
+    },
+    {
+      "ref": "JP1",
+      "value": "REMOVE_FOR_USB",
+      "x": 43,
+      "y": 76,
+      "pins": [
+        {
+          "num": 1,
+          "net": "FUSED5",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "ESP5",
+          "x": 0,
+          "y": 2.54
+        }
+      ],
+      "mpn": "Samtec TSW-102-07-G-S + shunt",
+      "kind": "header",
+      "id": "540091ff-6dde-484d-aa91-e3e05df66e02",
+      "footprint": "PortableSatCarrier:JP1_header"
+    },
+    {
+      "ref": "U1",
+      "value": "ESP32_DEVKITC_V4_38_WROOM32E",
+      "x": 77,
+      "y": 20,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": null,
+          "x": 0,
+          "y": 2.54
+        },
+        {
+          "num": 3,
+          "net": "AZ_MAX_N",
+          "x": 0,
+          "y": 5.08
+        },
+        {
+          "num": 4,
+          "net": "EL_MIN_N",
+          "x": 0,
+          "y": 7.62
+        },
+        {
+          "num": 5,
+          "net": "STOP_N",
+          "x": 0,
+          "y": 10.16
+        },
+        {
+          "num": 6,
+          "net": "AZ_MIN_N",
+          "x": 0,
+          "y": 12.7
+        },
+        {
+          "num": 7,
+          "net": "EL_MAX_N",
+          "x": 0,
+          "y": 15.24
+        },
+        {
+          "num": 8,
+          "net": null,
+          "x": 0,
+          "y": 17.78
+        },
+        {
+          "num": 9,
+          "net": "ENABLE_N",
+          "x": 0,
+          "y": 20.32
+        },
+        {
+          "num": 10,
+          "net": "AZ_STEP",
+          "x": 0,
+          "y": 22.86
+        },
+        {
+          "num": 11,
+          "net": "AZ_DIR",
+          "x": 0,
+          "y": 25.4
+        },
+        {
+          "num": 12,
+          "net": "EL_STEP",
+          "x": 0,
+          "y": 27.94
+        },
+        {
+          "num": 13,
+          "net": null,
+          "x": 0,
+          "y": 30.48
+        },
+        {
+          "num": 14,
+          "net": "GND",
+          "x": 0,
+          "y": 33.02
+        },
+        {
+          "num": 15,
+          "net": "EL_DIR",
+          "x": 0,
+          "y": 35.56
+        },
+        {
+          "num": 16,
+          "net": null,
+          "x": 0,
+          "y": 38.1
+        },
+        {
+          "num": 17,
+          "net": null,
+          "x": 0,
+          "y": 40.64
+        },
+        {
+          "num": 18,
+          "net": null,
+          "x": 0,
+          "y": 43.18
+        },
+        {
+          "num": 19,
+          "net": "ESP5",
+          "x": 0,
+          "y": 45.72
+        },
+        {
+          "num": 20,
+          "net": "GND",
+          "x": 25.4,
+          "y": 0
+        },
+        {
+          "num": 21,
+          "net": null,
+          "x": 25.4,
+          "y": 2.54
+        },
+        {
+          "num": 22,
+          "net": "AZ_SCL",
+          "x": 25.4,
+          "y": 5.08
+        },
+        {
+          "num": 23,
+          "net": null,
+          "x": 25.4,
+          "y": 7.62
+        },
+        {
+          "num": 24,
+          "net": null,
+          "x": 25.4,
+          "y": 10.16
+        },
+        {
+          "num": 25,
+          "net": "AZ_SDA",
+          "x": 25.4,
+          "y": 12.7
+        },
+        {
+          "num": 26,
+          "net": "GND",
+          "x": 25.4,
+          "y": 15.24
+        },
+        {
+          "num": 27,
+          "net": "EL_SCL",
+          "x": 25.4,
+          "y": 17.78
+        },
+        {
+          "num": 28,
+          "net": "EL_SDA",
+          "x": 25.4,
+          "y": 20.32
+        },
+        {
+          "num": 29,
+          "net": null,
+          "x": 25.4,
+          "y": 22.86
+        },
+        {
+          "num": 30,
+          "net": "GNSS_RX",
+          "x": 25.4,
+          "y": 25.4
+        },
+        {
+          "num": 31,
+          "net": "GNSS_TX",
+          "x": 25.4,
+          "y": 27.94
+        },
+        {
+          "num": 32,
+          "net": null,
+          "x": 25.4,
+          "y": 30.48
+        },
+        {
+          "num": 33,
+          "net": null,
+          "x": 25.4,
+          "y": 33.02
+        },
+        {
+          "num": 34,
+          "net": null,
+          "x": 25.4,
+          "y": 35.56
+        },
+        {
+          "num": 35,
+          "net": null,
+          "x": 25.4,
+          "y": 38.1
+        },
+        {
+          "num": 36,
+          "net": null,
+          "x": 25.4,
+          "y": 40.64
+        },
+        {
+          "num": 37,
+          "net": null,
+          "x": 25.4,
+          "y": 43.18
+        },
+        {
+          "num": 38,
+          "net": null,
+          "x": 25.4,
+          "y": 45.72
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2.54
+        ],
+        [
+          0,
+          5.08
+        ],
+        [
+          0,
+          7.62
+        ],
+        [
+          0,
+          10.16
+        ],
+        [
+          0,
+          12.7
+        ],
+        [
+          0,
+          15.24
+        ],
+        [
+          0,
+          17.78
+        ],
+        [
+          0,
+          20.32
+        ],
+        [
+          0,
+          22.86
+        ],
+        [
+          0,
+          25.4
+        ],
+        [
+          0,
+          27.94
+        ],
+        [
+          0,
+          30.48
+        ],
+        [
+          0,
+          33.02
+        ],
+        [
+          0,
+          35.56
+        ],
+        [
+          0,
+          38.1
+        ],
+        [
+          0,
+          40.64
+        ],
+        [
+          0,
+          43.18
+        ],
+        [
+          0,
+          45.72
+        ],
+        [
+          25.4,
+          0
+        ],
+        [
+          25.4,
+          2.54
+        ],
+        [
+          25.4,
+          5.08
+        ],
+        [
+          25.4,
+          7.62
+        ],
+        [
+          25.4,
+          10.16
+        ],
+        [
+          25.4,
+          12.7
+        ],
+        [
+          25.4,
+          15.24
+        ],
+        [
+          25.4,
+          17.78
+        ],
+        [
+          25.4,
+          20.32
+        ],
+        [
+          25.4,
+          22.86
+        ],
+        [
+          25.4,
+          25.4
+        ],
+        [
+          25.4,
+          27.94
+        ],
+        [
+          25.4,
+          30.48
+        ],
+        [
+          25.4,
+          33.02
+        ],
+        [
+          25.4,
+          35.56
+        ],
+        [
+          25.4,
+          38.1
+        ],
+        [
+          25.4,
+          40.64
+        ],
+        [
+          25.4,
+          43.18
+        ],
+        [
+          25.4,
+          45.72
+        ]
+      ],
+      "mpn": "Espressif ESP32-DevKitC-32E",
+      "kind": "module",
+      "id": "0e6daeeb-dcfa-4b84-8910-5d0dcfa3388a",
+      "footprint": "PortableSatCarrier:U1_module"
+    },
+    {
+      "ref": "U2",
+      "value": "WATTEROTT_TMC2209_V2",
+      "x": 45,
+      "y": 94,
+      "pins": [
+        {
+          "num": 1,
+          "net": "ENABLE_N",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "3V3",
+          "x": 0,
+          "y": 2.54
+        },
+        {
+          "num": 3,
+          "net": "3V3",
+          "x": 0,
+          "y": 5.08
+        },
+        {
+          "num": 4,
+          "net": "GND",
+          "x": 0,
+          "y": 7.62
+        },
+        {
+          "num": 5,
+          "net": null,
+          "x": 0,
+          "y": 10.16
+        },
+        {
+          "num": 6,
+          "net": null,
+          "x": 0,
+          "y": 12.7
+        },
+        {
+          "num": 7,
+          "net": "AZ_STEP",
+          "x": 0,
+          "y": 15.24
+        },
+        {
+          "num": 8,
+          "net": "AZ_DIR",
+          "x": 0,
+          "y": 17.78
+        },
+        {
+          "num": 9,
+          "net": "VMOT",
+          "x": 15.24,
+          "y": 0
+        },
+        {
+          "num": 10,
+          "net": "GND",
+          "x": 15.24,
+          "y": 2.54
+        },
+        {
+          "num": 11,
+          "net": "AZ_M2B",
+          "x": 15.24,
+          "y": 5.08
+        },
+        {
+          "num": 12,
+          "net": "AZ_M2A",
+          "x": 15.24,
+          "y": 7.62
+        },
+        {
+          "num": 13,
+          "net": "AZ_M1A",
+          "x": 15.24,
+          "y": 10.16
+        },
+        {
+          "num": 14,
+          "net": "AZ_M1B",
+          "x": 15.24,
+          "y": 12.7
+        },
+        {
+          "num": 15,
+          "net": "3V3",
+          "x": 15.24,
+          "y": 15.24
+        },
+        {
+          "num": 16,
+          "net": "GND",
+          "x": 15.24,
+          "y": 17.78
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2.54
+        ],
+        [
+          0,
+          5.08
+        ],
+        [
+          0,
+          7.62
+        ],
+        [
+          0,
+          10.16
+        ],
+        [
+          0,
+          12.7
+        ],
+        [
+          0,
+          15.24
+        ],
+        [
+          0,
+          17.78
+        ],
+        [
+          15.24,
+          0
+        ],
+        [
+          15.24,
+          2.54
+        ],
+        [
+          15.24,
+          5.08
+        ],
+        [
+          15.24,
+          7.62
+        ],
+        [
+          15.24,
+          10.16
+        ],
+        [
+          15.24,
+          12.7
+        ],
+        [
+          15.24,
+          15.24
+        ],
+        [
+          15.24,
+          17.78
+        ]
+      ],
+      "mpn": "Watterott SilentStepStick TMC2209 v2.x",
+      "kind": "driver",
+      "id": "666b3ccc-75d1-4c91-83b9-11122829a254",
+      "footprint": "PortableSatCarrier:U2_driver"
+    },
+    {
+      "ref": "C1",
+      "value": "220u_35V_LOW_ESR",
+      "x": 63,
+      "y": 84,
+      "pins": [
+        {
+          "num": 1,
+          "net": "VMOT",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "pad": 2.5,
+      "drill": 1,
+      "mpn": "Panasonic EEU-FR1V221",
+      "kind": "capacitor",
+      "id": "a6c769ee-c3a4-4df7-bd78-f120d2e47f36",
+      "footprint": "PortableSatCarrier:C1_capacitor"
+    },
+    {
+      "ref": "JM1",
+      "value": "AZ_MOTOR",
+      "x": 50,
+      "y": 120,
+      "pins": [
+        {
+          "num": 1,
+          "net": "AZ_M2B",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "AZ_M2A",
+          "x": 5.08,
+          "y": 0
+        },
+        {
+          "num": 3,
+          "net": "AZ_M1A",
+          "x": 10.16,
+          "y": 0
+        },
+        {
+          "num": 4,
+          "net": "AZ_M1B",
+          "x": 15.24,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          5.08,
+          0
+        ],
+        [
+          10.16,
+          0
+        ],
+        [
+          15.24,
+          0
+        ]
+      ],
+      "pad": 3.2,
+      "drill": 1.3,
+      "mpn": "Phoenix 1715747 MKDS 1,5/4-5.08",
+      "kind": "terminal",
+      "id": "4d1fccae-7639-4b61-8dcb-d020057d18d8",
+      "footprint": "PortableSatCarrier:JM1_terminal"
+    },
+    {
+      "ref": "U3",
+      "value": "WATTEROTT_TMC2209_V2",
+      "x": 80,
+      "y": 94,
+      "pins": [
+        {
+          "num": 1,
+          "net": "ENABLE_N",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "3V3",
+          "x": 0,
+          "y": 2.54
+        },
+        {
+          "num": 3,
+          "net": "3V3",
+          "x": 0,
+          "y": 5.08
+        },
+        {
+          "num": 4,
+          "net": "GND",
+          "x": 0,
+          "y": 7.62
+        },
+        {
+          "num": 5,
+          "net": null,
+          "x": 0,
+          "y": 10.16
+        },
+        {
+          "num": 6,
+          "net": null,
+          "x": 0,
+          "y": 12.7
+        },
+        {
+          "num": 7,
+          "net": "EL_STEP",
+          "x": 0,
+          "y": 15.24
+        },
+        {
+          "num": 8,
+          "net": "EL_DIR",
+          "x": 0,
+          "y": 17.78
+        },
+        {
+          "num": 9,
+          "net": "VMOT",
+          "x": 15.24,
+          "y": 0
+        },
+        {
+          "num": 10,
+          "net": "GND",
+          "x": 15.24,
+          "y": 2.54
+        },
+        {
+          "num": 11,
+          "net": "EL_M2B",
+          "x": 15.24,
+          "y": 5.08
+        },
+        {
+          "num": 12,
+          "net": "EL_M2A",
+          "x": 15.24,
+          "y": 7.62
+        },
+        {
+          "num": 13,
+          "net": "EL_M1A",
+          "x": 15.24,
+          "y": 10.16
+        },
+        {
+          "num": 14,
+          "net": "EL_M1B",
+          "x": 15.24,
+          "y": 12.7
+        },
+        {
+          "num": 15,
+          "net": "3V3",
+          "x": 15.24,
+          "y": 15.24
+        },
+        {
+          "num": 16,
+          "net": "GND",
+          "x": 15.24,
+          "y": 17.78
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2.54
+        ],
+        [
+          0,
+          5.08
+        ],
+        [
+          0,
+          7.62
+        ],
+        [
+          0,
+          10.16
+        ],
+        [
+          0,
+          12.7
+        ],
+        [
+          0,
+          15.24
+        ],
+        [
+          0,
+          17.78
+        ],
+        [
+          15.24,
+          0
+        ],
+        [
+          15.24,
+          2.54
+        ],
+        [
+          15.24,
+          5.08
+        ],
+        [
+          15.24,
+          7.62
+        ],
+        [
+          15.24,
+          10.16
+        ],
+        [
+          15.24,
+          12.7
+        ],
+        [
+          15.24,
+          15.24
+        ],
+        [
+          15.24,
+          17.78
+        ]
+      ],
+      "mpn": "Watterott SilentStepStick TMC2209 v2.x",
+      "kind": "driver",
+      "id": "452379b2-7f1b-4399-8426-c9d0044aea29",
+      "footprint": "PortableSatCarrier:U3_driver"
+    },
+    {
+      "ref": "C2",
+      "value": "220u_35V_LOW_ESR",
+      "x": 98,
+      "y": 84,
+      "pins": [
+        {
+          "num": 1,
+          "net": "VMOT",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "pad": 2.5,
+      "drill": 1,
+      "mpn": "Panasonic EEU-FR1V221",
+      "kind": "capacitor",
+      "id": "893f98a9-b99d-4dba-af7f-d18212b5c138",
+      "footprint": "PortableSatCarrier:C2_capacitor"
+    },
+    {
+      "ref": "JM2",
+      "value": "EL_MOTOR",
+      "x": 85,
+      "y": 120,
+      "pins": [
+        {
+          "num": 1,
+          "net": "EL_M2B",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "EL_M2A",
+          "x": 5.08,
+          "y": 0
+        },
+        {
+          "num": 3,
+          "net": "EL_M1A",
+          "x": 10.16,
+          "y": 0
+        },
+        {
+          "num": 4,
+          "net": "EL_M1B",
+          "x": 15.24,
+          "y": 0
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          5.08,
+          0
+        ],
+        [
+          10.16,
+          0
+        ],
+        [
+          15.24,
+          0
+        ]
+      ],
+      "pad": 3.2,
+      "drill": 1.3,
+      "mpn": "Phoenix 1715747 MKDS 1,5/4-5.08",
+      "kind": "terminal",
+      "id": "b4fa647e-af51-4792-9323-5ce73250eb42",
+      "footprint": "PortableSatCarrier:JM2_terminal"
+    },
+    {
+      "ref": "J6",
+      "value": "GNSS_3V3_UART",
+      "x": 157,
+      "y": 20,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "num": 3,
+          "net": "GNSS_TX",
+          "x": 0,
+          "y": 5
+        },
+        {
+          "num": 4,
+          "net": "GNSS_RX",
+          "x": 0,
+          "y": 7.5
+        }
+      ],
+      "mpn": "JST B4B-XH-A",
+      "kind": "xh",
+      "id": "59979a8b-485f-44a3-b68f-5a9d336ce7f7",
+      "footprint": "PortableSatCarrier:J6_xh"
+    },
+    {
+      "ref": "J7",
+      "value": "AZ_AS5600_I2C0",
+      "x": 157,
+      "y": 38,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "num": 3,
+          "net": "AZ_SDA",
+          "x": 0,
+          "y": 5
+        },
+        {
+          "num": 4,
+          "net": "AZ_SCL",
+          "x": 0,
+          "y": 7.5
+        }
+      ],
+      "pitch": 2.5,
+      "mpn": "JST B4B-XH-A",
+      "kind": "xh",
+      "id": "c6875700-edc1-4ba9-b172-ef1332eb9570",
+      "footprint": "PortableSatCarrier:J7_xh"
+    },
+    {
+      "ref": "J8",
+      "value": "EL_AS5600_I2C1",
+      "x": 157,
+      "y": 56,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "num": 3,
+          "net": "EL_SDA",
+          "x": 0,
+          "y": 5
+        },
+        {
+          "num": 4,
+          "net": "EL_SCL",
+          "x": 0,
+          "y": 7.5
+        }
+      ],
+      "pitch": 2.5,
+      "mpn": "JST B4B-XH-A",
+      "kind": "xh",
+      "id": "6a950098-369e-4a94-bfc6-716359e09ba9",
+      "footprint": "PortableSatCarrier:J8_xh"
+    },
+    {
+      "ref": "J9",
+      "value": "OPTIONAL_IMU_MAG_I2C0",
+      "x": 157,
+      "y": 74,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "num": 3,
+          "net": "AZ_SDA",
+          "x": 0,
+          "y": 5
+        },
+        {
+          "num": 4,
+          "net": "AZ_SCL",
+          "x": 0,
+          "y": 7.5
+        }
+      ],
+      "pitch": 2.5,
+      "mpn": "JST B4B-XH-A",
+      "kind": "xh",
+      "id": "6458eb7a-2093-41c4-816e-8556989fe528",
+      "footprint": "PortableSatCarrier:J9_xh"
+    },
+    {
+      "ref": "J3",
+      "value": "STOP_N_NC_AUX_ONLY",
+      "x": 157,
+      "y": 92,
+      "pins": [
+        {
+          "num": 1,
+          "net": "STOP_N",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 2.5
+        }
+      ],
+      "pitch": 2.5,
+      "mpn": "JST B2B-XH-A",
+      "kind": "xh",
+      "id": "fbc0e07e-d68c-4caa-a1c0-11cd2720c4af",
+      "footprint": "PortableSatCarrier:J3_xh"
+    },
+    {
+      "ref": "J10",
+      "value": "AZ_MIN_N_NC_AUX_ONLY",
+      "x": 157,
+      "y": 103,
+      "pins": [
+        {
+          "num": 1,
+          "net": "AZ_MIN_N",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 2.5
+        }
+      ],
+      "pitch": 2.5,
+      "mpn": "JST B2B-XH-A",
+      "kind": "xh",
+      "id": "871ff273-b134-4a9f-ba80-7217c4e0922f",
+      "footprint": "PortableSatCarrier:J10_xh"
+    },
+    {
+      "ref": "J11",
+      "value": "AZ_MAX_N_NC_AUX_ONLY",
+      "x": 157,
+      "y": 114,
+      "pins": [
+        {
+          "num": 1,
+          "net": "AZ_MAX_N",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 2.5
+        }
+      ],
+      "pitch": 2.5,
+      "mpn": "JST B2B-XH-A",
+      "kind": "xh",
+      "id": "4902f775-b24f-48c7-9594-062afb2da9d7",
+      "footprint": "PortableSatCarrier:J11_xh"
+    },
+    {
+      "ref": "J12",
+      "value": "EL_MIN_N_NC_AUX_ONLY",
+      "x": 137,
+      "y": 92,
+      "pins": [
+        {
+          "num": 1,
+          "net": "EL_MIN_N",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 2.5
+        }
+      ],
+      "pitch": 2.5,
+      "mpn": "JST B2B-XH-A",
+      "kind": "xh",
+      "id": "846772d3-173c-4793-b8e9-c11953c87927",
+      "footprint": "PortableSatCarrier:J12_xh"
+    },
+    {
+      "ref": "J13",
+      "value": "EL_MAX_N_NC_AUX_ONLY",
+      "x": 137,
+      "y": 103,
+      "pins": [
+        {
+          "num": 1,
+          "net": "EL_MAX_N",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 2.5
+        }
+      ],
+      "pitch": 2.5,
+      "mpn": "JST B2B-XH-A",
+      "kind": "xh",
+      "id": "d0dc04d7-cbba-477b-bc2a-f410745e1030",
+      "footprint": "PortableSatCarrier:J13_xh"
+    },
+    {
+      "ref": "R1",
+      "value": "10k",
+      "x": 119,
+      "y": 25,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "ENABLE_N",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-10K",
+      "kind": "resistor",
+      "id": "5837c785-2b5f-412f-924e-20dba095c111",
+      "footprint": "PortableSatCarrier:R1_resistor"
+    },
+    {
+      "ref": "R2",
+      "value": "10k",
+      "x": 131,
+      "y": 25,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "STOP_N",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-10K",
+      "kind": "resistor",
+      "id": "8b30a56b-b732-4b69-bc7a-2593b5282294",
+      "footprint": "PortableSatCarrier:R2_resistor"
+    },
+    {
+      "ref": "R3",
+      "value": "10k",
+      "x": 119,
+      "y": 35,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "AZ_MIN_N",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-10K",
+      "kind": "resistor",
+      "id": "9aff2421-84fd-445c-a1c7-1c21f519e6dc",
+      "footprint": "PortableSatCarrier:R3_resistor"
+    },
+    {
+      "ref": "R4",
+      "value": "10k",
+      "x": 131,
+      "y": 35,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "AZ_MAX_N",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-10K",
+      "kind": "resistor",
+      "id": "2ed312a0-7b36-44a0-bd48-7d9e77bd0eb3",
+      "footprint": "PortableSatCarrier:R4_resistor"
+    },
+    {
+      "ref": "R5",
+      "value": "10k",
+      "x": 119,
+      "y": 45,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "EL_MIN_N",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-10K",
+      "kind": "resistor",
+      "id": "065d987c-e564-4d90-b2ef-2a5fed9a4348",
+      "footprint": "PortableSatCarrier:R5_resistor"
+    },
+    {
+      "ref": "R6",
+      "value": "10k",
+      "x": 131,
+      "y": 45,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "EL_MAX_N",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-10K",
+      "kind": "resistor",
+      "id": "226637b9-110c-4d69-bceb-d9c4c685a58f",
+      "footprint": "PortableSatCarrier:R6_resistor"
+    },
+    {
+      "ref": "R7",
+      "value": "4k7",
+      "x": 119,
+      "y": 55,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "AZ_SDA",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-4K7",
+      "kind": "resistor",
+      "id": "9cd152e2-c1b5-416f-a006-8b3229930be4",
+      "footprint": "PortableSatCarrier:R7_resistor"
+    },
+    {
+      "ref": "R8",
+      "value": "4k7",
+      "x": 131,
+      "y": 55,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "AZ_SCL",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-4K7",
+      "kind": "resistor",
+      "id": "09afe817-b4e7-407e-b213-83dd42103815",
+      "footprint": "PortableSatCarrier:R8_resistor"
+    },
+    {
+      "ref": "R9",
+      "value": "4k7",
+      "x": 119,
+      "y": 65,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "EL_SDA",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-4K7",
+      "kind": "resistor",
+      "id": "147b84ee-46dd-4951-82b2-731b02dd1cf7",
+      "footprint": "PortableSatCarrier:R9_resistor"
+    },
+    {
+      "ref": "R10",
+      "value": "4k7",
+      "x": 131,
+      "y": 65,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "EL_SCL",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "Yageo CFR-25JB-52-4K7",
+      "kind": "resistor",
+      "id": "0f57fff0-e5d9-4f5e-b972-02c5f2a28a18",
+      "footprint": "PortableSatCarrier:R10_resistor"
+    },
+    {
+      "ref": "C3",
+      "value": "100n_50V",
+      "x": 147,
+      "y": 18,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "KEMET C315C104M5U5TA",
+      "kind": "capacitor",
+      "id": "a934eae3-d793-4417-8596-caf2d75ef590",
+      "footprint": "PortableSatCarrier:C3_capacitor"
+    },
+    {
+      "ref": "C4",
+      "value": "100n_50V",
+      "x": 147,
+      "y": 38,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "KEMET C315C104M5U5TA",
+      "kind": "capacitor",
+      "id": "b659ffe6-04a0-4c2f-83c4-427d74b407bd",
+      "footprint": "PortableSatCarrier:C4_capacitor"
+    },
+    {
+      "ref": "C5",
+      "value": "100n_50V",
+      "x": 147,
+      "y": 56,
+      "pins": [
+        {
+          "num": 1,
+          "net": "3V3",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "num": 2,
+          "net": "GND",
+          "x": 0,
+          "y": 5.08
+        }
+      ],
+      "positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5.08
+        ]
+      ],
+      "pad": 2,
+      "drill": 0.8,
+      "mpn": "KEMET C315C104M5U5TA",
+      "kind": "capacitor",
+      "id": "f6cfed9e-361c-4d52-9c7e-46cd9efe41c0",
+      "footprint": "PortableSatCarrier:C5_capacitor"
+    }
+  ],
+  "router": {
+    "grid_mm": 0.25,
+    "segments": 17349,
+    "vias": 55,
+    "unrouted": []
+  }
+}

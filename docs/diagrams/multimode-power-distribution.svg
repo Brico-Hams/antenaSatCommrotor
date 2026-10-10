@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="850" viewBox="0 0 1360 850" role="img" aria-labelledby="title desc">
+  <title id="title">PortableSatStation conceptual Powerpole and fused power distribution</title>
+  <desc id="desc">FIG-05 conceptual functional power topology; no released power schematic or auxiliary hardware exists. External battery connects through a TBD Powerpole pair, pack-adjacent positive master fuse, service disconnect, coordinated protection and conditioning, protected distribution and separately fused branches. The common-mode choke is optional and carries both conductors; differential LC stays DNP until converter stability guidance, damping analysis and measurements qualify an exact network. Motor hard-limit, watchdog and DC-rated latching E-stop power-cut guard are not designed/released; GPIO inputs/requests are not hardware permits. Not wiring authorization, a schematic or fabrication drawing.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3b526b"/></marker>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#172b43}
+      .title{font-size:26px;font-weight:700}
+      .subtitle{font-size:14px;fill:#455a70}
+      .head{font-size:17px;font-weight:700}
+      .body{font-size:14px}
+      .small{font-size:12px}
+      .tiny{font-size:11px}
+      .box{fill:#eef4fb;stroke:#2f5d8a;stroke-width:2}
+      .hold{fill:#fff4e7;stroke:#b05a16;stroke-width:2;stroke-dasharray:7 4}
+      .safe{fill:#f2f6ef;stroke:#58743e;stroke-width:2}
+      .pos{fill:none;stroke:#b52b24;stroke-width:5;marker-end:url(#arrow)}
+      .ret{fill:none;stroke:#172b43;stroke-width:4;stroke-dasharray:8 4}
+      .flow{fill:none;stroke:#3b526b;stroke-width:3;marker-end:url(#arrow)}
+      .warn{fill:#8b310d;font-weight:700}
+      .fuse{fill:#fff;stroke:#b52b24;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1360" height="850" fill="#f7f9fc"/>
+  <text x="28" y="40" class="title">FIG-05 - External battery input and fused power distribution</text>
+  <text x="28" y="68" class="subtitle">Functional topology only; ratings, conductor sizes, connector orientation, and electrical implementation require released design and measurement.</text>
+
+  <rect x="30" y="104" width="250" height="166" rx="12" class="hold"/>
+  <text x="52" y="137" class="head">External battery MMA-013</text>
+  <text x="52" y="163" class="body">ECO-WORTHY 12 V 30 Ah</text>
+  <text x="52" y="187" class="small">User-supplied reference; not qualified</text>
+  <text x="52" y="211" class="small">Pack/BMS mass separate from 5 kg</text>
+  <text x="52" y="235" class="small">Battery disconnected while wiring</text>
+  <text x="52" y="257" class="tiny warn">BMS is not the branch fuse</text>
+
+  <rect x="315" y="118" width="180" height="137" rx="12" class="box"/>
+  <text x="335" y="151" class="head">Input interface</text>
+  <text x="335" y="178" class="body">Anderson Powerpole</text>
+  <text x="335" y="200" class="body">family pair; exact model TBD</text>
+  <text x="335" y="225" class="tiny warn">Mate orientation / polarity DMM</text>
+  <text x="335" y="243" class="tiny warn">Color is not proof</text>
+
+  <rect x="535" y="143" width="126" height="84" rx="10" class="fuse"/>
+  <text x="552" y="163" class="head">F0</text>
+  <text x="552" y="183" class="small">DC master fuse</text>
+  <text x="552" y="201" class="tiny">close to battery +</text>
+  <text x="552" y="220" class="tiny">then S0 disconnect</text>
+
+  <rect x="704" y="126" width="210" height="118" rx="12" class="safe"/>
+  <text x="725" y="151" class="head">Source conditioning</text>
+  <text x="725" y="174" class="small">After F0 / S0: protection + inrush control</text>
+  <text x="725" y="194" class="small">Coordinated TVS / reverse protection</text>
+  <text x="725" y="216" class="tiny">Optional CM choke on + and return</text>
+  <text x="725" y="235" class="tiny">Then protected buses; ratings/test TBD</text>
+
+  <path d="M280 180H315" class="pos"/>
+  <path d="M495 180H535" class="pos"/>
+  <path d="M661 180H704" class="pos"/>
+  <text x="286" y="165" class="tiny warn">red +</text>
+  <text x="500" y="165" class="tiny warn">master close to source</text>
+
+  <rect x="944" y="103" width="386" height="193" rx="12" class="hold"/>
+  <text x="966" y="136" class="head">F1 - compute / dual SDR power</text>
+  <rect x="950" y="151" width="82" height="64" rx="8" class="fuse"/>
+  <text x="963" y="177" class="body">F1 fuse</text>
+  <text x="963" y="198" class="tiny">rating TBD</text>
+  <path d="M914 167H950" class="pos"/>
+  <path d="M1032 183H1042" class="flow"/>
+  <rect x="1042" y="151" width="116" height="64" rx="8" class="hold"/>
+  <text x="1050" y="173" class="tiny">Converter input</text>
+  <text x="1050" y="190" class="tiny">qualified network</text>
+  <text x="1050" y="207" class="tiny">LC DNP until proven</text>
+  <path d="M1158 183H1165" class="flow"/>
+  <rect x="1165" y="151" width="141" height="64" rx="8" class="box"/>
+  <text x="1174" y="176" class="small">Regulated 5 V</text>
+  <text x="1174" y="198" class="tiny">converter; budget 5 A</text>
+  <path d="M1236 215V236" class="flow"/>
+  <text x="950" y="243" class="small">USB-C: verified CM5 I/O board POWER input only</text>
+  <text x="950" y="264" class="tiny">USB host/data for 2 LimeSDRs separate; no PD/USB3 assumption</text>
+  <path d="M914 228V273H1291" class="ret"/>
+  <text x="954" y="289" class="tiny">return polarity and board connection verified from released docs</text>
+
+  <rect x="944" y="321" width="386" height="193" rx="12" class="hold"/>
+  <text x="966" y="354" class="head">F2 - three-axis motor power</text>
+  <rect x="950" y="369" width="82" height="64" rx="8" class="fuse"/>
+  <text x="963" y="395" class="body">F2 fuse</text>
+  <text x="963" y="416" class="tiny">rating TBD</text>
+  <path d="M914 386H950" class="pos"/>
+  <path d="M1032 401H1042" class="flow"/>
+  <rect x="1042" y="369" width="116" height="64" rx="8" class="hold"/>
+  <text x="1050" y="391" class="tiny">Converter input</text>
+  <text x="1050" y="408" class="tiny">qualified network</text>
+  <text x="1050" y="425" class="tiny">LC DNP until proven</text>
+  <path d="M1158 401H1165" class="flow"/>
+  <rect x="1165" y="368" width="141" height="69" rx="8" class="safe"/>
+  <text x="1174" y="391" class="tiny">External NC guard +</text>
+  <text x="1174" y="408" class="tiny">DC E-stop cutoff</text>
+  <text x="1174" y="426" class="tiny warn">NOT designed/released</text>
+  <path d="M1235 437V454" class="flow"/>
+  <rect x="1080" y="454" width="226" height="42" rx="8" class="box"/>
+  <text x="1092" y="481" class="small">Regulated nominal 12 V motor rail</text>
+  <text x="966" y="466" class="tiny warn">E-stop path is not an unrated switch in motor current.</text>
+  <path d="M914 228V491H1080" class="ret"/>
+
+  <rect x="944" y="538" width="386" height="120" rx="12" class="hold"/>
+  <text x="966" y="571" class="head">F3 - RF PA supply branch</text>
+  <rect x="950" y="586" width="82" height="51" rx="8" class="fuse"/>
+  <text x="963" y="607" class="small">F3 fuse</text>
+  <text x="963" y="625" class="tiny">TBD</text>
+  <path d="M914 227V612H944" class="pos"/>
+  <path d="M1032 611H1042" class="flow"/>
+  <rect x="1042" y="586" width="116" height="51" rx="8" class="hold"/>
+  <text x="1050" y="607" class="tiny">PA input network</text>
+  <text x="1050" y="625" class="tiny">LC DNP until proven</text>
+  <path d="M1158 611H1165" class="flow"/>
+  <rect x="1165" y="585" width="141" height="52" rx="8" class="hold"/>
+  <text x="1174" y="608" class="tiny">PA supply / thermal</text>
+  <text x="1174" y="627" class="tiny">model / rail TBD</text>
+  <path d="M914 228V648H1290" class="ret"/>
+
+  <rect x="30" y="310" width="850" height="348" rx="14" class="hold"/>
+  <text x="54" y="347" class="head">Protection, branch filters, and return-path design gates - MMA-028 / MMA-049</text>
+  <text x="54" y="382" class="body">At least one source-positive master fuse plus separate F1 / F2 / F3 branch protection.</text>
+  <text x="54" y="408" class="body">Fuse current values are NOT selected: measure continuous loads and startup/inrush first.</text>
+  <text x="54" y="434" class="body">Select DC voltage / interrupt ratings and time-current curve against actual source fault current.</text>
+  <text x="54" y="460" class="body">Choose wire gauge and length from ampacity, ambient/bundling, round-trip drop, and fault limits.</text>
+  <text x="54" y="486" class="body">Check Powerpole contacts, crimps/tool, housing/mating key, holder, disconnect, and bus ratings.</text>
+  <text x="54" y="512" class="body">Battery BMS is not a replacement for the close-to-source fuse or separate branch fuses.</text>
+  <text x="54" y="538" class="body">Red/black are only marks: verify mate orientation and polarity with a DMM at both ends.</text>
+  <text x="54" y="564" class="body">After F0 / S0: TVS + reverse protection; optional common-mode choke on BOTH DC conductors.</text>
+  <text x="54" y="590" class="body">Each branch: local decoupling; any differential LC needs vendor guidance, damping/stability analysis.</text>
+  <text x="54" y="616" class="small warn">LC is DNP until qualified. No EMI immunity/attenuation is claimed; auxiliary power hardware is unreleased.</text>
+  <text x="54" y="640" class="small">No fuse, filter, wire gauge or Powerpole SKU is approved; verify actual DC ratings and source fault current.</text>
+
+  <rect x="30" y="686" width="1300" height="142" rx="14" class="safe"/>
+  <text x="52" y="718" class="head">Cold assembly / first-power order - only after released schematic and safety hardware</text>
+  <text x="52" y="748" class="body">1 Isolate/remove battery -> 2 remove all fuses -> 3 build/strain-relieve harness -> 4 DMM continuity, isolation, polarity and NC checks</text>
+  <text x="52" y="772" class="body">5 install verified branch fuses -> 6 install source/master fuse LAST (battery disconnected) -> 7 reconnect with S0 OPEN, TX inhibited; current-limited first power</text>
+  <text x="52" y="795" class="tiny warn">GPIO NC inputs are monitors only; GPIO/expander enable outputs are requests, NOT hardware permits. Independent hard-stop/watchdog/E-stop guard is not released.</text>
+  <text x="52" y="814" class="tiny">EMI: rated 50-ohm RX loads, TX off; log converter/motor-chopper off/on. Damped LC DNP pending stability/vendor review. No immunity claim.</text>
+</svg>

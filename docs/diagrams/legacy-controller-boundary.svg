@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-03 - legacy ESP32 controller boundary (reference only)</title>
+  <desc id="desc">Conceptual boundary diagram, not wiring guidance. The legacy ESP32 carrier is an AZ/EL-only controller with two motor-driver channels and four NC limits. It has no POL motor channel, POL encoder or POL limit inputs and is not the CM5 three-axis multimode controller.</desc>
+  <defs>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#172b43}
+      .title{font-size:24px;font-weight:700}
+      .body{font-size:17px}
+      .small{font-size:14px}
+      .legacy{fill:#eef4fb;stroke:#2f5d8a;stroke-width:3}
+      .hold{fill:#fff1e8;stroke:#b05a16;stroke-width:3;stroke-dasharray:9 5}
+      .line{stroke:#2f5d8a;stroke-width:3}
+      .warn{fill:#8b310d;font-weight:700}
+    </style>
+  </defs>
+  <rect width="1000" height="440" fill="#f7f9fc"/>
+  <text x="28" y="42" class="title">FIG-03 - Legacy ESP32 reference boundary</text>
+  <rect x="48" y="94" width="280" height="126" rx="12" class="legacy"/>
+  <text x="78" y="136" class="body">Legacy ESP32 carrier</text>
+  <text x="78" y="168" class="small">AZ / EL only</text>
+  <text x="78" y="194" class="small">Not a CM5 or radio carrier</text>
+  <path d="M328 139H416" class="line"/>
+  <path d="M328 177H416" class="line"/>
+  <rect x="416" y="85" width="236" height="72" rx="10" class="legacy"/>
+  <text x="440" y="115" class="body">Driver U2 -> AZ</text>
+  <text x="440" y="139" class="small">motor channel 1</text>
+  <rect x="416" y="166" width="236" height="72" rx="10" class="legacy"/>
+  <text x="440" y="196" class="body">Driver U3 -> EL</text>
+  <text x="440" y="220" class="small">motor channel 2</text>
+  <rect x="700" y="85" width="252" height="153" rx="10" class="legacy"/>
+  <text x="724" y="119" class="body">4 NC inputs total</text>
+  <text x="724" y="151" class="small">AZ: two limits</text>
+  <text x="724" y="181" class="small">EL: two limits</text>
+  <text x="724" y="215" class="small">No released POL feedback</text>
+  <rect x="48" y="278" width="904" height="114" rx="12" class="hold"/>
+  <text x="78" y="320" class="body warn">HOLD - not suitable for the new three-axis design</text>
+  <text x="78" y="351" class="small">POL requires its own motor/driver, output encoder, two NC end limits,</text>
+  <text x="78" y="376" class="small">watchdog and protected power path. No connector or pinout may be inferred.</text>
+</svg>

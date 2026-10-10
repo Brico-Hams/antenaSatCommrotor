@@ -1,0 +1,10 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+body { margin: 0; }
+main { max-width: 58rem; margin: auto; padding: 1.5rem; line-height: 1.6; }
+h1 { line-height: 1.2; }
+.warning { border: 3px solid #c77b00; padding: 1rem; font-weight: bold; }
+li { margin-block: .6rem; }
+label { display: block; padding: 1rem; border: 1px solid #888; }
+button { font: inherit; padding: .8rem 1.2rem; cursor: pointer; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .85rem; }
+[hidden] { display: none !important; }

@@ -1,0 +1,207 @@
+{
+  "formatVersion": 1,
+  "snapshot": "Current source snapshot at this refresh; source files may continue to evolve.",
+  "scope": [
+    "Repository-root Markdown files",
+    "Direct-child Markdown files in docs/"
+  ],
+  "sources": [
+    {
+      "source": "ACKNOWLEDGEMENTS.md",
+      "target": "docs/hu/ACKNOWLEDGEMENTS.md",
+      "sha256": "6adb2aa8c6d066bbd6913678fceadf812d84f9d40e49eb401dd6e60e6e848018"
+    },
+    {
+      "source": "AUTHORS.md",
+      "target": "docs/hu/AUTHORS.md",
+      "sha256": "3288476ef89569169790939d27cad936e8683014acc1ada5bff1aecbc5cf5de3"
+    },
+    {
+      "source": "DISCLAIMER.md",
+      "target": "docs/hu/DISCLAIMER.md",
+      "sha256": "8af61890d1d5cd4ca1834c48e8130b5782444dead820e151aef3db30649e6726"
+    },
+    {
+      "source": "NOTICE.md",
+      "target": "docs/hu/NOTICE.md",
+      "sha256": "f779da3cecce2bd68b2874cd611a5b824c2d285316d80569462b65e18088aebd"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/hu/README.md",
+      "sha256": "c1628c17f82c9fc8f253178e87006fc083e7678baad3318bdea2d761eb60ea49"
+    },
+    {
+      "source": "docs/ACCEPTANCE.md",
+      "target": "docs/hu/ACCEPTANCE.md",
+      "sha256": "66c2bf00ad4c6eb7be76792f76406d2a2abfcac09c8888acdc78e5862a7fd2a4"
+    },
+    {
+      "source": "docs/ANDROID-ACCEPTANCE.md",
+      "target": "docs/hu/ANDROID-ACCEPTANCE.md",
+      "sha256": "66d860152f00fe267a9cbb331d15f2656254a5db5b9ad4b72464dfd637006029"
+    },
+    {
+      "source": "docs/ANDROID-DIGITAL.md",
+      "target": "docs/hu/ANDROID-DIGITAL.md",
+      "sha256": "abe5d90a0e3cadd80771d5fbaf61f31652d145cb0809841a317173fb658f24f0"
+    },
+    {
+      "source": "docs/ANDROID-FEATURE-MATRIX.md",
+      "target": "docs/hu/ANDROID-FEATURE-MATRIX.md",
+      "sha256": "7b58c7ba041b20a50c44e503a0a75af4ec726ca28c27ea4fee99d1304b5a9143"
+    },
+    {
+      "source": "docs/ANDROID.md",
+      "target": "docs/hu/ANDROID.md",
+      "sha256": "f39fe16eb1c96bf711fd19b3d0d10c08ae48b24072fb692847dce38031e27d03"
+    },
+    {
+      "source": "docs/ARCHITECTURE.md",
+      "target": "docs/hu/ARCHITECTURE.md",
+      "sha256": "5e140ebfa5b93f81bbe9051f8b86654c751ea38b96546c204901cde99a4cbdaf"
+    },
+    {
+      "source": "docs/ASSEMBLY-MULTIMODE.md",
+      "target": "docs/hu/ASSEMBLY-MULTIMODE.md",
+      "sha256": "9d5a5768c0f7570afa741a9cd820c8f55f9adcdaca7252149d1e7bcb88cbcf6a"
+    },
+    {
+      "source": "docs/BRICOHAMS-OS.md",
+      "target": "docs/hu/BRICOHAMS-OS.md",
+      "sha256": "939b9c03aa26fd00e01953099052e9a6dc0e3825b25374a327878cadcfdc81f4"
+    },
+    {
+      "source": "docs/BUILD-GUIDE.md",
+      "target": "docs/hu/BUILD-GUIDE.md",
+      "sha256": "9251d802ee7c4ce2b0fb68dc4e6cf0c34d9ded4a28024ab3e498a0f282c2d723"
+    },
+    {
+      "source": "docs/CM5-PCB.md",
+      "target": "docs/hu/CM5-PCB.md",
+      "sha256": "7a956f7c46a058f39f6ff363135d459649d41eb6b0662e4d7107a282cdd2ce33"
+    },
+    {
+      "source": "docs/CM5-RF-SELECTION.md",
+      "target": "docs/hu/CM5-RF-SELECTION.md",
+      "sha256": "c37a9cac3551668986ffc1a8a0cc03d0fe780ee212e645169cd747b2e7c48c14"
+    },
+    {
+      "source": "docs/CM5-ROTOR.md",
+      "target": "docs/hu/CM5-ROTOR.md",
+      "sha256": "58e44c1e43e7e24e1716cab1818fd37287cb168657fb5af2b6a07ee39f3b54ea"
+    },
+    {
+      "source": "docs/CONTROL.md",
+      "target": "docs/hu/CONTROL.md",
+      "sha256": "110fb32e601cce5fc40a3cfe117abbac24fe58c781ae999e5f17180d8007a7a6"
+    },
+    {
+      "source": "docs/DESIGN-CALCULATIONS.md",
+      "target": "docs/hu/DESIGN-CALCULATIONS.md",
+      "sha256": "5583895e9a42d44d4de08e2f795425580a830b187535cc85ef447ce1de18975f"
+    },
+    {
+      "source": "docs/ELECTRICAL.md",
+      "target": "docs/hu/ELECTRICAL.md",
+      "sha256": "78062ad63f7f2470c01cd1b032110ef6c828868493b1a772cdd8e1aee8c748e5"
+    },
+    {
+      "source": "docs/FIELD-MANUAL.md",
+      "target": "docs/hu/FIELD-MANUAL.md",
+      "sha256": "12f2ae2a1cdadc0abac76acccd047b16a4b3984ca2c0bf23cc9b5f6da810a254"
+    },
+    {
+      "source": "docs/MECHANICAL.md",
+      "target": "docs/hu/MECHANICAL.md",
+      "sha256": "ce43cc5b0b46d1e432aa5c698a58ac28fd5da3a7eef3360d2493dcd7a6758d0c"
+    },
+    {
+      "source": "docs/MODULE-ANTENNA.md",
+      "target": "docs/hu/MODULE-ANTENNA.md",
+      "sha256": "38805ae46be8098e9c493a070869eea2d4cbc7328e56ef88bd03f369034972a7"
+    },
+    {
+      "source": "docs/MODULE-INTEGRATED.md",
+      "target": "docs/hu/MODULE-INTEGRATED.md",
+      "sha256": "05db6d29632bf12d8b7e68eb14c7333fd3d7fa32e4d72235cb3a750c386304fa"
+    },
+    {
+      "source": "docs/MODULE-RADIO.md",
+      "target": "docs/hu/MODULE-RADIO.md",
+      "sha256": "c2f858d2639f1973344d523897e3966b7401118b4cb31b7beae43358df7c5f1a"
+    },
+    {
+      "source": "docs/MODULE-ROTOR.md",
+      "target": "docs/hu/MODULE-ROTOR.md",
+      "sha256": "0de4556400d6ce191d91cbd459a42db26e5e70dd8c009fa2c2195077720be358"
+    },
+    {
+      "source": "docs/PCB.md",
+      "target": "docs/hu/PCB.md",
+      "sha256": "5328b99daec4e0b1191add9d4574741331557ad520e2c819e597e626edc09b0d"
+    },
+    {
+      "source": "docs/POLARIZATION-MECHANICAL.md",
+      "target": "docs/hu/POLARIZATION-MECHANICAL.md",
+      "sha256": "9650cf4f9cb2f3f09b0c33f7c53d2ecd4ca203eebc96c5b2d2c13d0dce8f8e9a"
+    },
+    {
+      "source": "docs/RADIO-HOST.md",
+      "target": "docs/hu/RADIO-HOST.md",
+      "sha256": "cff549bf8226c0b282d61618c8f0c16e975ee63b9d7e9954f96ae8af37a1a5d6"
+    },
+    {
+      "source": "docs/REFERENCE-ANALYSIS.md",
+      "target": "docs/hu/REFERENCE-ANALYSIS.md",
+      "sha256": "4be0dcf053eda96d19f0489c7e395e352141af5f79d0f2103c08fc3e847846c5"
+    },
+    {
+      "source": "docs/REFERENCE-PRICES.md",
+      "target": "docs/hu/REFERENCE-PRICES.md",
+      "sha256": "2a91268ac19359d4832f2c8260f82f20237614770cf7d215ad8d703c0a8754d2"
+    },
+    {
+      "source": "docs/REQUIREMENTS.md",
+      "target": "docs/hu/REQUIREMENTS.md",
+      "sha256": "6cba82abfd9a1089819e2ea862aec783f59cc21d174772f3341d8572375bb360"
+    },
+    {
+      "source": "docs/RF-AND-RADIO.md",
+      "target": "docs/hu/RF-AND-RADIO.md",
+      "sha256": "222affa4ef9f950b3375aedefbbc0abd3922138f498ea96669137555b85ee6ba"
+    },
+    {
+      "source": "docs/RISKS.md",
+      "target": "docs/hu/RISKS.md",
+      "sha256": "0e1260a7ac041f6d25e77aa0c6364cffa6faf2fc8db756bf6e3cc6f6cda7fba0"
+    },
+    {
+      "source": "docs/SOURCES.md",
+      "target": "docs/hu/SOURCES.md",
+      "sha256": "b5e76347edbc16a5cf918df516bc1085a38d7e441b2b2022229565b65218cfeb"
+    },
+    {
+      "source": "docs/TROUBLESHOOTING-MULTIMODE.md",
+      "target": "docs/hu/TROUBLESHOOTING-MULTIMODE.md",
+      "sha256": "fa2c05abb2038f996fe4f965721929e45264200ffc1aecc505665c77b04f3847"
+    },
+    {
+      "source": "docs/VALIDATION.md",
+      "target": "docs/hu/VALIDATION.md",
+      "sha256": "3469f47ec3b077407dce58d9ba44f19e332c5c1cc8069ecd9177e720fd14d124"
+    },
+    {
+      "source": "docs/WEBFLASH.md",
+      "target": "docs/hu/WEBFLASH.md",
+      "sha256": "72b346ff58c49710582147ab7d2921fbfe3918757c2d3a80f8c73b4a75c74e60"
+    }
+  ],
+  "additionalReadmes": {
+    "searched": [
+      "radio/README.md",
+      "rotor/README.md"
+    ],
+    "found": []
+  }
+}

@@ -1,0 +1,46 @@
+PortableSatStation prototype firmware and web flasher
+Original software: Copyright (c) 2026 Anatol EA5KAO, Diego EA5JEF,
+Pedro Roca Molina. MIT; full text in licenses/ORIGINAL-MIT.txt.
+Acknowledgements: Bricohams, https://bricohams.org/
+Authors and acknowledgements are not certification or endorsement.
+
+ESP Web Tools 10.1.0: ESPHome maintainers, Apache-2.0.
+https://github.com/esphome/esp-web-tools
+Full distributed package dist/ (including dynamic imports and bundled notices)
+is preserved under vendor/esp-web-tools/. Package LICENSE is copied verbatim.
+Transitive package versions/integrity are recorded in dependencies-lock.json.
+Bundled third-party license comments remain in release JS files; their licenses
+are not replaced by this project's MIT license.
+
+Hopperpop Sgp4-Library: exact source commit in build-info.json, MIT.
+https://github.com/Hopperpop/Sgp4-Library
+SGP4 license is copied from the installed library, not inferred from project MIT.
+ArduinoJson 6.21.5: Benoit Blanchon, MIT.
+https://github.com/bblanchon/ArduinoJson
+TinyGPSPlus 1.1.0: Mikal Hart, LGPL-2.1-or-later.
+https://github.com/mikalhart/TinyGPSPlus
+Installed library license files are copied verbatim to licenses/.
+TinyGPSPlus's registry archive lacks LICENSE; its copyright/license source
+header is preserved alongside the full LGPL 2.1 text from Arduino-ESP32.
+NimBLE-Arduino 1.4.3: h2zero and contributors, Apache-2.0.
+https://github.com/h2zero/NimBLE-Arduino
+Apache/Mynewt and other included component copyright/license headers remain
+in the exact installed library-source archive; root LICENSE is copied verbatim.
+
+Arduino-ESP32 2.0.17: Espressif Systems, LGPL-2.1-or-later.
+ESP-IDF SDK components retain their own licenses (including Apache-2.0).
+https://github.com/espressif/arduino-esp32/tree/2.0.17
+https://github.com/espressif/esp-idf/tree/v4.4.7
+The linked firmware is NOT declared MIT-only. Before redistribution:
+retain upstream notices, supply corresponding source including dependencies
+and build scripts, and provide relinkable objects/source as LGPL requires.
+The CI artifact contains exact dependency configuration and firmware ELF.
+Do not distribute a stripped manifest-only copy that discards compliance files.
+Xtensa GCC/newlib runtime copyright, GPL/runtime exception and other notices
+from the actual pinned toolchain share/licenses directory are preserved under
+licenses/toolchain-runtime/. Compiler licensing is distinct from the original
+application MIT and from linked Arduino/TinyGPSPlus LGPL requirements.
+
+Hardware is an unreleased prototype; no physical or RF acceptance is implied.
+Education/minors: adult supervision, no hazardous child assembly.
+RF: no unauthorized/unlicensed transmissions.

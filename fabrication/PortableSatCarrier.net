@@ -1,0 +1,4934 @@
+(export
+	(version "E")
+	(design
+		(source "C:\\Users\\anatol.lopez\\Documents\\PortableSatStation\\hardware\\PortableSatCarrier.kicad_sch")
+		(date "2026-10-10T11:39:33")
+		(tool "Eeschema 10.0.7")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title)
+				(company)
+				(rev)
+				(date)
+				(source "PortableSatCarrier.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C1")
+			(value "220u_35V_LOW_ESR")
+			(footprint "PortableSatCarrier:C1_capacitor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:C1_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_C1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cce35a41-1396-45cf-b6f4-5c96e2e3a046")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C2")
+			(value "220u_35V_LOW_ESR")
+			(footprint "PortableSatCarrier:C2_capacitor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:C2_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_C2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "019d1046-a90a-4f58-8c6e-23d2aaff58d8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C3")
+			(value "100n_50V")
+			(footprint "PortableSatCarrier:C3_capacitor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:C3_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_C3")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "21daddc1-9bc4-4f99-96ca-f1fdf664e9b6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C4")
+			(value "100n_50V")
+			(footprint "PortableSatCarrier:C4_capacitor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:C4_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_C4")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "82b174df-bdbb-4a01-8307-f7b2de002480")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C5")
+			(value "100n_50V")
+			(footprint "PortableSatCarrier:C5_capacitor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:C5_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_C5")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f4122fd3-6f14-4ad9-a1f2-0fd7bf36d2a0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D1")
+			(value "SB560_REVERSE_BLOCK")
+			(footprint "PortableSatCarrier:D1_diode")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:D1_diode")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_D1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9abfacb4-4620-4dd1-9dbe-33975a1b879c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D2")
+			(value "SMBJ15A_TVS")
+			(footprint "PortableSatCarrier:D2_tvs")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:D2_tvs")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_D2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c7303f9d-172f-4309-a60d-b00436adb0c9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F1")
+			(value "T3.15A_MAIN")
+			(footprint "PortableSatCarrier:F1_fuse")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:F1_fuse")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_F1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0367796f-6295-4e9a-8289-136b18af9368")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F2")
+			(value "T2.5A_MOTOR")
+			(footprint "PortableSatCarrier:F2_fuse")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:F2_fuse")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_F2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3ef021c2-e372-4f2c-9f72-f08712eba763")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F3")
+			(value "T1A_LOGIC_5V")
+			(footprint "PortableSatCarrier:F3_fuse")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:F3_fuse")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_F3")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "2dd93d2d-ea35-411c-9c37-548f76230d1c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F4")
+			(value "T1A_BUCK_INPUT")
+			(footprint "PortableSatCarrier:F4_fuse")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:F4_fuse")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_F4")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "80d29d30-8feb-4d5e-8a97-5d120b28dc52")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "DC_IN_12V")
+			(footprint "PortableSatCarrier:J1_terminal")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J1_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4c225411-9309-4dee-9767-60adbf1a503c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "LATCHED_STOP_POWER_OUT_RETURN")
+			(footprint "PortableSatCarrier:J2_terminal")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J2_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d9051ade-bea0-4b9b-9085-e7267da9f80a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J3")
+			(value "STOP_N_NC_AUX_ONLY")
+			(footprint "PortableSatCarrier:J3_xh")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J3_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J3")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "fac2c01b-c7a7-4be2-9959-e10b01ddd790")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J4")
+			(value "EXTERNAL_BUCK_INPUT")
+			(footprint "PortableSatCarrier:J4_terminal")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J4_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J4")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9d7bc54c-6c98-41c9-923a-cf5ae1371d0a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J5")
+			(value "EXTERNAL_BUCK_5V_RETURN")
+			(footprint "PortableSatCarrier:J5_terminal")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J5_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J5")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8c045e3d-c00c-482e-a5ba-7843ebc0bc5e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J6")
+			(value "GNSS_3V3_UART")
+			(footprint "PortableSatCarrier:J6_xh")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J6_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J6")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "247a3a81-27ee-44d7-9f86-bf3c9f06ff47")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J7")
+			(value "AZ_AS5600_I2C0")
+			(footprint "PortableSatCarrier:J7_xh")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J7_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J7")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "484117ff-d2e1-440d-912f-7a93dd8fd5e3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J8")
+			(value "EL_AS5600_I2C1")
+			(footprint "PortableSatCarrier:J8_xh")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J8_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J8")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c8fcca8a-f553-4d2a-980a-4edbb307dea6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J9")
+			(value "OPTIONAL_IMU_MAG_I2C0")
+			(footprint "PortableSatCarrier:J9_xh")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J9_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J9")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ff358c9f-85e5-4699-8eaa-ee039a7ac54b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J10")
+			(value "AZ_MIN_N_NC_AUX_ONLY")
+			(footprint "PortableSatCarrier:J10_xh")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J10_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J10")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3f3b61c6-6a67-4302-b36f-30d2cfa45aaf")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J11")
+			(value "AZ_MAX_N_NC_AUX_ONLY")
+			(footprint "PortableSatCarrier:J11_xh")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J11_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J11")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "12b8036b-97cd-4bd9-bcb6-f8320fd040ca")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J12")
+			(value "EL_MIN_N_NC_AUX_ONLY")
+			(footprint "PortableSatCarrier:J12_xh")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J12_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J12")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c89848f4-6d84-41f4-bb24-d29834a4d9fb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J13")
+			(value "EL_MAX_N_NC_AUX_ONLY")
+			(footprint "PortableSatCarrier:J13_xh")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:J13_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_J13")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bae02cd3-8e78-4292-be4d-009adfd6d360")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "JM1")
+			(value "AZ_MOTOR")
+			(footprint "PortableSatCarrier:JM1_terminal")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:JM1_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_JM1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "08de1282-9d3b-4c21-b9eb-05eb2512e39d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "JM2")
+			(value "EL_MOTOR")
+			(footprint "PortableSatCarrier:JM2_terminal")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:JM2_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_JM2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "511bdc92-37b9-411f-8fd4-96d46449f353")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "JP1")
+			(value "REMOVE_FOR_USB")
+			(footprint "PortableSatCarrier:JP1_header")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:JP1_header")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_JP1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4e66f093-ef0e-46fa-8b91-7fd172f644ce")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "10k")
+			(footprint "PortableSatCarrier:R1_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R1_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0267f550-7359-46c3-bb9c-74cedf0eea30")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "10k")
+			(footprint "PortableSatCarrier:R2_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R2_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "659a9745-807b-46c9-8daa-719a295528a3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R3")
+			(value "10k")
+			(footprint "PortableSatCarrier:R3_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R3_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R3")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "db249092-3cd8-4b6a-b826-325eb4040cf3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "10k")
+			(footprint "PortableSatCarrier:R4_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R4_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R4")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "36e49195-d68f-40f8-8684-488118fce928")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R5")
+			(value "10k")
+			(footprint "PortableSatCarrier:R5_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R5_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R5")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "65dfeb0d-38e7-47a6-8d63-0b18158742d5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R6")
+			(value "10k")
+			(footprint "PortableSatCarrier:R6_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R6_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R6")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7a1a544b-0d73-46d6-9bbf-5e674dc9783d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R7")
+			(value "4k7")
+			(footprint "PortableSatCarrier:R7_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R7_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R7")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "fdf66b28-d05d-4d08-b323-6438fee05cda")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R8")
+			(value "4k7")
+			(footprint "PortableSatCarrier:R8_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R8_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R8")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7b3a0db9-42c1-46a3-9974-7d061019823f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "4k7")
+			(footprint "PortableSatCarrier:R9_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R9_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R9")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9c78330f-4671-47cd-9544-da0db33b29fd")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R10")
+			(value "4k7")
+			(footprint "PortableSatCarrier:R10_resistor")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:R10_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_R10")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "44875eed-e3ac-40b7-b289-8330f4ef0dce")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "ESP32_DEVKITC_V4_38_WROOM32E")
+			(footprint "PortableSatCarrier:U1_module")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:U1_module")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_U1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f4e399f1-5480-4e9f-bb6e-01a4364711b0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "21")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "26")
+						)
+						(pin
+							(num "27")
+						)
+						(pin
+							(num "28")
+						)
+						(pin
+							(num "29")
+						)
+						(pin
+							(num "30")
+						)
+						(pin
+							(num "31")
+						)
+						(pin
+							(num "32")
+						)
+						(pin
+							(num "33")
+						)
+						(pin
+							(num "34")
+						)
+						(pin
+							(num "35")
+						)
+						(pin
+							(num "36")
+						)
+						(pin
+							(num "37")
+						)
+						(pin
+							(num "38")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U2")
+			(value "WATTEROTT_TMC2209_V2")
+			(footprint "PortableSatCarrier:U2_driver")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:U2_driver")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_U2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e8a07838-c399-4756-893d-0c20baa9a44c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "WATTEROTT_TMC2209_V2")
+			(footprint "PortableSatCarrier:U3_driver")
+			(fields
+				(field
+					(name "Footprint") "PortableSatCarrier:U3_driver")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "PortableSatCarrier")
+				(part "Carrier_U3")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "PortableSatCarrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PortableSatCarrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bb04d253-79bc-4977-bf68-a3ba3f0e58e9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_C1")
+			(fields
+				(field
+					(name "Reference") "C1")
+				(field
+					(name "Value") "220u_35V_LOW_ESR")
+				(field
+					(name "Footprint") "PortableSatCarrier:C1_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VMOT")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_C2")
+			(fields
+				(field
+					(name "Reference") "C2")
+				(field
+					(name "Value") "220u_35V_LOW_ESR")
+				(field
+					(name "Footprint") "PortableSatCarrier:C2_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VMOT")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_C3")
+			(fields
+				(field
+					(name "Reference") "C3")
+				(field
+					(name "Value") "100n_50V")
+				(field
+					(name "Footprint") "PortableSatCarrier:C3_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_C4")
+			(fields
+				(field
+					(name "Reference") "C4")
+				(field
+					(name "Value") "100n_50V")
+				(field
+					(name "Footprint") "PortableSatCarrier:C4_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_C5")
+			(fields
+				(field
+					(name "Reference") "C5")
+				(field
+					(name "Value") "100n_50V")
+				(field
+					(name "Footprint") "PortableSatCarrier:C5_capacitor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_D1")
+			(fields
+				(field
+					(name "Reference") "D1")
+				(field
+					(name "Value") "SB560_REVERSE_BLOCK")
+				(field
+					(name "Footprint") "PortableSatCarrier:D1_diode")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "RAW12")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "PROTECTED12")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_D2")
+			(fields
+				(field
+					(name "Reference") "D2")
+				(field
+					(name "Value") "SMBJ15A_TVS")
+				(field
+					(name "Footprint") "PortableSatCarrier:D2_tvs")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "FUSED12")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_F1")
+			(fields
+				(field
+					(name "Reference") "F1")
+				(field
+					(name "Value") "T3.15A_MAIN")
+				(field
+					(name "Footprint") "PortableSatCarrier:F1_fuse")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "PROTECTED12")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "FUSED12")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_F2")
+			(fields
+				(field
+					(name "Reference") "F2")
+				(field
+					(name "Value") "T2.5A_MOTOR")
+				(field
+					(name "Footprint") "PortableSatCarrier:F2_fuse")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "FUSED12")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "STOP_SEND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_F3")
+			(fields
+				(field
+					(name "Reference") "F3")
+				(field
+					(name "Value") "T1A_LOGIC_5V")
+				(field
+					(name "Footprint") "PortableSatCarrier:F3_fuse")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "BUCK5")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "FUSED5")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_F4")
+			(fields
+				(field
+					(name "Reference") "F4")
+				(field
+					(name "Value") "T1A_BUCK_INPUT")
+				(field
+					(name "Footprint") "PortableSatCarrier:F4_fuse")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "FUSED12")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "BUCK12")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J1")
+			(fields
+				(field
+					(name "Reference") "J1")
+				(field
+					(name "Value") "DC_IN_12V")
+				(field
+					(name "Footprint") "PortableSatCarrier:J1_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "RAW12")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J10")
+			(fields
+				(field
+					(name "Reference") "J10")
+				(field
+					(name "Value") "AZ_MIN_N_NC_AUX_ONLY")
+				(field
+					(name "Footprint") "PortableSatCarrier:J10_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "AZ_MIN_N")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J11")
+			(fields
+				(field
+					(name "Reference") "J11")
+				(field
+					(name "Value") "AZ_MAX_N_NC_AUX_ONLY")
+				(field
+					(name "Footprint") "PortableSatCarrier:J11_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "AZ_MAX_N")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J12")
+			(fields
+				(field
+					(name "Reference") "J12")
+				(field
+					(name "Value") "EL_MIN_N_NC_AUX_ONLY")
+				(field
+					(name "Footprint") "PortableSatCarrier:J12_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "EL_MIN_N")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J13")
+			(fields
+				(field
+					(name "Reference") "J13")
+				(field
+					(name "Value") "EL_MAX_N_NC_AUX_ONLY")
+				(field
+					(name "Footprint") "PortableSatCarrier:J13_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "EL_MAX_N")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J2")
+			(fields
+				(field
+					(name "Reference") "J2")
+				(field
+					(name "Value") "LATCHED_STOP_POWER_OUT_RETURN")
+				(field
+					(name "Footprint") "PortableSatCarrier:J2_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "STOP_SEND")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "VMOT")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J3")
+			(fields
+				(field
+					(name "Reference") "J3")
+				(field
+					(name "Value") "STOP_N_NC_AUX_ONLY")
+				(field
+					(name "Footprint") "PortableSatCarrier:J3_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "STOP_N")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J4")
+			(fields
+				(field
+					(name "Reference") "J4")
+				(field
+					(name "Value") "EXTERNAL_BUCK_INPUT")
+				(field
+					(name "Footprint") "PortableSatCarrier:J4_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "BUCK12")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J5")
+			(fields
+				(field
+					(name "Reference") "J5")
+				(field
+					(name "Value") "EXTERNAL_BUCK_5V_RETURN")
+				(field
+					(name "Footprint") "PortableSatCarrier:J5_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "BUCK5")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J6")
+			(fields
+				(field
+					(name "Reference") "J6")
+				(field
+					(name "Value") "GNSS_3V3_UART")
+				(field
+					(name "Footprint") "PortableSatCarrier:J6_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "GNSS_TX")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "GNSS_RX")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J7")
+			(fields
+				(field
+					(name "Reference") "J7")
+				(field
+					(name "Value") "AZ_AS5600_I2C0")
+				(field
+					(name "Footprint") "PortableSatCarrier:J7_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "AZ_SDA")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "AZ_SCL")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J8")
+			(fields
+				(field
+					(name "Reference") "J8")
+				(field
+					(name "Value") "EL_AS5600_I2C1")
+				(field
+					(name "Footprint") "PortableSatCarrier:J8_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "EL_SDA")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "EL_SCL")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_J9")
+			(fields
+				(field
+					(name "Reference") "J9")
+				(field
+					(name "Value") "OPTIONAL_IMU_MAG_I2C0")
+				(field
+					(name "Footprint") "PortableSatCarrier:J9_xh")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "AZ_SDA")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "AZ_SCL")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_JM1")
+			(fields
+				(field
+					(name "Reference") "JM1")
+				(field
+					(name "Value") "AZ_MOTOR")
+				(field
+					(name "Footprint") "PortableSatCarrier:JM1_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "AZ_M2B")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "AZ_M2A")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "AZ_M1A")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "AZ_M1B")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_JM2")
+			(fields
+				(field
+					(name "Reference") "JM2")
+				(field
+					(name "Value") "EL_MOTOR")
+				(field
+					(name "Footprint") "PortableSatCarrier:JM2_terminal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "EL_M2B")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "EL_M2A")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "EL_M1A")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "EL_M1B")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_JP1")
+			(fields
+				(field
+					(name "Reference") "JP1")
+				(field
+					(name "Value") "REMOVE_FOR_USB")
+				(field
+					(name "Footprint") "PortableSatCarrier:JP1_header")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "FUSED5")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "ESP5")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R1")
+			(fields
+				(field
+					(name "Reference") "R1")
+				(field
+					(name "Value") "10k")
+				(field
+					(name "Footprint") "PortableSatCarrier:R1_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "ENABLE_N")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R10")
+			(fields
+				(field
+					(name "Reference") "R10")
+				(field
+					(name "Value") "4k7")
+				(field
+					(name "Footprint") "PortableSatCarrier:R10_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "EL_SCL")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R2")
+			(fields
+				(field
+					(name "Reference") "R2")
+				(field
+					(name "Value") "10k")
+				(field
+					(name "Footprint") "PortableSatCarrier:R2_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "STOP_N")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R3")
+			(fields
+				(field
+					(name "Reference") "R3")
+				(field
+					(name "Value") "10k")
+				(field
+					(name "Footprint") "PortableSatCarrier:R3_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "AZ_MIN_N")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R4")
+			(fields
+				(field
+					(name "Reference") "R4")
+				(field
+					(name "Value") "10k")
+				(field
+					(name "Footprint") "PortableSatCarrier:R4_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "AZ_MAX_N")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R5")
+			(fields
+				(field
+					(name "Reference") "R5")
+				(field
+					(name "Value") "10k")
+				(field
+					(name "Footprint") "PortableSatCarrier:R5_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "EL_MIN_N")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R6")
+			(fields
+				(field
+					(name "Reference") "R6")
+				(field
+					(name "Value") "10k")
+				(field
+					(name "Footprint") "PortableSatCarrier:R6_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "EL_MAX_N")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R7")
+			(fields
+				(field
+					(name "Reference") "R7")
+				(field
+					(name "Value") "4k7")
+				(field
+					(name "Footprint") "PortableSatCarrier:R7_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "AZ_SDA")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R8")
+			(fields
+				(field
+					(name "Reference") "R8")
+				(field
+					(name "Value") "4k7")
+				(field
+					(name "Footprint") "PortableSatCarrier:R8_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "AZ_SCL")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_R9")
+			(fields
+				(field
+					(name "Reference") "R9")
+				(field
+					(name "Value") "4k7")
+				(field
+					(name "Footprint") "PortableSatCarrier:R9_resistor")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "EL_SDA")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_U1")
+			(fields
+				(field
+					(name "Reference") "U1")
+				(field
+					(name "Value") "ESP32_DEVKITC_V4_38_WROOM32E")
+				(field
+					(name "Footprint") "PortableSatCarrier:U1_module")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "AZ_MAX_N")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "EL_MIN_N")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "STOP_N")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "AZ_MIN_N")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "EL_MAX_N")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "ENABLE_N")
+					(type "passive")
+				)
+				(pin
+					(num "10")
+					(name "AZ_STEP")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "AZ_DIR")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "EL_STEP")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "14")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "15")
+					(name "EL_DIR")
+					(type "passive")
+				)
+				(pin
+					(num "16")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "17")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "18")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "19")
+					(name "ESP5")
+					(type "passive")
+				)
+				(pin
+					(num "20")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "21")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "22")
+					(name "AZ_SCL")
+					(type "passive")
+				)
+				(pin
+					(num "23")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "24")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "25")
+					(name "AZ_SDA")
+					(type "passive")
+				)
+				(pin
+					(num "26")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "27")
+					(name "EL_SCL")
+					(type "passive")
+				)
+				(pin
+					(num "28")
+					(name "EL_SDA")
+					(type "passive")
+				)
+				(pin
+					(num "29")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "30")
+					(name "GNSS_RX")
+					(type "passive")
+				)
+				(pin
+					(num "31")
+					(name "GNSS_TX")
+					(type "passive")
+				)
+				(pin
+					(num "32")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "33")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "34")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "35")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "36")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "37")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "38")
+					(name "NC")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_U2")
+			(fields
+				(field
+					(name "Reference") "U2")
+				(field
+					(name "Value") "WATTEROTT_TMC2209_V2")
+				(field
+					(name "Footprint") "PortableSatCarrier:U2_driver")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "ENABLE_N")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "AZ_STEP")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "AZ_DIR")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "VMOT")
+					(type "passive")
+				)
+				(pin
+					(num "10")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "AZ_M2B")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "AZ_M2A")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "AZ_M1A")
+					(type "passive")
+				)
+				(pin
+					(num "14")
+					(name "AZ_M1B")
+					(type "passive")
+				)
+				(pin
+					(num "15")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "16")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "PortableSatCarrier")
+			(part "Carrier_U3")
+			(fields
+				(field
+					(name "Reference") "U3")
+				(field
+					(name "Value") "WATTEROTT_TMC2209_V2")
+				(field
+					(name "Footprint") "PortableSatCarrier:U3_driver")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "ENABLE_N")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "NC")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "EL_STEP")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "EL_DIR")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "VMOT")
+					(type "passive")
+				)
+				(pin
+					(num "10")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "EL_M2B")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "EL_M2A")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "EL_M1A")
+					(type "passive")
+				)
+				(pin
+					(num "14")
+					(name "EL_M1B")
+					(type "passive")
+				)
+				(pin
+					(num "15")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "16")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "PortableSatCarrier")
+			(uri "${KIPRJMOD}/PortableSatCarrier.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "3V3")
+			(class "Default")
+			(node
+				(ref "C3")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J7")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J8")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J9")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R5")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R6")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "15")
+				(pinfunction "3V3_15")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "2")
+				(pinfunction "3V3_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "3")
+				(pinfunction "3V3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "15")
+				(pinfunction "3V3_15")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "3V3_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "3V3_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "2")
+			(name "AZ_DIR")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "11")
+				(pinfunction "AZ_DIR_11")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "8")
+				(pinfunction "AZ_DIR_8")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "3")
+			(name "AZ_M1A")
+			(class "Default")
+			(node
+				(ref "JM1")
+				(pin "3")
+				(pinfunction "AZ_M1A_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "13")
+				(pinfunction "AZ_M1A_13")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "4")
+			(name "AZ_M1B")
+			(class "Default")
+			(node
+				(ref "JM1")
+				(pin "4")
+				(pinfunction "AZ_M1B_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "14")
+				(pinfunction "AZ_M1B_14")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "5")
+			(name "AZ_M2A")
+			(class "Default")
+			(node
+				(ref "JM1")
+				(pin "2")
+				(pinfunction "AZ_M2A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "12")
+				(pinfunction "AZ_M2A_12")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "6")
+			(name "AZ_M2B")
+			(class "Default")
+			(node
+				(ref "JM1")
+				(pin "1")
+				(pinfunction "AZ_M2B_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "11")
+				(pinfunction "AZ_M2B_11")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "AZ_MAX_N")
+			(class "Default")
+			(node
+				(ref "J11")
+				(pin "1")
+				(pinfunction "AZ_MAX_N_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "2")
+				(pinfunction "AZ_MAX_N_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "AZ_MAX_N_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "8")
+			(name "AZ_MIN_N")
+			(class "Default")
+			(node
+				(ref "J10")
+				(pin "1")
+				(pinfunction "AZ_MIN_N_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "2")
+				(pinfunction "AZ_MIN_N_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "6")
+				(pinfunction "AZ_MIN_N_6")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "9")
+			(name "AZ_SCL")
+			(class "Default")
+			(node
+				(ref "J7")
+				(pin "4")
+				(pinfunction "AZ_SCL_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J9")
+				(pin "4")
+				(pinfunction "AZ_SCL_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "2")
+				(pinfunction "AZ_SCL_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "22")
+				(pinfunction "AZ_SCL_22")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "10")
+			(name "AZ_SDA")
+			(class "Default")
+			(node
+				(ref "J7")
+				(pin "3")
+				(pinfunction "AZ_SDA_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "J9")
+				(pin "3")
+				(pinfunction "AZ_SDA_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "2")
+				(pinfunction "AZ_SDA_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "25")
+				(pinfunction "AZ_SDA_25")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "11")
+			(name "AZ_STEP")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "10")
+				(pinfunction "AZ_STEP_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "7")
+				(pinfunction "AZ_STEP_7")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "12")
+			(name "BUCK5")
+			(class "Default")
+			(node
+				(ref "F3")
+				(pin "1")
+				(pinfunction "BUCK5_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "1")
+				(pinfunction "BUCK5_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "13")
+			(name "BUCK12")
+			(class "Default")
+			(node
+				(ref "F4")
+				(pin "2")
+				(pinfunction "BUCK12_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J4")
+				(pin "1")
+				(pinfunction "BUCK12_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "14")
+			(name "EL_DIR")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "15")
+				(pinfunction "EL_DIR_15")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "8")
+				(pinfunction "EL_DIR_8")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "15")
+			(name "EL_M1A")
+			(class "Default")
+			(node
+				(ref "JM2")
+				(pin "3")
+				(pinfunction "EL_M1A_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "13")
+				(pinfunction "EL_M1A_13")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "16")
+			(name "EL_M1B")
+			(class "Default")
+			(node
+				(ref "JM2")
+				(pin "4")
+				(pinfunction "EL_M1B_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "14")
+				(pinfunction "EL_M1B_14")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "17")
+			(name "EL_M2A")
+			(class "Default")
+			(node
+				(ref "JM2")
+				(pin "2")
+				(pinfunction "EL_M2A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "12")
+				(pinfunction "EL_M2A_12")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "18")
+			(name "EL_M2B")
+			(class "Default")
+			(node
+				(ref "JM2")
+				(pin "1")
+				(pinfunction "EL_M2B_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "11")
+				(pinfunction "EL_M2B_11")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "19")
+			(name "EL_MAX_N")
+			(class "Default")
+			(node
+				(ref "J13")
+				(pin "1")
+				(pinfunction "EL_MAX_N_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R6")
+				(pin "2")
+				(pinfunction "EL_MAX_N_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "7")
+				(pinfunction "EL_MAX_N_7")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "20")
+			(name "EL_MIN_N")
+			(class "Default")
+			(node
+				(ref "J12")
+				(pin "1")
+				(pinfunction "EL_MIN_N_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R5")
+				(pin "2")
+				(pinfunction "EL_MIN_N_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "EL_MIN_N_4")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "21")
+			(name "EL_SCL")
+			(class "Default")
+			(node
+				(ref "J8")
+				(pin "4")
+				(pinfunction "EL_SCL_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "2")
+				(pinfunction "EL_SCL_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "27")
+				(pinfunction "EL_SCL_27")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "22")
+			(name "EL_SDA")
+			(class "Default")
+			(node
+				(ref "J8")
+				(pin "3")
+				(pinfunction "EL_SDA_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "2")
+				(pinfunction "EL_SDA_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "28")
+				(pinfunction "EL_SDA_28")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "23")
+			(name "EL_STEP")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "12")
+				(pinfunction "EL_STEP_12")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "7")
+				(pinfunction "EL_STEP_7")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "24")
+			(name "ENABLE_N")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "2")
+				(pinfunction "ENABLE_N_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "9")
+				(pinfunction "ENABLE_N_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "ENABLE_N_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "ENABLE_N_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "25")
+			(name "ESP5")
+			(class "Default")
+			(node
+				(ref "JP1")
+				(pin "2")
+				(pinfunction "ESP5_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "19")
+				(pinfunction "ESP5_19")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "26")
+			(name "FUSED5")
+			(class "Default")
+			(node
+				(ref "F3")
+				(pin "2")
+				(pinfunction "FUSED5_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "JP1")
+				(pin "1")
+				(pinfunction "FUSED5_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "27")
+			(name "FUSED12")
+			(class "Default")
+			(node
+				(ref "D2")
+				(pin "2")
+				(pinfunction "FUSED12_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "F1")
+				(pin "2")
+				(pinfunction "FUSED12_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "F2")
+				(pin "1")
+				(pinfunction "FUSED12_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "F4")
+				(pin "1")
+				(pinfunction "FUSED12_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "28")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D2")
+				(pin "1")
+				(pinfunction "GND_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J10")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J11")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J12")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J13")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J4")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J7")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J8")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J9")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "14")
+				(pinfunction "GND_14")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "20")
+				(pinfunction "GND_20")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "26")
+				(pinfunction "GND_26")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "10")
+				(pinfunction "GND_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "16")
+				(pinfunction "GND_16")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "10")
+				(pinfunction "GND_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "16")
+				(pinfunction "GND_16")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "29")
+			(name "GNSS_RX")
+			(class "Default")
+			(node
+				(ref "J6")
+				(pin "4")
+				(pinfunction "GNSS_RX_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "30")
+				(pinfunction "GNSS_RX_30")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "30")
+			(name "GNSS_TX")
+			(class "Default")
+			(node
+				(ref "J6")
+				(pin "3")
+				(pinfunction "GNSS_TX_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "31")
+				(pinfunction "GNSS_TX_31")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "31")
+			(name "PROTECTED12")
+			(class "Default")
+			(node
+				(ref "D1")
+				(pin "2")
+				(pinfunction "PROTECTED12_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "F1")
+				(pin "1")
+				(pinfunction "PROTECTED12_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "32")
+			(name "RAW12")
+			(class "Default")
+			(node
+				(ref "D1")
+				(pin "1")
+				(pinfunction "RAW12_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "RAW12_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "33")
+			(name "STOP_N")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "1")
+				(pinfunction "STOP_N_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "2")
+				(pinfunction "STOP_N_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "5")
+				(pinfunction "STOP_N_5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "34")
+			(name "STOP_SEND")
+			(class "Default")
+			(node
+				(ref "F2")
+				(pin "2")
+				(pinfunction "STOP_SEND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "STOP_SEND_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "35")
+			(name "VMOT")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "1")
+				(pinfunction "VMOT_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "1")
+				(pinfunction "VMOT_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "VMOT_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "9")
+				(pinfunction "VMOT_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "9")
+				(pinfunction "VMOT_9")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "36")
+			(name "unconnected-(U1-NC-Pad2)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "NC_2")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "37")
+			(name "unconnected-(U1-NC-Pad8)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "NC_8")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "38")
+			(name "unconnected-(U1-NC-Pad13)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "13")
+				(pinfunction "NC_13")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "39")
+			(name "unconnected-(U1-NC-Pad16)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "16")
+				(pinfunction "NC_16")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "40")
+			(name "unconnected-(U1-NC-Pad17)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "17")
+				(pinfunction "NC_17")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "41")
+			(name "unconnected-(U1-NC-Pad18)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "18")
+				(pinfunction "NC_18")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "42")
+			(name "unconnected-(U1-NC-Pad21)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "21")
+				(pinfunction "NC_21")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "43")
+			(name "unconnected-(U1-NC-Pad23)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "23")
+				(pinfunction "NC_23")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "44")
+			(name "unconnected-(U1-NC-Pad24)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "24")
+				(pinfunction "NC_24")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "45")
+			(name "unconnected-(U1-NC-Pad29)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "29")
+				(pinfunction "NC_29")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "46")
+			(name "unconnected-(U1-NC-Pad32)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "32")
+				(pinfunction "NC_32")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "47")
+			(name "unconnected-(U1-NC-Pad33)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "33")
+				(pinfunction "NC_33")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "48")
+			(name "unconnected-(U1-NC-Pad34)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "34")
+				(pinfunction "NC_34")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "49")
+			(name "unconnected-(U1-NC-Pad35)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "35")
+				(pinfunction "NC_35")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "50")
+			(name "unconnected-(U1-NC-Pad36)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "36")
+				(pinfunction "NC_36")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "51")
+			(name "unconnected-(U1-NC-Pad37)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "37")
+				(pinfunction "NC_37")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "52")
+			(name "unconnected-(U1-NC-Pad38)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "38")
+				(pinfunction "NC_38")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "53")
+			(name "unconnected-(U2-NC-Pad5)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "5")
+				(pinfunction "NC_5")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "54")
+			(name "unconnected-(U2-NC-Pad6)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "6")
+				(pinfunction "NC_6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "55")
+			(name "unconnected-(U3-NC-Pad5)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "5")
+				(pinfunction "NC_5")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "56")
+			(name "unconnected-(U3-NC-Pad6)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "6")
+				(pinfunction "NC_6")
+				(pintype "passive+no_connect")
+			)
+		)
+	)
+)

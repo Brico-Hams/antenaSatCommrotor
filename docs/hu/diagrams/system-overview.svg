@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="600" viewBox="0 0 1060 600">
+  <rect width="1060" height="600" fill="#f3f6fa"/>
+  <style>text{font-family:Arial,sans-serif;fill:#17273d} .box{fill:white;stroke:#37628f;stroke-width:2} .wire{stroke:#37628f;stroke-width:3;fill:none} .rf{stroke:#b15a20;stroke-width:3;fill:none} .small{font-size:14px} .title{font-size:20px;font-weight:bold}</style>
+  <text x="30" y="35" class="title">PortableSatStation – eredeti architektúra, nem tanúsított prototípus</text>
+  <rect x="30" y="70" width="230" height="90" rx="10" class="box"/>
+  <text x="45" y="98" class="title">Böngésző / helyi AP</text>
+  <text x="45" y="122" class="small">Beállítás, átvonulások, leállítás</text>
+  <text x="45" y="145" class="small">Átvonulás alatt nem kell PC</text>
+  <rect x="325" y="70" width="270" height="160" rx="10" class="box"/>
+  <text x="342" y="98" class="title">Önálló ESP32</text>
+  <text x="342" y="125" class="small">SGP4 + tartós TLE</text>
+  <text x="342" y="150" class="small">UTC és GNSS-helyzet</text>
+  <text x="342" y="175" class="small">Kalibrált valódi észak + szint</text>
+  <text x="342" y="200" class="small">Homing, határok, visszacsatolás, hibák</text>
+  <path d="M260 115H325" class="wire"/>
+  <rect x="665" y="70" width="350" height="160" rx="10" class="box"/>
+  <text x="683" y="98" class="title">Levehető AZ/EL-rotor</text>
+  <text x="683" y="125" class="small">NEMA14, tengelyenként két 5:1 fokozat</text>
+  <text x="683" y="150" class="small">ASA + fém tengelyek/csapágyak</text>
+  <text x="683" y="175" class="small">NC-leállítás + motorok fizikai lekapcsolása</text>
+  <text x="683" y="200" class="small">Terhelés/pontosság tesztje függőben</text>
+  <path d="M595 150H665" class="wire"/>
+  <rect x="30" y="200" width="230" height="120" rx="10" class="box"/>
+  <text x="45" y="228" class="title">TLE</text>
+  <text x="45" y="252" class="small">STA / HTTPS internetkapcsolattal</text>
+  <text x="45" y="276" class="small">vagy kézi import hálózat nélkül</text>
+  <text x="45" y="300" class="small">Az AP önmagában nem ad internetet</text>
+  <path d="M260 250H290V200H325" class="wire"/>
+  <rect x="325" y="265" width="270" height="80" rx="10" class="box"/>
+  <text x="342" y="292" class="title">Védett tápegység</text>
+  <text x="342" y="317" class="small">Motorok + külön DC/DC logika</text>
+  <path d="M460 265V230" class="wire"/>
+  <rect x="665" y="265" width="350" height="80" rx="10" class="box"/>
+  <text x="683" y="292" class="title">Fényképezőgép-állvány</text>
+  <text x="683" y="317" class="small">Fém betét, ellenőrzött torzió</text>
+  <path d="M840 265V230" class="wire"/>
+  <rect x="30" y="390" width="230" height="130" rx="10" class="box"/>
+  <text x="45" y="417" class="title">RT3S / OpenGD77</text>
+  <text x="45" y="445" class="small">Saját akkumulátor, rögzített tartó</text>
+  <text x="45" y="470" class="small">Független Doppler-korrekció</text>
+  <text x="45" y="495" class="small">Nincs feltételezett CAT / teljes duplex</text>
+  <rect x="325" y="390" width="270" height="130" rx="10" class="box"/>
+  <text x="342" y="417" class="title">VHF/UHF-diplexer</text>
+  <text x="342" y="445" class="small">Levehető fém aldoboz</text>
+  <text x="342" y="470" class="small">1 közös port, 2 sáv</text>
+  <text x="342" y="495" class="small">S-paraméterek ellenőrzendők</text>
+  <path d="M260 455H325" class="rf"/>
+  <rect x="665" y="390" width="350" height="130" rx="10" class="box"/>
+  <text x="683" y="417" class="title">Eredeti, összecsukható antenna</text>
+  <text x="683" y="445" class="small">Külön 145 / 435 MHz hálózatok/radiátorok</text>
+  <text x="683" y="470" class="small">Keresztezett dipólus + sávonkénti reflektor</text>
+  <text x="683" y="495" class="small">Alternatíva: kompatibilis külső Yagi</text>
+  <path d="M595 440H665M595 478H665" class="rf"/>
+  <path d="M1000 230V390" class="wire"/>
+  <text x="30" y="560" class="small">Kék: vezérlés / mechanika. Narancs: RF. Szétválasztható modulok. A passzív szűrő nem tesz egy RT3S-t teljes duplexszé.</text>
+  <text x="30" y="585" class="small">A kezdeti méretek, célzott tömeg és számított nyomaték összeszerelést, VNA-t és üzem előtti teszteket igényel.</text>
+</svg>

@@ -1,0 +1,442 @@
+{
+  "board": {
+    "name": "PortableSat CM5IO Auxiliary Control",
+    "revision": "A",
+    "gpioContractStatus": "frozen for software integration",
+    "hardwareStatus": "not yet designed or fabricated",
+    "host": "Raspberry Pi CM5IO revision 2",
+    "hostModuleCandidate": "CM5104016",
+    "moduleSkuConfirmed": false,
+    "hostHeaderVoltageV": 3.3,
+    "usb3RouteOnAuxiliaryBoard": false,
+    "usbPowerDataTopology": {
+      "cm5ioUsbCPowerInputSeparateFromUsbDataHost": true,
+      "combinedPowerDataPortAssumed": false,
+      "powerTargetV": 5,
+      "powerTargetA": 5,
+      "powerTargetStatus": "conditional design target; not a CM5IO rating or proof of available power",
+      "requiresNegotiatedUsbCPdContract": true,
+      "requiresCm5ioInputRatingVerification": true,
+      "requiresFullConcurrentLoadMeasurement": true,
+      "sourceAt5V3AAccepted": false,
+      "limeSdrMiniCount": 2,
+      "limeSdrMiniMinimumCurrentEachA": 0.6,
+      "limeSdrMiniCombinedMinimumCurrentA": 1.2,
+      "currentRemainingAt5V3AAfterLimeSdrsA": 1.8,
+      "requires5AEMarkedUsbCCableWhenNegotiatedCurrentRequires": true,
+      "auxiliaryBoardMayPowerLimeSdrsFrom40Pin5VRail": false,
+      "limeSdrUsb3DataRoutedThroughAuxiliaryBoard": false,
+      "verification": "Confirm exact CM5IO revision connector roles, PD contract, cable/source, startup and concurrent radio/audio load, and transmit peaks"
+    },
+    "externalBattery": {
+      "required": true,
+      "installation": "external battery pack; not installed inside the 5 kg station mass tally",
+      "massIncludedInFiveKgObjective": false,
+      "nominalInterfaceV": 12,
+      "candidate": {
+        "manufacturer": "ECO-WORTHY",
+        "product": "12 V 30 Ah LiFePO4",
+        "variant": "40308275183822",
+        "url": "https://es.eco-worthy.com/products/bateria-litio-lifepo4-12v-30ah?currency=EUR&country=ES&variant=40308275183822",
+        "status": "reference candidate only; vendor listing describes an internal BMS, but procurement, exact delivered model, rated capacity, BMS/current limits and connector remain unverified",
+        "nominalCapacityAh": 30,
+        "nominalEnergyWhIfCapacityVerified": 360
+      },
+      "chemistry": "LiFePO4 candidate; confirm exact delivered pack",
+      "provisionalFullChargeV": 14.6,
+      "provisionalFullChargeVoltageStatus": "not confirmed; use for input component stress screening only after verification against exact pack documentation",
+      "fullChargeAndMinimumVoltageRange": "not verified; obtain exact pack limits and transients before selecting/finalizing input ratings",
+      "minimumNominalCapacityAhExclusive": 1,
+      "minimumNominalEnergyWhExclusive": 12,
+      "minimumCapacityEstablishesTwoHourAutonomy": false,
+      "autonomyObjectiveHours": 2,
+      "autonomyStatus": "objective only; requires a defined duty cycle and measured whole-system battery-side average load",
+      "sizing": "required nominal Wh >= measured average battery-side W * 2 h / usable-energy fraction; determine usable-energy fraction for selected chemistry, temperature, age, cutoff, and reserve",
+      "protectionRequired": [
+        "chemistry-compatible pack protection or BMS",
+        "pack-adjacent fuse",
+        "reverse-polarity protection",
+        "short-circuit and overcurrent protection",
+        "transient suppression coordinated with verified pack and converter ratings",
+        "controlled inrush",
+        "rated conversion stages for each selected rail"
+      ],
+      "inputConnector": {
+        "batterySideFamily": "Anderson Powerpole PP15/30/45 modular red/black housing family",
+        "batterySideConnection": "mating harness pigtail with correctly keyed/polarized red/black housings and exact crimp contacts selected for verified wire gauge and load",
+        "boardSideConnection": "separately selected rated PCB terminal connector; do not assume a board-mounted Powerpole footprint",
+        "contactCurrentClass": "not selected; choose exact 15 A, 30 A, or 45 A family contact only after measured load, wire gauge, thermal derating, and primary datasheet verification",
+        "wireGauge": "not selected pending load measurement and exact contact datasheet",
+        "exactConnectorPartNumbers": "not selected or source-verified",
+        "connectorAndPolarityBenchCheckRequired": true
+      },
+      "fuseAndDistribution": {
+        "batteryPositiveSequence": [
+          "battery positive",
+          "pack-adjacent main DC-rated fuse",
+          "main service disconnect",
+          "protected distribution"
+        ],
+        "branchFuseLoads": [
+          "CM5IO USB-C 5 V converter",
+          "motor supply/converter",
+          "each PA/RF supply branch as applicable"
+        ],
+        "fuseAmpRatings": "not selected; set only after measured continuous/startup/stall/transmit current and time-current/inrush/thermal coordination",
+        "maximumFuseRule": "each fuse must protect the lowest safe-current-rated conductor, contact, connector, PCB terminal and fuse holder in its branch",
+        "bmsIsNotSubstituteForExternalFuses": true,
+        "dcRatedIndependentMotorEstopRequired": true
+      },
+      "emiPowerIntegrity": {
+        "status": "pre-layout requirement; no input-filter schematic, component values, or PCB routing implemented",
+        "batteryEntrySequence": [
+          "Powerpole battery harness",
+          "pack-adjacent main DC-rated fuse",
+          "service disconnect",
+          "reverse-polarity protection",
+          "coordinated TVS or equivalent transient suppression",
+          "controlled inrush",
+          "optional DC-current-rated common-mode choke carrying positive and return",
+          "optional exact-rated connector/header filter module only if specified and verified",
+          "damped differential filter only if converter vendor guidance and impedance analysis support it",
+          "fused separate CM5IO, motor, and applicable PA/RF branches",
+          "local converter/load decoupling"
+        ],
+        "commonModeChoke": {
+          "bothSupplyAndReturnPassThroughCoupledWindings": true,
+          "exactPartNumber": "not selected",
+          "currentRatingMustCoverMeasuredContinuousAndTransientLoad": true,
+          "verifyDcrSaturationThermalInsulationFaultBehaviorAndInsertionImpedance": true,
+          "smallSignalOr300mABeadAllowedIn5ACm5ioPath": false
+        },
+        "connectorHeaderFilterModule": {
+          "exactModule": "TBD",
+          "inventedFootprintAllowed": false,
+          "requiresVerifiedInterfaceRatingImpedanceAndAssemblyState": true,
+          "offboardModuleIfTestingRequires": "separately rated interface followed by complete schematic/ERC/DRC/connectivity/thermal/manufacturing revalidation and new revision exports"
+        },
+        "differentialFilter": {
+          "idealUndampedHighQFilterAllowed": false,
+          "requiresConverterVendorInputImpedanceAndFilterGuidance": true,
+          "requiresDampingAnalysisWithActualSourceCableAndConverter": true,
+          "stabilityTests": [
+            "startup",
+            "load step",
+            "line step",
+            "brownout",
+            "current limit",
+            "recovery"
+          ]
+        },
+        "physicalSeparation": {
+          "separateFusedCm5ioMotorAndPaRfBranches": true,
+          "highDiDtLoopsSeparatedFromCm5LogicGnssCompassEncodersAndAudio": true,
+          "returnAndShieldChassisStrategyMustBeDefined": true,
+          "motorReturnThroughSensorOrAudioGroundAllowed": false
+        },
+        "verificationRequired": [
+          "regulator input/output ripple and transient response",
+          "CM5IO 5 V droop, undervoltage behavior and recovery",
+          "power-converter and filter stability",
+          "component/copper/connector temperature rise",
+          "Linux stability under dual LimeSDR streaming, motor motion and radio transmission",
+          "receiver sensitivity/desense measurement",
+          "SMA-port transmit spurs and harmonic measurement including 145 MHz third harmonic near 435 MHz"
+        ],
+        "dcInputFilterProvesRfComplianceOrDesense": false
+      },
+      "inputVoltageAndCurrentRatingsFrozen": false,
+      "motorAndLogicRailsFrozen": false,
+      "connectorAndFuseRatingsFrozen": false
+    },
+    "conversion": {
+      "raw12VBatteryMayConnectToCm5ioUsbCPower": false,
+      "raw12VBatteryMayConnectToCm5io40Pin5V": false,
+      "cm5ioSupply": "separate protected conversion from selected battery range to qualified, negotiated USB-C 5 V source contract; 5 V / 5 A remains a conditional target",
+      "preliminaryBatteryInputComponentRatingV": 30,
+      "preliminaryInputRatingStatus": "at least 30 V for conservative stress screening only; 14.6 V pack maximum is unverified. Re-verify rating against exact pack limits, transients, TVS coordination and selected components before release",
+      "auxiliaryLogicSupply": "5 V isolated regulator required; input range, isolation ratings, output/load ratings, part and layout not selected",
+      "auxiliaryLogicMustBeIsolatedFromBatteryInput": true,
+      "inputTransientSuppressionAndInrushRequired": true,
+      "cm5ioPowerConversion": "external battery -> separately fused, qualified protected 5 V USB-C source -> CM5IO's separate USB-C power input; never raw battery to CM5IO",
+      "motorSupply": "separate protected rail; voltage and current not selected",
+      "limeSdrLoadMayUseAuxiliary40Pin5VRail": false,
+      "smaRfAndExternalK1AudioRetained": true,
+      "smaRfOrK1AudioRoutedThroughUsbCPower": false,
+      "allProtectionAndRegulatorRatingsFrozen": false
+    },
+    "fabricationRelease": false,
+    "pcbaRelease": false,
+    "costingStatus": "deferred until exact sourceable manufacturer and LCSC part numbers are verified"
+  },
+  "gpio": [
+    { "bcm": 2, "headerPin": 3, "signal": "I2C1_SDA", "direction": "bidirectional", "safeLevel": "HIGH (released)", "voltageV": 3.3 },
+    { "bcm": 3, "headerPin": 5, "signal": "I2C1_SCL", "direction": "output", "safeLevel": "HIGH (released)", "voltageV": 3.3 },
+    { "bcm": 4, "headerPin": 7, "signal": "AZ_LIMIT_MIN_N", "direction": "input", "activeLevel": "HIGH", "healthy": "LOW" },
+    { "bcm": 5, "headerPin": 29, "signal": "AZ_LIMIT_MAX_N", "direction": "input", "activeLevel": "HIGH", "healthy": "LOW" },
+    { "bcm": 6, "headerPin": 31, "signal": "EL_LIMIT_MIN_N", "direction": "input", "activeLevel": "HIGH", "healthy": "LOW" },
+    { "bcm": 7, "headerPin": 26, "signal": "EL_LIMIT_MAX_N", "direction": "input", "activeLevel": "HIGH", "healthy": "LOW" },
+    { "bcm": 8, "headerPin": 24, "signal": "POL_LIMIT_MIN_N", "direction": "input", "activeLevel": "HIGH", "healthy": "LOW" },
+    { "bcm": 9, "headerPin": 21, "signal": "POL_LIMIT_MAX_N", "direction": "input", "activeLevel": "HIGH", "healthy": "LOW" },
+    { "bcm": 10, "headerPin": 19, "signal": "ESTOP_AUX_N", "direction": "input", "activeLevel": "HIGH", "healthy": "LOW" },
+    { "bcm": 11, "headerPin": 23, "signal": "WATCHDOG_HEARTBEAT", "direction": "output", "safeLevel": "LOW" },
+    { "bcm": 12, "headerPin": 32, "signal": "MOTOR_ARM_REQUEST", "direction": "output", "activeLevel": "HIGH", "safeLevel": "LOW" },
+    { "bcm": 13, "headerPin": 33, "signal": "TCA9548A_RESET_N", "direction": "output", "activeLevel": "LOW", "safeLevel": "HIGH" },
+    { "bcm": 14, "headerPin": 8, "signal": "GNSS_UART_TX", "direction": "output", "safeLevel": "HIGH (UART idle)", "voltageV": 3.3 },
+    { "bcm": 15, "headerPin": 10, "signal": "GNSS_UART_RX", "direction": "input", "voltageV": 3.3 },
+    { "bcm": 16, "headerPin": 36, "signal": "SPI1_CS2_POL", "direction": "output", "activeLevel": "LOW", "safeLevel": "HIGH" },
+    { "bcm": 17, "headerPin": 11, "signal": "SPI1_CS1_EL", "direction": "output", "activeLevel": "LOW", "safeLevel": "HIGH" },
+    { "bcm": 18, "headerPin": 12, "signal": "SPI1_CS0_AZ", "direction": "output", "activeLevel": "LOW", "safeLevel": "HIGH" },
+    { "bcm": 19, "headerPin": 35, "signal": "SPI1_MISO", "direction": "input", "voltageV": 3.3 },
+    { "bcm": 20, "headerPin": 38, "signal": "SPI1_MOSI", "direction": "output", "safeLevel": "LOW", "voltageV": 3.3 },
+    { "bcm": 21, "headerPin": 40, "signal": "SPI1_SCLK", "direction": "output", "safeLevel": "LOW", "voltageV": 3.3 },
+    { "bcm": 22, "headerPin": 15, "signal": "PTT_VHF_REQUEST", "direction": "output", "activeLevel": "HIGH", "safeLevel": "LOW" },
+    { "bcm": 23, "headerPin": 16, "signal": "PTT_UHF_REQUEST", "direction": "output", "activeLevel": "HIGH", "safeLevel": "LOW" },
+    { "bcm": 24, "headerPin": 18, "signal": "FAULT_AZ_N", "direction": "input", "activeLevel": "LOW" },
+    { "bcm": 25, "headerPin": 22, "signal": "FAULT_EL_N", "direction": "input", "activeLevel": "LOW" },
+    { "bcm": 26, "headerPin": 37, "signal": "FAULT_POL_N", "direction": "input", "activeLevel": "LOW" },
+    { "bcm": 27, "headerPin": 13, "signal": "GNSS_PPS", "direction": "input" }
+  ],
+  "peripherals": {
+    "spi": {
+      "bus": "SPI1",
+      "mosiBcm": 20,
+      "misoBcm": 19,
+      "sclkBcm": 21,
+      "chipSelects": {
+        "AZ": { "bcm": 18, "cs": 0 },
+        "EL": { "bcm": 17, "cs": 1 },
+        "POL": { "bcm": 16, "cs": 2 }
+      },
+      "driver": "Watterott SilentStepStick TMC5160 v1.5"
+    },
+    "i2c": {
+      "bus": "I2C1",
+      "sdaBcm": 2,
+      "sclBcm": 3,
+      "mux": { "part": "TCA9548A", "address": "0x70", "addressStraps": "A0=A1=A2=GND", "resetBcm": 13 },
+      "gpioExpander": {
+        "part": "MCP23017",
+        "address": "0x20",
+        "addressStraps": "A0=A1=A2=GND",
+        "resetBehavior": "all GPIO inputs; external pulls keep enables deasserted",
+        "pins": {
+          "GPA0": "AZ_ENABLE_REQUEST",
+          "GPA1": "EL_ENABLE_REQUEST",
+          "GPA2": "POL_ENABLE_REQUEST",
+          "GPA3": "MOTOR_PERMIT_FEEDBACK_N",
+          "GPA4": "PTT_VHF_FEEDBACK_N",
+          "GPA5": "PTT_UHF_FEEDBACK_N",
+          "GPA6": "PA_VHF_FAULT_N",
+          "GPA7": "PA_UHF_FAULT_N",
+          "GPB0-GPB7": "reserved; no connect"
+        },
+        "enableRequest": "output HIGH requests enable; external pulldown means reset/expander fault=OFF",
+        "feedbackInputs": "inputs with external pull-ups; LOW=asserted/healthy only after exact circuit definition"
+      },
+      "channels": {
+        "0": "ENCODER_AZ_AS5600",
+        "1": "ENCODER_EL_AS5600",
+        "2": "ENCODER_POL_AS5600",
+        "3": "COMPASS_LIS3MDL",
+        "4": "IMU_LSM6DSOX"
+      }
+    },
+    "gnss": {
+      "part": "Adafruit Ultimate GPS Breakout",
+      "productId": "746",
+      "txBcm": 14,
+      "rxBcm": 15,
+      "ppsBcm": 27
+    },
+    "sensors": {
+      "encoders": {
+        "count": 3,
+        "part": "Adafruit AS5600 Magnetic Angle Sensor",
+        "productId": "6357",
+        "address": "0x36",
+        "connector": "keyed 4-pin I2C electrical interface; physical connector and pin order not frozen"
+      },
+      "compass": {
+        "part": "Adafruit LIS3MDL 3-axis magnetometer",
+        "productId": "4479",
+        "connector": "keyed 4-pin I2C electrical interface; physical connector and pin order not frozen"
+      },
+      "imu": {
+        "part": "Adafruit LSM6DSOX 6-DoF breakout",
+        "productId": "4438",
+        "connector": "keyed 4-pin I2C electrical interface; physical connector and pin order not frozen"
+      }
+    }
+  },
+  "audio": {
+    "onboard": {
+      "target": "built-in speaker and microphone through a USB codec",
+      "codecCandidate": {
+        "manufacturer": "Texas Instruments",
+        "part": "PCM2902C",
+        "source": "https://www.ti.com/product/PCM2902C",
+        "status": "public candidate only; not selected or implemented on the PCB"
+      },
+      "microphoneFrontEnd": "not selected or designed",
+      "speakerAmplifier": "not selected or designed",
+      "cm5ioUsbHostPath": "unverified; USB-C power input is separate from USB data/host connection; do not assume the power port is host-capable or a native USB3 port is available",
+      "releaseStatus": "audio function not implemented or qualified"
+    },
+    "externalRadio": {
+      "target": "Kenwood-style K1 dual 3.5 mm / 2.5 mm accessory interface compatible with UV-5R/UV-82 accessories",
+      "compatibilityStatus": "target only; exact radio, accessory, and pinout unverified",
+      "separateJackDaughterboard": true,
+      "jackPopulation": "DNP pending exact accessory pinout and electrical qualification",
+      "daughterboardHeader": "not selected, pin-assigned, or verified",
+      "accessoryPinoutFrozen": false,
+      "audioGroundPolicy": "audio return may connect only to the verified ground-referenced audio driver return; do not bond an assumed BTL contact to audio ground",
+      "btlContactPolicy": "never assume the busy-tone lamp contact is ground",
+      "pttIndependentFromAudio": true
+    },
+    "assembly": {
+      "cplDesignators": "must exactly match unique schematic/PCB references; K1 accessory-interface naming is not a PCB reference",
+      "jlcpcbCplColumns": ["Designator", "Mid X", "Mid Y", "Layer", "Rotation"],
+      "cplCoordinates": "board placement-center coordinates in mm; verify board side and rotation against the assembled-board view",
+      "generatedCplRows": 0,
+      "generatedCplStatus": "not issued; no validated CM5 auxiliary PCB exists",
+      "dnpPartsInCpl": false,
+      "pricing": "deferred until exact sourceable manufacturer and LCSC part numbers are verified"
+    }
+  },
+  "safety": {
+    "gpioMapFrozen": true,
+    "limitInputs": {
+      "count": 6,
+      "contact": "normally closed to GND",
+      "healthyLevel": "LOW",
+      "openWireLevel": "HIGH",
+      "softwareInputIsNotTheIndependentHardStop": true
+    },
+    "estop": {
+      "monitorBcm": 10,
+      "physicalCut": "external DC-rated latching contact in motor supply path",
+      "contactRatingUnselected": true
+    },
+    "watchdog": {
+      "heartbeatBcm": 11,
+      "permitRequiredForMotorEnable": true,
+      "exactWatchdogPartUnselected": true
+    },
+    "motorEnable": {
+      "requestBcm": 12,
+      "commonHardwareGateBcm": 12,
+      "perAxisRequests": {
+        "AZ": "MCP23017 GPA0",
+        "EL": "MCP23017 GPA1",
+        "POL": "MCP23017 GPA2"
+      },
+      "default": "DISABLED",
+      "driverEnDefault": "HIGH (disabled)"
+    },
+    "ptt": {
+      "vhfRequestBcm": 22,
+      "uhfRequestBcm": 23,
+      "vhfFeedback": "MCP23017 GPA4",
+      "uhfFeedback": "MCP23017 GPA5",
+      "separateIsolatedOutputs": true,
+      "default": "OPEN / INHIBITED",
+      "paElectricalLimitsUnselected": true
+    },
+    "driverFaults": {
+      "AZ": 24,
+      "EL": 25,
+      "POL": 26
+    }
+  },
+  "softwareContract": {
+    "rotor": {
+      "axes": {
+        "AZ": {
+          "spiChipSelect": "SPI1 CS0 / BCM18 / physical pin 12",
+          "encoderMuxChannel": 0,
+          "minimumLimitBcm": 4,
+          "maximumLimitBcm": 5,
+          "driverFaultBcm": 24,
+          "enableRequest": "MCP23017 GPA0"
+        },
+        "EL": {
+          "spiChipSelect": "SPI1 CS1 / BCM17 / physical pin 11",
+          "encoderMuxChannel": 1,
+          "minimumLimitBcm": 6,
+          "maximumLimitBcm": 7,
+          "driverFaultBcm": 25,
+          "enableRequest": "MCP23017 GPA1"
+        },
+        "POL": {
+          "spiChipSelect": "SPI1 CS2 / BCM16 / physical pin 36",
+          "encoderMuxChannel": 2,
+          "minimumLimitBcm": 8,
+          "maximumLimitBcm": 9,
+          "driverFaultBcm": 26,
+          "enableRequest": "MCP23017 GPA2"
+        }
+      },
+      "estopMonitorBcm": 10,
+      "watchdogHeartbeatOutputBcm": 11,
+      "motorArmRequestOutputBcm": 12,
+      "encoderAddress": "0x36",
+      "sensorMuxAddress": "0x70",
+      "sensorBus": "I2C1 / BCM2 SDA / BCM3 SCL",
+      "driver": "Watterott SilentStepStick TMC5160 v1.5"
+    },
+    "radio": {
+      "vhfPttRequestOutputBcm": 22,
+      "uhfPttRequestOutputBcm": 23,
+      "activeLevel": "HIGH",
+      "resetSafeLevel": "LOW",
+      "feedbackExpander": "MCP23017 GPA4/GPA5",
+      "vhfPaFaultInput": "MCP23017 GPA6",
+      "uhfPaFaultInput": "MCP23017 GPA7",
+      "txPermissionDependsOn": [
+        "host radio interlock",
+        "external watchdog permit",
+        "normally-off PA interface",
+        "selected PA electrical qualification"
+      ]
+    },
+    "gnss": {
+      "uart": "UART0",
+      "txOutputBcm": 14,
+      "rxInputBcm": 15,
+      "ppsInputBcm": 27
+    },
+    "unverifiedHardwareMustRemainDisabled": true,
+    "bootSafety": {
+      "spiBus": "SPI1",
+      "i2cBus": "I2C1",
+      "gnssUart": "UART0",
+      "spi0SubstituteAllowed": false,
+      "staleDeviceTreeOverlayMayReassignFrozenGpio": false,
+      "verifyTargetImageOverlaysAndDeviceNodes": true,
+      "motorArmOnColdBoot": "OFF",
+      "perAxisEnablesOnColdBoot": "OFF",
+      "pttRequestsOnColdBoot": "OFF",
+      "automaticMotorArmOnStartupAllowed": false,
+      "automaticPttOnStartupAllowed": false,
+      "repeatFailOffInitializationAfter": [
+        "reboot",
+        "service restart",
+        "GPIO provider recovery",
+        "MCP23017 reset or power loss"
+      ],
+      "softwareDoesNotReplaceExternalHardwareFailOff": true
+    }
+  },
+  "sourceUrls": [
+    "https://www.raspberrypi.com/documentation/computers/compute-module.html",
+    "https://pip.raspberrypi.com/documents/RP-008180-DS",
+    "https://learn.watterott.com/silentstepstick/pinconfig/tmc5160/",
+    "https://github.com/watterott/SilentStepStick/blob/098b7518b0de31e6a12fda78c68ae2666b81fbb6/hardware/SilentStepStick-TMC5160_v15.pdf",
+    "https://www.ti.com/product/TCA9548A",
+    "https://www.adafruit.com/product/6357",
+    "https://www.adafruit.com/product/4479",
+    "https://www.adafruit.com/product/4438",
+    "https://www.adafruit.com/product/746"
+  ]
+}

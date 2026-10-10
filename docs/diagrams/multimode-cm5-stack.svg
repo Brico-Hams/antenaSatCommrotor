@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="920" viewBox="0 0 1180 920" role="img" aria-labelledby="title desc">
+  <title id="title">PortableSatStation conceptual CM5 and auxiliary PCB stack</title>
+  <desc id="desc">FIG-04 conceptual board stack: candidate wireless 4 GB RAM 16 GB eMMC CM5 on official CM5 I/O board, two LimeSDR Mini modules on direct USB 3 paths, and a separate custom auxiliary PCB planned for three-axis motion, sensors, audio and safety. Software GPIO contract revision A is frozen in hardware/cm5/interface.json and docs/CM5-PCB.md; AZ min/max are BCM GPIO 4/5 at header pins 7/29, EL 6/7 at 31/26, POL 8/9 at 24/21, and E-stop auxiliary monitor 10 at 19; NC closed healthy LOW, open/fault HIGH. This is not wiring authorization. GPIO arm/enable signals are requests, not hardware permits. Independent external hard-limit, watchdog and DC-rated latching E-stop guard hardware is not yet designed or released; no motor motion is permitted until reviewed and tested. Not a PCB layout, schematic, wiring or fabrication drawing.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#486581"/></marker>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#172b43}
+      .title{font-size:26px;font-weight:700}
+      .subtitle{font-size:14px;fill:#455a70}
+      .head{font-size:18px;font-weight:700}
+      .body{font-size:15px}
+      .small{font-size:13px}
+      .tiny{font-size:12px}
+      .board{fill:#e8f0f8;stroke:#2f5d8a;stroke-width:3}
+      .module{fill:#f4f7fa;stroke:#58743e;stroke-width:2}
+      .hold{fill:#fff4e7;stroke:#b05a16;stroke-width:2;stroke-dasharray:8 5}
+      .warn{fill:#8b310d;font-weight:700}
+      .arrow{fill:none;stroke:#486581;stroke-width:3;marker-end:url(#arrow)}
+      .usb{fill:none;stroke:#2f5d8a;stroke-width:4}
+      .audio{fill:none;stroke:#6b4b8e;stroke-width:3;stroke-dasharray:8 5}
+    </style>
+  </defs>
+  <rect width="1180" height="820" fill="#f7f9fc"/>
+  <text x="28" y="42" class="title">FIG-04 - CM5 / official I/O / auxiliary PCB stack (concept)</text>
+  <text x="28" y="70" class="subtitle">Block-level assembly reference only: not to scale, not a mounting drawing, wiring instruction, or PCB fabrication release.</text>
+
+  <rect x="42" y="104" width="646" height="554" rx="16" class="board"/>
+  <text x="66" y="139" class="head">Fixed-base compute and interface stack</text>
+
+  <rect x="104" y="166" width="520" height="82" rx="10" class="module"/>
+  <text x="126" y="198" class="head">CM5 compute module - candidate SKU</text>
+  <text x="126" y="226" class="body">Wireless / 4 GB RAM / 16 GB eMMC; confirm exact orderable SKU</text>
+
+  <path d="M364 249V276" class="arrow"/>
+  <rect x="80" y="281" width="568" height="112" rx="10" class="module"/>
+  <text x="104" y="316" class="head">Official Raspberry Pi CM5 I/O board (selected base/carrier)</text>
+  <text x="104" y="347" class="body">Two USB 3 paths reserved directly: one LimeSDR Mini per path</text>
+  <text x="104" y="374" class="small">Check exact board revision, connector mapping, power, and dual-RX operation</text>
+
+  <path d="M216 393V421M500 393V421" class="usb"/>
+  <rect x="70" y="426" width="260" height="77" rx="10" class="module"/>
+  <text x="94" y="458" class="head">LimeSDR Mini A</text>
+  <text x="94" y="484" class="small">USB 3 direct link A (verify)</text>
+  <rect x="398" y="426" width="260" height="77" rx="10" class="module"/>
+  <text x="422" y="458" class="head">LimeSDR Mini B</text>
+  <text x="422" y="484" class="small">USB 3 direct link B (verify)</text>
+
+  <rect x="80" y="531" width="568" height="86" rx="10" class="hold"/>
+  <text x="104" y="564" class="head">USB audio path unresolved - not yet selected or qualified</text>
+  <text x="104" y="592" class="body">Qualified powered hub OR documented/configured USB 2 host; verify power and audio</text>
+  <path d="M364 393V516" class="audio"/>
+
+  <rect x="724" y="104" width="414" height="554" rx="16" class="hold"/>
+  <text x="748" y="139" class="head">Separate custom auxiliary PCB (planned)</text>
+  <text x="748" y="169" class="small">Three-axis motor / sensor / audio / safety interface</text>
+  <rect x="770" y="195" width="326" height="83" rx="10" class="board"/>
+  <text x="792" y="228" class="head">Auxiliary PCB</text>
+  <text x="792" y="255" class="small">Own schematic, PCB, JLC BOM + CPL release</text>
+  <path d="M688 346H722" class="arrow"/>
+  <text x="738" y="326" class="tiny warn">Mechanical/electrical mating scheme TBD</text>
+
+  <rect x="770" y="304" width="326" height="92" rx="10" class="module"/>
+  <text x="792" y="337" class="head">POL channel driver selection</text>
+  <text x="792" y="363" class="body">Watterott TMC5160 v1.5; SPI1; ramp jumper open</text>
+  <text x="792" y="385" class="small">EN high = disabled; confirm clock tolerance/revision docs</text>
+
+  <rect x="770" y="418" width="326" height="112" rx="10" class="module"/>
+  <text x="792" y="452" class="head">Auxiliary-board functions</text>
+  <text x="792" y="480" class="body">3 motors, 3 encoders, 6 NC limits, watchdog</text>
+  <text x="792" y="507" class="small">GNSS / compass / audio interfaces, pins not frozen</text>
+
+  <rect x="770" y="548" width="326" height="79" rx="10" class="hold"/>
+  <text x="792" y="580" class="head">No header-row or pin assignment</text>
+  <text x="792" y="606" class="small">Do not order/assemble until reviewed PCB release</text>
+
+  <text x="44" y="698" class="warn">HOLD: Blocks do not establish board orientation, mount, interconnect, signal integrity, thermal design, or released wiring.</text>
+  <text x="44" y="729" class="body">Power: 5 V / 5 A CM5 I/O input budget; separate regulated nominal 12 V motor rail across verified battery bounds.</text>
+  <text x="44" y="760" class="small">USB-C power, SDR host/data and provisioning roles are distinct; connector type alone proves neither USB 3 nor PD. No pass measured.</text>
+  <rect x="42" y="780" width="1096" height="122" rx="10" fill="#fff1e8" stroke="#b05a16" stroke-width="2"/>
+  <text x="58" y="803" class="small warn">GPIO contract rev A (software map only; source: interface.json + CM5-PCB.md; not a wiring guide):</text>
+  <text x="58" y="827" class="small">AZ min/max BCM4/5 = header pins 7/29; EL min/max BCM6/7 = 31/26.</text>
+  <text x="58" y="850" class="small">POL min/max BCM8/9 = 24/21; E-stop auxiliary monitor BCM10 = 19. NC: closed healthy LOW; open/fault HIGH.</text>
+  <text x="58" y="873" class="small warn">GPIO arm/expander enables are requests, NOT hardware permits. External hard-limit/watchdog/DC-rated E-stop guard is not designed/released.</text>
+  <text x="58" y="894" class="small warn">Never wire from this diagram or chat; no motor motion until the independent hardware guard is released and tested.</text>
+</svg>

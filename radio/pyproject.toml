@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portable-sat-radio-host"
+version = "1.0.0"
+description = "Fail-closed independent Linux SoapySDR radio and BlueZ PCM bridge"
+requires-python = ">=3.11"
+dependencies = ["dbus-next>=0.2.3,<0.3", "numpy>=1.26,<3", "scipy>=1.11,<2", "gpiod>=2.2,<3; sys_platform == 'linux'", "smbus2>=0.4,<1; sys_platform == 'linux'"]
+
+[project.scripts]
+portable-sat-radio = "radio.main:main"
+
+[project.optional-dependencies]
+integration-test = ["sgp4==2.25", "smbus2==0.5.0", "pyserial==3.5"]
+
+[tool.setuptools]
+packages = ["radio"]
+package-dir = {radio = "."}
+include-package-data = false
+
+[tool.setuptools.exclude-package-data]
+radio = ["__pycache__/*", "*.pyc"]

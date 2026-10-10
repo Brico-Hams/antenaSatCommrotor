@@ -1,0 +1,120 @@
+﻿{
+    "kicad_version":  "10.0.7",
+    "timestamp_utc":  "2026-10-10T09:39:27.0541711Z",
+    "cad_verified":  true,
+    "production_release":  false,
+    "assembly_operation_release":  false,
+    "blockers":  [
+                     "Physical ESP32 DevKitC V4 38pin and Watterott TMC2209 v2.x footprint/pinout measurement",
+                     "Exact external maintained-latching NC stop with \u003e=5A at 12V DC breaking rating and isolated NC auxiliary selection",
+                     "Commercial protected source, source cable fuse, power transient/current/thermal/selectivity bench qualification",
+                     "3V3 current budget and external sensor/GNSS breakout physical/voltage verification",
+                     "Firmware carrierVerified remains false until physical checkout; encoders/calibration/mechanics/stop-rearm bench tests"
+                 ],
+    "drc_violations":  0,
+    "unconnected_items":  0,
+    "schematic_parity_issues":  0,
+    "erc_violations":  0,
+    "board_mm":  [
+                     180,
+                     130
+                 ],
+    "mounting_holes_mm":  [
+                              [
+                                  5,
+                                  5
+                              ],
+                              [
+                                  175,
+                                  5
+                              ],
+                              [
+                                  5,
+                                  125
+                              ],
+                              [
+                                  175,
+                                  125
+                              ]
+                          ],
+    "router":  {
+                   "grid_mm":  0.25,
+                   "segments":  17349,
+                   "vias":  55,
+                   "unrouted":  [
+
+                                ]
+               },
+    "sha256":  {
+                   "hardware/PortableSatCarrier.kicad_pcb":  "5159baf68b86c3955ce78e19b610a5bc36b2438c80f9780ca24ccd36451bc281",
+                   "hardware/PortableSatCarrier.kicad_sch":  "0d24cdc9717f49dd2406fd3e168b361a82ddc82b35302449cf6d3d9d1010fa63",
+                   "hardware/PortableSatCarrier.kicad_pro":  "b0d774c3d1e8114cb2a03c79769ff13b4be3b400f8a23013a2de82ef31e24d66",
+                   "hardware/connectivity.json":  "afa9472007dedef1767dedfea259955c3204d50544f4ecaa134e64ceeb28754d",
+                   "hardware/generate-carrier.cjs":  "b80c545600d6e48cc868d149d68cfd747cb14d811e1aa5e6f9659aad9b5b3257",
+                   "fabrication/reports/drc.json":  "1261c113c2919aa0e60eaa030aae9d3583cebebbf1525550152a7aad5dbed687",
+                   "fabrication/reports/erc.json":  "748d7f7c119d4d708349629c4c2d48d38bb1d86b651d5cc493c505cc0cbd9d5b",
+                   "fabrication/PortableSatCarrier.net":  "f402822ad291ee958a7bb9ccafe787fdf8884e023c2a9981089116ad2382eb79",
+                   "fabrication/assembly-positions.csv":  "d7c8161a8f85dd580f91262b95940a43f00073ce172f8764f19df42d3c34e5ee",
+                   "fabrication/gerbers/PortableSatCarrier-B_Cu.gbl":  "8c9a4191bcbdfc06ae95e6a83b33a013a05755a6f23751a9ea51e5a095da9c6f",
+                   "fabrication/gerbers/PortableSatCarrier-B_Mask.gbs":  "fab7e3f7532640a07bdb3753c6dedd2497cca41ecaadd1d6e2415a10dfd54981",
+                   "fabrication/gerbers/PortableSatCarrier-b_silkscreen.gbo":  "c3d41a7390ca5fe1e076329ed6ce64e26f1cc53c24030e6a3ef442926a5541e3",
+                   "fabrication/gerbers/PortableSatCarrier-Edge_Cuts.gm1":  "337a1fd0771581b6bbb99166bf22daa7c45d0dc47830af173affb5357ccf1138",
+                   "fabrication/gerbers/PortableSatCarrier-F_Cu.gtl":  "46143c4e3edcf9068b97a76c16bb155fa6f7f87f75ae0965397bc501c4dcc3f3",
+                   "fabrication/gerbers/PortableSatCarrier-F_Mask.gts":  "02af4cabd76ce14a5d4ececab2d8654b94cdb560050a8efb1a6da903b80898d6",
+                   "fabrication/gerbers/PortableSatCarrier-f_silkscreen.gto":  "4294bf242c7b50cc1e8596d7ef65a501a51361b6ccbf947a254c0615ba1edb0c",
+                   "fabrication/gerbers/PortableSatCarrier-job.gbrjob":  "b088e95b71d47725b5bdbba788da292007dc758a6e284274ea5b69dc09bf5c83",
+                   "fabrication/gerbers/PortableSatCarrier-NPTH.drl":  "1700bd43f2252f81686eba67fe75e276957a528dc7b98e68979b2ac968fc5449",
+                   "fabrication/gerbers/PortableSatCarrier-PTH.drl":  "b53a8ec94fda185baccfd3f06e1f6909a3f39ed8bfcff7267308679388f546b3",
+                   "hardware/PortableSatCarrier.pretty/C1_capacitor.kicad_mod":  "2dfdaae4bb2e24f0d7935ed80d3657082ac6288548affc0672f53af563f884fb",
+                   "hardware/PortableSatCarrier.pretty/C2_capacitor.kicad_mod":  "0681bc2d53baef4ce655bfb22b9e6785cd2b88fd93e4f87297e0cabd75615db8",
+                   "hardware/PortableSatCarrier.pretty/C3_capacitor.kicad_mod":  "44437823bdd386f20b812f8beb9bdd9df0ba4a4a7d1e5edec654ced01594667d",
+                   "hardware/PortableSatCarrier.pretty/C4_capacitor.kicad_mod":  "57ef6d25558f9c71f2db0cbf85245fbe8a90cce1467e72e6de8b43d4d13e49da",
+                   "hardware/PortableSatCarrier.pretty/C5_capacitor.kicad_mod":  "e1479e8e21dfc93eeab139801e96d5d0a88b4590e3933e8b95a73d6e0e5325dc",
+                   "hardware/PortableSatCarrier.pretty/D1_diode.kicad_mod":  "951fd1e7097ad356be909c1e42aa90ec1b6dfad9f7fa4b8dbc30289db72bcf38",
+                   "hardware/PortableSatCarrier.pretty/D2_tvs.kicad_mod":  "ea7d6a9cb276a76f70837bf0251ab13fb59fc8acd24e4eccddc7c55427fb9723",
+                   "hardware/PortableSatCarrier.pretty/F1_fuse.kicad_mod":  "bac8c2b75a49f8a1bfa8f06e371b3b845cc28d7253f54936ce7647470c5c7d6d",
+                   "hardware/PortableSatCarrier.pretty/F2_fuse.kicad_mod":  "18d1588d9538287f000ae4ce3302e57cd9199f69c870e0eda127919b31e56038",
+                   "hardware/PortableSatCarrier.pretty/F3_fuse.kicad_mod":  "4b74d14117050b4b13bd10426174b20b8717239e04898ea090a1590eb231e3b7",
+                   "hardware/PortableSatCarrier.pretty/F4_fuse.kicad_mod":  "98b6482ee9576bb101bd54d8c319ac36a66a703899c29ab42c5a39a399a0c3f3",
+                   "hardware/PortableSatCarrier.pretty/J10_xh.kicad_mod":  "115558a302f77da2785d15f460557eeac6890f08226be64f779d5df43c5abc6f",
+                   "hardware/PortableSatCarrier.pretty/J11_xh.kicad_mod":  "6321a4028bca4dedd53cfb1787c5b1f186eb8aabb7273899b994ff978409df6d",
+                   "hardware/PortableSatCarrier.pretty/J12_xh.kicad_mod":  "93645323d2e4567468d116bdafd59122623923457fda5cb0af701c87841a7f07",
+                   "hardware/PortableSatCarrier.pretty/J13_xh.kicad_mod":  "a69fbe067e562dcf4fc05020c06c8386900d0562701b4e3e40f7ab1d3368bc71",
+                   "hardware/PortableSatCarrier.pretty/J1_terminal.kicad_mod":  "4f5a5daee4b6b4674d4f443387d442d71be60d1cdc5703ba1d5b3a6f9c000507",
+                   "hardware/PortableSatCarrier.pretty/J2_terminal.kicad_mod":  "c4f1657630df619ba94d77c0d8e39269ad6e0c67dc45036191c224ede09e8cf3",
+                   "hardware/PortableSatCarrier.pretty/J3_xh.kicad_mod":  "e681a1e92b4e1cd50e4ded18471593de1f81a2f6f8eac1bc3c53a1762e1449ba",
+                   "hardware/PortableSatCarrier.pretty/J4_terminal.kicad_mod":  "24bbf7de4a6db468e50be2fd0ba498560bba4998f0debc3fb2b1e636e8af04f9",
+                   "hardware/PortableSatCarrier.pretty/J5_terminal.kicad_mod":  "949735d7d1f1f4841c34d61267c62756f2b5f521f138aa20e1b0b5ae739e7dd4",
+                   "hardware/PortableSatCarrier.pretty/J6_xh.kicad_mod":  "9f57d3a05014df0a855e3a15432f04547477dcbb6ac2ab14e8a4c85e4ea4562d",
+                   "hardware/PortableSatCarrier.pretty/J7_xh.kicad_mod":  "78ee5ea0c49e67d70dc85392563d2d80c91a7640e1e98a5a020710d8b5cd36a2",
+                   "hardware/PortableSatCarrier.pretty/J8_xh.kicad_mod":  "c15b91c1641d87233a122fb8c5b7de5172f937f462d46df769b2d403113aa76f",
+                   "hardware/PortableSatCarrier.pretty/J9_xh.kicad_mod":  "4b05f9cc807e27b7cfa3db1805805957045c797aa97b95a8793613602a9db743",
+                   "hardware/PortableSatCarrier.pretty/JM1_terminal.kicad_mod":  "c557a31df45ed4a071251d7b3b927f93387da06c3b0c4af0880d4c16ce46ddef",
+                   "hardware/PortableSatCarrier.pretty/JM2_terminal.kicad_mod":  "491d40ed169dbb866bf2e0c50c40d1448991a8619228ca801f301fe6a2cb44ab",
+                   "hardware/PortableSatCarrier.pretty/JP1_header.kicad_mod":  "660d9817aade8b1e0f8f7adfd726418e23976c3f8e2c4916dc158bc2d9be44bd",
+                   "hardware/PortableSatCarrier.pretty/MountingHole_3.2.kicad_mod":  "21d24dda3cbc335d4f1f44a600a4aef8267c8edcdd60d99aaa9723dfbaa2153d",
+                   "hardware/PortableSatCarrier.pretty/R10_resistor.kicad_mod":  "22ebbc0e0567148a0e693cbc33fcdc76a2bfb7f4f33064340074bc71ca9d32a5",
+                   "hardware/PortableSatCarrier.pretty/R1_resistor.kicad_mod":  "59b53fd8aeb36aebbaf762873a1970fd7d408581631f14e62b4f561747bfc160",
+                   "hardware/PortableSatCarrier.pretty/R2_resistor.kicad_mod":  "792187f94acae293bf2d1d681fa686671d3a209a14ba5ca9432fade0b76e234e",
+                   "hardware/PortableSatCarrier.pretty/R3_resistor.kicad_mod":  "70fbb7072f231c1aa69f6d215e2d4a0859cc21120846dcab1a95b89bbc7435ab",
+                   "hardware/PortableSatCarrier.pretty/R4_resistor.kicad_mod":  "02fa4c8be944e5f394aed1955123a2a999d7cdab63fcd1bd23102bd0f584afc4",
+                   "hardware/PortableSatCarrier.pretty/R5_resistor.kicad_mod":  "0f65cb898e3787c31623a6f292506ea1b3a33caf337d14b4a6d9f4b61c66b149",
+                   "hardware/PortableSatCarrier.pretty/R6_resistor.kicad_mod":  "e726fe44327d3fc419b77b1da5befeee244e05d6dea9bd5cae48267e2948af06",
+                   "hardware/PortableSatCarrier.pretty/R7_resistor.kicad_mod":  "d06953ae4ffe4842c8ca2aba642b422dbf677234b5cb0d911d1f00b28bda845d",
+                   "hardware/PortableSatCarrier.pretty/R8_resistor.kicad_mod":  "88e77224bd2e490eaf4418b89bc6bbe502377c1cf09030f05a1822e938584a8a",
+                   "hardware/PortableSatCarrier.pretty/R9_resistor.kicad_mod":  "7fe1ce61a6c360a2b4a578d267fd77a52403dcf69fa9946628b3f7f9a62d77d6",
+                   "hardware/PortableSatCarrier.pretty/U1_module.kicad_mod":  "4aca4d14eec143815f363c4a85b059219ac4ef33ca04003d9c8baa09266e7a61",
+                   "hardware/PortableSatCarrier.pretty/U2_driver.kicad_mod":  "72d918494e3a0d2ca633d01d1d5e9f22b02e47029052bc2c4a6ebcf8b020c10b",
+                   "hardware/PortableSatCarrier.pretty/U3_driver.kicad_mod":  "bc722074b89c496b74a1d77b2faaa35f3682d2eaae5e806f1eb19bf8dc8527b9",
+                   "hardware/PortableSatCarrier.kicad_sym":  "9e4de5eb2270efb9f45cc50369a72e55458163a7362141669116a298a245b4a8",
+                   "hardware/fp-lib-table":  "5f208f871c5d8f9aaf1f5a5c705a59285f9a06b6530176e56907992a445dae95",
+                   "hardware/PortableSatCarrier.kicad_dru":  "6baffd16772ca4873ccbd1a27c8d3bb085f2d31a5539b2444de76bcb768d9e68",
+                   "hardware/sym-lib-table":  "3da7db40787367b9ec52215d5e5e0b9a857a9f59ffd3ee495ba43d94b54c29b4",
+                   "hardware/validate-export.ps1":  "4a0120277f066dcd676d0666b36f9f794f30d7d3dafd04dc314685106730709d",
+                   "bom/pcb.csv":  "7a5ddf1d6f8e8a8886b376117e838ec89c4fbea47d8e2d34f26c80fe071a5d8c",
+                   "fabrication/STACKUP.txt":  "824661b438def33d725550aea24411e370ef6c75118bb01836c375699bfaffce",
+                   "fabrication/PortableSatCarrier-schematic.pdf":  "fd2f678430e9e19452d57e2a535d94753733ddc86d4495760f6c9b99c1b47791",
+                   "fabrication/assembly-drawing.pdf":  "b39bb4280b9378858f9fc87c7cfabd97bd5514fdedb8eea6a8028b3a9d2aadd3",
+                   "fabrication/PortableSatCarrier-Gerbers-CAD-VERIFIED-NOT-RELEASED.zip":  "591a4a9b44ca9fbdbad19574dd41d4689a800a45028e296e4f413bcfd465097e"
+               }
+}

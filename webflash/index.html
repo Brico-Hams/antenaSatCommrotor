@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PortableSatStation — flasher de prototipo</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <h1>PortableSatStation · PROTOTIPO NO LIBERADO</h1>
+  <p class="warning">PCB, mecánica y control requieren aceptación física. Esta descarga NO certifica
+    seguridad, precisión, RF ni aptitud para conectar motores. Firmware público:
+    carrierVerified=false; sin contraseña WiFi ni token API embebidos.
+    NVS virgen requiere aprovisionamiento USB; NVS previa conserva sus valores.
+    Arranca DISARMED, sin restaurar homing/calibración.</p>
+  <h2>Antes de abrir el puerto serie</h2>
+  <ul>
+    <li>Desconecta alimentación de motores, drivers y actuadores. Conecta solamente USB al ESP32.</li>
+    <li>Comprueba etiqueta <strong>ESP32-DevKitC V4, 38 pines, WROOM-32E (ESP32 clásico)</strong>.
+      No C3, S3, WROVER/PSRAM ni otro pinout. Comprueba manualmente las dos hileras y orientación.</li>
+    <li>Cierra monitores serie. Confirma tu placa en el selector de permisos; puedes cancelar.
+      No selecciones un equipo desconocido.</li>
+    <li>La instalación reemplaza bootloader, particiones, boot_app0 y aplicación.
+      Si el controlador necesita LittleFS, también reemplaza la UI/TLE almacenada allí.
+      Guarda una copia antes; nunca prometemos conservar una tabla NVS incompatible.</li>
+  </ul>
+  <p>Los archivos separados NO escriben NVS (0x9000–0xdfff).
+    El diálogo presenta “Erase device” <strong>sin marcar por defecto</strong>.
+    <strong>No marques “Erase device”</strong> si quieres conservar NVS.
+    Un borrado completo elimina credenciales, datos y configuración y requiere confirmación
+    explícita dentro del instalador. Flashear no constituye homing ni calibración.</p>
+  <label><input id="acknowledge" type="checkbox">
+    Confirmo motores/actuadores desconectados, placa y pines correctos, copia de datos y riesgo del prototipo.</label>
+  <p id="support" role="status">Comprobando HTTPS y Web Serial…</p>
+  <section id="installer" hidden>
+    <esp-web-install-button manifest="./manifest.json">
+      <button slot="activate">Conectar y revisar instalación</button>
+      <span slot="unsupported">Se requiere Chrome o Edge de escritorio con Web Serial.</span>
+      <span slot="not-allowed">Web Serial no disponible: abre esta página directamente por HTTPS,
+        no en un iframe; revisa permisos/políticas del navegador.</span>
+    </esp-web-install-button>
+  </section>
+  <noscript>Activa JavaScript para instalar, o utiliza PlatformIO localmente.</noscript>
+  <h2>Primer arranque: configuración privada por USB</h2>
+  <p>Con motores desconectados, después de instalar cierra el puerto del instalador y abre
+    una consola USB local a 115200 baudios. Envía una línea JSON
+    <code>{"cmd":"setup"}</code> y sigue el
+    <a href="./docs/CONTROL.md">protocolo de configuración del controlador</a>:
+    contraseña AP propia (12–63 caracteres), token API aleatorio propio (24–128 ASCII),
+    y <code>{"cmd":"reboot"}</code>. No pegues credenciales en GitHub, CI ni servicios externos.
+    No marques el carrier verificado hasta completar aceptación física.
+    BLE se habilita sólo mediante provisioning local explícito, no automáticamente.
+    NVS no está cifrada: protege el acceso físico/USB.
+    Raíces TLS vacías rechazan descargas HTTPS; usa carga manual de TLE después de configurar el AP.</p>
+  <h2>Versión e integridad</h2>
+  <pre id="version">Los datos de compilación aparecerán cuando CI genere los activos.</pre>
+  <p><a href="./manifest.json">Manifest</a> · <a href="./build-info.json">Commit y dependencias</a>
+    · <a href="./SHA256SUMS">SHA256 de binarios</a>
+    · <a href="./THIRD-PARTY-NOTICES.txt">Licencias y avisos</a></p>
+  <h2>Privacidad, autoría y uso educativo</h2>
+  <p>ESP Web Tools 10.1.0 (Apache-2.0), JS y módulos servidos desde esta misma página,
+    copiados del paquete npm por CI. Sin CDN de ejecución ni telemetría propia.
+    El puerto USB es local: esta página no envía firmware privado, datos serie,
+    credenciales ni código del usuario a terceros. GitHub aloja la página y recibe
+    las solicitudes HTTP normales. La instalación consulta solamente los activos públicos.</p>
+  <p>Autores: <a href="./AUTHORS.md">Anatol EA5KAO, Diego EA5JEF y Pedro Roca Molina</a>.
+    <a href="./ACKNOWLEDGEMENTS.md">Autoría y agradecimientos completos</a>.
+    Agradecimiento a <a href="https://bricohams.org/" rel="noreferrer">Bricohams</a>.
+    Divulgación científica para niños y adolescentes con supervisión adulta;
+    el prototipo no es un juguete y no permite montaje peligroso por menores.
+    No transmitir RF sin licencia/autorización y límites legales aplicables.
+    Los autores de bibliotecas y referencias conservan su autoría y derechos;
+    citarlos no implica colaboración, patrocinio ni aval de este prototipo.
+    <a href="./DISCLAIMER.md">Límites de uso y responsabilidad</a>.</p>
+</main>
+<script type="module" src="./flash.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+#!/usr/bin/python3
+"""Write a non-secret, root-owned radio identity config; never enables service."""
+
+import argparse
+import os
+import sys
+
+sys.path.insert(0, "/usr/local/lib")
+from bricohams_os.config import write_config
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--peer", required=True, help="exact paired BlueZ Device1 object path")
+    parser.add_argument("--vhf-serial", required=True, help="exact VHF Lime Mini serial")
+    parser.add_argument("--uhf-serial", required=True, help="different exact UHF Lime Mini serial")
+    parser.add_argument("--hardware-rate", type=int, default=1_000_000)
+    args = parser.parse_args()
+    if os.geteuid() != 0:
+        parser.error("run this local configuration command with sudo")
+    try:
+        with open("/etc/bricohams/profile", encoding="ascii") as profile_file:
+            profile = profile_file.read()
+    except OSError:
+        parser.error("select and install a BricoHams profile first")
+    if profile != "radio-only\n":
+        parser.error("radio host configuration is available only in radio-only profile")
+    try:
+        path = write_config({
+            "version": 1,
+            "peer": args.peer,
+            "vhfSerial": args.vhf_serial,
+            "uhfSerial": args.uhf_serial,
+            "hardwareRate": args.hardware_rate,
+        })
+    except FileExistsError:
+        parser.error("radio host config already exists; refusing to overwrite it")
+    print(f"Wrote non-secret radio identities to {path}. The service remains disabled.")
+
+
+if __name__ == "__main__":
+    main()

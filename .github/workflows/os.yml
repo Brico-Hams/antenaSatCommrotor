@@ -1,0 +1,96 @@
+name: BricoHams Raspberry Pi OS
+
+on:
+  push:
+    paths:
+      - '.github/workflows/os.yml'
+      - 'os/**'
+      - 'docs/BRICOHAMS-OS.md'
+      - 'tests/os*.test.cjs'
+      - 'radio/**'
+      - 'rotor/**'
+      - 'hardware/cm5/interface.json'
+      - 'LICENSES/**'
+      - 'docs/SOURCES.md'
+      - 'docs/CM5-PCB.md'
+      - 'docs/CM5-ROTOR.md'
+      - 'docs/RADIO-HOST.md'
+      - 'AUTHORS.md'
+      - 'ACKNOWLEDGEMENTS.md'
+      - 'DISCLAIMER.md'
+      - 'NOTICE.md'
+  pull_request:
+    paths:
+      - '.github/workflows/os.yml'
+      - 'os/**'
+      - 'docs/BRICOHAMS-OS.md'
+      - 'tests/os*.test.cjs'
+      - 'radio/**'
+      - 'rotor/**'
+      - 'hardware/cm5/interface.json'
+      - 'LICENSES/**'
+      - 'docs/SOURCES.md'
+      - 'docs/CM5-PCB.md'
+      - 'docs/CM5-ROTOR.md'
+      - 'docs/RADIO-HOST.md'
+      - 'AUTHORS.md'
+      - 'ACKNOWLEDGEMENTS.md'
+      - 'DISCLAIMER.md'
+      - 'NOTICE.md'
+  workflow_dispatch:
+    inputs:
+      build_image:
+        description: Build and upload the credential-checked Raspberry Pi OS Lite image
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check shell syntax
+        run: |
+          bash -n os/build-image.sh
+          bash -n os/pi-gen-stage/stage2/99-bricohams/00-run.sh
+          sh -n os/pi-gen-stage/stage2/99-bricohams/00-run-chroot.sh
+      - name: Compile OS Python entry points
+        run: |
+          PYTHONPYCACHEPREFIX=/tmp/bricohams-os-pycache python3 -m py_compile \
+            os/pi-gen-stage/stage2/99-bricohams/files/usr/local/sbin/bricohams-os-profile-setup \
+            os/pi-gen-stage/stage2/99-bricohams/files/usr/local/libexec/bricohams-gpio-safe-state \
+            os/pi-gen-stage/stage2/99-bricohams/files/usr/local/sbin/bricohams-radio-config \
+            os/pi-gen-stage/stage2/99-bricohams/files/usr/local/libexec/bricohams-radio-start \
+            os/pi-gen-stage/stage2/99-bricohams/files/usr/local/lib/bricohams_os/config.py
+      - name: Test OS image recipe and safety gates
+        run: node --test tests/os-image.test.cjs
+
+  build-image:
+    if: github.event_name == 'workflow_dispatch' && inputs.build_image
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    env:
+      BUILD_ROOT: /tmp/bricohams-os-pigen
+      OUTPUT_DIR: /tmp/bricohams-os-artifacts
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the pinned Raspberry Pi OS Lite derivative
+        run: bash os/build-image.sh
+      - name: Upload image archive and checksum (not a release)
+        uses: actions/upload-artifact@v4
+        with:
+          name: BricoHams-PortableSatStation-OS
+          path: |
+            /tmp/bricohams-os-artifacts/*.zip
+            /tmp/bricohams-os-artifacts/*.sha256
+          if-no-files-found: error
+          retention-days: 3

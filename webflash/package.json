@@ -1,0 +1,9 @@
+{
+  "name": "portable-sat-station-webflash-tools",
+  "private": true,
+  "version": "0.1.0",
+  "description": "CI-only pinned ESP Web Tools distribution",
+  "dependencies": {
+    "esp-web-tools": "10.1.0"
+  }
+}

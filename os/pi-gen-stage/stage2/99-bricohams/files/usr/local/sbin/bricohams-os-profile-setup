@@ -1,0 +1,291 @@
+#!/usr/bin/python3
+"""Select and install a BricoHams OS module profile from the local console."""
+
+import grp
+import glob
+import os
+import pwd
+import shutil
+import stat
+import subprocess
+import sys
+
+
+PROFILE_PATH = "/etc/bricohams/profile"
+PENDING_PROFILE_PATH = "/etc/bricohams/profile.pending"
+GPIOCHIP_PATH = "/etc/bricohams/gpiochip"
+BASE_PACKAGES = (
+    "build-essential",
+    "ca-certificates",
+    "libgpiod-dev",
+    "python3",
+    "python3-dev",
+    "python3-pip",
+    "python3-setuptools",
+    "python3-venv",
+    "python3-wheel",
+)
+ROTOR_PACKAGES = (
+    "gpiod",
+    "python3-libgpiod",
+    "python3-smbus2",
+    "python3-spidev",
+)
+RADIO_PACKAGES = (
+    "alsa-utils",
+    "bluez",
+    "libsoapysdr0.8",
+    "limesuite",
+    "python3-dbus-next",
+    "python3-libgpiod",
+    "python3-numpy",
+    "python3-scipy",
+    "python3-smbus2",
+    "python3-soapysdr",
+    "soapysdr-module-lms7",
+    "soapysdr-tools",
+)
+PROFILES = {
+    "rotor-only": (ROTOR_PACKAGES, ("rotor",)),
+    "radio-only": (RADIO_PACKAGES, ("radio",)),
+    "integrated": (tuple(sorted(set(ROTOR_PACKAGES + RADIO_PACKAGES))), ("radio", "rotor")),
+}
+OPERATOR_GROUPS = ("gpio", "i2c", "spi", "dialout")
+
+
+def run(command, *, environment=None):
+    subprocess.run(command, check=True, env=environment)
+
+
+def select_profile():
+    print(
+        "\nSelect the module profile to install:\n"
+        "  1) rotor-only  (no SoapySDR or LimeSDR hardware plugin)\n"
+        "  2) radio-only  (manual frequency control; no rotor/Doppler)\n"
+        "  3) integrated  (both dependency sets; integration service is pending)\n"
+        "Antenna-only needs no station host packages; see its installation guide."
+    )
+    choices = {"1": "rotor-only", "2": "radio-only", "3": "integrated"}
+    while True:
+        answer = input("Profile [1-3]: ").strip()
+        if answer in choices:
+            return choices[answer]
+        print("Choose exactly 1, 2, or 3.")
+
+
+def select_operator():
+    while True:
+        username = input("Existing local operator login: ").strip()
+        try:
+            account = pwd.getpwnam(username)
+        except KeyError:
+            print("That local account does not exist. Create it with first-boot setup first.")
+            continue
+        if account.pw_uid < 1000 or account.pw_shell in ("/usr/sbin/nologin", "/bin/false"):
+            print("Select a regular, interactive local operator account.")
+            continue
+        return username
+
+
+def select_gpiochip():
+    try:
+        result = subprocess.run(
+            ["gpiodetect"], check=True, text=True, capture_output=True
+        )
+    except (OSError, RuntimeError, ValueError, subprocess.CalledProcessError) as error:
+        raise RuntimeError("cannot enumerate local GPIO chips with gpiodetect") from error
+    print("\nDetected GPIO controllers:")
+    print(result.stdout.rstrip() or "(none)")
+    available = []
+    for path in sorted(glob.glob("/dev/gpiochip[0-9]*")):
+        try:
+            if stat.S_ISCHR(os.stat(path, follow_symlinks=False).st_mode):
+                available.append(path)
+        except FileNotFoundError:
+            continue
+    if not available:
+        raise RuntimeError("no /dev/gpiochipN character devices are available")
+    print(
+        "Verify the BCM offsets with `gpioinfo` and the CM5IO rev-2 pin map "
+        "before selecting the matching controller."
+    )
+    while True:
+        path = input(f"CM5IO GPIO controller {available}: ").strip()
+        if path not in available:
+            print("Enter one of the detected GPIO controller paths exactly.")
+            continue
+        return path
+
+
+def install_profile(profile, operator):
+    packages, modules = PROFILES[profile]
+    environment = os.environ.copy()
+    environment["DEBIAN_FRONTEND"] = "noninteractive"
+    run(["apt-get", "update"], environment=environment)
+    run(
+        ["apt-get", "install", "--yes", "--no-install-recommends",
+         *BASE_PACKAGES, *packages],
+        environment=environment,
+    )
+
+    for group in OPERATOR_GROUPS:
+        try:
+            grp.getgrnam(group)
+        except KeyError:
+            run(["groupadd", "--system", group])
+    if "rotor" in modules:
+        run(["usermod", "--append", "--groups", ",".join(OPERATOR_GROUPS), operator])
+    if "radio" in modules:
+        try:
+            pwd.getpwnam("bricohams-radio")
+        except KeyError:
+            run([
+                "useradd", "--system", "--user-group", "--create-home",
+                "--home-dir", "/var/lib/bricohams",
+                "--shell", "/usr/sbin/nologin", "bricohams-radio",
+            ])
+        run(["usermod", "--append", "--groups", ",".join(OPERATOR_GROUPS),
+             "bricohams-radio"])
+        run(["install", "-d", "-o", "bricohams-radio", "-g", "bricohams-radio",
+             "-m", "0700", "/var/lib/bricohams"])
+
+    os.makedirs("/opt/bricohams", mode=0o755, exist_ok=True)
+    run(["python3", "-m", "venv", "--system-site-packages", "/opt/bricohams/venv"])
+    python = "/opt/bricohams/venv/bin/python"
+    pip_base = [python, "-m", "pip", "install", "--disable-pip-version-check",
+                "--no-input", "--no-deps", "--no-build-isolation"]
+    run(pip_base + ["-r", "/opt/bricohams/build-requirements.txt"])
+    if "rotor" in modules:
+        run(pip_base + ["-r", "/opt/bricohams/runtime-requirements.txt"])
+    run(pip_base + [f"/opt/bricohams/src/{module}" for module in modules])
+    run([python, "-m", "pip", "check"])
+    for module in modules:
+        if module == "radio":
+            run([python, "-c",
+                 "from radio.soapy import load; load(); print('SoapySDR Python binding: OK')"])
+            run(["/opt/bricohams/venv/bin/portable-sat-radio", "--help"])
+        elif module == "rotor":
+            run(["/opt/bricohams/venv/bin/portable-sat-rotor", "--help"])
+    if "radio" in modules:
+        source_root = "/usr/share/bricohams-os/radio-files"
+        radio_files = (
+            ("etc/systemd/system/bricohams-radio.service",
+             "/etc/systemd/system/bricohams-radio.service", "0644"),
+            ("usr/local/lib/bricohams_os/__init__.py",
+             "/usr/local/lib/bricohams_os/__init__.py", "0644"),
+            ("usr/local/lib/bricohams_os/config.py",
+             "/usr/local/lib/bricohams_os/config.py", "0644"),
+            ("usr/local/libexec/bricohams-radio-start",
+             "/usr/local/libexec/bricohams-radio-start", "0755"),
+            ("usr/local/sbin/bricohams-radio-config",
+             "/usr/local/sbin/bricohams-radio-config", "0755"),
+        )
+        for source, destination, mode in radio_files:
+            run(["install", "-D", "-o", "root", "-g", "root",
+                 "-m", mode, f"{source_root}/{source}", destination])
+        run(["systemctl", "daemon-reload"])
+
+    unselected = {"radio", "rotor"} - set(modules)
+    for module in unselected:
+        source_path = f"/opt/bricohams/src/{module}"
+        if os.path.isdir(source_path):
+            shutil.rmtree(source_path)
+    if "radio" not in modules:
+        radio_staging = "/usr/share/bricohams-os/radio-files"
+        if os.path.isdir(radio_staging):
+            shutil.rmtree(radio_staging)
+
+
+def write_root_marker(path, value):
+    profile_directory = os.path.dirname(path)
+    os.makedirs(profile_directory, mode=0o755, exist_ok=True)
+    directory = os.stat(profile_directory, follow_symlinks=False)
+    if not stat.S_ISDIR(directory.st_mode) or directory.st_uid != 0:
+        raise PermissionError("profile directory must be a root-owned directory")
+    temporary = f"{path}.tmp.{os.getpid()}"
+    descriptor = os.open(
+        temporary,
+        os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, "O_CLOEXEC", 0)
+        | getattr(os, "O_NOFOLLOW", 0),
+        0o600,
+    )
+    try:
+        with os.fdopen(descriptor, "w", encoding="ascii") as stream:
+            os.fchmod(stream.fileno(), 0o644)
+            stream.write(value + "\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.link(temporary, path, follow_symlinks=False)
+    finally:
+        try:
+            os.unlink(temporary)
+        except FileNotFoundError:
+            pass
+
+
+def finish_profile():
+    os.link(PENDING_PROFILE_PATH, PROFILE_PATH, follow_symlinks=False)
+    os.unlink(PENDING_PROFILE_PATH)
+
+
+def main():
+    if sys.argv[1:] != ["--firstboot"]:
+        print("Usage: bricohams-os-profile-setup --firstboot", file=sys.stderr)
+        return 2
+    if os.geteuid() != 0:
+        print("Run this first-boot profile setup as root.", file=sys.stderr)
+        return 1
+    if not sys.stdin.isatty():
+        print("Profile setup requires the local first-boot console.", file=sys.stderr)
+        return 1
+    if os.path.lexists(PROFILE_PATH):
+        print("A BricoHams profile is already recorded; refusing to replace it.",
+              file=sys.stderr)
+        return 1
+    try:
+        if os.path.lexists(PENDING_PROFILE_PATH):
+            with open(PENDING_PROFILE_PATH, encoding="ascii") as pending_file:
+                profile = pending_file.read()
+            if profile not in {f"{name}\n" for name in PROFILES}:
+                raise ValueError("invalid pending profile marker; inspect it locally")
+            profile = profile[:-1]
+            print(f"Resuming the previously selected profile: {profile}")
+        else:
+            profile = select_profile()
+            write_root_marker(PENDING_PROFILE_PATH, profile)
+        operator = select_operator()
+        gpiochip = select_gpiochip()
+        if not os.path.lexists(GPIOCHIP_PATH):
+            write_root_marker(GPIOCHIP_PATH, gpiochip)
+        else:
+            with open(GPIOCHIP_PATH, encoding="ascii") as gpiochip_file:
+                if gpiochip_file.read() != gpiochip + "\n":
+                    raise ValueError("the previously selected GPIO controller cannot be changed")
+        run(["systemctl", "start", "bricohams-gpio-safe-state.service"])
+        if profile == "integrated":
+            print(
+                "\nNOTICE: dependencies will be installed, but the production rotor "
+                "adapter is pending. No integrated service will be enabled or started; "
+                "there is no tracking-loss fallback."
+            )
+        install_profile(profile, operator)
+        finish_profile()
+    except KeyboardInterrupt:
+        print("\nProfile setup interrupted; no profile was recorded.", file=sys.stderr)
+        return 130
+    except (OSError, RuntimeError, ValueError, subprocess.CalledProcessError) as error:
+        print(f"Profile installation failed; no profile was recorded: {error}",
+              file=sys.stderr)
+        return 1
+    print(f"\nInstalled profile: {profile}. No module service was enabled.")
+    if profile == "radio-only":
+        print("Manual radio profile only. Doppler/rotor is absent; TX is not commissioned.")
+    elif profile == "rotor-only":
+        print("Rotor BSP/production adapter remains pending; this does not enable motion.")
+    else:
+        print("Integrated operation remains pending and cannot silently fall back to manual.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

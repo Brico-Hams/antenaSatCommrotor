@@ -1,0 +1,7 @@
+{
+  "v": 1,
+  "hardwareCommissioned": false,
+  "gpioChip": "/dev/gpiochip0",
+  "i2cBus": 1,
+  "status": "HOLD: external NC/watchdog/RF guard circuit unimplemented; gpiochip mapping must be verified"
+}

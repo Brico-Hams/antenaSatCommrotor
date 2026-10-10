@@ -1,0 +1,28 @@
+Drill report for PortableSatCarrier.kicad_pcb
+Created on 2026-10-10T11:39:38
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'PortableSatCarrier-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.400mm  0.0157"  (55 holes))
+    T2  0.800mm  0.0315"  (26 holes))
+    T3  1.000mm  0.0394"  (102 holes))
+    T4  1.300mm  0.0512"  (18 holes))
+    T5  1.400mm  0.0551"  (8 holes))
+
+    Total plated holes count 209
+
+
+Drill file 'PortableSatCarrier-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  2.700mm  0.1063"  (4 holes))
+    T2  3.200mm  0.1260"  (4 holes))
+
+    Total unplated holes count 8

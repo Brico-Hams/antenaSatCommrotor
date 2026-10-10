@@ -1,0 +1,23 @@
+PortableSatCarrier REV A - manufacturing data (prototype, assembly/operation HOLD)
+Original 180.00 x 130.00 mm PCB, closed rectangular Edge.Cuts, no routed slots.
+Four NPTH mounting holes diameter 3.20 mm at x=5/175, y=5/125 mm.
+Fuse-holder locating holes: 2.70 mm NPTH, not plated.
+FR4 Tg>=135C; total finished thickness 1.60 mm +/-10%.
+Two copper layers F.Cu/B.Cu, FINISHED 70um / 2oz each.
+Minimum routed signal width 0.30 mm; motor/power routes 1.50 mm;
+GND routed 1.00 mm. Minimum copper clearance 0.25 mm.
+Ground is electrically routed, not a disconnected decorative plane.
+Via 0.90 mm / finished drill 0.40 mm; THT drill 0.8..1.4 mm.
+Solder mask both faces, white component silkscreen front.
+No blind/buried vias; no controlled impedance; HASL lead-free or ENIG.
+No components on bottom. Use netlist for board electrical testing.
+Excellon output in millimetres, decimal format, separate plated/nonplated.
+All fabrication layers share ABSOLUTE origin (PCB top-left 0,0).
+No copper in central ESP antenna projection (x80..100,y0..27 mm) nor
+upper antenna fringe (x72..106,y0..19 mm); keep metal/heatsinks away.
+External stop is a DC-rated maintained/latching series power contact, NOT
+a PCB jumper. External NC auxiliary monitor is isolated from motor power.
+Nominal 12V ONLY; normal source <=13.8V; source-side cable fuse REQUIRED.
+TVS is downstream of on-board main fuse. No onboard lithium battery charger.
+CAD rule validation does not establish thermal or safety certification.
+Check release-status.json and docs/PCB.md before assembly/use.

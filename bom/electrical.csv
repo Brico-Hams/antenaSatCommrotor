@@ -1,0 +1,15 @@
+id,quantity,component,selection_constraint,cost_status,notes
+E01,1,ESP32 DevKit classic ESP32-WROOM,GPIO and two I2C buses as CONTROL manual,quote-required,Not interchangeable with C3/S3 without pin review
+E02,2,NEMA14 bipolar 200step motor,Measured running torque and matching shaft as CAD,quote-required,NEMA size alone does not specify torque
+E03,2,Stepper driver with STEP DIR ENABLE,TMC2209 or compatible verified board at 16 microsteps,quote-required,Set RMS current from actual motor and board
+E04,2,AS5600 output encoder module,3.3V compatible and separate buses,quote-required,Verify magnet geometry and field status
+E05,2,Diametric encoder magnet,Correct size and spacing for AS5600 mount,quote-required,Not an arbitrary axial magnet
+E06,1,GNSS UART module and antenna,3.3V UART verified UTC position altitude output,quote-required,Stationary GNSS does not provide north
+E07,1,Commercial protected DC supply or battery,Nominal 12V range compatible with drivers,quote-required,Use intended charger and protected product
+E08,1,DC-DC converter,Regulated 5V sufficient peak current for ESP32 and modules,quote-required,Measure RX noise with converter on
+E09,1,Main switch and fuse holder,Rated for DC current with fuse selected for wiring,quote-required,Not sized by guessing motor holding current
+E10,1,Accessible latching motor-power emergency stop,DC rated hardware cutoff plus monitored NC contact,quote-required,Software-only stop is insufficient
+E11,4,Travel or home limit switch,NC wiring compatible with GPIO and mechanical margins,quote-required,Confirm polarity and hard-stop locations
+E12,1,Wiring and strain relief kit,Connector current rating and no 5V on ESP32 GPIO,quote-required,Include ferrules terminals and decoupling per driver
+E13,1,Bubble level and true-north reference method,Repeatable site leveling and orientation,quote-required,Optional calibrated sensors do not replace validation
+E14,1,Metal RF subenclosure,Fit verified diplexor with removable connectors,quote-required,ASA enclosure does not shield RF

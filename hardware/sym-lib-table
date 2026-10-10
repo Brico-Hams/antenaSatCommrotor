@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "PortableSatCarrier") (type "KiCad") (uri "${KIPRJMOD}/PortableSatCarrier.kicad_sym") (options "") (descr "Original carrier module and passive pin symbols"))
+)

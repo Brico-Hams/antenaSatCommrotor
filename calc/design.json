@@ -1,0 +1,37 @@
+{
+  "status": "preliminary-unmeasured",
+  "rf": {
+    "speedOfLightMps": 299792458,
+    "bandsMHz": [145, 435],
+    "drivenShorteningFactor": 0.92,
+    "reflectorFactor": 1.05,
+    "reflectorSpacingWavelengths": 0.225,
+    "stockTrimAllowanceMmPerArm": 10,
+    "coaxVelocityFactorExampleOnly": 0.66
+  },
+  "gear": {
+    "moduleMm": 1.5,
+    "pressureAngleDeg": 20,
+    "sunTeeth": 18,
+    "planetTeeth": 27,
+    "ringTeeth": 72,
+    "planetCount": 3,
+    "stages": 2,
+    "motorStepsPerRevolution": 200,
+    "microsteps": 16,
+    "efficiencyPerStageAssumed": 0.7
+  },
+  "load": {
+    "antennaMassKgTarget": 0.5,
+    "antennaCgOffsetMMaximumTarget": 0.03,
+    "motorTorqueNmExampleNotVerified": 0.1,
+    "projectedAreaM2Example": 0.06,
+    "dragCoefficientAssumed": 1.2,
+    "windMpsCalculationOnly": 8,
+    "windMomentArmMExample": 0.25,
+    "airDensityKgM3": 1.225,
+    "gravityMps2": 9.81,
+    "designSafetyFactor": 2,
+    "stationMassKgTargetExcludingRadioTripod": 3
+  }
+}

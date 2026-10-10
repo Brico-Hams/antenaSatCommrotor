@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+"""Load the root-owned radio identity config and exec the unprivileged host."""
+
+import os
+import sys
+
+sys.path.insert(0, "/usr/local/lib")
+from bricohams_os.config import RADIO_EXECUTABLE, TOKEN_PATH, read_config
+
+
+def main():
+    try:
+        with open("/etc/bricohams/profile", encoding="ascii") as profile_file:
+            profile = profile_file.read()
+    except OSError as error:
+        raise RuntimeError("select a BricoHams OS profile before starting radio") from error
+    if profile != "radio-only\n":
+        raise RuntimeError(
+            "radio service supports radio-only manual mode only; integrated tracking "
+            "adapter is pending and cannot fall back to manual"
+        )
+    config = read_config()
+    arguments = [
+        RADIO_EXECUTABLE,
+        "--operation-profile", "STANDALONE_MANUAL",
+        "--peer", config["peer"],
+        "--vhf-serial", config["vhfSerial"],
+        "--uhf-serial", config["uhfSerial"],
+        "--hardware-rate", str(config["hardwareRate"]),
+        "--token-file", TOKEN_PATH,
+    ]
+    os.execv(RADIO_EXECUTABLE, arguments)
+
+
+if __name__ == "__main__":
+    main()

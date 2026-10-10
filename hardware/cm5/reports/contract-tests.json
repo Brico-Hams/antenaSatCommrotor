@@ -1,0 +1,1510 @@
+[
+  {
+    "test": "BCM2 / header 3 = I2C1_SDA",
+    "passed": true
+  },
+  {
+    "test": "BCM3 / header 5 = I2C1_SCL",
+    "passed": true
+  },
+  {
+    "test": "BCM4 / header 7 = AZ_LIMIT_MIN_N",
+    "passed": true
+  },
+  {
+    "test": "BCM5 / header 29 = AZ_LIMIT_MAX_N",
+    "passed": true
+  },
+  {
+    "test": "BCM6 / header 31 = EL_LIMIT_MIN_N",
+    "passed": true
+  },
+  {
+    "test": "BCM7 / header 26 = EL_LIMIT_MAX_N",
+    "passed": true
+  },
+  {
+    "test": "BCM8 / header 24 = POL_LIMIT_MIN_N",
+    "passed": true
+  },
+  {
+    "test": "BCM9 / header 21 = POL_LIMIT_MAX_N",
+    "passed": true
+  },
+  {
+    "test": "BCM10 / header 19 = ESTOP_AUX_N",
+    "passed": true
+  },
+  {
+    "test": "BCM11 / header 23 = WATCHDOG_HEARTBEAT",
+    "passed": true
+  },
+  {
+    "test": "BCM12 / header 32 = MOTOR_ARM_REQUEST",
+    "passed": true
+  },
+  {
+    "test": "BCM13 / header 33 = TCA9548A_RESET_N",
+    "passed": true
+  },
+  {
+    "test": "BCM14 / header 8 = GNSS_UART_TX",
+    "passed": true
+  },
+  {
+    "test": "BCM15 / header 10 = GNSS_UART_RX",
+    "passed": true
+  },
+  {
+    "test": "BCM16 / header 36 = SPI1_CS2_POL",
+    "passed": true
+  },
+  {
+    "test": "BCM17 / header 11 = SPI1_CS1_EL",
+    "passed": true
+  },
+  {
+    "test": "BCM18 / header 12 = SPI1_CS0_AZ",
+    "passed": true
+  },
+  {
+    "test": "BCM19 / header 35 = SPI1_MISO",
+    "passed": true
+  },
+  {
+    "test": "BCM20 / header 38 = SPI1_MOSI",
+    "passed": true
+  },
+  {
+    "test": "BCM21 / header 40 = SPI1_SCLK",
+    "passed": true
+  },
+  {
+    "test": "BCM22 / header 15 = PTT_VHF_REQUEST",
+    "passed": true
+  },
+  {
+    "test": "BCM23 / header 16 = PTT_UHF_REQUEST",
+    "passed": true
+  },
+  {
+    "test": "BCM24 / header 18 = FAULT_AZ_N",
+    "passed": true
+  },
+  {
+    "test": "BCM25 / header 22 = FAULT_EL_N",
+    "passed": true
+  },
+  {
+    "test": "BCM26 / header 37 = FAULT_POL_N",
+    "passed": true
+  },
+  {
+    "test": "BCM27 / header 13 = GNSS_PPS",
+    "passed": true
+  },
+  {
+    "test": "No auxiliary power feed to CM5IO header pin 1",
+    "passed": true
+  },
+  {
+    "test": "No auxiliary power feed to CM5IO header pin 2",
+    "passed": true
+  },
+  {
+    "test": "No auxiliary power feed to CM5IO header pin 4",
+    "passed": true
+  },
+  {
+    "test": "No auxiliary power feed to CM5IO header pin 17",
+    "passed": true
+  },
+  {
+    "test": "MCP address strap 15",
+    "passed": true
+  },
+  {
+    "test": "MCP address strap 16",
+    "passed": true
+  },
+  {
+    "test": "MCP address strap 17",
+    "passed": true
+  },
+  {
+    "test": "Mux address strap 1",
+    "passed": true
+  },
+  {
+    "test": "Mux address strap 2",
+    "passed": true
+  },
+  {
+    "test": "Mux address strap 21",
+    "passed": true
+  },
+  {
+    "test": "Mux SDA channel 0",
+    "passed": true
+  },
+  {
+    "test": "Mux SCL channel 0",
+    "passed": true
+  },
+  {
+    "test": "Mux SDA channel 1",
+    "passed": true
+  },
+  {
+    "test": "Mux SCL channel 1",
+    "passed": true
+  },
+  {
+    "test": "Mux SDA channel 2",
+    "passed": true
+  },
+  {
+    "test": "Mux SCL channel 2",
+    "passed": true
+  },
+  {
+    "test": "Mux SDA channel 3",
+    "passed": true
+  },
+  {
+    "test": "Mux SCL channel 3",
+    "passed": true
+  },
+  {
+    "test": "Mux SDA channel 4",
+    "passed": true
+  },
+  {
+    "test": "Mux SCL channel 4",
+    "passed": true
+  },
+  {
+    "test": "Retriggerable watchdog actual Q output pin13",
+    "passed": true
+  },
+  {
+    "test": "Watchdog timing Cext14 / RCext15",
+    "passed": true
+  },
+  {
+    "test": "NC hard-inhibit input 0",
+    "passed": true
+  },
+  {
+    "test": "NC hard-inhibit input 1",
+    "passed": true
+  },
+  {
+    "test": "NC hard-inhibit input 2",
+    "passed": true
+  },
+  {
+    "test": "NC hard-inhibit input 3",
+    "passed": true
+  },
+  {
+    "test": "NC hard-inhibit input 4",
+    "passed": true
+  },
+  {
+    "test": "NC hard-inhibit input 5",
+    "passed": true
+  },
+  {
+    "test": "AZ EN is low-side MOSFET drain, not GPIO",
+    "passed": true
+  },
+  {
+    "test": "AZ selected SPI CS",
+    "passed": true
+  },
+  {
+    "test": "AZ DCO not wired as fault",
+    "passed": true
+  },
+  {
+    "test": "AZ VIO3V3",
+    "passed": true
+  },
+  {
+    "test": "EL EN is low-side MOSFET drain, not GPIO",
+    "passed": true
+  },
+  {
+    "test": "EL selected SPI CS",
+    "passed": true
+  },
+  {
+    "test": "EL DCO not wired as fault",
+    "passed": true
+  },
+  {
+    "test": "EL VIO3V3",
+    "passed": true
+  },
+  {
+    "test": "POL EN is low-side MOSFET drain, not GPIO",
+    "passed": true
+  },
+  {
+    "test": "POL selected SPI CS",
+    "passed": true
+  },
+  {
+    "test": "POL DCO not wired as fault",
+    "passed": true
+  },
+  {
+    "test": "POL VIO3V3",
+    "passed": true
+  },
+  {
+    "test": "USB device VBUS never battery/logic",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U13', '1') LATCH_CLEAR_N",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U13', '2') ALL_REQUESTS_IDLE",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U13', '3') REARM_CLK",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U13', '4') V3V3",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U13', '5') REARMED",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '1') ARM_IDLE",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '2') VHF_IDLE",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '3') IDLE_AV",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '4') IDLE_AV",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '5') UHF_IDLE",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '6') ALL_REQUESTS_IDLE",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '9') SAFE_OK",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '10') LOGIC_RESET_N",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '8') LATCH_CLEAR_N",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '12') SAFE_OK",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '13') REARMED",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U14', '11') REARM_PERMIT",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U8', '1') REARM_PERMIT",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U8', '2') MOTOR_ARM_REQUEST",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U8', '3') MOTOR_PERMIT",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U9', '1') REARM_PERMIT",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U9', '2') PTT_VHF_REQUEST",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U9', '3') PTT_VHF_GATE",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U9', '4') REARM_PERMIT",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U9', '5') PTT_UHF_REQUEST",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('U9', '6') PTT_UHF_GATE",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('Q7', '2') BAT_FUSED",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('Q7', '3') BAT_PROTECTED",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('L1', '1') LOGIC_BAT_FUSED",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('L1', '4') EMI_LOGIC_POS",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('L1', '2') GND_MOTOR",
+    "passed": true
+  },
+  {
+    "test": "Circuit binding ('L1', '3') EMI_LOGIC_RETURN",
+    "passed": true
+  },
+  {
+    "test": "AZ module column spacing 12.70mm",
+    "passed": true
+  },
+  {
+    "test": "AZ socket pin1 alignment",
+    "passed": true
+  },
+  {
+    "test": "AZ pitch pad1",
+    "passed": true
+  },
+  {
+    "test": "AZ pitch pad2",
+    "passed": true
+  },
+  {
+    "test": "AZ pitch pad3",
+    "passed": true
+  },
+  {
+    "test": "AZ pitch pad4",
+    "passed": true
+  },
+  {
+    "test": "AZ pitch pad5",
+    "passed": true
+  },
+  {
+    "test": "AZ pitch pad6",
+    "passed": true
+  },
+  {
+    "test": "AZ pitch pad7",
+    "passed": true
+  },
+  {
+    "test": "AZ actual two GND pads common motor reference",
+    "passed": true
+  },
+  {
+    "test": "EL module column spacing 12.70mm",
+    "passed": true
+  },
+  {
+    "test": "EL socket pin1 alignment",
+    "passed": true
+  },
+  {
+    "test": "EL pitch pad1",
+    "passed": true
+  },
+  {
+    "test": "EL pitch pad2",
+    "passed": true
+  },
+  {
+    "test": "EL pitch pad3",
+    "passed": true
+  },
+  {
+    "test": "EL pitch pad4",
+    "passed": true
+  },
+  {
+    "test": "EL pitch pad5",
+    "passed": true
+  },
+  {
+    "test": "EL pitch pad6",
+    "passed": true
+  },
+  {
+    "test": "EL pitch pad7",
+    "passed": true
+  },
+  {
+    "test": "EL actual two GND pads common motor reference",
+    "passed": true
+  },
+  {
+    "test": "POL module column spacing 12.70mm",
+    "passed": true
+  },
+  {
+    "test": "POL socket pin1 alignment",
+    "passed": true
+  },
+  {
+    "test": "POL pitch pad1",
+    "passed": true
+  },
+  {
+    "test": "POL pitch pad2",
+    "passed": true
+  },
+  {
+    "test": "POL pitch pad3",
+    "passed": true
+  },
+  {
+    "test": "POL pitch pad4",
+    "passed": true
+  },
+  {
+    "test": "POL pitch pad5",
+    "passed": true
+  },
+  {
+    "test": "POL pitch pad6",
+    "passed": true
+  },
+  {
+    "test": "POL pitch pad7",
+    "passed": true
+  },
+  {
+    "test": "POL actual two GND pads common motor reference",
+    "passed": true
+  },
+  {
+    "test": "SMA pair signal continuity J36",
+    "passed": true
+  },
+  {
+    "test": "SMA pair isolated shield continuity J36",
+    "passed": true
+  },
+  {
+    "test": "SMA non-RP actual footprint J36",
+    "passed": true
+  },
+  {
+    "test": "SMA pair signal continuity J38",
+    "passed": true
+  },
+  {
+    "test": "SMA pair isolated shield continuity J38",
+    "passed": true
+  },
+  {
+    "test": "SMA non-RP actual footprint J38",
+    "passed": true
+  },
+  {
+    "test": "RF shield domains distinct",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP J41",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP F1",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP F2",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP F3",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP F4",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP F5",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP F6",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP Q7",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP D1",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP D2",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP L1",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP R80",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP C80",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP R52",
+    "passed": true
+  },
+  {
+    "test": "Unqualified power locked out DNP C16",
+    "passed": true
+  },
+  {
+    "test": "Battery gate RC resistor binding",
+    "passed": true
+  },
+  {
+    "test": "Battery gate RC capacitor binding",
+    "passed": true
+  },
+  {
+    "test": "Logic bypass C21 remains populated",
+    "passed": true
+  },
+  {
+    "test": "Main fuse upstream of reverse/transient branch",
+    "passed": true
+  },
+  {
+    "test": "Independent branch fuse F2",
+    "passed": true
+  },
+  {
+    "test": "Independent branch fuse F3",
+    "passed": true
+  },
+  {
+    "test": "Independent branch fuse F4",
+    "passed": true
+  },
+  {
+    "test": "Independent branch fuse F5",
+    "passed": true
+  },
+  {
+    "test": "Independent branch fuse F6",
+    "passed": true
+  },
+  {
+    "test": "Motor external E-stop cuts supply before J28",
+    "passed": true
+  },
+  {
+    "test": "Exhaustive Boolean permit model 8192 cases",
+    "passed": true
+  },
+  {
+    "test": "Fault recovery and POR need fresh manual edge with requests idle",
+    "passed": true
+  },
+  {
+    "test": "RF reference zones physically present",
+    "passed": true
+  },
+  {
+    "test": "Candidate DC trunk 2mm present; neckdowns NOT current-qualified /BAT_POS",
+    "passed": true
+  },
+  {
+    "test": "Candidate DC trunk 2mm present; neckdowns NOT current-qualified /BAT_FUSED",
+    "passed": true
+  },
+  {
+    "test": "Candidate DC trunk 2mm present; neckdowns NOT current-qualified /BAT_PROTECTED",
+    "passed": true
+  },
+  {
+    "test": "Candidate DC trunk 2mm present; neckdowns NOT current-qualified /MOTOR_BRANCH_FUSED",
+    "passed": true
+  },
+  {
+    "test": "Candidate DC trunk 2mm present; neckdowns NOT current-qualified /CM5IO_BRANCH_FUSED",
+    "passed": true
+  },
+  {
+    "test": "Candidate DC trunk 2mm present; neckdowns NOT current-qualified /VHF_BRANCH_FUSED",
+    "passed": true
+  },
+  {
+    "test": "Candidate DC trunk 2mm present; neckdowns NOT current-qualified /UHF_BRANCH_FUSED",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm AZM1A",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm AZM1B",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm AZM2A",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm AZM2B",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm ELM1A",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm ELM1B",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm ELM2A",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm ELM2B",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm POLM1A",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm POLM1B",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm POLM2A",
+    "passed": true
+  },
+  {
+    "test": "Candidate motor coil minimum width1mm POLM2B",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C1",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C1",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C2",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C2",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C3",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C3",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C4",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C4",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C5",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C5",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C6",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C6",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C7",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C7",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C8",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C8",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C9",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C9",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C10",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C10",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C11",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C11",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C12",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C12",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C13",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C13",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C14",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C14",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C15",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C15",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C17",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C17",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C18",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C18",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C19",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C19",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C20",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C20",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C21",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C21",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C22",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C22",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C23",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C23",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C24",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C24",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD C25",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN C25",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD Q1",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN Q1",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD Q2",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN Q2",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD Q3",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN Q3",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD Q4",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN Q4",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD Q5",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN Q5",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD Q6",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN Q6",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R1",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R1",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R2",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R2",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R3",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R3",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R4",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R4",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R5",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R5",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R6",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R6",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R7",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R7",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R8",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R8",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R9",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R9",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R10",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R10",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R11",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R11",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R12",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R12",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R13",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R13",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R14",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R14",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R15",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R15",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R16",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R16",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R17",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R17",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R18",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R18",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R19",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R19",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R20",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R20",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R21",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R21",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R22",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R22",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R23",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R23",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R24",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R24",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R25",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R25",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R26",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R26",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R27",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R27",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R28",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R28",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R29",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R29",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R30",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R30",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R31",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R31",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R32",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R32",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R33",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R33",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R34",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R34",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R35",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R35",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R36",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R36",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R37",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R37",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R38",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R38",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R39",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R39",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R40",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R40",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R41",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R41",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R42",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R42",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R43",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R43",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R44",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R44",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R45",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R45",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R46",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R46",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R47",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R47",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R48",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R48",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R49",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R49",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R50",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R50",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R51",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R51",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R53",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R53",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD R54",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN R54",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U1",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U1",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U2",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U2",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U3",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U3",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U4",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U4",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U5",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U5",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U6",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U6",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U7",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U7",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U8",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U8",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U9",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U9",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U10",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U10",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U11",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U11",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U12",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U12",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U13",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U13",
+    "passed": true
+  },
+  {
+    "test": "BOM/CPL active-SMD U14",
+    "passed": true
+  },
+  {
+    "test": "BOM exact candidate MPN U14",
+    "passed": true
+  }
+]

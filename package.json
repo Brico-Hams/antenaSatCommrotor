@@ -1,0 +1,11 @@
+{
+  "name": "portable-sat-station-validation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline engineering validation, not a required field runtime",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test tests",
+    "calculations": "node scripts/engineering-report.cjs"
+  }
+}

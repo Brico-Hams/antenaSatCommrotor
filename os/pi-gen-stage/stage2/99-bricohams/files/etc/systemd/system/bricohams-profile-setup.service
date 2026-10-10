@@ -1,0 +1,18 @@
+[Unit]
+Description=Select and install a BricoHams station profile
+After=cloud-init.target
+Before=getty@tty1.service
+ConditionPathExists=!/etc/bricohams/profile
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/bricohams-os-profile-setup --firstboot
+StandardInput=tty
+StandardOutput=tty
+StandardError=tty
+TTYPath=/dev/tty1
+TTYReset=yes
+TTYVHangup=yes
+
+[Install]
+WantedBy=multi-user.target

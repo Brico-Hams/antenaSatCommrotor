@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">PortableSatStation conceptual exploded three-axis assembly</title>
+  <desc id="desc">Exploded conceptual station with fixed tripod, external ECO-WORTHY 12 V 30 Ah battery reference, stop, CM5 on the official CM5 I/O board, separate custom auxiliary PCB for three-axis motor/sensor/audio/safety functions, two LimeSDR Mini modules on separate USB 3 paths, GNSS receiver and antenna, remote compass and base-inclination IMU, and independent dual-band RHCP/LHCP RF switch, plus an antenna assembly on a limited POL roll axis above elevation and azimuth drives. Battery pack/BMS mass is excluded from the 5 kg station cap but reported separately; listed battery mass 3.55 kg is unverified until weighing. USB audio route and auxiliary-board interconnect/pinout are TBD. GNSS is not stationary heading. POL travel is unselected and no slip rings are assumed.</desc>
+  <defs>
+    <marker id="down" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 0L5 10z" fill="#63758a"/></marker>
+    <marker id="rf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a54b17"/></marker>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#172b43}
+      .title{font-size:24px;font-weight:700}
+      .subtitle{font-size:13px;fill:#455a70}
+      .label{font-size:16px;font-weight:700}
+      .small{font-size:13px}
+      .tiny{font-size:11px}
+      .fixed{fill:#eef4fb;stroke:#2f5d8a;stroke-width:2}
+      .hold{fill:#fff4e7;stroke:#b05a16;stroke-width:2;stroke-dasharray:7 4}
+      .moving{fill:#f3f6ee;stroke:#58743e;stroke-width:2}
+      .metal{fill:#dce2e9;stroke:#586b7e;stroke-width:2}
+      .leader{fill:none;stroke:#63758a;stroke-width:2;stroke-dasharray:6 5;marker-end:url(#down)}
+      .rf{fill:none;stroke:#a54b17;stroke-width:3;stroke-dasharray:8 5;marker-start:url(#rf);marker-end:url(#rf)}
+      .num{fill:#183b61;stroke:white;stroke-width:2}
+      .numtext{fill:white;font-size:13px;font-weight:700;text-anchor:middle}
+      .warn{fill:#8b310d;font-weight:700}
+      .module{fill:#ffffff;stroke:#2f5d8a;stroke-width:2;stroke-dasharray:6 4}
+      .module-antenna{fill:#ffffff;stroke:#58743e;stroke-width:2;stroke-dasharray:6 4}
+    </style>
+  </defs>
+  <rect width="1200" height="900" fill="#f7f9fc"/>
+  <text x="30" y="38" class="title">FIG-02 - Conceptual exploded three-axis assembly</text>
+  <text x="30" y="63" class="subtitle">Not to scale / dimension. Numbered parts map to manual and BOM. Dashed orange items are unselected / HOLD.</text>
+
+  <!-- Fixed electronics and RF select path -->
+  <text x="38" y="106" class="label">FIXED BASE - stays on tripod</text>
+  <rect x="42" y="132" width="220" height="66" rx="9" class="hold"/>
+  <circle cx="62" cy="165" r="16" class="num"/><text x="62" y="170" class="numtext">4</text>
+  <text x="85" y="158" class="small">Physical stop / power</text>
+  <text x="85" y="179" class="small">three-axis coverage TBD</text>
+
+  <rect x="284" y="132" width="220" height="66" rx="9" class="hold"/>
+  <circle cx="304" cy="165" r="16" class="num"/><text x="304" y="170" class="numtext">3</text>
+  <text x="327" y="158" class="small">External ECO-WORTHY 30 Ah</text>
+  <text x="327" y="179" class="small">ref.; 3.55 kg listed, mass separate</text>
+
+  <rect x="42" y="224" width="220" height="72" rx="9" class="hold"/>
+  <circle cx="62" cy="260" r="16" class="num"/><text x="62" y="265" class="numtext">5</text>
+  <text x="85" y="253" class="small">CM5 (wireless / 4 GB / 16 GB candidate)</text>
+  <text x="85" y="276" class="tiny">Official I/O + separate auxiliary PCB; pins HOLD</text>
+
+  <rect x="284" y="224" width="220" height="72" rx="9" class="hold"/>
+  <circle cx="304" cy="260" r="16" class="num"/><text x="304" y="265" class="numtext">6</text>
+  <text x="327" y="251" class="small">SDR-A: VHF; SDR-B: UHF</text>
+  <text x="327" y="272" class="tiny">Two LimeSDR Mini; direct USB 3 each</text>
+  <text x="327" y="289" class="tiny warn">Dual RX intended; one TX path max</text>
+
+  <rect x="42" y="322" width="220" height="138" rx="9" class="hold"/>
+  <circle cx="62" cy="349" r="16" class="num"/><text x="62" y="354" class="numtext">11</text>
+  <text x="85" y="347" class="small">Independent RF switch</text>
+  <text x="62" y="377" class="tiny">145 MHz: RHCP / LHCP feed-phase path</text>
+  <text x="62" y="398" class="tiny">435 MHz: RHCP / LHCP feed-phase path</text>
+  <text x="62" y="416" class="tiny">All RF ports: conventional 50-ohm SMA</text>
+  <text x="62" y="433" class="tiny warn">Check center contact / mating gender</text>
+  <text x="62" y="450" class="tiny warn">PTT off -> switch -> verify -> TX permit</text>
+
+  <rect x="284" y="322" width="220" height="118" rx="9" class="hold"/>
+  <circle cx="304" cy="349" r="16" class="num"/><text x="304" y="354" class="numtext">7</text>
+  <text x="327" y="347" class="small">Audio / speaker / mic</text>
+  <text x="302" y="375" class="tiny">Bluetooth bidirectional audio</text>
+  <text x="302" y="393" class="tiny">K1 dual 3.5 / 2.5 mm audio/PTT target</text>
+  <text x="302" y="411" class="tiny">UV-5R / UV-82 style; exact models TBD</text>
+  <text x="302" y="429" class="tiny warn">Pinout/compatibility unverified; not SMA/power</text>
+
+  <!-- Rotating three-axis assembly -->
+  <text x="578" y="106" class="label">ROTATING ASSEMBLY - antenna payload only</text>
+  <line x1="686" y1="153" x2="1083" y2="153" stroke="#58743e" stroke-width="7"/>
+  <line x1="756" y1="121" x2="756" y2="185" stroke="#58743e" stroke-width="4"/>
+  <line x1="1009" y1="121" x2="1009" y2="185" stroke="#58743e" stroke-width="4"/>
+  <ellipse cx="884" cy="153" rx="50" ry="27" fill="none" stroke="#58743e" stroke-width="3"/>
+  <circle cx="884" cy="153" r="20" class="num"/><text x="884" y="158" class="numtext">10</text>
+  <text x="694" y="203" class="small">Compatible circular antenna with separate 145 / 435 MHz feed paths</text>
+  <text x="694" y="222" class="tiny warn">Measure axial ratio for RHCP and LHCP at each nominal band</text>
+
+  <path d="M884 230V258" class="leader"/>
+  <ellipse cx="884" cy="286" rx="160" ry="27" fill="#edf3e7" stroke="#58743e" stroke-width="3"/>
+  <ellipse cx="884" cy="286" rx="118" ry="15" fill="none" stroke="#58743e" stroke-width="2"/>
+  <circle cx="722" cy="286" r="16" class="num"/><text x="722" y="291" class="numtext">9c</text>
+  <text x="764" y="279" class="small">POL limited axial-roll stage</text>
+  <text x="764" y="299" class="tiny warn">travel TBD; +/-90 deg proposal only</text>
+  <text x="764" y="316" class="tiny">roll does not change RHCP / LHCP</text>
+
+  <path d="M884 318V343" class="leader"/>
+  <path d="M741 375Q884 324 1027 375L1001 419Q884 390 767 419z" class="moving"/>
+  <circle cx="733" cy="378" r="16" class="num"/><text x="733" y="383" class="numtext">9b</text>
+  <text x="800" y="374" class="small">EL elevation yoke / drive</text>
+  <text x="800" y="400" class="tiny">added POL mass changes EL load / CG</text>
+
+  <path d="M884 426V452" class="leader"/>
+  <rect x="763" y="461" width="242" height="54" rx="14" class="moving"/>
+  <circle cx="746" cy="488" r="16" class="num"/><text x="746" y="493" class="numtext">9a</text>
+  <text x="785" y="484" class="small">AZ azimuth drive</text>
+  <text x="785" y="504" class="tiny">BASE concept; assembly untested</text>
+
+  <path d="M884 521V556" class="leader"/>
+
+  <!-- Limited-twist coax/service path -->
+  <path d="M504 380C581 377 571 256 661 245S710 253 727 272" class="rf"/>
+  <text x="524" y="357" class="tiny">SMA 50-ohm: antenna, VHF/UHF diplexer, hybrid/CP</text>
+  <text x="524" y="377" class="tiny">SDR/radio, bulkheads; check center contact / gender</text>
+  <text x="524" y="397" class="tiny warn">No RP-SMA; BNC legacy only, not baseline; no adapter chains</text>
+  <text x="524" y="417" class="tiny warn">limited POL torsion loop only; no unrated slip ring</text>
+  <text x="524" y="437" class="tiny">Vendor torque/strain relief TBD; BNC legacy only</text>
+
+  <!-- Fixed tray and tripod -->
+  <polygon points="604,574 1085,574 1046,606 565,606" class="metal"/>
+  <circle cx="594" cy="590" r="17" class="num"/><text x="594" y="595" class="numtext">2</text>
+  <text x="718" y="598" class="small">Fixed metal tray / adapter</text>
+  <path d="M884 517V569" class="leader"/>
+
+  <rect x="569" y="626" width="490" height="42" rx="7" class="metal"/>
+  <circle cx="591" cy="647" r="16" class="num"/><text x="591" y="652" class="numtext">1</text>
+  <text x="616" y="652" class="small">Tripod / verified metal mount and secondary restraint</text>
+  <path d="M814 670L685 798M814 670L962 798M814 670L814 809" stroke="#586b7e" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Legend and old board warning -->
+  <rect x="38" y="476" width="466" height="205" rx="11" fill="#edf3f9" stroke="#2f5d8a" stroke-width="2"/>
+  <text x="60" y="508" class="label">Three-axis feedback and navigation (HOLD)</text>
+  <text x="60" y="535" class="small">3 independent output encoders: AZ / EL / POL</text>
+  <text x="60" y="559" class="small">6 independent NC end limits: 2 per axis</text>
+  <text x="60" y="583" class="small">12 GNSS receiver + antenna: site / UTC; UART/PPS TBD</text>
+  <text x="60" y="607" class="small">13 Remote compass + base-inclination IMU</text>
+  <text x="60" y="631" class="tiny warn">Stationary GNSS is not heading; manual true-heading check required.</text>
+  <text x="60" y="653" class="tiny warn">Sensor pins/calibration unimplemented; legacy carrier has 2 encoders / 4 limits.</text>
+
+  <!-- Stand-alone module boundaries: final installation is optional integration -->
+  <rect x="38" y="694" width="360" height="112" rx="10" class="module"/>
+  <text x="54" y="719" class="small" font-weight="700">MOD-ROTOR - stand-alone</text>
+  <text x="54" y="740" class="tiny">FIG-02 #1/#2/#9a-9c; BOM MMA-012 parking restraint</text>
+  <text x="54" y="759" class="tiny">Tripod/tray + AZ/EL/POL; inert test payload only.</text>
+  <text x="54" y="778" class="tiny">No antenna or radio required for rotor bench checks.</text>
+  <text x="54" y="797" class="tiny warn">Requires released mechanics, stop, limits and feedback.</text>
+
+  <rect x="420" y="694" width="360" height="112" rx="10" class="module-antenna"/>
+  <text x="436" y="719" class="small" font-weight="700">MOD-ANTENNA - stand-alone</text>
+  <text x="436" y="740" class="tiny">FIG-02 #10/#11; BOM MMA-041/042 feeds, MMA-043 RF selector</text>
+  <text x="436" y="759" class="tiny">Antenna/feed can be mounted and RF-tested on its own support.</text>
+  <text x="436" y="778" class="tiny">No rotor, CM5 or LimeSDR required for module tests.</text>
+  <text x="436" y="797" class="tiny warn">Use rated fixtures; selector change only with TX inhibited.</text>
+
+  <rect x="802" y="694" width="360" height="112" rx="10" class="module"/>
+  <text x="818" y="719" class="small" font-weight="700">MOD-RADIO - stand-alone</text>
+  <text x="818" y="740" class="tiny">FIG-02 #5/#6/#7; MMA-050 + MMA-047 + MMA-017 x2</text>
+  <text x="818" y="759" class="tiny">CM5/I/O + released auxiliary PCB + two LimeSDR Mini.</text>
+  <text x="818" y="778" class="tiny">Bench RX/audio with rated fixtures; rotor/antenna optional.</text>
+  <text x="818" y="797" class="tiny warn">Aux PCB, power, USB and TX interlock gates still apply.</text>
+
+  <rect x="38" y="822" width="1124" height="60" rx="10" fill="#fff1e8" stroke="#b05a16" stroke-width="2"/>
+  <text x="58" y="848" class="small warn">Concept only. Module cards show independent build boundaries, not released mounts, dimensions, wiring, or compatibility.</text>
+  <text x="58" y="870" class="small">MOD-INTEGRATED joins accepted modules only; the RF switch is independent of POL and cannot change during TX.</text>
+</svg>

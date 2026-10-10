@@ -1,0 +1,6 @@
+{
+  "method": "conservative-grid; KiCad DRC required",
+  "grid_mm": 0.15,
+  "routes": [],
+  "physical_validation": false
+}

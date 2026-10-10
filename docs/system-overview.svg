@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="600" viewBox="0 0 1060 600">
+  <rect width="1060" height="600" fill="#f3f6fa"/>
+  <style>text{font-family:Arial,sans-serif;fill:#17273d} .box{fill:white;stroke:#37628f;stroke-width:2} .wire{stroke:#37628f;stroke-width:3;fill:none} .rf{stroke:#b15a20;stroke-width:3;fill:none} .small{font-size:14px} .title{font-size:20px;font-weight:bold}</style>
+  <text x="30" y="35" class="title">PortableSatStation - arquitectura original, prototipo no certificado</text>
+  <rect x="30" y="70" width="230" height="90" rx="10" class="box"/>
+  <text x="45" y="98" class="title">Navegador / AP local</text>
+  <text x="45" y="122" class="small">Configuracion, pases, parada</text>
+  <text x="45" y="145" class="small">No requiere PC durante el pase</text>
+  <rect x="325" y="70" width="270" height="160" rx="10" class="box"/>
+  <text x="342" y="98" class="title">ESP32 autonomo</text>
+  <text x="342" y="125" class="small">SGP4 + TLE persistentes</text>
+  <text x="342" y="150" class="small">UTC y posicion GNSS</text>
+  <text x="342" y="175" class="small">Norte verdadero + nivel calibrados</text>
+  <text x="342" y="200" class="small">Homing, limites, feedback, fallos</text>
+  <path d="M260 115H325" class="wire"/>
+  <rect x="665" y="70" width="350" height="160" rx="10" class="box"/>
+  <text x="683" y="98" class="title">Rotor AZ/EL desmontable</text>
+  <text x="683" y="125" class="small">NEMA14, dos etapas 5:1 por eje</text>
+  <text x="683" y="150" class="small">ASA + ejes/rodamientos metalicos</text>
+  <text x="683" y="175" class="small">Parada NC + corte fisico motores</text>
+  <text x="683" y="200" class="small">Carga/precision pendientes de ensayo</text>
+  <path d="M595 150H665" class="wire"/>
+  <rect x="30" y="200" width="230" height="120" rx="10" class="box"/>
+  <text x="45" y="228" class="title">TLE</text>
+  <text x="45" y="252" class="small">STA / HTTPS con Internet</text>
+  <text x="45" y="276" class="small">o importacion manual sin red</text>
+  <text x="45" y="300" class="small">AP solo no aporta Internet</text>
+  <path d="M260 250H290V200H325" class="wire"/>
+  <rect x="325" y="265" width="270" height="80" rx="10" class="box"/>
+  <text x="342" y="292" class="title">Fuente protegida</text>
+  <text x="342" y="317" class="small">Motores + DC/DC logica separados</text>
+  <path d="M460 265V230" class="wire"/>
+  <rect x="665" y="265" width="350" height="80" rx="10" class="box"/>
+  <text x="683" y="292" class="title">Tripode fotografico</text>
+  <text x="683" y="317" class="small">Inserto metalico, torsion validada</text>
+  <path d="M840 265V230" class="wire"/>
+  <rect x="30" y="390" width="230" height="130" rx="10" class="box"/>
+  <text x="45" y="417" class="title">RT3S / OpenGD77</text>
+  <text x="45" y="445" class="small">Bateria propia, soporte fijo</text>
+  <text x="45" y="470" class="small">Doppler independiente</text>
+  <text x="45" y="495" class="small">No CAT / full-duplex supuesto</text>
+  <rect x="325" y="390" width="270" height="130" rx="10" class="box"/>
+  <text x="342" y="417" class="title">Diplexor VHF/UHF</text>
+  <text x="342" y="445" class="small">Subcaja metalica extraible</text>
+  <text x="342" y="470" class="small">1 puerto comun, 2 bandas</text>
+  <text x="342" y="495" class="small">S-parametros por verificar</text>
+  <path d="M260 455H325" class="rf"/>
+  <rect x="665" y="390" width="350" height="130" rx="10" class="box"/>
+  <text x="683" y="417" class="title">Antena original plegable</text>
+  <text x="683" y="445" class="small">Red/radiadores separados 145 / 435 MHz</text>
+  <text x="683" y="470" class="small">Dipolos cruzados + reflector por banda</text>
+  <text x="683" y="495" class="small">Alternativa: Yagi externa compatible</text>
+  <path d="M595 440H665M595 478H665" class="rf"/>
+  <path d="M1000 230V390" class="wire"/>
+  <text x="30" y="560" class="small">Azul: control / mecanica. Naranja: RF. Modulos separables. Un filtro pasivo no hace full-duplex una RT3S.</text>
+  <text x="30" y="585" class="small">Las dimensiones iniciales, masa objetivo y par calculado requieren montaje, VNA y ensayos antes de operacion.</text>
+</svg>

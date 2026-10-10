@@ -1,0 +1,28 @@
+{
+  "purpose": "Read-only metadata of user-supplied references; no third-party geometry redistributed",
+  "units": "unspecified-by-format",
+  "assembledDimensions": "not-established",
+  "assets": [
+    {
+      "name": "tinker.obj",
+      "bytes": 648864,
+      "sha256": "e231ba603e352d31570a9db748208d7c32dd5116dec796b633858a7191910a00",
+      "format": "OBJ",
+      "vertices": 10416,
+      "faces": 20964,
+      "objects": 1,
+      "min": [-97, -17.798, 0],
+      "max": [97, 98, 33],
+      "spans": [194, 115.798, 33]
+    },
+    {
+      "name": "OK1BT_wannabe_milsat_satcom.stl",
+      "bytes": 1048284,
+      "sha256": "f40f044336ad46a0434f8fc512e112d51cf68c6c80ddca6992bfc786a474b71a",
+      "format": "STL-binary",
+      "triangles": 20964,
+      "spansApproximately": [194, 115.798, 33]
+    }
+  ],
+  "licenseStatus": "Not established; do not infer copying permission from file availability"
+}

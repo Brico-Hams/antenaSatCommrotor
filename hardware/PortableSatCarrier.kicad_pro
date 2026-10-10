@@ -1,0 +1,31 @@
+{
+  "board": {
+    "design_settings": {
+      "rules": {
+        "min_clearance": 0.25,
+        "min_track_width": 0.3,
+        "min_via_diameter": 0.9,
+        "min_via_drill": 0.4,
+        "min_through_hole_diameter": 0.4,
+        "min_hole_to_hole": 0.25,
+        "min_copper_edge_clearance": 0.5
+      }
+    }
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "name": "Default",
+        "clearance": 0.25,
+        "track_width": 0.3,
+        "via_diameter": 0.9,
+        "via_drill": 0.4,
+        "description": "2 oz original carrier, signal 3.3V"
+      }
+    ]
+  },
+  "meta": {
+    "filename": "PortableSatCarrier.kicad_pro",
+    "version": 1
+  }
+}

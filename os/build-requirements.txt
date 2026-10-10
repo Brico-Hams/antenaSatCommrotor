@@ -1,0 +1,2 @@
+# Must satisfy rotor/pyproject.toml's exact PEP 517 backend requirement.
+setuptools==75.8.2

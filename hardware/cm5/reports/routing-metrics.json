@@ -1,0 +1,403 @@
+{
+  "tracks": 1952,
+  "vias": 178,
+  "zones": 2,
+  "board_thickness_mm": 1.6,
+  "outline_mm": [
+    290,
+    280
+  ],
+  "module_socket_pitch_mm": 2.54,
+  "module_column_spacing_mm": 12.7,
+  "net_track_widths_mm": {
+    "/ALL_REQUESTS_IDLE": [
+      0.2
+    ],
+    "/ARM_IDLE": [
+      0.2
+    ],
+    "/AUX_5V_ISOLATED": [
+      0.4
+    ],
+    "/AZ_ENABLE_REQUEST": [
+      0.2
+    ],
+    "/AZ_EN_N": [
+      0.2
+    ],
+    "/AZ_GATE": [
+      0.2
+    ],
+    "/AZ_LIMIT_MAX_N": [
+      0.2
+    ],
+    "/AZ_LIMIT_MIN_N": [
+      0.2
+    ],
+    "/AZ_M1A": [
+      1.0
+    ],
+    "/AZ_M1B": [
+      1.0
+    ],
+    "/AZ_M2A": [
+      1.0
+    ],
+    "/AZ_M2B": [
+      1.0
+    ],
+    "/BAT_FUSED": [
+      2.0
+    ],
+    "/BAT_POS": [
+      2.0
+    ],
+    "/BAT_PROTECTED": [
+      0.902,
+      2.0
+    ],
+    "/CM5IO_BRANCH_FUSED": [
+      2.0
+    ],
+    "/DAMP_CAP_POS": [
+      0.2
+    ],
+    "/EL_ENABLE_REQUEST": [
+      0.2
+    ],
+    "/EL_EN_N": [
+      0.2
+    ],
+    "/EL_GATE": [
+      0.2
+    ],
+    "/EL_LIMIT_MAX_N": [
+      0.2
+    ],
+    "/EL_LIMIT_MIN_N": [
+      0.2
+    ],
+    "/EL_M1A": [
+      1.0
+    ],
+    "/EL_M1B": [
+      1.0
+    ],
+    "/EL_M2A": [
+      1.0
+    ],
+    "/EL_M2B": [
+      1.0
+    ],
+    "/EMI_LOGIC_POS": [
+      0.4
+    ],
+    "/EMI_LOGIC_RETURN": [
+      0.4
+    ],
+    "/ESTOP_AUX_N": [
+      0.2
+    ],
+    "/ESTOP_OK": [
+      0.2
+    ],
+    "/FAULT_AZ_N": [
+      0.2
+    ],
+    "/FAULT_EL_N": [
+      0.2
+    ],
+    "/FAULT_POL_N": [
+      0.2
+    ],
+    "/GND_LOGIC": [
+      0.4
+    ],
+    "/GND_MOTOR": [
+      1.0
+    ],
+    "/GNSS_PPS": [
+      0.2
+    ],
+    "/GNSS_UART_RX": [
+      0.2
+    ],
+    "/GNSS_UART_TX": [
+      0.2
+    ],
+    "/I2C1_SCL": [
+      0.2
+    ],
+    "/I2C1_SDA": [
+      0.2
+    ],
+    "/IDLE_AV": [
+      0.2
+    ],
+    "/LATCH_CLEAR_N": [
+      0.2
+    ],
+    "/LIMIT_OK_0": [
+      0.2
+    ],
+    "/LIMIT_OK_1": [
+      0.2
+    ],
+    "/LIMIT_OK_2": [
+      0.2
+    ],
+    "/LIMIT_OK_3": [
+      0.2
+    ],
+    "/LIMIT_OK_4": [
+      0.2
+    ],
+    "/LIMIT_OK_5": [
+      0.2
+    ],
+    "/LOGIC_BAT_FUSED": [
+      0.4
+    ],
+    "/LOGIC_RESET": [
+      0.2
+    ],
+    "/LOGIC_RESET_N": [
+      0.2
+    ],
+    "/MOTOR_ARM_REQUEST": [
+      0.2
+    ],
+    "/MOTOR_BRANCH_FUSED": [
+      2.0
+    ],
+    "/MOTOR_PERMIT": [
+      0.2
+    ],
+    "/MOTOR_PERMIT_FEEDBACK_N": [
+      0.2
+    ],
+    "/PA_UHF_FAULT_N": [
+      0.2
+    ],
+    "/PA_VHF_FAULT_N": [
+      0.2
+    ],
+    "/POL_ENABLE_REQUEST": [
+      0.2
+    ],
+    "/POL_EN_N": [
+      0.2
+    ],
+    "/POL_GATE": [
+      0.2
+    ],
+    "/POL_LIMIT_MAX_N": [
+      0.2
+    ],
+    "/POL_LIMIT_MIN_N": [
+      0.2
+    ],
+    "/POL_M1A": [
+      1.0
+    ],
+    "/POL_M1B": [
+      1.0
+    ],
+    "/POL_M2A": [
+      1.0
+    ],
+    "/POL_M2B": [
+      1.0
+    ],
+    "/POWER_GATE": [
+      0.2
+    ],
+    "/PTT_UHF_FEEDBACK_N": [
+      0.2
+    ],
+    "/PTT_UHF_GATE": [
+      0.2
+    ],
+    "/PTT_UHF_LED_A": [
+      0.2
+    ],
+    "/PTT_UHF_LED_K": [
+      0.2
+    ],
+    "/PTT_UHF_OUT_ISO": [
+      0.2
+    ],
+    "/PTT_UHF_REQUEST": [
+      0.2
+    ],
+    "/PTT_UHF_RETURN_ISO": [
+      0.2
+    ],
+    "/PTT_VHF_FEEDBACK_N": [
+      0.2
+    ],
+    "/PTT_VHF_GATE": [
+      0.2
+    ],
+    "/PTT_VHF_LED_A": [
+      0.2
+    ],
+    "/PTT_VHF_LED_K": [
+      0.2
+    ],
+    "/PTT_VHF_OUT_ISO": [
+      0.2
+    ],
+    "/PTT_VHF_REQUEST": [
+      0.2
+    ],
+    "/PTT_VHF_RETURN_ISO": [
+      0.2
+    ],
+    "/REARMED": [
+      0.2
+    ],
+    "/REARM_BUTTON": [
+      0.2
+    ],
+    "/REARM_BUTTON_N": [
+      0.2
+    ],
+    "/REARM_CLK": [
+      0.2
+    ],
+    "/REARM_PERMIT": [
+      0.2
+    ],
+    "/RESET_RC": [
+      0.2
+    ],
+    "/RF_UHF_GND": [
+      1.0
+    ],
+    "/RF_UHF_LINE": [
+      1.0,
+      2.9
+    ],
+    "/RF_VHF_GND": [
+      1.0
+    ],
+    "/RF_VHF_LINE": [
+      1.0,
+      2.9
+    ],
+    "/SAFE_N": [
+      0.2
+    ],
+    "/SAFE_OK": [
+      0.2
+    ],
+    "/SCL_CH0": [
+      0.2
+    ],
+    "/SCL_CH1": [
+      0.2
+    ],
+    "/SCL_CH2": [
+      0.2
+    ],
+    "/SCL_CH3": [
+      0.2
+    ],
+    "/SCL_CH4": [
+      0.2
+    ],
+    "/SDA_CH0": [
+      0.2
+    ],
+    "/SDA_CH1": [
+      0.2
+    ],
+    "/SDA_CH2": [
+      0.2
+    ],
+    "/SDA_CH3": [
+      0.2
+    ],
+    "/SDA_CH4": [
+      0.2
+    ],
+    "/SPI1_CS0_AZ": [
+      0.2
+    ],
+    "/SPI1_CS1_EL": [
+      0.2
+    ],
+    "/SPI1_CS2_POL": [
+      0.2
+    ],
+    "/SPI1_MISO": [
+      0.2
+    ],
+    "/SPI1_MOSI": [
+      0.2
+    ],
+    "/SPI1_SCLK": [
+      0.2
+    ],
+    "/TCA9548A_RESET_N": [
+      0.2
+    ],
+    "/UHF_BRANCH_FUSED": [
+      2.0
+    ],
+    "/UHF_IDLE": [
+      0.2
+    ],
+    "/USB_CC1": [
+      0.2
+    ],
+    "/USB_CC2": [
+      0.2
+    ],
+    "/USB_DM": [
+      0.2
+    ],
+    "/USB_DP": [
+      0.2
+    ],
+    "/USB_RETURN": [
+      0.2
+    ],
+    "/USB_VBUS_DEVICE": [
+      0.2
+    ],
+    "/V3V3": [
+      0.4
+    ],
+    "/VHF_BRANCH_FUSED": [
+      2.0
+    ],
+    "/VHF_IDLE": [
+      0.2
+    ],
+    "/VMOT_ESTOP": [
+      1.0
+    ],
+    "/WATCHDOG_HEARTBEAT": [
+      0.2
+    ],
+    "/WATCHDOG_OK": [
+      0.2
+    ],
+    "/WD_C": [
+      0.2
+    ],
+    "/WD_RC": [
+      0.2
+    ],
+    "unconnected-(J34-SHIELD-PadSH)": [
+      0.2
+    ]
+  },
+  "high_current_via_rating_verified": false,
+  "rf_impedance_verified": false,
+  "thermal_validation": false,
+  "latch_boolean_cases": 8192,
+  "latch_timing_and_physical_validation": false
+}

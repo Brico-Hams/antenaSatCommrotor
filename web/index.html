@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estación portátil — control autónomo</title>
+<style>
+body{font:16px system-ui;max-width:960px;margin:auto;padding:1rem;background:#121922;color:#eef3f8}
+section{background:#202c3a;margin:1rem 0;padding:1rem;border-radius:8px}
+input,select,textarea,button{font:inherit;padding:.5rem;margin:.25rem;max-width:95%}
+button{cursor:pointer}label{display:inline-block}textarea{width:95%;height:12rem}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}.danger{background:#ffb3a7}#message{white-space:pre-wrap}
+</style>
+<h1>Estación portátil 145 / 435 MHz</h1>
+<p>Proyecto original: Anatol (EA5KAO), Diego (EA5JEF) y Pedro Roca Molina.
+Actividad educativa de Bricohams (bricohams.org), con supervisión adulta.
+No se implica respaldo de fabricantes o autores de referencias.</p>
+<p>SGP4 a bordo, sin nube. No controla PTT ni CAT del RT3S. GNSS estacionario <strong>no mide rumbo</strong>.
+No habilite motores hasta verificar cableado, límites y parada de emergencia física.</p>
+<p>Menores: uso supervisado; no transmitir sin autorización/licencia aplicable.
+Antes de flashear, desconecte motores y RF y use alimentación protegida.
+Firmware de prototipo: compilar/flashear no certifica el hardware.</p>
+<section>
+<h2>Acceso y estado</h2>
+<label>Token local <input id="token" type="password" autocomplete="off"></label>
+<button id="connect">Conectar</button><button id="stop" class="danger">PARAR motores</button>
+<button id="clear">Borrar fallo (después: rehome)</button>
+<p id="message" role="status"></p><pre id="status">Sin conexión</pre>
+</section>
+<section>
+<h2>Ubicación y calibración</h2>
+<ol>
+<li>Compruebe NC/e-stop, base estable y restricción de carga. HOME físico; espere READY.</li>
+<li>Mueva EL a 0° y AZ a referencia conocida. Nivele físicamente: GNSS no mide nivel ni rumbo.</li>
+<li>Si AS5600 están habilitados, confirme <code>encoderZeroVerified=true</code> en estado.
+Los ceros se toman en homing, no desde una brújula ni por este botón.</li>
+<li>Introduzca rumbo verdadero actual, confirme nivel y calibre en reposo (motores OFF).</li>
+<li>Verifique <code>calibrated</code>, sitio y UTC válidos antes de seleccionar/seguir.</li>
+</ol>
+<label><input id="manual" type="checkbox"> Ubicación manual (UTC sigue siendo GNSS)</label><br>
+<label>Latitud <input id="lat" type="number" step="any" value="0"></label>
+<label>Longitud <input id="lon" type="number" step="any" value="0"></label>
+<label>Altitud m <input id="alt" type="number" step="any" value="0"></label>
+<button id="site">Guardar sitio</button><br>
+<button id="home">Homing físico AZ → EL</button>
+<p>Homing fija AZ=-180°, EL=0°. No determina norte verdadero.
+Use una referencia geográfica/solar o brújula corregida por declinación y alejada de metal;
+nivele la base con instrumento. Calibración obligatoria en cada encendido/rehome.</p>
+<label>AZ mecánico <input id="az" type="number" min="-180" max="180" step="any" value="0"></label>
+<label>EL <input id="el" type="number" min="0" max="90" step="any" value="0"></label>
+<button id="move">Mover</button><br>
+<label>Rumbo verdadero actual de la antena ° <input id="trueAz" type="number" min="0" max="359.999" step="any" value="0"></label>
+<label><input id="level" type="checkbox"> Base nivelada y EL=0 verificado</label>
+<button id="calibrate">Confirmar calibración</button>
+<p id="calibrationState">Calibración pendiente de conexión.</p>
+</section>
+<section>
+<h2>TLE y satélites</h2>
+<p>Importe bloques nombre + líneas 1/2 con checksums (máximo 100 satélites).
+TLE &gt;14 días inhibe seguimiento. Un AP aislado no tiene Internet.</p>
+<input id="file" type="file" accept=".txt,.tle"><textarea id="tle" placeholder="Nombre&#10;1 ...&#10;2 ..."></textarea>
+<button id="import">Validar y guardar importación</button>
+<select id="provider"><option value="celestrak">CelesTrak amateur</option><option value="amsat">AMSAT</option><option value="pe0sat">PE0SAT</option></select>
+<button id="update">Actualizar HTTPS vía STA</button>
+<p>STA y CA PEM se configuran al compilar; TLS nunca inseguro. Descargas fallidas conservan caché.</p>
+<button id="list">Cargar lista</button><select id="satellite"></select>
+<button id="select">Seleccionar</button>
+</section>
+<section>
+<h2>Pases y seguimiento</h2>
+<button id="passes">Calcular/consultar próximas 24 h</button>
+<button id="track">Seguir ahora</button>
+<p>Adquisición: apunte primero cerca del satélite (≤15°); solo inicia sobre el horizonte.
+El cruce del límite de cable ±180° provoca fallo, no un giro de 360°.
+Pases muestreados cada 10 s; no garantizan viabilidad mecánica cerca del cenit.</p>
+<pre id="passList"></pre>
+<p>Doppler mostrado en estado es orientativo a 145/435 MHz: ajuste las frecuencias reales en
+OpenGD77 de forma independiente. Sin premisa de full dúplex ni interfaz CAT.</p>
+</section>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+let connected=false, polling=false;
+async function api(path,data){
+ const response=await fetch('/api/'+path,{method:data===undefined?'GET':'POST',
+  headers:{'X-Control-Token':$('token').value,...(data===undefined?{}:{'Content-Type':'application/json'})},
+  body:data===undefined?undefined:JSON.stringify(data),cache:'no-store'});
+ const result=await response.json();
+ if(!response.ok)throw Error(result.error||'HTTP '+response.status);
+ return result;
+}
+function report(error){$('message').textContent=error.message||String(error)}
+function button(id,fn){$(id).addEventListener('click',async()=>{
+ try{const result=await fn();if(result?.message)$('message').textContent=result.message}
+ catch(error){report(error)}
+});}
+async function status(){
+ if(polling)return;polling=true;
+ try{const state=await api('status');$('status').textContent=JSON.stringify(state,null,2);
+ $('calibrationState').textContent=`HOME: ${state.homed?'sí':'no'} | motores: ${state.enabled?'ACTIVOS — no calibrar':'OFF'} | nivel/norte: ${state.calibrated?'confirmados':'pendientes'} | encoder: ${state.encoders?(state.encoderZeroVerified?'ceros verificados':'PENDIENTE'):'fallback manual'} | sitio/UTC: ${state.siteValid&&state.utcValid?'válidos':'pendientes'}`;
+ }
+ catch(error){report(error)}finally{polling=false}
+}
+async function list(){
+ const result=await api('tle');$('satellite').replaceChildren();
+ for(const sat of result.satellites){
+  const option=document.createElement('option');option.value=sat.id;
+  option.textContent=sat.name+' — '+(sat.fresh?'vigente':'caducado/UTC no válida');
+  $('satellite').append(option);
+ }
+}
+button('connect',async()=>{await api('status');connected=true;await status();await list()});
+button('stop',()=>api('stop',{}));button('clear',()=>api('clear',{}));
+button('home',()=>api('home',{}));
+button('move',()=>api('move',{az:Number($('az').value),el:Number($('el').value)}));
+button('site',()=>api('site',{manual:$('manual').checked,lat:Number($('lat').value),
+ lon:Number($('lon').value),alt:Number($('alt').value)}));
+button('calibrate',()=>api('calibrate',{trueAz:Number($('trueAz').value),
+ levelConfirmed:$('level').checked}));
+button('import',async()=>{const result=await api('tle',{text:$('tle').value});await list();return result});
+button('update',async()=>{const result=await api('update',{provider:$('provider').value});await list();return result});
+button('list',list);
+button('select',()=>api('select',{id:Number($('satellite').value)}));
+button('track',()=>api('track',{}));
+button('passes',async()=>{
+ const result=await api('passes');
+ const date=t=>new Date(t*1000).toISOString();
+ $('passList').textContent=(result.calculating?'Calculando; consulte de nuevo.\n':'')+
+ result.passes.map(p=>`${date(p.aos)} → ${date(p.los)} | máximo ${p.maxEl.toFixed(1)}° a ${date(p.peak)}${p.partial?' (parcial)':''}`).join('\n');
+ if(!result.calculating&&!result.passes.length)$('passList').textContent='Sin pases en 24 h';
+});
+$('file').addEventListener('change',async()=>{
+ try{const file=$('file').files[0];if(file.size>48000)throw Error('Archivo demasiado grande');
+ $('tle').value=await file.text()}catch(error){report(error)}
+});
+setInterval(()=>{if(connected)status()},1000);
+</script>
+</html>
