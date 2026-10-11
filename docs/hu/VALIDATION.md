@@ -285,6 +285,16 @@ A 8 m/s-os szélpélda a 2-es biztonsági tényezővel **NEM teljesítette**
 a nyomatéki keretet. A teszt éppen azért sikeres, mert kimutatja ezt a
 korlátot; nem igazolja az ilyen szélben történő működést.
 
+## Ellenőrzés 2026-10-11 (felülvizsgálati környezet, hardver nélkül)
+
+| Tesztcsomag | Eredmény | Megjegyzés |
+| --- | --- | --- |
+| `node --test "tests/*.test.cjs"` | 66/66 | az `npm test` javítva Node 22-höz |
+| `pytest tests/rotor tests/radio_host` | 86 sikeres | a `test_controller` segédfüggvény átnevezve (a pytest tesztként gyűjtötte be); `PYTHONPATH=.:radio:rotor` |
+| Natív vezérlőlogika (Unity, g++) | 6/6 | `tests/control_logic/test_native` |
+| OpenSCAD 2021.01 render a logós alkatrészekről | vízzáró | 4 alkatrész |
+| Android JVM, KiCad ERC/DRC, `control_sgp4.cpp`, OS-lemezkép | **nem futott** | nincs hálózat a Gradle-hez, nincs KiCad, nincs rögzített SGP4 könyvtár, nincs Docker/Debian tükör |
+
 ## Értelmezés
 
 Egy lefordított orbitális könyvtár nem igazolja a kábelezést, az érzékelők

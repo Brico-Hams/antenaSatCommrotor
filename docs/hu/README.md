@@ -210,6 +210,9 @@ antennájáról nem feltételezzük, hogy kompatibilis 145/435 MHz-en.
 - [Előzetes számítások](../../calc/design.json).
 - [Numerikus levezetés és tartalékok](DESIGN-CALCULATIONS.md).
 - [Építési sorrend](BUILD-GUIDE.md).
+- [Illusztrált lépésenkénti összeszerelési útmutató (modulonként és együtt)](assembly/README.md).
+- [PortableSatLite: könnyű hordozható V/U állomás (alprojekt)](../../PortableSatLite/README.md).
+- [BricoHams-arculat a PCB-n és a nyomtatott alkatrészeken](BRANDING.md).
 - [Szállítás és terepi üzem](FIELD-MANUAL.md).
 - [Kockázatok és enyhítés](RISKS.md).
 - [Tesztek és elfogadási kritériumok](ACCEPTANCE.md).

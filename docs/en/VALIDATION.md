@@ -266,6 +266,16 @@ The 8 m/s wind example **FAILED** the torque budget with safety factor 2. The
 test **PASSES precisely because it detects this limit**; it does not validate
 operation in that wind.
 
+## Verification 2026-10-11 (review environment, no hardware)
+
+| Suite | Result | Notes |
+| --- | --- | --- |
+| `node --test "tests/*.test.cjs"` | 66/66 | `npm test` fixed for Node 22 |
+| `pytest tests/rotor tests/radio_host` | 86 passed | helper `test_controller` renamed (pytest collected it as a test); `PYTHONPATH=.:radio:rotor` |
+| Native control logic (Unity, g++) | 6/6 | `tests/control_logic/test_native` |
+| OpenSCAD 2021.01 render of the logo parts | watertight | 4 parts |
+| Android JVM, KiCad ERC/DRC, `control_sgp4.cpp`, OS image | **not executed** | no network for Gradle, no KiCad, no pinned SGP4 library, no Docker/Debian mirrors |
+
 ## Interpretation
 
 A compiled orbital library does not confirm wiring, sensor accuracy, or complete

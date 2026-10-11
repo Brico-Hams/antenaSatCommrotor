@@ -1,5 +1,7 @@
 # Guia ilustrada de ensamblaje
 
+Idiomas: [English](../en/assembly/README.md) · [Magyar](../hu/assembly/README.md). Las figuras en inglés y húngaro están en `fig/*.en.svg` y `fig/*.hu.svg`.
+
 Todas las figuras llevan el logo BricoHams, el bloque de titulo y los autores (Anatol EA5KAO, Diego EA5JEF, Pedro Roca Molina). Se generan con `scripts/make_assembly_figs.py` desde los modelos OpenSCAD (`cad/`) y los Gerber, de modo que no divergen del diseno.
 
 > **Estado:** prototipo digital, **no validado fisicamente**. Las figuras son ayudas de montaje, no planos de mecanizado ni pinouts de fabricacion. El rotor BASE vigente es el de **correa GT2** (`cad/belt_station.scad`); el planetario (`cad/station.scad`) es LEGACY.

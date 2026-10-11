@@ -5,7 +5,9 @@ from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 AUTHORS = 'Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina'
 SITE = 'bricohams.org'
-STATUS = 'Prototipo digital: no validado fisicamente / Digital prototype: not physically validated'
+STATUS = {'es': 'Prototipo digital: no validado fisicamente', 'en': 'Digital prototype: not physically validated',
+          'hu': 'Digitális prototípus: fizikailag nem validált'}
+LBL = {'es': ('Pasos', 'Leyenda', 'ver LICENSES/'), 'en': ('Steps', 'Legend', 'see LICENSES/'), 'hu': ('Lépések', 'Jelmagyarázat', 'lásd LICENSES/')}
 NAVY, ORANGE, GREY = '#12263f', '#e8871e', '#5b6b7b'
 W = 1600
 
@@ -30,7 +32,7 @@ def _wrap(t, n):
         else: line = (line+' '+w).strip()
     return out+[line] if line else out
 
-def frame(code, title, subtitle, body_svg, body_h, steps=(), legend=(), body_w=None):
+def frame(code, title, subtitle, body_svg, body_h, steps=(), legend=(), body_w=None, lang='es'):
     """body_svg is drawn in a box of (body_w or 900) x body_h at x=40; steps panel on the right."""
     bw = body_w or 940
     lg, lw = logo_uri(64)
@@ -43,7 +45,7 @@ def frame(code, title, subtitle, body_svg, body_h, steps=(), legend=(), body_w=N
         srows.append((i, lines, y)); y += 26*len(lines)+20
     leg_h = 34 if legend else 0
     H = top+max(body_h, y+60)+leg_h+70+24
-    o = [f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {W} {H}" width="{W}" height="{H}" font-family="DejaVu Sans, Arial, sans-serif">',
+    o = [f'<svg lang="{lang}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {W} {H}" width="{W}" height="{H}" font-family="DejaVu Sans, Arial, sans-serif">',
          f'<title>{escape(code)} {escape(title)} - BricoHams</title>',
          f'<desc>{escape(subtitle)}. {AUTHORS}. {SITE}</desc>',
          f'<rect width="{W}" height="{H}" fill="#fff"/><rect x="6" y="6" width="{W-12}" height="{H-12}" fill="none" stroke="{NAVY}" stroke-width="2"/>',
@@ -54,7 +56,7 @@ def frame(code, title, subtitle, body_svg, body_h, steps=(), legend=(), body_w=N
          f'<rect x="{W-170}" y="22" width="140" height="48" rx="6" fill="{NAVY}"/><text x="{W-100}" y="54" font-size="26" font-weight="bold" fill="#fff" text-anchor="middle">{escape(code)}</text>',
          f'<g transform="translate(40,{top})">{body_svg}</g>']
     if steps:
-        o.append(f'<g transform="translate({sx},{top+4})"><text font-size="18" font-weight="bold" fill="{NAVY}" y="16">Pasos / Steps</text>')
+        o.append(f'<g transform="translate({sx},{top+4})"><text font-size="18" font-weight="bold" fill="{NAVY}" y="16">{LBL[lang][0]}</text>')
         for i, lines, yy in srows:
             yy += 44
             o.append(f'<circle cx="14" cy="{yy-6}" r="14" fill="{ORANGE}"/><text x="14" y="{yy}" font-size="15" font-weight="bold" fill="#fff" text-anchor="middle">{i}</text>')
@@ -64,13 +66,13 @@ def frame(code, title, subtitle, body_svg, body_h, steps=(), legend=(), body_w=N
     ly = top+max(body_h, y+60)+6
     if legend:
         x = 40
-        o.append(f'<text x="40" y="{ly+14}" font-size="13" font-weight="bold" fill="{NAVY}">Leyenda / Legend:</text>'); x = 200
+        o.append(f'<text x="40" y="{ly+14}" font-size="13" font-weight="bold" fill="{NAVY}">{LBL[lang][1]}:</text>'); x = 200
         for col, txt in legend:
             o.append(f'<rect x="{x}" y="{ly+3}" width="14" height="14" fill="{col}" stroke="#333"/><text x="{x+20}" y="{ly+15}" font-size="13" fill="#222">{escape(txt)}</text>')
             x += 40+len(txt)*7.4
     fy = H-60
     o += [f'<rect x="6" y="{fy-8}" width="{W-12}" height="2" fill="{ORANGE}"/>',
           f'<text x="24" y="{fy+14}" font-size="14" font-weight="bold" fill="{NAVY}">BricoHams · {escape(AUTHORS)} · {SITE}</text>',
-          f'<text x="24" y="{fy+34}" font-size="12" fill="{GREY}">{escape(STATUS)} · CERN-OHL-S-2.0 (hardware) / MIT (software) - ver LICENSES/</text>',
+          f'<text x="24" y="{fy+34}" font-size="12" fill="{GREY}">{escape(STATUS[lang])} · CERN-OHL-S-2.0 (hardware) / MIT (software) - {LBL[lang][2]}</text>',
           f'<text x="{W-24}" y="{fy+14}" font-size="12" fill="{GREY}" text-anchor="end">{escape(code)} · {escape(title)}</text></svg>']
     return '\n'.join(o), W, H

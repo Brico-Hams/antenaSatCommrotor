@@ -202,6 +202,9 @@ compatible with 145/435 MHz.
 - [Sources, licenses, and provenance](SOURCES.md).
 - [RF, diplexer, and OpenGD77](RF-AND-RADIO.md).
 - [CAD, printing, and assembly](MECHANICAL.md).
+- [Illustrated step-by-step assembly guide (per module and collective)](assembly/README.md).
+- [PortableSatLite: lightweight portable V/U station (sub-project)](../../PortableSatLite/README.md).
+- [BricoHams branding on PCB and printed parts](BRANDING.md).
 - [Control, logical wiring, and API](CONTROL.md).
 - [PCB and fabrication files](PCB.md).
 - [WebFlash and GitHub build](WEBFLASH.md).

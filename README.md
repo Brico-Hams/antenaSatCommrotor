@@ -240,7 +240,7 @@ no se presume compatible con 145/435 MHz.
 - [Calculos preliminares](calc/design.json).
 - [Desarrollo numerico y margenes](docs/DESIGN-CALCULATIONS.md).
 - [PortableSatLite: estacion V/U portatil ligera (subproyecto)](PortableSatLite/README.md).
-- [Guia ilustrada de ensamblaje paso a paso (por modulo y colectiva)](docs/assembly/README.md) / [English](docs/en/assembly/README.md).
+- [Guia ilustrada de ensamblaje paso a paso (por modulo y colectiva)](docs/assembly/README.md) / [English](docs/en/assembly/README.md) / [Magyar](docs/hu/assembly/README.md).
 - [Orden de construccion](docs/BUILD-GUIDE.md).
 - [Transporte y operacion de campo](docs/FIELD-MANUAL.md).
 - [Riesgos y mitigacion](docs/RISKS.md).

@@ -189,12 +189,17 @@ jelent HFP/A2DP-t vagy igazolt fizikai audiointerfészt.
 
 ## Első indítás és profilválasztás
 
-1. Raspberry Pi Imager első indítási beállításával vagy upstream helyi
-   beállítóvarázslójával hozd létre a tényleges kezelői fiókot, és állítsd be
-   a kívánt hálózatot. Az upstream lezárt elsőfelhasználó-helyőrző helyben,
-   első indításkor konfigurálódik. A képben nincs jelszó, Wi-Fi-profil,
-   SSH-kulcs, BlueZ partner, rádiótoken, sorozatszám vagy követési adatforrás.
-   Az SSH kikapcsolva marad, hacsak a kezelő szándékosan nem konfigurálja.
+1. **Alapértelmezett fiók (tulajdonosi döntés):** felhasználó `bricohams`,
+   jelszó `Brico123`, a pi-gen hozza létre (`FIRST_USER_NAME`/`FIRST_USER_PASS`,
+   az átnevezővarázsló letiltva). Ez **nyilvános, közismert hitelesítő adat**:
+   az első bejelentkezéskor változtasd meg a `passwd` paranccsal (az MOTD is
+   ezt írja). Az SSH **kikapcsolva** marad (`ENABLE_SSH=0`), amíg meg nem
+   változtattad. Ebbe a képbe nincs beépítve Wi-Fi-profil, SSH-kulcs, BlueZ
+   partner, rádiótoken, sorozatszám vagy követési adatforrás. A BricoHams
+   bannerek (`/etc/motd`, `/etc/issue`, `/etc/issue.net`, SSH-banner) statikus
+   fájlok az `os/pi-gen-stage/stage2/99-bricohams/files/etc/` könyvtárban. A
+   Raspberry Pi Imager testreszabásával a fiók és a hálózat továbbra is
+   lecserélhető.
 2. Az upstream elsőfelhasználó-beállítás után a BricoHams-választó elindul
    a helyi `tty1` konzolon. Válassz kifejezett modulprofilt, és jelentkezz be
    a már létrehozott helyi kezelői fiókkal. A profil telepítéséhez internet
@@ -301,3 +306,14 @@ Harmadik fél firmware-blobot vagy logót nem másolunk a lemezképbe.
 - [Hivatalos Raspberry Pi pi-gen ARM64/Trixie forrás a rögzített commitnál](https://github.com/RPi-Distro/pi-gen/tree/d346cd53562b3c6b4f94c9155175f814258c456d)
 - [Hivatalos Raspberry Pi Linux SPI1 overlay dokumentáció](https://github.com/raspberrypi/linux/blob/4103a989a46196239b830bd07693277e42b8f992/arch/arm/boot/dts/overlays/README)
 - [Raspberry Pi CM5IO és segédpanel tűszerződése](CM5-PCB.md)
+
+## Build állapota (olvasd el, mielőtt megbízol egy lemezképben)
+
+A recept, a bannerek és az alapértelmezett fiók csak statikusan ellenőrzöttek
+(szintaxis és tárolóteszt). Ebből a receptből a készítési környezetben **nem
+készült és nem indult el lemezkép**: nincs Docker-démon, nincs ARM chroot/binfmt,
+és a Debian/Raspberry Pi tükrök elérhetetlenek voltak. Építsd az
+`os/build-image.sh` szkripttel Linuxon Dockerrel (60 GiB szabad hely), vagy
+indítsd a `.github/workflows/build-os.yml` GitHub Actions munkafolyamatot
+(kézi indítás). Amíg a lemezkép nem indult el CM5-ön és az itt leírt ellenőrzések
+nem futottak le, az operációs rendszer NEM elfogadott.
