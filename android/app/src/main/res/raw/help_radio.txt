@@ -1,0 +1,9 @@
+AYUDA · Radio host (SDR en la Raspberry/CM5)
+BricoHams · Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina
+
+Conecta con el host de radio (CM5) por BLE para audio y estado. TX permanece inhibido salvo que el host lo permita expresamente tras cualificación con carga.
+1. Empareje el host en Ajustes de Android, seleccione el dispositivo y escriba el token de radio.
+2. Conecte y espere "listo"; compruebe perfil, créditos TX y fallos.
+3. No transmita sin antena/carga cualificada ni con TX no cualificado.
+4. Desconexión: el host vuelve a estado seguro.
+Problemas: sin dispositivos -> permisos Bluetooth y emparejado previo; fallo de token -> repita el token; sin audio -> compruebe entrada de micrófono y perfil.

@@ -12,7 +12,7 @@
         android:usesPermissionFlags="neverForLocation" tools:targetApi="31" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <application android:label="@string/app_name" android:allowBackup="false"
-        android:icon="@drawable/ic_rotor" android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@drawable/ic_launcher_bricohams" android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="false" android:usesCleartextTraffic="false"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
         <activity android:name=".MainActivity" android:exported="true">
@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".DigitalReceiveActivity" android:exported="false" />
         <activity android:name=".RadioHostActivity" android:exported="false" />
+        <activity android:name=".HelpActivity" android:exported="false" />
         <receiver
             android:name=".orbit.PassAlertReceiver"
             android:enabled="true"

@@ -23,6 +23,11 @@ class TleCatalogueTest {
     private fun reject(code: String, text: String) {
         try { parse(text); fail(code) } catch (failure: ProtocolFailure) { assertEquals(code, failure.code) }
     }
+    @Test fun toleratesTrailingBlanksAndCarriageReturnsFromPublicFeeds() {
+        val padded = fixture().split("\n").filter { it.isNotEmpty() }.joinToString("\r\n") { "$it   " } + "\r\n"
+        assertEquals(1, parse(padded).entries.size)
+        assertEquals(fixture(), parse(padded).text)
+    }
     @Test fun mirrorsValladoEpochAndChecksumsWithoutPhonePropagation() {
         val published = parse("VALLADO-TEST\n$ONE\n$TWO\n")
         assertEquals(962131819L, published.entries.single().epoch)

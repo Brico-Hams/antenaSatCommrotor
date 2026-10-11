@@ -1,5 +1,8 @@
 # Tests and acceptance gates
 
+
+Step-by-step detail, test bench and per-component checklists: [testing/README.md](testing/README.md).
+
 Record date, Git revision, instruments, operator, assembly, and result.
 A criterion that has not been measured is PENDING, not APPROVED by calculation.
 

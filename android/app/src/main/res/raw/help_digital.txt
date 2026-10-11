@@ -1,0 +1,10 @@
+AYUDA · Receptor digital (SSTV / APRS)
+BricoHams · Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina
+
+Decodifica audio recibido por el micrófono/entrada de audio del teléfono. No transmite.
+1. Conecte la salida de audio del receptor a la entrada de audio del teléfono con un cable aislado (o use el micrófono acústicamente). Conceda el permiso de micrófono.
+2. Elija modo (SSTV o APRS/AX.25 1200 baudios) y entrada de audio.
+3. Introduzca su indicativo si desea usar mensajería APRS (solo guardado en el teléfono).
+4. Inicie la recepción. Las imágenes SSTV y el registro de paquetes pueden guardarse.
+5. Compruebe el nivel de audio: demasiado alto distorsiona, demasiado bajo no decodifica.
+Problemas: sin imagen -> revise volumen y modo; paquetes con errores -> reduzca ruido y ajuste nivel.

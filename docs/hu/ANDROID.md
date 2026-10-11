@@ -312,3 +312,24 @@ nélküli elutasítás, a firmware által megkövetelt MITM-titkosítás,
 MTU 23 és tárgyalt MTU, 26/30/31/35 engedélyek, timeout, rádióvesztés,
 második kliens és fizikai leállítás. Nem állítjuk, hogy a motorok, BLE-kapcsolat
 vagy kalibrálás terepen validált.
+
+## Felülvizsgálat 2026-10-11: TLE-letöltés, BLE-szinkron, arculat és súgó
+
+A változtatásokat a felülvizsgálati környezetben **nem fordítottuk Gradle-lel** (nincs hálózat a Maven/SDK felé). A `TleCatalogue` és a
+`TleDownload` logikáját `kotlinc`-kel JVM-en lefordítottuk, és ellenőrzést futtattunk; a JVM-tesztek (`./gradlew testDebugUnitTest`) még függőben vannak.
+
+| Megállapítás | Valószínű ok | Javítás |
+| --- | --- | --- |
+| Hasznos magyarázat nélküli letöltési hibák | bármely HTTP-kód vagy időtúllépés „TLE érvénytelen: tle_http_…” vagy általános hibaként jelent meg | konkrét üzenetek: használati korlát (403/429), átirányítás (301/302/303/307/308), nem található, szerver és időtúllépés; az érvényes gyorsítótár megmarad |
+| A sorvégi szóközös letöltés elbukott | az elemző pontosan 69 karakteres, záró szóköz nélküli sorokat követelt | a `TleCatalogue.parse` figyelmen kívül hagyja a záró szóközöket/CR-t/tabulátort (az érvényesített tartalom és az ellenőrzőösszeg változatlan) |
+| A Raspberry felé az átvitel 300 mp-nél megszakadt | rögzített teljes időzítő, 512 karakteres blokkokkal 20 bájtos BLE-kereteken | elakadásészlelés: minden ACK-nál újraindul (60 mp); 60 mp előrehaladás nélkül megszakít és bont |
+| BLE kapcsolódási hiba `133` | gyakori átmeneti Android-állapot újrapróbálás nélkül | legfeljebb 2 automatikus újrapróbálás a `BleTransport`-ban (a `RadioHostBleTransport`-ban még nincs) |
+| Nincs logó és súgó | — | logó és szerzők mindhárom képernyőn (`Branding.kt`), BricoHams indítóikon, Súgó gomb (`HelpActivity`; offline szövegek a `res/raw`, `res/raw-en`, `res/raw-hu` mappában) |
+
+**Megjegyzés a szolgáltatókról:** a korábbi ellenőrzés (fent) 97 műholdat töltött le az AMSAT-tól, de a CelesTrak és a PE0SAT időtúllépett arról a hálózatról.
+Ebben a felülvizsgálatban egy webolvasó eszköz `302`-t kapott az AMSAT-tól `http://`-re, amit az alkalmazás elutasítana (nincs átirányítás, nincs titkosítatlan
+forgalom), de az alkalmazással ez nem volt reprodukálható, ezért **egyetlen** szolgáltatót sem tiltottunk le. Ha egy szolgáltató nem működik a hálózatodról, az
+alkalmazás elmagyarázza és másikat javasol; jegyezd fel a tesztnyilvántartásba, melyik működik (APP-03). A szolgáltató látja a kapcsolat IP-címét.
+
+Valós telefonon még ellenőrzendő: a három szolgáltató a felhasználó hálózatáról, egy nagy katalógus teljes BLE-átvitele és a 133-as hiba újrapróbálása.
+Tesztek: [testing/07-app-android.md](testing/07-app-android.md).

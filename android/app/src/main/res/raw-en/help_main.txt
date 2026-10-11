@@ -1,0 +1,43 @@
+HELP · PortableSatStation (BricoHams)
+Authors: Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina — bricohams.org
+
+NOTICE: prototype not validated in the field. Always use a physical emergency stop, protected power and checked limits. Supervised educational activity. The app does not control CAT or PTT.
+
+1. GETTING STARTED
+ a) Power the rotor and check that the physical stop works.
+ b) Tap "Scan rotors (15 s)". Android 12+ asks for nearby-devices permission; Android 8-11 asks for location only to scan BLE (the app neither uses nor uploads your position).
+ c) Explicitly select your rotor and confirm the passkey configured on the device (pairing).
+ d) Enter the local API token and tap "Save encrypted token". The token never leaves the phone.
+ e) Connect. "Authenticated and versions verified" means the link is valid; it does NOT enable motors.
+
+2. STATUS AND HOMING
+ - "Read status" shows mode, UTC time, site and faults.
+ - "Physical homing AZ → EL" sets mechanical AZ = -180° and EL = 0°; it is not true north.
+ - "STOP motors" always stops. It does not replace the physical stop.
+
+3. CALIBRATION (4 phases)
+ 1 Clear space, limits and stop. Homing.  2 Level the base and verify EL = 0.  3 Measure the antenna's CURRENT true heading (compass corrected for declination, away from metal; a stationary GNSS does not measure heading).  4 Enter the heading and confirm. After a rehome or power cycle you must calibrate again.
+
+4. DOWNLOADING SATELLITES (TLE)
+ - Pick a provider (CelesTrak, AMSAT or PE0SAT) and tap "Download TLEs from selected provider". HTTPS only; no token, location or analytics. The provider sees your IP.
+ - If it fails: check Internet; CelesTrak limits repeated downloads (wait a few hours); try another provider (one provider may be down or blocked on your network while another works); or use "Import local TLE file".
+ - The last valid cache is kept if a download fails.
+ - With more than 100 satellites you must choose a subset (max. 100).
+
+5. SYNCING WITH THE RASPBERRY / CONTROLLER
+ - Needs a connected, authenticated rotor, valid UTC time, mode READY or DISARMED, and fresh TLEs.
+ - Tap "Transfer whole catalogue over BLE". The controller's catalogue is replaced. Progress is shown in bytes; if nothing advances for 60 s the transfer is cancelled and the link dropped.
+ - If it fails: move the phone closer, reconnect, check the rotor's UTC time, reduce the catalogue and retry. Android's transient error 133 is retried automatically twice.
+
+6. PASSES AND TRACKING
+ Choose a satellite from the controller's catalogue and query passes. SGP4 is computed by the controller, not the phone.
+
+7. DIGITAL RECEIVER and RADIO
+ The "Digital receiver" and "Radio host" buttons have their own help (Help button on each screen).
+
+8. COMMON PROBLEMS
+ - Rotor not found: Bluetooth on, permission granted, rotor advertising, within 5 m.
+ - "bond_and_token_required": pair in Android settings and save the token.
+ - "authentication_failed": wrong token.
+ - "protocol_mismatch": different app/firmware versions.
+ - "ble_request_timeout": weak signal; reconnect.

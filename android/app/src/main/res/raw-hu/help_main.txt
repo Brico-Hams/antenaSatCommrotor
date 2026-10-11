@@ -1,0 +1,45 @@
+SÚGÓ · PortableSatStation (BricoHams)
+Szerzők: Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina — bricohams.org
+
+MEGJEGYZÉS: az alkalmazás felülete angol vagy spanyol nyelvű; a súgó a gombokat mindkét nyelven megadja.
+
+FIGYELEM: terepen nem validált prototípus. Mindig legyen fizikai vészleállító, védett táplálás és ellenőrzött végállás. Felügyelt oktatási tevékenység. Az alkalmazás nem vezérel CAT-et vagy PTT-t.
+
+1. ELSŐ LÉPÉSEK
+ a) Kapcsold be a forgatót, és ellenőrizd, hogy a fizikai vészleállító működik.
+ b) Koppints a „Scan rotors (15 s)” / „Buscar rotores (15 s)” gombra. Android 12+ közeli eszközök engedélyét kéri; Android 8-11 csak a BLE-kereséshez kér helyzetet (az alkalmazás nem használja és nem tölti fel a pozíciódat).
+ c) Válaszd ki kifejezetten a forgatódat, és erősítsd meg az eszközön beállított passkeyt (párosítás).
+ d) Add meg a helyi API-tokent, és koppints a „Save encrypted token” / „Guardar token cifrado” gombra. A token nem hagyja el a telefont.
+ e) Csatlakozz. A „Hitelesítve, verziók ellenőrizve” azt jelenti, hogy a kapcsolat érvényes; a motorokat NEM engedélyezi.
+
+2. ÁLLAPOT ÉS HOMING
+ - Az „Read status” / „Consultar estado” megmutatja az üzemmódot, az UTC időt, a helyet és a hibákat.
+ - A „Physical homing AZ → EL” / „Homing físico AZ → EL” a mechanikai AZ = -180° és EL = 0° értéket állítja be; nem a valódi észak.
+ - A „STOP motors” / „PARAR motores” mindig megállít. Nem helyettesíti a fizikai vészleállítót.
+
+3. KALIBRÁCIÓ (4 fázis)
+ 1 Szabad hely, végállások és vészleállító. Homing.  2 Szintezd az alapot, és ellenőrizd az EL = 0 értéket.  3 Mérd meg az antenna JELENLEGI valódi irányát (deklinációval korrigált iránytű, fémtől távol; az álló GNSS nem mér irányt).  4 Add meg az irányt és erősítsd meg. Rehome vagy újraindítás után újra kalibrálni kell.
+
+4. MŰHOLDAK LETÖLTÉSE (TLE)
+ - Válassz szolgáltatót (CelesTrak, AMSAT vagy PE0SAT), és koppints a „Download TLEs from selected provider” / „Descargar TLE del proveedor elegido” gombra. Csak HTTPS; token, helyzet és analitika nélkül. A szolgáltató látja az IP-címedet.
+ - Hiba esetén: ellenőrizd az internetet; a CelesTrak korlátozza az ismételt letöltést (várj néhány órát); próbálj másik szolgáltatót (az egyik szolgáltató leállhat vagy blokkolva lehet a hálózatodon, miközben egy másik működik); vagy használd a „Import local TLE file” / „Importar archivo TLE local” gombot.
+ - Sikertelen letöltésnél az utolsó érvényes gyorsítótár megmarad.
+ - 100-nál több műholdnál részhalmazt kell választani (legfeljebb 100).
+
+5. SZINKRONIZÁLÁS A RASPBERRY-VEL / VEZÉRLŐVEL
+ - Csatlakoztatott, hitelesített forgató, érvényes UTC idő, READY vagy DISARMED üzemmód és friss TLE szükséges.
+ - Koppints az „Transfer whole catalogue over BLE” / „Transferir catálogo completo por BLE” gombra. A vezérlő katalógusa lecserélődik. Az előrehaladás bájtban látszik; ha 60 mp-ig nem halad, az átvitel megszakad és a kapcsolat bontódik.
+ - Hiba esetén: vidd közelebb a telefont, csatlakozz újra, ellenőrizd a forgató UTC idejét, csökkentsd a katalógust, és próbáld újra. Az Android átmeneti 133-as hibáját az alkalmazás kétszer automatikusan újrapróbálja.
+
+6. ÁTVONULÁSOK ÉS KÖVETÉS
+ Válassz műholdat a vezérlő katalógusából, és kérdezd le az átvonulásokat. Az SGP4-et a vezérlő számolja, nem a telefon.
+
+7. DIGITÁLIS VEVŐ és RÁDIÓ
+ A „Digitális vevő” és a „Rádió host” gomboknak saját súgója van (Súgó gomb minden képernyőn).
+
+8. GYAKORI PROBLÉMÁK
+ - Nem található a forgató: Bluetooth bekapcsolva, engedély megadva, a forgató hirdet, 5 m-en belül.
+ - „bond_and_token_required”: párosíts az Android beállításaiban, és mentsd a tokent.
+ - „authentication_failed”: hibás token.
+ - „protocol_mismatch”: eltérő alkalmazás-/firmware-verzió.
+ - „ble_request_timeout”: gyenge jel; csatlakozz újra.

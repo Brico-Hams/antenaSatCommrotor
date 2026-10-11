@@ -1,0 +1,43 @@
+AYUDA · PortableSatStation (BricoHams)
+Autores: Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina — bricohams.org
+
+AVISO: prototipo no validado en campo. Use siempre parada de emergencia física, alimentación protegida y límites comprobados. Actividad educativa supervisada. La app no controla CAT ni PTT.
+
+1. PRIMEROS PASOS
+ a) Encienda el rotor y compruebe que la parada física funciona.
+ b) Pulse "Buscar rotores (15 s)". Android 12+ pide permiso de dispositivos cercanos; Android 8-11 pide ubicación solo para buscar BLE (la app no usa ni sube su posición).
+ c) Seleccione explícitamente su rotor y confirme el passkey configurado en el dispositivo (emparejamiento).
+ d) Introduzca el token API local y pulse "Guardar token cifrado". El token nunca sale del teléfono.
+ e) Conecte. "Autenticado y versiones verificadas" significa que la comunicación es válida; NO habilita motores.
+
+2. ESTADO Y HOMING
+ - "Consultar estado" muestra modo, hora UTC, sitio y fallos.
+ - "Homing físico AZ → EL" fija AZ = -180° y EL = 0° mecánicos; no es el norte verdadero.
+ - "PARAR motores" detiene siempre. No sustituye a la parada física.
+
+3. CALIBRACIÓN (4 fases)
+ 1 Espacio libre, límites y parada. Homing.  2 Nivele la base y verifique EL = 0.  3 Mida el rumbo verdadero ACTUAL de la antena (brújula con declinación corregida, lejos de metal; el GNSS parado no mide rumbo).  4 Introduzca el rumbo y confirme. Tras rehome o reinicio hay que calibrar otra vez.
+
+4. DESCARGAR SATÉLITES (TLE)
+ - Elija proveedor (CelesTrak, AMSAT o PE0SAT) y pulse "Descargar TLE del proveedor elegido". Solo HTTPS; sin token, posición ni analítica. El proveedor ve su IP.
+ - Si falla: compruebe Internet; CelesTrak limita descargas repetidas (espere unas horas); pruebe otro proveedor (un proveedor puede estar caído o bloqueado en su red mientras otro funciona); o use "Importar archivo TLE local".
+ - La última caché válida se conserva si una descarga falla.
+ - Si hay más de 100 satélites debe elegir un subconjunto (máx. 100).
+
+5. SINCRONIZAR CON LA RASPBERRY / CONTROLADOR
+ - Requiere rotor conectado, autenticado, hora UTC válida y modo READY o DISARMED, y TLE recientes.
+ - Pulse "Transferir catálogo completo por BLE". Se reemplaza el catálogo del controlador. El progreso se muestra en bytes; si no avanza durante 60 s se cancela y se desconecta.
+ - Si falla: acerque el teléfono, reconecte, compruebe la hora UTC del rotor, reduzca el catálogo y reintente. El error 133 de Android se reintenta solo dos veces.
+
+6. PASES Y SEGUIMIENTO
+ Elija satélite del catálogo del controlador y consulte pases. El cálculo SGP4 lo hace el controlador, no el teléfono.
+
+7. RECEPTOR DIGITAL y RADIO
+ Botones "Receptor digital" y "Radio host": ver su ayuda propia (botón Ayuda en cada pantalla).
+
+8. PROBLEMAS FRECUENTES
+ - No aparece el rotor: Bluetooth activado, permiso concedido, rotor anunciando, a menos de 5 m.
+ - "bond_and_token_required": empareje en Ajustes de Android y guarde el token.
+ - "authentication_failed": token incorrecto.
+ - "protocol_mismatch": versiones app/firmware distintas.
+ - "ble_request_timeout": señal débil; reconecte.

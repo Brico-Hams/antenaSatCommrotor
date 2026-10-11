@@ -260,4 +260,12 @@
     <string name="aprs_inbox_empty">No hay mensajes APRS/ACK/rej recibidos dirigidos a la estación configurada en esta decodificación. Introduzca arriba su indicativo-SSID antes de decodificar.</string>
     <string name="aprs_plaintext_confirmation">Confirmo que este mensaje es texto legal de radioaficionado sin cifrar y que tengo autorización/licencia para transmitirlo. Preparar/exportar no autoriza la transmisión RF.</string>
     <string name="aprs_plaintext_required">Confirme texto legal y sin cifrar de radioaficionado antes de preparar el audio. La aplicación no cifra ni verifica el contenido.</string>
+    <string name="logo_description">Logotipo de BricoHams</string>
+    <string name="help_open">Ayuda</string>
+    <string name="help_unavailable">No se pudo cargar el archivo de ayuda incluido en la aplicación.</string>
+    <string name="tle_http_timeout">La descarga tardó demasiado. Compruebe la conexión e inténtelo de nuevo o use otro proveedor.</string>
+    <string name="tle_http_rate_limited">El proveedor rechazó la petición (límite de uso). Espere unas horas, pruebe otro proveedor o importe un archivo TLE.</string>
+    <string name="tle_http_redirect">El proveedor redirige a otra dirección, algo que la app no sigue por seguridad. Pruebe otro proveedor o importe un archivo.</string>
+    <string name="tle_http_missing">El archivo ya no existe en el proveedor. Pruebe otro proveedor o importe un archivo.</string>
+    <string name="tle_http_server">El servidor del proveedor no responde ahora. Inténtelo más tarde o use otro proveedor.</string>
 </resources>

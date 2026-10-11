@@ -158,7 +158,7 @@ class MainActivity : Activity() {
                         val upload = TleTransfer(value)
                         val command = upload.begin(status)
                         transfer = upload
-                        main.postDelayed(transferTimeout, 300000)
+                        main.postDelayed(transferTimeout, TRANSFER_STALL_MS)
                         transport.command(command.operation, command.body)
                         localTleInfo.text = getString(R.string.transfer_progress, 0, upload.size)
                     } catch (error: ProtocolFailure) { failure(error.code) }
@@ -168,6 +168,9 @@ class MainActivity : Activity() {
                 if (operation.startsWith("tle/")) {
                     val upload = transfer ?: throw ProtocolFailure("tle_transfer_sequence")
                     val next = upload.acknowledge(operation, body)
+                    // Stall detection: every acknowledged step proves the link is alive, so a
+                    // large catalogue over 20-byte BLE frames is not cut off by a fixed total time.
+                    if (next != null) { main.removeCallbacks(transferTimeout); main.postDelayed(transferTimeout, TRANSFER_STALL_MS) }
                     localTleInfo.text = getString(R.string.transfer_progress, upload.received, upload.size)
                     if (next != null) transport.command(next.operation, next.body)
                     else {
@@ -229,13 +232,9 @@ class MainActivity : Activity() {
         })
         layout = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL; setPadding(24, 16, 24, 16) }
         setContentView(ScrollView(this).apply { addView(layout) })
+        Branding.header(this, layout, Branding.Topic.MAIN)
         text(getString(R.string.app_name))
         text(getString(R.string.disclaimer))
-        text(getString(R.string.credits)).apply {
-            autoLinkMask = android.text.util.Linkify.WEB_URLS
-            text = getString(R.string.credits)
-            movementMethod = android.text.method.LinkMovementMethod.getInstance()
-        }
         message = text(getString(R.string.disconnected)).apply { accessibilityLiveRegion = View.ACCESSIBILITY_LIVE_REGION_POLITE }
         statusView = text(getString(R.string.disconnected))
         button(R.string.open_digital_receiver) {
@@ -423,6 +422,11 @@ class MainActivity : Activity() {
             "tle_rotor_not_ready_or_fresh" -> getString(R.string.tle_rotor_not_ready)
             "tle_no_cache" -> getString(R.string.no_cached_tle)
             "tle_network", "tle_cache_unavailable" -> getString(R.string.download_failed)
+            "tle_download_timeout" -> getString(R.string.tle_http_timeout)
+            "tle_http_403", "tle_http_429" -> getString(R.string.tle_http_rate_limited)
+            "tle_http_301", "tle_http_302", "tle_http_303", "tle_http_307", "tle_http_308" -> getString(R.string.tle_http_redirect)
+            "tle_http_404", "tle_http_410" -> getString(R.string.tle_http_missing)
+            "tle_http_500", "tle_http_502", "tle_http_503", "tle_http_504" -> getString(R.string.tle_http_server)
             "pass_query_limit" -> getString(R.string.pass_query_limit)
             "tle_transfer_timeout" -> getString(R.string.tle_transfer_timeout)
             else -> if (code.startsWith("tle_")) getString(R.string.tle_invalid,
@@ -538,6 +542,7 @@ class MainActivity : Activity() {
                     }
                 }
             } catch (error: ProtocolFailure) { downloadFailure(generation, error.code) }
+            catch (_: java.net.SocketTimeoutException) { downloadFailure(generation, "tle_download_timeout") }
             catch (_: IOException) { downloadFailure(generation, "tle_network") }
             catch (_: SecurityException) { downloadFailure(generation, "tle_file_permission") }
         }
@@ -631,5 +636,6 @@ class MainActivity : Activity() {
     }
     companion object {
         private const val ORBIT_NOTIFICATION_PERMISSION = 61
+        private const val TRANSFER_STALL_MS = 60_000L
     }
 }

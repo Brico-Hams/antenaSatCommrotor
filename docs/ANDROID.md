@@ -298,3 +298,24 @@ pendiente comprobar en un Android real: diálogo de passkey, rechazo sin bonding
 cifrado MITM exigido por firmware, MTU 23 y MTU negociado, permisos 26/30/31/35,
 timeout, pérdida de radio, segundo cliente y parada física. Nunca se afirma que
 los motores, el enlace BLE o la calibración estén validados en campo.
+
+## Revisión 2026-10-11: descarga TLE, sincronización BLE, marca y ayuda
+
+Cambios **no compilados con Gradle** en el entorno de revisión (sin red a Maven/SDK). La lógica de `TleCatalogue` y `TleDownload`
+se compiló con `kotlinc` en JVM y se ejecutó una comprobación; las pruebas JVM (`./gradlew testDebugUnitTest`) siguen pendientes.
+
+| Hallazgo | Causa probable | Corrección |
+| --- | --- | --- |
+| Fallos de descarga sin explicación útil | cualquier código HTTP o tiempo agotado se mostraba como "TLE inválido: tle_http_…" o como un error genérico | mensajes específicos: límite de uso (403/429), redirección (301/302/303/307/308), no encontrado, servidor y tiempo agotado; la caché válida se conserva |
+| Una descarga con líneas con blancos finales fallaba | el analizador exigía líneas exactas de 69 caracteres sin espacios finales | `TleCatalogue.parse` ignora espacios/CR/tabuladores finales (no cambia el contenido validado ni el checksum) |
+| Transferencia a la Raspberry cortada a los 300 s | temporizador total fijo, con 512 caracteres por trozo sobre tramas BLE de 20 bytes | detección de bloqueo: se reinicia (60 s) con cada ACK; sin avance en 60 s se cancela y desconecta |
+| Fallo de conexión BLE `133` | estado transitorio habitual de Android sin reintento | hasta 2 reintentos automáticos en `BleTransport` (no en `RadioHostBleTransport`, pendiente) |
+| Sin logo ni ayuda | — | logotipo y autores en las tres pantallas (`Branding.kt`), icono de lanzador BricoHams, botón Ayuda (`HelpActivity`; textos offline en `res/raw`, `res/raw-en`, `res/raw-hu`) |
+
+**Nota sobre proveedores:** la verificación anterior (arriba) descargó 97 satélites de AMSAT, pero CelesTrak y PE0SAT agotaron el plazo desde esa red.
+En esta revisión una herramienta de lectura web recibió un `302` de AMSAT hacia `http://`, algo que la app rechazaría (sin redirecciones ni texto plano),
+pero no pudo reproducirse con la app, así que **no** se desactivó ningún proveedor. Si un proveedor falla desde su red, la app lo explica y sugiere otro;
+anote cuál funciona en el registro de pruebas (APP-03). El proveedor ve la IP de la conexión.
+
+Pendiente de verificar en teléfono real: los tres proveedores desde la red del usuario, transferencia BLE completa de un catálogo grande
+y el reintento del error 133. Pruebas: [testing/07-app-android.md](testing/07-app-android.md).

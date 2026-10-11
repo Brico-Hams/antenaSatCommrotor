@@ -89,6 +89,7 @@ class DigitalReceiveActivity : Activity() {
             setPadding(24, 16, 24, 24)
         }
         setContentView(ScrollView(this).apply { addView(layout) })
+        Branding.header(this, layout, Branding.Topic.DIGITAL)
         addText(layout, getString(R.string.digital_title), 22f)
         addText(layout, getString(R.string.digital_scope), 16f)
         addButton(layout, R.string.digital_back) { finish() }

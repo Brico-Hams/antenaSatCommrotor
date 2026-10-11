@@ -1,5 +1,8 @@
 # Ensayos y puertas de aceptacion
 
+
+Detalle paso a paso, banco de pruebas y checklists por componente: [testing/README.md](testing/README.md).
+
 Registrar fecha, revision Git, instrumentos, operador, montaje y resultado.
 Un criterio no medido queda PENDIENTE, no APROBADO por calculo.
 

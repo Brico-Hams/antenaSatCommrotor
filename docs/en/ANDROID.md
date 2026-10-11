@@ -298,3 +298,24 @@ still verify: system passkey dialog, rejection without bonding, firmware-require
 MITM encryption, MTU 23 and negotiated MTU, permissions 26/30/31/35, timeout,
 radio loss, second client, and physical stop. The motors, BLE link, and
 calibration are never represented as field-validated.
+
+## Review 2026-10-11: TLE download, BLE sync, branding and help
+
+Changes **not built with Gradle** in the review environment (no network to Maven/SDK). The `TleCatalogue` and `TleDownload` logic was
+compiled with `kotlinc` on a JVM and a check was run; the JVM tests (`./gradlew testDebugUnitTest`) are still pending.
+
+| Finding | Probable cause | Fix |
+| --- | --- | --- |
+| Download failures with no useful explanation | any HTTP code or timeout showed as "TLE invalid: tle_http_…" or a generic error | specific messages: usage limit (403/429), redirect (301/302/303/307/308), not found, server and timeout; the valid cache is kept |
+| A download with trailing blanks on lines failed | the parser required exact 69-character lines with no trailing blanks | `TleCatalogue.parse` ignores trailing blanks/CR/tabs (validated content and checksum unchanged) |
+| Transfer to the Raspberry cut at 300 s | fixed total timer, with 512 characters per chunk over 20-byte BLE frames | stall detection: reset (60 s) on every ACK; no progress for 60 s cancels and disconnects |
+| BLE connection failure `133` | common transient Android status with no retry | up to 2 automatic retries in `BleTransport` (not yet in `RadioHostBleTransport`) |
+| No logo or help | — | logo and authors on all three screens (`Branding.kt`), BricoHams launcher icon, Help button (`HelpActivity`; offline texts in `res/raw`, `res/raw-en`, `res/raw-hu`) |
+
+**Note on providers:** the earlier verification (above) downloaded 97 satellites from AMSAT, but CelesTrak and PE0SAT timed out from that network.
+In this review a web-reading tool received a `302` from AMSAT to `http://`, which the app would reject (no redirects, no cleartext), but it could
+not be reproduced with the app, so **no** provider was disabled. If a provider fails from your network the app explains it and suggests another;
+record which one works in the test register (APP-03). The provider sees the connection IP.
+
+Still to verify on a real phone: the three providers from the user's network, a full BLE transfer of a large catalogue and the error-133 retry.
+Tests: [testing/07-app-android.md](testing/07-app-android.md).

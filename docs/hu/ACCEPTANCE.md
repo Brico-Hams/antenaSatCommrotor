@@ -1,5 +1,8 @@
 # Tesztek és elfogadási kapuk
 
+
+Részletes lépések, tesztpad és komponensenkénti ellenőrzőlisták: [testing/README.md](testing/README.md).
+
 Rögzítsd a dátumot, Git-revíziót, műszereket, kezelőt, összeállítást és
 eredményt. A nem mért kritérium **FÜGGŐBEN** marad; számítás alapján nem
 jelölhető JÓVÁHAGYOTTNAK.

@@ -149,6 +149,7 @@ internal class RadioHostActivity : Activity(), RadioHostBleTransport.Listener {
             setPadding(24, 16, 24, 24)
         }
         setContentView(ScrollView(this).apply { addView(column) })
+        Branding.header(this, column, Branding.Topic.RADIO)
         text(column, getString(R.string.radio_title), 22f)
         text(column, getString(R.string.radio_disclosure), 14f)
         button(column, R.string.digital_back) { safeShutdown(finishActivity = true) }

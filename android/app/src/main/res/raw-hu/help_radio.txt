@@ -1,0 +1,9 @@
+SÚGÓ · Rádió host (SDR a Raspberry-n/CM5-ön)
+BricoHams · Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina
+
+BLE-n csatlakozik a rádió hosthoz (CM5) hangért és állapotért. A TX tiltva marad, hacsak a host terheléssel történt minősítés után kifejezetten nem engedi.
+1. Párosítsd a hostot az Android beállításaiban, válaszd ki az eszközt, és add meg a rádió tokent.
+2. Csatlakozz, és várd meg a „kész” állapotot; ellenőrizd a profilt, a TX-kreditet és a hibákat.
+3. Ne adj minősítetlen antennával/terheléssel vagy minősítetlen TX-szel.
+4. Bontáskor a host biztonságos állapotba tér vissza.
+Hibák: nincs eszköz -> Bluetooth-engedélyek és előzetes párosítás; tokenhiba -> add meg újra; nincs hang -> ellenőrizd a mikrofonbemenetet és a profilt.

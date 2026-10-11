@@ -1,0 +1,10 @@
+HELP · Digital receiver (SSTV / APRS)
+BricoHams · Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina
+
+Decodes audio received through the phone's microphone/audio input. It does not transmit.
+1. Connect the receiver's audio output to the phone's audio input with an isolated cable (or use the microphone acoustically). Grant the microphone permission.
+2. Choose the mode (SSTV or APRS/AX.25 1200 baud) and the audio input.
+3. Enter your callsign if you want APRS messaging (stored on the phone only).
+4. Start reception. SSTV images and the packet log can be saved.
+5. Check the audio level: too high distorts, too low does not decode.
+Problems: no image -> check volume and mode; packet errors -> reduce noise and adjust level.

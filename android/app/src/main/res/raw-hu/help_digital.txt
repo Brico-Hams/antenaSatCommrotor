@@ -1,0 +1,10 @@
+SÚGÓ · Digitális vevő (SSTV / APRS)
+BricoHams · Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina
+
+A telefon mikrofonján/hangbemenetén érkező hangot dekódolja. Nem ad.
+1. Kösd a vevő hangkimenetét a telefon hangbemenetére leválasztott kábellel (vagy használd akusztikusan a mikrofont). Add meg a mikrofonengedélyt.
+2. Válaszd ki az üzemmódot (SSTV vagy APRS/AX.25 1200 baud) és a hangbemenetet.
+3. Add meg a hívójeledet, ha APRS-üzenetküldést használsz (csak a telefonon tárolódik).
+4. Indítsd a vételt. Az SSTV-képek és a csomagnapló menthetők.
+5. Ellenőrizd a hangszintet: a túl magas torzít, a túl alacsony nem dekódol.
+Hibák: nincs kép -> ellenőrizd a hangerőt és az üzemmódot; hibás csomagok -> csökkentsd a zajt és állítsd a szintet.

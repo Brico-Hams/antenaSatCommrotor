@@ -28,7 +28,9 @@ data class TleCatalogue(val text: String, val entries: List<TleEntry>) {
             val ids = mutableSetOf<Int>()
             var name = ""
             var one: String? = null
-            for (line in decoded.replace("\r\n", "\n").split('\n')) {
+            for (rawLine in decoded.replace("\r\n", "\n").split('\n')) {
+                // Public feeds sometimes pad lines with trailing blanks or a stray CR; they carry no data.
+                val line = rawLine.trimEnd(' ', '\r', '\t')
                 if (line.isEmpty()) continue
                 if (line.any { it.code !in 32..126 }) throw ProtocolFailure("tle_ascii")
                 when {

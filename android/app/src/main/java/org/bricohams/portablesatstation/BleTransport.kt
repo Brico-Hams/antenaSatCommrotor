@@ -25,6 +25,8 @@ class BleTransport(private val context: Context, private val listener: Listener)
     private val session = ControlSession()
     private var mtu = 23
     private var mtuRetry = false
+    private var lastDevice: BluetoothDevice? = null
+    private var connectRetries = 0
     private var stage = Stage.DISCONNECTED
     private val fragments = ArrayDeque<ByteArray>()
     private val assembler = FrameAssembler()
@@ -44,13 +46,14 @@ class BleTransport(private val context: Context, private val listener: Listener)
             listener.onFailure("bond_and_token_required"); return
         }
         session.start(token); stage = Stage.CONNECTING
+        lastDevice = device; connectRetries = 0
         gatt = device.connectGatt(context, false, callback, BluetoothDevice.TRANSPORT_LE)
         if (gatt == null) fail("connect_failed") else armTimeout()
     }
     fun disconnect() {
         main.removeCallbacks(timeout)
         val previous = gatt
-        gatt = null; rx = null; tx = null; stage = Stage.DISCONNECTED
+        gatt = null; rx = null; tx = null; stage = Stage.DISCONNECTED; lastDevice = null
         session.reset(); emergencyStop = false
         fragments.clear(); assembler.reset(); completedResponse = null; writing = false; mtu = 23; mtuRetry = false
         try { previous?.disconnect() } catch (_: SecurityException) { listener.onFailure("permission_denied") }
@@ -74,6 +77,20 @@ class BleTransport(private val context: Context, private val listener: Listener)
             armTimeout(); writeNext()
         } catch (error: ProtocolFailure) { fail(error.code) }
         catch (_: SecurityException) { fail("permission_denied") }
+    }
+    /** Android reports a transient GATT status 133 on many first connections; retry twice before giving up. */
+    private fun retryConnect(device: BluetoothDevice) {
+        connectRetries++
+        try { gatt?.close() } catch (_: SecurityException) { }
+        gatt = null
+        main.removeCallbacks(timeout); main.postDelayed(timeout, 15000)
+        main.postDelayed({
+            if (stage != Stage.CONNECTING || gatt != null) return@postDelayed
+            try {
+                gatt = device.connectGatt(context, false, callback, BluetoothDevice.TRANSPORT_LE)
+                if (gatt == null) fail("connect_failed")
+            } catch (_: SecurityException) { fail("permission_denied") }
+        }, 600)
     }
     private fun armTimeout() { main.removeCallbacks(timeout); main.postDelayed(timeout, 15000) }
     private fun fail(code: String) { disconnect(); listener.onFailure(code) }
@@ -156,7 +173,10 @@ class BleTransport(private val context: Context, private val listener: Listener)
     }
     private val callback = object : BluetoothGattCallback() {
         override fun onConnectionStateChange(source: BluetoothGatt, status: Int, newState: Int) = dispatch(source) {
-            if (status != BluetoothGatt.GATT_SUCCESS || newState == BluetoothProfile.STATE_DISCONNECTED)
+            val device = lastDevice
+            if (status == 133 && stage == Stage.CONNECTING && connectRetries < 2 && device != null)
+                retryConnect(device)
+            else if (status != BluetoothGatt.GATT_SUCCESS || newState == BluetoothProfile.STATE_DISCONNECTED)
                 fail("connection_lost_$status")
             else if (newState == BluetoothProfile.STATE_CONNECTED && stage == Stage.CONNECTING) {
                 if (source.device.bondState != BluetoothDevice.BOND_BONDED) return@dispatch fail("bond_lost")

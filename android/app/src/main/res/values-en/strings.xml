@@ -259,4 +259,12 @@
     <string name="aprs_inbox_empty">No received APRS message/ACK/rej addressed to the configured station in this decode. Enter your own callsign-SSID above before decoding.</string>
     <string name="aprs_plaintext_confirmation">I confirm this message is unencrypted, lawful amateur-radio text and I am licensed/authorized to transmit it. Preparing/exporting does not authorize RF transmission.</string>
     <string name="aprs_plaintext_required">Confirm lawful unencrypted amateur-radio text before preparing audio. The app does not encrypt or verify message meaning.</string>
+    <string name="logo_description">BricoHams logo</string>
+    <string name="help_open">Help</string>
+    <string name="help_unavailable">The help file bundled with the app could not be loaded.</string>
+    <string name="tle_http_timeout">The download took too long. Check the connection and retry, or use another provider.</string>
+    <string name="tle_http_rate_limited">The provider rejected the request (usage limit). Wait a few hours, try another provider or import a TLE file.</string>
+    <string name="tle_http_redirect">The provider redirects to another address, which the app does not follow for safety. Try another provider or import a file.</string>
+    <string name="tle_http_missing">The file no longer exists at the provider. Try another provider or import a file.</string>
+    <string name="tle_http_server">The provider server is not responding. Try again later or use another provider.</string>
 </resources>
