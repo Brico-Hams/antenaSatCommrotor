@@ -1,0 +1,278 @@
+{
+ "gear_sun_motor": {
+  "volume_cm3": 3.26,
+  "size_mm": [
+   20.7,
+   20.7,
+   16.0
+  ],
+  "watertight": true,
+  "est_mass_g": 3.5,
+  "qty": 2,
+  "note": "NEMA17 5 mm shaft (use grub screw M3 on a flat); 1 per axis"
+ },
+ "gear_planet": {
+  "volume_cm3": 8.24,
+  "size_mm": [
+   29.7,
+   29.7,
+   16.0
+  ],
+  "watertight": true,
+  "est_mass_g": 8.8,
+  "qty": 12,
+  "note": "3 per stage x 2 stages x 2 axes"
+ },
+ "rotor_housing": {
+  "volume_cm3": 105.99,
+  "size_mm": [
+   92.0,
+   92.0,
+   48.0
+  ],
+  "watertight": true,
+  "est_mass_g": 68.0,
+  "qty": 2,
+  "note": "two internal herringbone rings, one piece; 6 x M3 through-bolts"
+ },
+ "carrier1_plate_A": {
+  "volume_cm3": 17.55,
+  "size_mm": [
+   76.4,
+   76.4,
+   4.0
+  ],
+  "watertight": true,
+  "est_mass_g": 11.3,
+  "qty": 2,
+  "note": "planet axles pressed (4 mm rod, 3 per plate)"
+ },
+ "carrier1_plate_B_sun2": {
+  "volume_cm3": 21.52,
+  "size_mm": [
+   76.4,
+   76.4,
+   20.0
+  ],
+  "watertight": true,
+  "est_mass_g": 23.0,
+  "qty": 2,
+  "note": "plate with integrated 2nd-stage sun (print upright, tune clearance)"
+ },
+ "carrier2_plate_A": {
+  "volume_cm3": 17.36,
+  "size_mm": [
+   76.4,
+   76.4,
+   4.0
+  ],
+  "watertight": true,
+  "est_mass_g": 11.1,
+  "qty": 2,
+  "note": "rides on sun2 hub, axles pressed"
+ },
+ "output_flange": {
+  "volume_cm3": 28.68,
+  "size_mm": [
+   76.4,
+   76.4,
+   22.0
+  ],
+  "watertight": true,
+  "est_mass_g": 18.4,
+  "qty": 2,
+  "note": "universal interface: 4xM4 on 40 mm PCD + 20 mm spigot"
+ },
+ "rotor_endcap": {
+  "volume_cm3": 53.73,
+  "size_mm": [
+   92.0,
+   92.0,
+   10.0
+  ],
+  "watertight": true,
+  "est_mass_g": 34.5,
+  "qty": 2,
+  "note": "6806 bearing seat; 6 x M3 same circle as the housing"
+ },
+ "motor_plate": {
+  "volume_cm3": 36.85,
+  "size_mm": [
+   92.0,
+   92.0,
+   6.0
+  ],
+  "watertight": true,
+  "est_mass_g": 23.7,
+  "qty": 2,
+  "note": "NEMA17 31 mm square pattern, 6xM3 to the housing"
+ },
+ "tripod_adapter_1-4": {
+  "volume_cm3": 30.72,
+  "size_mm": [
+   68.0,
+   68.0,
+   18.0
+  ],
+  "watertight": true,
+  "est_mass_g": 19.7,
+  "qty": 1,
+  "note": "M4 flange side + 1/4\"-20 screw (hex nut M6.35 trap underneath); 3/8\" tripods: use stock reducer bush"
+ },
+ "stub_spigot_20": {
+  "volume_cm3": 18.83,
+  "size_mm": [
+   20.0,
+   20.0,
+   80.0
+  ],
+  "watertight": true,
+  "est_mass_g": 12.1,
+  "qty": 2,
+  "note": "OPTIONAL printed stub; cheaper: 20 mm aluminium/CF tube 1 mm wall (BOM)"
+ },
+ "boom_clamp_16_lower": {
+  "volume_cm3": 16.6,
+  "size_mm": [
+   40.0,
+   36.0,
+   17.0
+  ],
+  "watertight": true,
+  "est_mass_g": 10.7,
+  "qty": 1,
+  "note": "for 16 mm boom; bolts 2xM4 (nut traps omitted -> use nylock + washer)"
+ },
+ "boom_clamp_16_upper": {
+  "volume_cm3": 20.19,
+  "size_mm": [
+   40.0,
+   36.0,
+   17.0
+  ],
+  "watertight": true,
+  "est_mass_g": 13.0,
+  "qty": 1,
+  "note": ""
+ },
+ "boom_clamp_20_lower": {
+  "volume_cm3": 15.41,
+  "size_mm": [
+   40.0,
+   36.0,
+   17.0
+  ],
+  "watertight": true,
+  "est_mass_g": 9.9,
+  "qty": 1,
+  "note": "for 20 mm boom; bolts 2xM4 (nut traps omitted -> use nylock + washer)"
+ },
+ "boom_clamp_20_upper": {
+  "volume_cm3": 18.19,
+  "size_mm": [
+   40.0,
+   36.0,
+   17.0
+  ],
+  "watertight": true,
+  "est_mass_g": 11.7,
+  "qty": 1,
+  "note": ""
+ },
+ "boom_clamp_25_lower": {
+  "volume_cm3": 13.16,
+  "size_mm": [
+   40.0,
+   36.0,
+   17.0
+  ],
+  "watertight": true,
+  "est_mass_g": 8.5,
+  "qty": 1,
+  "note": "for 25 mm boom; bolts 2xM4 (nut traps omitted -> use nylock + washer)"
+ },
+ "boom_clamp_25_upper": {
+  "volume_cm3": 14.98,
+  "size_mm": [
+   40.0,
+   36.0,
+   17.0
+  ],
+  "watertight": true,
+  "est_mass_g": 9.6,
+  "qty": 1,
+  "note": ""
+ },
+ "cross_hub_16": {
+  "volume_cm3": 7.57,
+  "size_mm": [
+   20.0,
+   38.0,
+   38.0
+  ],
+  "watertight": true,
+  "est_mass_g": 4.9,
+  "qty": 7,
+  "note": "1 per element station (3 VHF + 4 UHF); 4 hinge lugs for M3 pivots"
+ },
+ "hinge_arm": {
+  "volume_cm3": 1.0,
+  "size_mm": [
+   12.0,
+   5.0,
+   21.0
+  ],
+  "watertight": true,
+  "est_mass_g": 0.6,
+  "qty": 28,
+  "note": "swing arm: 3.1 mm bore for the 3 mm aluminium rod (epoxy/M2 grub); folds along the boom"
+ },
+ "radio_cradle_RT3S": {
+  "volume_cm3": 32.81,
+  "size_mm": [
+   68.0,
+   44.0,
+   40.0
+  ],
+  "watertight": true,
+  "est_mass_g": 21.1,
+  "qty": 1,
+  "note": "open-top tray, 4xM4 on 40 mm PCD (same as every interface) + Velcro strap through the side windows; internal size is a PARAMETER"
+ },
+ "control_box": {
+  "volume_cm3": 62.03,
+  "size_mm": [
+   112.0,
+   82.0,
+   42.2
+  ],
+  "watertight": true,
+  "est_mass_g": 39.8,
+  "qty": 1,
+  "note": "ESP32 + 2xTMC2209 + buck/PD + diplexer bay (72x40 PCB, BNC/SMA bulkheads on +X face)"
+ },
+ "control_box_lid": {
+  "volume_cm3": 21.9,
+  "size_mm": [
+   112.0,
+   82.0,
+   2.4
+  ],
+  "watertight": true,
+  "est_mass_g": 14.1,
+  "qty": 1,
+  "note": ""
+ },
+ "coupon_gear_clearance": {
+  "volume_cm3": 4.35,
+  "size_mm": [
+   30.0,
+   30.0,
+   8.0
+  ],
+  "watertight": true,
+  "est_mass_g": 4.6,
+  "qty": 1,
+  "note": "print this first: check it slides on the 4 mm pin and meshes with a printed sun tooth coupon"
+ }
+}

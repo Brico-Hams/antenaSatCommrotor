@@ -1,0 +1,10 @@
+[
+ {"id":"ISS",   "alias":"ISS;ZARYA",              "dl":145.990, "ul":437.800, "mode":"FM voice repeater / SSTV events", "ctcss":67.0},
+ {"id":"SO-50", "alias":"SO-50;SAUDISAT 1C",      "dl":436.795, "ul":145.850, "mode":"FM repeater (arm 74.4 Hz, then 67 Hz)", "ctcss":67.0},
+ {"id":"AO-91", "alias":"AO-91;FOX-1B",           "dl":145.960, "ul":435.250, "mode":"FM repeater", "ctcss":67.0},
+ {"id":"AO-123","alias":"AO-123;ASRTU",           "dl":435.400, "ul":145.850, "mode":"FM repeater", "ctcss":67.0},
+ {"id":"PO-101","alias":"PO-101;DIWATA",          "dl":145.900, "ul":437.500, "mode":"FM repeater", "ctcss":141.3},
+ {"id":"CAS-3H","alias":"CAS-3H;LILACSAT-2",      "dl":437.200, "ul":144.350, "mode":"FM repeater", "ctcss":0},
+ {"id":"IO-86", "alias":"IO-86;LAPAN",            "dl":435.880, "ul":145.880, "mode":"FM repeater", "ctcss":88.5},
+ {"id":"RS95S", "alias":"RS95S;RS-95",            "dl":436.950, "ul":145.920, "mode":"FM repeater", "ctcss":67.0}
+]

@@ -1,0 +1,10 @@
+{
+ "VHF": {
+  "plane_XY_deg": 82.0,
+  "plane_XZ_deg": 82.0
+ },
+ "UHF": {
+  "plane_XY_deg": 69.5,
+  "plane_XZ_deg": 69.5
+ }
+}

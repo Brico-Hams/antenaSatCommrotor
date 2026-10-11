@@ -1,0 +1,76 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SatLite</title>
+<style>
+:root{--bg:#10141a;--card:#1a212b;--ink:#e8edf3;--mut:#8b98a8;--acc:#43b0ff;--ok:#4cd08a;--bad:#ff6b6b;--warn:#f4c04e;--line:#2a3442}
+@media (prefers-color-scheme:light){:root{--bg:#f2f5f9;--card:#fff;--ink:#14202e;--mut:#5d6b7c;--acc:#0a6fd1;--ok:#13874f;--bad:#c53030;--warn:#a06b00;--line:#d5dce6}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.4 system-ui,sans-serif;padding:12px 16px 40px;max-width:760px;margin-inline:auto}
+h1{font-size:18px;margin:6px 0 10px;display:flex;justify-content:space-between;align-items:center}h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin:0 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}.kv b{display:block;font-size:20px;font-variant-numeric:tabular-nums}.kv span{color:var(--mut);font-size:12px}
+button,select,input{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}button{cursor:pointer;background:var(--acc);color:#fff;border-color:transparent}button.sec{background:var(--bg);color:var(--ink);border-color:var(--line)}button.stop{background:var(--bad)}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}th{color:var(--mut);font-weight:500;font-size:12px}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;border:1px solid var(--line)}.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+canvas{width:100%;max-width:340px;aspect-ratio:1;display:block;margin:auto}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0}label{color:var(--mut);font-size:13px}input{width:92px}
+details summary{cursor:pointer;color:var(--mut);font-size:13px;text-transform:uppercase;letter-spacing:.06em}pre{white-space:pre-wrap;font-size:12px;color:var(--mut);margin:6px 0 0}
+</style></head><body>
+<h1><span>SatLite · <small id="ssid" style="color:var(--mut);font-weight:400"></small></span><button class="sec" id="lang">EN</button></h1>
+<div class="card"><h2 data-t="status">Estado</h2><div class="grid">
+<div class="kv"><b id="utc">--:--:--</b><span>UTC</span></div>
+<div class="kv"><b id="gps">--</b><span data-t="gps">GNSS</span></div>
+<div class="kv"><b id="head">--</b><span data-t="head">Rumbo cero rotor (N verd.)</span></div>
+<div class="kv"><b id="tilt">--</b><span data-t="tilt">Inclinación base (roll/pitch)</span></div>
+<div class="kv"><b id="azel">--</b><span data-t="azel">Rotor AZ / EL</span></div>
+<div class="kv"><b id="tgt">--</b><span data-t="tgt">Objetivo AZ / EL</span></div></div>
+<div id="warn" class="warn" style="margin-top:8px"></div></div>
+<div class="card"><h2 data-t="sky">Cielo</h2><canvas id="sky" width="340" height="340"></canvas>
+<div class="grid" style="margin-top:8px"><div class="kv"><b id="dr">--</b><span data-t="dl">RX (bajada) Doppler</span></div><div class="kv"><b id="du">--</b><span data-t="ul">TX (subida) Doppler</span></div></div></div>
+<div class="card"><h2 data-t="passes">Próximos pases (24 h)</h2><table><thead><tr><th>Sat</th><th>AOS</th><th>Max</th><th>Dur</th><th></th></tr></thead><tbody id="pl"></tbody></table><div id="nop" style="color:var(--mut)"></div></div>
+<div class="card"><h2 data-t="manual">Manual</h2><div class="row"><label>AZ</label><input id="maz" type="number" value="0"><label>EL</label><input id="mel" type="number" value="0">
+<button id="go" data-t="go">Mover (eje rotor)</button><button class="sec" id="gt" data-t="gotrue">Apuntar (az/el reales)</button></div>
+<div class="row"><button class="stop" id="stop" data-t="stop">PARAR</button><button class="sec" id="home" data-t="home">Home</button></div></div>
+<div class="card"><details><summary data-t="set">Ajustes</summary>
+<div class="row"><label data-t="loc">Posición</label><input id="lat" type="number" step="0.0001"><input id="lon" type="number" step="0.0001"><input id="alt" type="number" placeholder="m"><button id="sl" class="sec" data-t="save">Guardar</button><button id="sg" class="sec" data-t="usegps">Usar GNSS</button></div>
+<div class="row"><label data-t="decl">Declinación magnética (° E+)</label><input id="decl" type="number" step="0.1"><button id="sd" class="sec" data-t="save">Guardar</button></div>
+<div class="row"><label data-t="north">Norte manual (az verdadero del cero del rotor)</label><input id="nm" type="number"><button id="snm" class="sec">OK</button><button id="sna" class="sec" data-t="auto">Auto (brújula)</button></div>
+<div class="row"><button id="cc" class="sec" data-t="calc">Calibrar brújula: iniciar</button><button id="cce" class="sec" data-t="calcend">terminar</button></div>
+<div class="row"><button id="st" class="sec" data-t="settime">Hora del móvil</button></div>
+<div class="row"><label>Wi-Fi (hotspot)</label><input id="ws" placeholder="SSID" style="width:130px"><input id="wp" type="password" placeholder="pass" style="width:130px"><button id="sw" class="sec">OK</button></div>
+<div class="row"><button id="tu" class="sec" data-t="tleup">Actualizar TLE (Celestrak/AMSAT/PE0SAT)</button></div><pre id="tlemsg"></pre>
+<div class="row"><label data-t="tleman">TLE manual</label></div><textarea id="tlet" rows="3" style="width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px"></textarea><div class="row"><button id="tlup" class="sec" data-t="send">Enviar</button></div>
+</details></div>
+<script>
+const T={es:{status:'Estado',gps:'GNSS',head:'Rumbo cero rotor (N verd.)',tilt:'Inclinación base (roll/pitch)',azel:'Rotor AZ / EL',tgt:'Objetivo AZ / EL',sky:'Cielo',dl:'RX (bajada) Doppler',ul:'TX (subida) Doppler',passes:'Próximos pases (24 h)',manual:'Manual',go:'Mover (eje rotor)',gotrue:'Apuntar (az/el reales)',stop:'PARAR',home:'Home',set:'Ajustes',loc:'Posición',save:'Guardar',usegps:'Usar GNSS',decl:'Declinación magnética (° E+)',north:'Norte manual (az verdadero del cero del rotor)',auto:'Auto (brújula)',calc:'Calibrar brújula: iniciar',calcend:'terminar',settime:'Hora del móvil',tleup:'Actualizar TLE (Celestrak/AMSAT/PE0SAT)',tleman:'TLE manual',send:'Enviar',track:'Seguir',tracking:'Siguiendo',nofix:'Sin fijación GNSS: usa posición manual y hora del móvil',notle:'Sin TLE: actualiza o pega TLE',nonorth:'Sin referencia de norte: brújula sin calibrar o norte manual no definido; el seguimiento está inhibido',notime:'Sin hora válida'},
+en:{status:'Status',gps:'GNSS',head:'Rotor zero heading (true N)',tilt:'Base tilt (roll/pitch)',azel:'Rotor AZ / EL',tgt:'Target AZ / EL',sky:'Sky',dl:'RX (downlink) Doppler',ul:'TX (uplink) Doppler',passes:'Next passes (24 h)',manual:'Manual',go:'Move (rotor axes)',gotrue:'Point (true az/el)',stop:'STOP',home:'Home',set:'Settings',loc:'Position',save:'Save',usegps:'Use GNSS',decl:'Magnetic declination (° E+)',north:'Manual north (true az of rotor zero)',auto:'Auto (compass)',calc:'Calibrate compass: start',calcend:'finish',settime:'Phone time',tleup:'Update TLE (Celestrak/AMSAT/PE0SAT)',tleman:'Manual TLE',send:'Send',track:'Track',tracking:'Tracking',nofix:'No GNSS fix: use manual position and phone time',notle:'No TLE: update or paste TLE',nonorth:'No north reference: compass not calibrated or manual north not set; tracking is inhibited',notime:'No valid time'}};
+let L=localStorage.getItem('lang')||'es',S={},P=[];const $=i=>document.getElementById(i);
+const tr=k=>(T[L]||T.es)[k]||k;function applyLang(){document.documentElement.lang=L;document.querySelectorAll('[data-t]').forEach(e=>e.textContent=tr(e.dataset.t));$('lang').textContent=L=='es'?'EN':'ES'}
+$('lang').onclick=()=>{L=L=='es'?'en':'es';try{localStorage.setItem('lang',L)}catch(e){}applyLang();render()};
+const api=(p,q)=>fetch('/api/'+p+(q?'?'+new URLSearchParams(q):''),{cache:'no-store'}).then(r=>r.ok?r.text():r.text().then(t=>{throw new Error(t)}));
+const f1=(x,d=1)=>x==null?'--':Number(x).toFixed(d);const hms=u=>new Date(u*1000).toISOString().substr(11,8);const hm=u=>new Date(u*1000).toISOString().substr(11,5);
+async function poll(){try{S=JSON.parse(await api('state'));render()}catch(e){$('warn').textContent='sin conexión / offline'}setTimeout(poll,1000)}
+async function pollP(){try{P=JSON.parse(await api('passes'));renderP()}catch(e){}setTimeout(pollP,15000)}
+function render(){if(!S.unix)return;$('ssid').textContent=S.ssid||'';$('utc').textContent=hms(S.unix);$('gps').innerHTML=S.gps_fix?`<span class=ok>${S.sats} sat</span>`:'<span class=bad>no fix</span>';
+$('head').textContent=S.heading==null?'--':f1(S.heading)+'°';$('tilt').textContent=f1(S.roll)+'° / '+f1(S.pitch)+'°';$('azel').textContent=f1(S.az)+'° / '+f1(S.el)+'°';$('tgt').textContent=S.tracking>=0?f1(S.tgt_az)+'° / '+f1(S.tgt_el)+'°':'--';
+$('dr').textContent=S.tracking>=0?(S.dop_rx/1e6).toFixed(4)+' MHz':'--';
+$('du').textContent=S.tracking>=0?(S.dop_tx/1e6).toFixed(4)+' MHz':'--';
+let w=[];if(!S.have_time)w.push(tr('notime'));if(!S.gps_fix)w.push(tr('nofix'));if(!S.frame_ok)w.push(tr('nonorth'));if(!S.tle_count)w.push(tr('notle'));$('warn').innerHTML=w.join('<br>');
+if(!document.activeElement||document.activeElement.tagName!='INPUT'){['lat','lon','alt','decl'].forEach(k=>{if($(k).dataset.set!=='1'&&S[k]!=null){$(k).value=S[k]}})}
+drawSky();renderP()}
+function renderP(){const tb=$('pl');tb.innerHTML='';const now=S.unix||0;(P||[]).filter(p=>p.los>=now).sort((a,b)=>a.aos-b.aos).forEach(p=>{const tr_=document.createElement('tr');const dur=Math.round((p.los-p.aos)/60);const act=now>=p.aos&&now<=p.los;
+tr_.innerHTML=`<td>${p.id}</td><td>${hm(p.aos)}${act?' ●':''}<br><small style=color:var(--mut)>${p.aos>now?'T-'+Math.round((p.aos-now)/60)+'m':''}</small></td><td>${f1(p.max_el,0)}°</td><td>${dur}m</td><td><button data-s="${p.sat}">${S.tracking==p.sat?tr('tracking'):tr('track')}</button></td>`;tb.appendChild(tr_)});
+tb.querySelectorAll('button').forEach(b=>b.onclick=()=>api('track',{sat:b.dataset.s}).then(poll).catch(e=>alert(e.message)));$('nop').textContent=(P&&P.length)?'':'—'}
+function drawSky(){const c=$('sky'),g=c.getContext('2d'),W=c.width,R=W/2-18,cx=W/2,cy=W/2;g.clearRect(0,0,W,W);const st=getComputedStyle(document.body);const line=st.getPropertyValue('--line'),mut=st.getPropertyValue('--mut'),acc=st.getPropertyValue('--acc'),ok=st.getPropertyValue('--ok');
+g.strokeStyle=line;g.fillStyle=mut;g.lineWidth=1;g.font='12px system-ui';[0,30,60].forEach(e=>{g.beginPath();g.arc(cx,cy,R*(90-e)/90,0,7);g.stroke()});for(let a=0;a<360;a+=45){const r=a*Math.PI/180;g.beginPath();g.moveTo(cx,cy);g.lineTo(cx+R*Math.sin(r),cy-R*Math.cos(r));g.stroke()}
+[['N',0],['E',90],['S',180],['O',270]].forEach(([t,a])=>{const r=a*Math.PI/180;g.fillText(t,cx+(R+10)*Math.sin(r)-4,cy-(R+10)*Math.cos(r)+4)});
+const pt=(az,el)=>[cx+R*(90-el)/90*Math.sin(az*Math.PI/180),cy-R*(90-el)/90*Math.cos(az*Math.PI/180)];
+if(S.tracking>=0&&S.sat_el!=null){const q=pt(S.sat_az,Math.max(S.sat_el,0));g.fillStyle=S.sat_el>=0?ok:mut;g.beginPath();g.arc(q[0],q[1],6,0,7);g.fill();g.fillStyle=mut;g.fillText(S.catalog[S.tracking].id,q[0]+9,q[1]+4)}
+if(S.heading!=null){/* antenna pointing in true az/el from rotor axes is shown via target when tracking */}}
+const q=(id,fn)=>$(id).onclick=()=>Promise.resolve(fn()).then(poll).catch(e=>alert(e.message));
+q('stop',()=>api('stop'));q('home',()=>api('home'));q('go',()=>api('goto',{az:$('maz').value,el:$('mel').value}));q('gt',()=>api('goto_true',{az:$('maz').value,el:$('mel').value}));
+q('sl',()=>api('location',{lat:$('lat').value,lon:$('lon').value,alt:$('alt').value||0}));q('sg',()=>api('location_gps'));q('sd',()=>api('decl',{deg:$('decl').value}));
+q('snm',()=>api('north',{deg:$('nm').value}));q('sna',()=>api('north',{deg:'auto'}));q('cc',()=>api('compass_cal',{op:'start'}));q('cce',()=>api('compass_cal',{op:'end'}));
+q('st',()=>api('time',{unix:Math.floor(Date.now()/1000)}));q('sw',()=>api('wifi',{ssid:$('ws').value,pass:$('wp').value}));
+q('tu',async()=>{$('tlemsg').textContent='...';$('tlemsg').textContent=await api('tle_update')});
+q('tlup',()=>fetch('/api/tle_upload',{method:'POST',body:$('tlet').value}).then(r=>r.text()));
+['lat','lon','alt','decl'].forEach(k=>$(k).addEventListener('input',()=>$(k).dataset.set='1'));
+applyLang();poll();pollP();
+</script></body></html>

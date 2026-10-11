@@ -1,0 +1,24 @@
+module,item,qty,spec,est_price_eur_each,notes
+rotor,NEMA17 stepper 34 mm body,2,>=0.25 N.m holding; 1.0-1.5 A,"10-15",ESTIMATE not quoted
+rotor,6806 bearing 30x42x7,2,,"3-5",output bearing
+rotor,Steel/stainless rod 4 mm,1,cut 12 pins x 24 mm,"3",planet axles
+rotor,"Hardware M3/M4 (screws, nuts, washers)",1,assorted,"8",
+rotor,20 mm aluminium/CF tube 1 mm wall,1,"2 x 120 mm stubs","6",or use printed stub
+rotor,Micro switch NC,2,end stops,"1-2",
+control,ESP32 DevKitC,1,WROOM-32,"5-8",
+control,TMC2209 module,2,STEP/DIR,"3-6",
+control,GNSS NEO-6M/M8N + antenna,1,UART,"6-10",
+control,MPU6050 module,1,accelerometer,"2-3",
+control,QMC5883L module,1,magnetometer,"2-3",
+control,AS5600 module,2,optional (not read by firmware yet),"2-3",
+control,Buck 12V to 5V,1,>=2 A,"2",
+control,USB-C PD trigger 12 V (optional),1,instead of a battery pack,"5-8",
+control,Fuse + holder + 100 uF caps + wire,1,,"6",
+rf,Existing 2m/70cm diplexer PCB (BRICOHAMS),1,user's own,"-",
+rf,"90 deg hybrid coupler board (SatcomRadio) - VERIFY BAND",2,one per band,"8-25",see ADR-004
+rf,SMA/BNC bulkheads,3,J1-J3,"2",
+rf,Coax 75 ohm RG-59 (qwt) 2 m,1,8 pieces,"3",VF to be measured
+rf,Coax 50 ohm RG-58 patch 1.5 m,1,,"3",
+antenna,3 mm aluminium rod 4 m,2,welding/brazing rod,"3-5",14 elements x 2 planes
+antenna,PVC conduit 16 mm 1 m,1,boom,"2",
+print,ASA filament,1,~0.8 kg,"15-25",printed mass ~0.66 kg + supports/waste

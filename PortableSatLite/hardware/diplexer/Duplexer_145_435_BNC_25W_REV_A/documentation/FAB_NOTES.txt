@@ -1,0 +1,9 @@
+FABRICATION NOTES
+- 2-layer FR-4, 1.6 mm
+- 2 oz copper recommended
+- ENIG preferred
+- No soldermask over RF connector center pads
+- Use metal enclosure; solder/fasten ground plane to enclosure walls at several points
+- Verify BNC footprint against TE 5415025-1 drawing before fabrication
+- Keep air-core inductors perpendicular to each other where practical
+- Tune with VNA at low power before applying 25 W

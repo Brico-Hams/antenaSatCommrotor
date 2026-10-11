@@ -1,0 +1,16 @@
+Ref,Value,Footprint/part,Qty,Notes
+J1,BNC ANT,TE Connectivity 5415025-1,1,"50 ohm, panel mount, right angle, THT"
+J2,BNC VHF,TE Connectivity 5415025-1,1,"50 ohm, panel mount, right angle, THT"
+J3,BNC UHF,TE Connectivity 5415025-1,1,"50 ohm, panel mount, right angle, THT"
+L1,68 nH,AIR-COIL-4MM,1,"~5 turns, 0.8-1.0 mm Cu, tune on VNA"
+C1,18 pF,C0G-HV-1206,1,"1 kV preferred, C0G/NP0"
+L2,100 nH,AIR-COIL-4MM,1,"~6 turns, 0.8-1.0 mm Cu, tune on VNA"
+C2,18 pF,C0G-HV-1206,1,"1 kV preferred, C0G/NP0"
+L3,68 nH,AIR-COIL-4MM,1,"~5 turns, 0.8-1.0 mm Cu, tune on VNA"
+C3,4.7 pF,C0G-HV-1206,1,"1 kV preferred, C0G/NP0"
+L4,16 nH,AIR-COIL-4MM,1,"~2.5 turns, 0.8-1.0 mm Cu, tune on VNA"
+C4,3.1 pF,C0G-HV-1206,1,1 kV preferred; 3.0 pF + parasitic is acceptable
+L5,16 nH,AIR-COIL-4MM,1,"~2.5 turns, 0.8-1.0 mm Cu, tune on VNA"
+C5,4.7 pF,C0G-HV-1206,1,1 kV preferred
+PCB,80 x 60 mm,"2-layer FR-4, 1.6 mm, 2 oz Cu",1,ENIG preferred; metal enclosure recommended
+J1-J3,BNC 50 ohm,TE Connectivity 5415025-1,3,Verify mechanical drawing before fabrication
