@@ -101,7 +101,7 @@ class TestOnlyPowerGate:
         self.enabled = False
 
 
-def test_controller(settings, sensors, gate, catalog):
+def build_test_controller(settings, sensors, gate, catalog):
     motors = {
         axis: Tmc5160Axis(
             Tmc5160Spi(SimulatedSpiTransport()),
@@ -138,7 +138,7 @@ class ControllerTests(unittest.TestCase):
         )
         self.sensors = TestOnlySensors()
         self.gate = TestOnlyPowerGate()
-        self.controller = test_controller(
+        self.controller = build_test_controller(
             self.settings, self.sensors, self.gate, self.catalog
         )
 
@@ -263,7 +263,7 @@ class ControllerTests(unittest.TestCase):
             mechanics_verified=True,
         )
         gate = TestOnlyPowerGate()
-        controller = test_controller(settings, self.sensors, gate, self.catalog)
+        controller = build_test_controller(settings, self.sensors, gate, self.catalog)
         request = {
             "confirm": "CALIBRATE AND ARM CM5 ROTOR",
             "carrierVerified": True,

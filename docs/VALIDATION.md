@@ -300,3 +300,14 @@ de sensores ni un seguimiento completo sin pruebas de banco.
 Una malla exportada no confirma encaje, montaje, resistencia o engrane.
 Las dimensiones iniciales no son una garantia de adaptacion/ganancia RF.
 Los limites pendientes estan descritos en ACCEPTANCE.md y RISKS.md.
+
+## Verificacion 2026-10-11 (entorno de revision, sin hardware)
+
+| Suite | Resultado | Notas |
+| --- | --- | --- |
+| `node --test "tests/*.test.cjs"` | 66/66 | `npm test` corregido para Node 22 |
+| `pytest tests/rotor tests/radio_host` | 86 aprobadas | helper `test_controller` renombrado (pytest lo recogia como prueba); `PYTHONPATH=.:radio:rotor` |
+| Logica de control nativa (Unity, g++) | 6/6 | `tests/control_logic/test_native` |
+| Render OpenSCAD 2021.01 de las piezas con logo | estancas | 4 piezas |
+| JVM Android, KiCad ERC/DRC, `control_sgp4.cpp`, imagen OS | **no ejecutados** | sin red para Gradle, sin KiCad, sin libreria SGP4 fijada, sin Docker/espejos Debian |
+

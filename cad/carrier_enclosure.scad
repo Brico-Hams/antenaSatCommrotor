@@ -12,6 +12,7 @@ standoff_h=6;
 component_headroom=32;
 brand_font="Liberation Sans:style=Bold"; // bundled with isolated OpenSCAD2021.01
 brand_raise=0.7;
+include <bricohams_logo.scad>
 brand_name="BRICOHAMS";
 brand_url="bricohams.org";
 fit=0.25;
@@ -55,6 +56,8 @@ module carrier_lid() {
             offset(delta=0.03) text(brand_name,size=12,font=brand_font,halign="center",valign="center");
         translate([w/2,d/2-10,1.95]) linear_extrude(height=brand_raise+0.05)
             offset(delta=0.03) text(brand_url,size=8,font=brand_font,halign="center",valign="center");
+        // BricoHams logo (vectorised from branding/bricohams_horizontal.png), raised like the text.
+        translate([w/2-35,d/2-35-35*bh_lockup_aspect/2,1.95]) linear_extrude(height=brand_raise+0.05) bh_lockup_2d(70);
     }
 }
 module port_cover(wide=true) {

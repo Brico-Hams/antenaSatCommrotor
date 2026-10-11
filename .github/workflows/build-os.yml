@@ -1,0 +1,26 @@
+name: build-os-image
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare space and tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rsync qemu-user-static binfmt-support
+          sudo mkdir -p /mnt/osbuild && sudo chown "$USER" /mnt/osbuild
+          df -h /mnt
+      - name: Build image (pi-gen, pinned commit)
+        env:
+          BUILD_ROOT: /mnt/osbuild/root
+          OUTPUT_DIR: /mnt/osbuild/artifacts
+        run: bash os/build-image.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bricohams-portablesatstation-os
+          path: /mnt/osbuild/artifacts/*

@@ -1,5 +1,5 @@
 {
-  "cm5-guard-A.kicad_pcb": "83047419869136f54801bc73054cda73ee6bde1fbec96fbfbc67208c46b9a672",
+  "cm5-guard-A.kicad_pcb": "d5565110352ced2522f309fe3c57b7bd2037762b0cb0a4eaf71f05a043ed914c",
   "cm5-guard-A.kicad_pro": "532b2c166c7413b08e8cbe052e28477f8d06496adc3bb73a34aa5d6aeb928f96",
   "cm5-guard-A.kicad_sch": "b1e6908ed676c4e8602a744e518e4f9d1e359f1f8b9da57da3cc1e7ff8c2232d",
   "design\\component-register.csv": "a063726645ad7dbfb7d78e1461009a964ae11837ea1e8746818bbdd39c566f81",
@@ -27,7 +27,7 @@
   "fabrication\\NOT_FOR_MANUFACTURE\\gerber\\cm5-guard-A-F_Cu.gtl": "25e05c3ef86dcc18f13c572f8ca992d3b9e5f207504838616dc3cefd5507fc65",
   "fabrication\\NOT_FOR_MANUFACTURE\\gerber\\cm5-guard-A-F_Mask.gts": "d4d8bab5a6f74ffa32eb4d30ec8f8e9d3e8e4fd8b7d19de4e2094f17eb7e529f",
   "fabrication\\NOT_FOR_MANUFACTURE\\gerber\\cm5-guard-A-F_Paste.gtp": "1ba2d0b1458e87fc19f8a370255e09c722a272657daedcc8e40f1220646fb2d2",
-  "fabrication\\NOT_FOR_MANUFACTURE\\gerber\\cm5-guard-A-F_Silkscreen.gto": "521ef886d3262805de1f182e5c79b9320a6486d4f741ccfb9ec45dedfd507ec7",
+  "fabrication\\NOT_FOR_MANUFACTURE\\gerber\\cm5-guard-A-F_Silkscreen.gto": "7e3cc91a0b9b3b3146161b6dee79c10300ffa22e58eb84f6e20b351f1d765631",
   "fabrication\\NOT_FOR_MANUFACTURE\\gerber\\cm5-guard-A-job.gbrjob": "cc25677ed39b49a3dbe3a824a86fd897b727a55567b7591f9280032f82806f39",
   "fabrication\\NOT_FOR_MANUFACTURE\\gerber\\cm5-guard-A-NPTH-drl_map.pdf": "ab5dbf10020582d20b73cd8a8b9c4ef305b0b6795d9b5030e21d507c276719ff",
   "fabrication\\NOT_FOR_MANUFACTURE\\gerber\\cm5-guard-A-NPTH.drl": "13357fcc5d37b681843602bf6b8a23567781a24e7ffe4754564f63d290f51348",

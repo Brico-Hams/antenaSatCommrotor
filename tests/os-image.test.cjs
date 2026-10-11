@@ -17,7 +17,26 @@ test("pi-gen recipe is pinned to the official 64-bit Trixie Lite build", () => {
   assert.match(config, /^RELEASE='trixie'$/m);
   assert.match(config, /^STAGE_LIST='stage0 stage1 stage2'$/m);
   assert.match(config, /^ENABLE_SSH=0$/m);
-  assert.doesNotMatch(config, /FIRST_USER_PASS|WPA_PASSWORD|PUBKEY_SSH_FIRST_USER/);
+  // Owner-requested default account (documented, well-known credential; SSH stays disabled).
+  assert.match(config, /^FIRST_USER_NAME='bricohams'$/m);
+  assert.match(config, /^FIRST_USER_PASS='Brico123'$/m);
+  assert.equal((config.match(/^DISABLE_FIRST_BOOT_USER_RENAME=/gm) || []).length, 1);
+  assert.match(config, /^DISABLE_FIRST_BOOT_USER_RENAME=1$/m);
+  assert.doesNotMatch(config, /WPA_PASSWORD|PUBKEY_SSH_FIRST_USER/);
+});
+
+test("BricoHams banners ship as static files and never carry network secrets", () => {
+  const base = "os/pi-gen-stage/stage2/99-bricohams/files/etc/";
+  const motd = read(base + "motd"), issue = read(base + "issue"), net = read(base + "issue.net");
+  const ssh = read(base + "ssh/sshd_config.d/10-bricohams-banner.conf");
+  assert.match(motd, /bricohams\.org/);
+  assert.match(motd, /passwd/);
+  assert.match(motd, /Brico123/);
+  assert.match(issue, /BricoHams PortableSatStation OS/);
+  assert.match(issue, /\\n \\l/);
+  assert.match(net, /BricoHams/);
+  assert.match(ssh, /^Banner \/etc\/issue\.net$/m);
+  for (const f of [motd, issue, net]) assert.doesNotMatch(f, /psk|wpa|private.?key|token/i);
 });
 
 test("boot setup maps only the frozen auxiliary-board buses", () => {
@@ -338,7 +357,7 @@ test("image stage preserves upstream OS identity and checks private build artifa
   assert.match(stage, /radio-host\.json/);
   assert.match(stage, /multi-user\.target\.wants\/bricohams-radio\.service/);
   assert.doesNotMatch(stage, /os-release/);
-  assert.doesNotMatch(config, /FIRST_USER_PASS|WPA_PASSWORD|PUBKEY_SSH_FIRST_USER/);
+  assert.doesNotMatch(config, /WPA_PASSWORD|PUBKEY_SSH_FIRST_USER/);
   assert.match(docs, /not an official Raspberry Pi product/);
   assert.match(docs, /does \*\*not\*\* flash an SD[\s\S]*?card or eMMC/);
   assert.match(docs, /does not configure a station Wi-Fi access point/);

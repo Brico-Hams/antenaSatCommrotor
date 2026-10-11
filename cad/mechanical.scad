@@ -199,16 +199,24 @@ module radio_cradle() {
         for(x=[12,w-4]) translate([x,18,-1]) cylinder(d=4.5,h=7);
         for(x=[-1,w+3]) translate([x,14,28]) cube([6,20,5]); // webbing
     }
+    // BricoHams logo raised 0.6 mm on the outer face of the back wall (y=0), 0.05 mm overlap.
+    lw=min(50,w-6);
+    translate([(w+8-lw)/2,0.05,40]) rotate([90,0,0]) linear_extrude(height=0.65) bh_lockup_2d(lw);
 }
 module enclosure(lid=false,diplexor=false) {
     w=diplexor?80:130; d=70; h=diplexor?35:45;
-    if(lid) difference() {
+    if(lid) union() {
+      difference() {
         cube([w,d,3]);
         for(x=[5,w-5],y=[5,d-5]) translate([x,y,-1]) cylinder(d=3.4,h=5);
         // Interior-only pockets preserve a continuous 1.6 mm roof and ribs;
         // RF shielding remains the independent metal liner.
         for(x=[10,w/2+3]) translate([x,10,-1])
             cube([w/2-16,d-20,2.4]);
+      }
+      // BricoHams logo, raised 0.6 mm on the top face (0.05 mm overlap joins every island to the lid).
+      lw=diplexor?50:60;
+      translate([(w-lw)/2,(d-lw*bh_lockup_aspect)/2,2.95]) linear_extrude(height=0.65) bh_lockup_2d(lw);
     } else difference() {
         union() {
             difference() { cube([w,d,h]); translate([3,3,3]) cube([w-6,d-6,h]); }

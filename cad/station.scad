@@ -1,4 +1,5 @@
 include <parameters.scad>
+include <bricohams_logo.scad>
 include <gears.scad>
 include <mechanical.scad>
 include <antenna.scad>

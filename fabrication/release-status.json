@@ -46,7 +46,7 @@
                                 ]
                },
     "sha256":  {
-                   "hardware/PortableSatCarrier.kicad_pcb":  "5159baf68b86c3955ce78e19b610a5bc36b2438c80f9780ca24ccd36451bc281",
+                   "hardware/PortableSatCarrier.kicad_pcb":  "45c59694a5e951dbd0853817982dec8d8535b253e6e9a1fe8db9900fa857ec39",
                    "hardware/PortableSatCarrier.kicad_sch":  "0d24cdc9717f49dd2406fd3e168b361a82ddc82b35302449cf6d3d9d1010fa63",
                    "hardware/PortableSatCarrier.kicad_pro":  "b0d774c3d1e8114cb2a03c79769ff13b4be3b400f8a23013a2de82ef31e24d66",
                    "hardware/connectivity.json":  "afa9472007dedef1767dedfea259955c3204d50544f4ecaa134e64ceeb28754d",
@@ -61,7 +61,7 @@
                    "fabrication/gerbers/PortableSatCarrier-Edge_Cuts.gm1":  "337a1fd0771581b6bbb99166bf22daa7c45d0dc47830af173affb5357ccf1138",
                    "fabrication/gerbers/PortableSatCarrier-F_Cu.gtl":  "46143c4e3edcf9068b97a76c16bb155fa6f7f87f75ae0965397bc501c4dcc3f3",
                    "fabrication/gerbers/PortableSatCarrier-F_Mask.gts":  "02af4cabd76ce14a5d4ececab2d8654b94cdb560050a8efb1a6da903b80898d6",
-                   "fabrication/gerbers/PortableSatCarrier-f_silkscreen.gto":  "4294bf242c7b50cc1e8596d7ef65a501a51361b6ccbf947a254c0615ba1edb0c",
+                   "fabrication/gerbers/PortableSatCarrier-f_silkscreen.gto":  "b5d445af5b1c7f3a22eb0cbe75879cca853cd2a7b65bc73e98db2175fc833a6f",
                    "fabrication/gerbers/PortableSatCarrier-job.gbrjob":  "b088e95b71d47725b5bdbba788da292007dc758a6e284274ea5b69dc09bf5c83",
                    "fabrication/gerbers/PortableSatCarrier-NPTH.drl":  "1700bd43f2252f81686eba67fe75e276957a528dc7b98e68979b2ac968fc5449",
                    "fabrication/gerbers/PortableSatCarrier-PTH.drl":  "b53a8ec94fda185baccfd3f06e1f6909a3f39ed8bfcff7267308679388f546b3",
@@ -115,6 +115,6 @@
                    "fabrication/STACKUP.txt":  "824661b438def33d725550aea24411e370ef6c75118bb01836c375699bfaffce",
                    "fabrication/PortableSatCarrier-schematic.pdf":  "fd2f678430e9e19452d57e2a535d94753733ddc86d4495760f6c9b99c1b47791",
                    "fabrication/assembly-drawing.pdf":  "b39bb4280b9378858f9fc87c7cfabd97bd5514fdedb8eea6a8028b3a9d2aadd3",
-                   "fabrication/PortableSatCarrier-Gerbers-CAD-VERIFIED-NOT-RELEASED.zip":  "591a4a9b44ca9fbdbad19574dd41d4689a800a45028e296e4f413bcfd465097e"
+                   "fabrication/PortableSatCarrier-Gerbers-CAD-VERIFIED-NOT-RELEASED.zip":  "4060862d8b5d493496517451916d17bd2b4a42644a477dba7c292143bbf73e83"
                }
 }

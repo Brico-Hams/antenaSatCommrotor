@@ -199,12 +199,15 @@ this does not imply HFP/A2DP or a verified physical audio interface.
 
 ## First boot and profile selection
 
-1. Use Raspberry Pi Imager's first-boot setup, or the upstream local setup
-   wizard, to create the real operator account and configure the intended
-   network. The upstream locked first-user placeholder is configured locally
-   during first boot; no password, Wi-Fi profile, SSH key, BlueZ peer, radio
-   token, serial number, or tracking source is baked into this image. SSH
-   remains disabled unless an operator deliberately configures it.
+1. **Default account (owner decision):** user `bricohams`, password `Brico123`,
+   created by pi-gen (`FIRST_USER_NAME`/`FIRST_USER_PASS`, rename wizard disabled).
+   This is a **published, well-known credential**: change it at the first login
+   with `passwd` (the MOTD says so). SSH stays **disabled** (`ENABLE_SSH=0`) until
+   you have changed it. No Wi-Fi profile, SSH key, BlueZ peer, radio token,
+   serial number, or tracking source is baked into this image. The BricoHams
+   banners (`/etc/motd`, `/etc/issue`, `/etc/issue.net`, SSH banner) are static
+   files in `os/pi-gen-stage/stage2/99-bricohams/files/etc/`. You may still use
+   Raspberry Pi Imager's customisation to replace the account and network.
 2. After upstream first-user setup, the BricoHams selector runs on local tty1.
    Choose the explicit module profile and enter the existing local operator
    login. Profile installation needs network access to Debian and the pinned
@@ -314,3 +317,13 @@ hardware-compatible update procedure before any manual firmware operation.
 - [Raspberry Pi CM5IO and auxiliary-board pin contract](CM5-PCB.md)
 - [Linux radio host API and verification boundary](RADIO-HOST.md)
 - [Linux rotor host API and verification boundary](CM5-ROTOR.md)
+
+## Build status (read before trusting an image)
+
+The recipe, banners and default account are verified only statically (syntax and
+repository tests). **No image has been built or booted** from this recipe in the
+authoring environment: it has no Docker daemon, no ARM chroot/binfmt, and the
+Debian/Raspberry Pi mirrors were unreachable. Build it with `os/build-image.sh`
+on Linux with Docker (60 GiB free) or run the GitHub Actions workflow
+`.github/workflows/build-os.yml` (manual dispatch). Until an image has booted on
+a CM5 and the checks in this document are executed, the OS is NOT accepted.

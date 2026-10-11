@@ -17,18 +17,4 @@ ln -s ../bricohams-profile-setup.service \
 ln -s ../bricohams-gpio-safe-state.service \
     /etc/systemd/system/multi-user.target.wants/bricohams-gpio-safe-state.service
 
-cat > /etc/motd <<'EOF'
- ____       _
-| __ ) _ __(_) ___ ___
-|  _ \| '__| |/ __/ _ \
-| |_) | |  | | (_|  __/
-|____/|_|  |_|\___\___|
-
- PortableSatStation  |  bricohams.org
- BricoHams community project - local commissioning required.
-EOF
-cat >> /etc/issue <<'EOF'
-
-BricoHams PortableSatStation
-Raspberry Pi OS derivative | bricohams.org
-EOF
+# Banners (/etc/motd, /etc/issue, /etc/issue.net) are static files copied by 00-run.sh from files/etc.
