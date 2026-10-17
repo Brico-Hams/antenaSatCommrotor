@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" lang="es" role="img" aria-labelledby="title desc" viewBox="0 0 1000 911" font-family="Arial, sans-serif">
+<title id="title">MMA-028 - Power distribution harness Anderson Powerpole-family input and DC fuses - BricoHams</title>
+<desc id="desc">Ficha conceptual, no plano ni fotografia. Motor. Fuente bom/multimode-assembly.csv, fila 29. No validado fisicamente.</desc>
+<rect width="1000" height="911" fill="#fff"/>
+<rect x="8" y="8" width="984" height="895" fill="none" stroke="#12263f" stroke-width="2"/>
+<rect x="10" y="10" width="980" height="94" fill="#f4f7fa"/>
+<image href="../../../branding/bricohams_horizontal.png" x="24" y="24" width="218" height="56"/>
+<text x="270" y="50" font-size="25" fill="#12263f" font-weight="bold">BricoHams | Componentes</text>
+<text x="270" y="79" font-size="17" fill="#5b6b7b">multimode-028</text>
+<path d="M10 105H990" stroke="#e8871e" stroke-width="5"/>
+<g transform="translate(35 160)" fill="none" stroke="#12263f" stroke-width="5" stroke-linejoin="round"><rect x="52" y="42" width="136" height="136" rx="12"/><circle cx="120" cy="110" r="40"/><path d="M120 110v-65M80 178v28m80-28v28"/></g>
+<text x="35" y="435" font-size="15" fill="#5b6b7b">PICTOGRAMA NO A ESCALA</text>
+<text x="310" y="150" font-size="17" fill="#12263f">Power distribution harness Anderson Powerpole-family</text>
+<text x="310" y="173" font-size="17" fill="#12263f">input and DC fuses</text>
+<text x="310" y="196" font-size="17" fill="#12263f"></text>
+<text x="310" y="219" font-size="17" fill="#12263f">Referencia: MMA-028</text>
+<text x="310" y="242" font-size="17" fill="#12263f">Cantidad de la fila: 1 set</text>
+<text x="310" y="265" font-size="17" fill="#12263f">Exact Powerpole model/housing orientation/contacts,</text>
+<text x="310" y="288" font-size="17" fill="#12263f">mating polarity, crimp tool, conductor gauge/length and</text>
+<text x="310" y="311" font-size="17" fill="#12263f">all DC fuse/holder ratings remain TBD; validate actual</text>
+<text x="310" y="334" font-size="17" fill="#12263f">assemblies with DMM, never color/family appearance alone.</text>
+<text x="310" y="357" font-size="17" fill="#12263f">Include source-positive master fuse close to battery and</text>
+<text x="310" y="380" font-size="17" fill="#12263f">independent branch fuse locations for CM5 5 V converter,</text>
+<text x="310" y="403" font-size="17" fill="#12263f">motor power/NC E-stop cutoff path, and RF PA. Candidate</text>
+<text x="310" y="426" font-size="17" fill="#12263f">upstream EMI treatment after master fuse: common-mode</text>
+<text x="310" y="449" font-size="17" fill="#12263f">choke in both DC conductors, appropriately coordinated</text>
+<text x="310" y="472" font-size="17" fill="#12263f">TVS and reverse-polarity protection; optional damped</text>
+<text x="310" y="495" font-size="17" fill="#12263f">branch LC plus local decoupling DNP pending converter</text>
+<text x="310" y="518" font-size="17" fill="#12263f">stability/vendor criteria and bench evidence. Specify</text>
+<text x="310" y="541" font-size="17" fill="#12263f">choke/inductor low DCR, continuous/inrush current,</text>
+<text x="310" y="564" font-size="17" fill="#12263f">saturation, thermal and impedance performance; TVS</text>
+<text x="310" y="587" font-size="17" fill="#12263f">stand-off/clamp/energy and reverse-protection ratings;</text>
+<text x="310" y="610" font-size="17" fill="#12263f">branch-fuse normal/inrush/current and DC</text>
+<text x="310" y="633" font-size="17" fill="#12263f">voltage/interrupt/time-current curve against prospective</text>
+<text x="310" y="656" font-size="17" fill="#12263f">fault current. All values, part models,</text>
+<text x="310" y="679" font-size="17" fill="#12263f">wire/contact/holder ampacity and lengths remain TBD;</text>
+<text x="310" y="702" font-size="17" fill="#12263f">external battery BMS is not a fuse.</text>
+<text x="310" y="725" font-size="17" fill="#12263f"></text>
+<text x="310" y="748" font-size="17" fill="#12263f">TBD</text>
+<rect x="20" y="799" width="960" height="36" fill="#fff0db"/>
+<text x="32" y="823" font-size="16" fill="#12263f">PROTOTIPO / NO FABRICAR NI CABLEAR DESDE ESTA FICHA</text>
+<text x="24" y="858" font-size="14" fill="#12263f">Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina | bricohams.org</text>
+<text x="24" y="882" font-size="13" fill="#5b6b7b">Fuente: bom/multimode-assembly.csv | fila 29 | Ver NOTICE y LICENSES</text>
+</svg>

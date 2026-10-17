@@ -8,8 +8,8 @@ Cada ensayo es una casilla: márquela solo con medida, fecha e instrumento anota
 
 ### PWR-01
 - [ ] **Acción:** Sin motores ni radio, conectar la fuente de banco con límite de corriente a 0,2 A y subir a la tensión nominal de 12 V.
-- **Esperado:** Consumo de reposo estable y sin calentamiento; ningún componente caliente al tacto en 2 min.
-- **Criterio de aprobación:** Corriente < límite sin saturarlo; polaridad correcta (probar antes con diodo/LED en serie).
+- **Esperado:** Consumo de reposo y temperatura medidos; el límite inicial corresponde solo al bloque sin CM5/SDR/motores, no al arranque de todo el conjunto.
+- **Criterio de aprobación:** Corriente dentro del presupuesto aprobado sin saturar fuente; polaridad comprobada con DMM antes de conectar, temperatura dentro de ficha. No usar tacto o LED como verificación metrológica.
 - _Resultado medido ____ · Fecha ____ · Instrumento ____ · Estado: PENDIENTE_
 
 ### PWR-02
@@ -37,7 +37,7 @@ Cada ensayo es una casilla: márquela solo con medida, fecha e instrumento anota
 - _Resultado medido ____ · Fecha ____ · Instrumento ____ · Estado: PENDIENTE_
 
 ### PWR-06
-- [ ] **Acción:** Provocar fallo de fusible (retirarlo) y de cable de limite cortado en cada sensor NC.
+- [ ] **Acción:** Con el equipo sin energía retirar fusible o preparar apertura simulada por fixture de cada cable NC; reenergizar solo el circuito de prueba autorizado y observar el fallo.
 - **Esperado:** Fallo explícito en el software y motores inhibidos.
 - **Criterio de aprobación:** Cable abierto = nivel ALTO = fallo; nunca se interpreta como límite sano (LOW = sano).
 - _Resultado medido ____ · Fecha ____ · Instrumento ____ · Estado: PENDIENTE_
@@ -65,13 +65,13 @@ Cada ensayo es una casilla: márquela solo con medida, fecha e instrumento anota
 - _Resultado medido ____ · Fecha ____ · Instrumento ____ · Estado: PENDIENTE_
 
 ### DRV-02
-- [ ] **Acción:** Con los motores conectados y EN alto, medir que los ejes giran libres a mano (sin par de retención).
-- **Esperado:** Sin par de mantenimiento con el driver deshabilitado.
-- **Criterio de aprobación:** Giro libre = driver realmente deshabilitado.
+- [ ] **Acción:** Con carga retenida y EN alto, comprobar nivel, estado del driver y corriente de fase con instrumentación apropiada, sin ordenar movimiento.
+- **Esperado:** Excitación deshabilitada; puede existir cogging mecánico aun sin corriente.
+- **Criterio de aprobación:** Inhibición y corriente residual según ficha/contrato; girar libre no demuestra por sí solo que EN funciona. No mover cargas sin retención.
 - _Resultado medido ____ · Fecha ____ · Instrumento ____ · Estado: PENDIENTE_
 
 ### DRV-03
-- [ ] **Acción:** Calcular la corriente de fase con la resistencia de sensado de tu placa y la corriente nominal del motor, configurar IRUN/IHOLD y medir con pinza/amperímetro en una fase.
+- [ ] **Acción:** Calcular la corriente de fase con Rsense y modelo exactos, configurar IRUN/IHOLD y medir RMS de fase con sonda/método apto para PWM chopper según LAB-08; la corriente DC de entrada o un DMM ordinario no son sustitutos.
 - **Esperado:** Corriente RMS medida ≈ la calculada.
 - **Criterio de aprobación:** Dentro de ±10 % y nunca por encima de la corriente nominal del motor; no copiar el valor de otra NEMA14.
 - _Resultado medido ____ · Fecha ____ · Instrumento ____ · Estado: PENDIENTE_
@@ -101,7 +101,7 @@ Cada ensayo es una casilla: márquela solo con medida, fecha e instrumento anota
 ### SNS-01
 - [ ] **Acción:** Escanear el bus I2C1 con el multiplexor TCA9548A (0x70): seleccionar cada canal y leer el AS5600 (0x36).
 - **Esperado:** Un AS5600 por canal; el reset del multiplexor (BCM13) recupera el bus.
-- **Criterio de aprobación:** Los tres AS5600 responden uno a uno; con dos en el mismo canal sin multiplexor el escaneo falla (esperado).
+- **Criterio de aprobación:** Identificar cada sensor aislándolo/alimentándolo individualmente por canal; dos dispositivos de igual dirección pueden dar el mismo ACK y el escaneo NO prueba unicidad.
 - _Resultado medido ____ · Fecha ____ · Instrumento ____ · Estado: PENDIENTE_
 
 ### SNS-02

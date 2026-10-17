@@ -198,8 +198,8 @@ confirmation cannot commission it. Measure/qualify the driver's actual internal 
 configuring its ramp formulas; do not substitute a nominal oscillator
 frequency.
 
-The mechanical ratios remain configuration inputs until the mechanics agent
-freezes them. Current working figures are explicitly provisional: AZ and EL
+The mechanical ratios remain configuration inputs until mechanical design
+release. Current working figures are explicitly provisional: AZ and EL
 25:1 with a 200-full-step motor at 16 microsteps (80,000 motor microsteps per
 output revolution), and POL 5:1 (16,000 microsteps/revolution) with candidate
 physical hard-stop travel of +/-90 degrees. POL uses a proposed

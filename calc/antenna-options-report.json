@@ -1,0 +1,114 @@
+{
+  "revision": "EO-QO-01",
+  "status": "candidate-not-rf-or-load-qualified",
+  "warning": "Analytic seed geometry only. Not NEC/EM simulation or a released feed design. No measured gain, match, axial ratio, power or packed size.",
+  "power": {
+    "maxConductedW": 25,
+    "maxSsbPepW": 25,
+    "maxAmCarrierWAt100Percent": 6.25,
+    "simultaneousTransmitters": 1,
+    "qualification": "HOLD-no-selected-PA-switch-LNA-or-feed-network"
+  },
+  "models": [
+    {
+      "id": "EB-145",
+      "type": "eggbeater",
+      "frequencyMHz": 145,
+      "wavelengthMm": 2067.534193103448,
+      "diameterMm": 658.116573687854,
+      "heightMm": 1095.6234123085437,
+      "bottomMm": 413.5068386206897,
+      "reflectorZmm": 0,
+      "reflectorRadialMm": 516.883548275862,
+      "verticalOffsetMm": 24,
+      "circumferenceMm": 2067.534193103448,
+      "gapAngleRad": 0.09120086233742807,
+      "conductorPerLoopMm": 2037.5237935840053,
+      "maxArcSegmentMm": 258.441774137931,
+      "arcSegmentChordMm": 251.85030931522053,
+      "loops": 2,
+      "segmentsPerLoop": 8
+    },
+    {
+      "id": "QFH-145",
+      "type": "qfh",
+      "frequencyMHz": 145,
+      "wavelengthMm": 2067.534193103448,
+      "diameterMm": 328.41418928165285,
+      "heightMm": 565.4627028506446,
+      "loops": [
+        {
+          "factor": 1.03,
+          "lengthMm": 2129.5602188965518,
+          "diameterMm": 328.41418928165285,
+          "heightMm": 525.4627028506446,
+          "helicalSideMm": 736.365920166623,
+          "bottomMm": 40,
+          "conductorMm": 2099.5602188965518,
+          "maxHelixSegmentMm": 184.09148004165576
+        },
+        {
+          "factor": 0.97,
+          "lengthMm": 2005.5081673103446,
+          "diameterMm": 309.2832656341779,
+          "heightMm": 494.85322501468465,
+          "helicalSideMm": 693.4708180209943,
+          "bottomMm": 55.30473891797999,
+          "conductorMm": 1975.5081673103446,
+          "maxHelixSegmentMm": 173.36770450524858
+        }
+      ],
+      "segmentsPerHelicalSide": 4
+    },
+    {
+      "id": "EB-435",
+      "type": "eggbeater",
+      "frequencyMHz": 435,
+      "wavelengthMm": 689.1780643678161,
+      "diameterMm": 219.3721912292847,
+      "heightMm": 381.20780410284794,
+      "bottomMm": 137.83561287356324,
+      "reflectorZmm": 0,
+      "reflectorRadialMm": 172.29451609195402,
+      "verticalOffsetMm": 24,
+      "circumferenceMm": 689.1780643678161,
+      "gapAngleRad": 0.274367537406253,
+      "conductorPerLoopMm": 659.0837604263199,
+      "maxArcSegmentMm": 86.14725804597701,
+      "arcSegmentChordMm": 83.95010310507352,
+      "loops": 2,
+      "segmentsPerLoop": 8
+    },
+    {
+      "id": "QFH-435",
+      "type": "qfh",
+      "frequencyMHz": 435,
+      "wavelengthMm": 689.1780643678161,
+      "diameterMm": 109.47139642721761,
+      "heightMm": 215.1542342835482,
+      "loops": [
+        {
+          "factor": 1.03,
+          "lengthMm": 709.8534062988506,
+          "diameterMm": 109.47139642721761,
+          "heightMm": 175.1542342835482,
+          "helicalSideMm": 245.4553067222077,
+          "bottomMm": 40,
+          "conductorMm": 679.8534062988506,
+          "maxHelixSegmentMm": 61.363826680551924
+        },
+        {
+          "factor": 0.97,
+          "lengthMm": 668.5027224367816,
+          "diameterMm": 103.09442187805931,
+          "heightMm": 164.9510750048949,
+          "helicalSideMm": 231.15693934033152,
+          "bottomMm": 45.101579639326644,
+          "conductorMm": 638.5027224367816,
+          "maxHelixSegmentMm": 57.78923483508288
+        }
+      ],
+      "segmentsPerHelicalSide": 4
+    }
+  ]
+}

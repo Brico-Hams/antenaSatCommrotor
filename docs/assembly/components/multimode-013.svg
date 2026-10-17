@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" lang="es" role="img" aria-labelledby="title desc" viewBox="0 0 1000 796" font-family="Arial, sans-serif">
+<title id="title">MMA-013 - External ECO-WORTHY LiFePO4 12 V 30 Ah battery reference plus compatible charger and leads - BricoHams</title>
+<desc id="desc">Ficha conceptual, no plano ni fotografia. Energia. Fuente bom/multimode-assembly.csv, fila 14. No validado fisicamente.</desc>
+<rect width="1000" height="796" fill="#fff"/>
+<rect x="8" y="8" width="984" height="780" fill="none" stroke="#12263f" stroke-width="2"/>
+<rect x="10" y="10" width="980" height="94" fill="#f4f7fa"/>
+<image href="../../../branding/bricohams_horizontal.png" x="24" y="24" width="218" height="56"/>
+<text x="270" y="50" font-size="25" fill="#12263f" font-weight="bold">BricoHams | Componentes</text>
+<text x="270" y="79" font-size="17" fill="#5b6b7b">multimode-013</text>
+<path d="M10 105H990" stroke="#e8871e" stroke-width="5"/>
+<g transform="translate(35 160)" fill="none" stroke="#12263f" stroke-width="5" stroke-linejoin="round"><rect x="35" y="60" width="170" height="145" rx="10"/><path d="M60 60V40h28v20m64 0V40h28v20M60 105h35m-18-18v36m70-18h35"/></g>
+<text x="35" y="435" font-size="15" fill="#5b6b7b">PICTOGRAMA NO A ESCALA</text>
+<text x="310" y="150" font-size="17" fill="#12263f">External ECO-WORTHY LiFePO4 12 V 30 Ah battery reference</text>
+<text x="310" y="173" font-size="17" fill="#12263f">plus compatible charger and leads</text>
+<text x="310" y="196" font-size="17" fill="#12263f"></text>
+<text x="310" y="219" font-size="17" fill="#12263f">Referencia: MMA-013</text>
+<text x="310" y="242" font-size="17" fill="#12263f">Cantidad de la fila: 1 set</text>
+<text x="310" y="265" font-size="17" fill="#12263f">User-supplied variant 40308275183822, SKU</text>
+<text x="310" y="288" font-size="17" fill="#12263f">DE-L13060202003-1 (1 Pack/battery only): vendor page</text>
+<text x="310" y="311" font-size="17" fill="#12263f">lists 12.8 V, 30 Ah, 360 Wh, 3.55 kg, 183 x 176 x 83 mm,</text>
+<text x="310" y="334" font-size="17" fill="#12263f">M5 terminals, 14.6 V max charge, 10 V discharge cutoff</text>
+<text x="310" y="357" font-size="17" fill="#12263f">and 30 A max charge/discharge. Product text mass is 3.55</text>
+<text x="310" y="380" font-size="17" fill="#12263f">kg but variant shipping-weight metadata is 0; weigh</text>
+<text x="310" y="403" font-size="17" fill="#12263f">delivered unit. 12.8 x 30 = 384 Wh conflicts with listed</text>
+<text x="310" y="426" font-size="17" fill="#12263f">360 Wh; use 360 Wh for label-reference arithmetic only.</text>
+<text x="310" y="449" font-size="17" fill="#12263f">Exact BMS model/rating/thresholds and supporting</text>
+<text x="310" y="472" font-size="17" fill="#12263f">model-specific datasheet remain unverified. Product</text>
+<text x="310" y="495" font-size="17" fill="#12263f">family page mentions internal BMS; separate 5 A charger</text>
+<text x="310" y="518" font-size="17" fill="#12263f">option is a distinct variant, not included/approved</text>
+<text x="310" y="541" font-size="17" fill="#12263f">charger. 12 V x 30 Ah = 360 Wh and 180 W ideal average</text>
+<text x="310" y="564" font-size="17" fill="#12263f">for 2 h are calculations, not usable energy or autonomy</text>
+<text x="310" y="587" font-size="17" fill="#12263f">validation</text>
+<text x="310" y="610" font-size="17" fill="#12263f"></text>
+<text x="310" y="633" font-size="17" fill="#12263f">REFERENCE_ONLY_UNVERIFIED</text>
+<rect x="20" y="684" width="960" height="36" fill="#fff0db"/>
+<text x="32" y="708" font-size="16" fill="#12263f">PROTOTIPO / NO FABRICAR NI CABLEAR DESDE ESTA FICHA</text>
+<text x="24" y="743" font-size="14" fill="#12263f">Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina | bricohams.org</text>
+<text x="24" y="767" font-size="13" fill="#5b6b7b">Fuente: bom/multimode-assembly.csv | fila 14 | Ver NOTICE y LICENSES</text>
+</svg>

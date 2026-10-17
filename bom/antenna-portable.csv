@@ -1,0 +1,24 @@
+id,quantity,component,specification,status,notes
+PF-01,4,Cassette hub,ASA ring with 20.5 mm bore and four clevis pairs,CANDIDATE_PRINT_COUPON,Not load qualified; 18 mm tall; separate boom indexing pin
+PF-02,16,Hinged rod root,ASA 36 x 7 x 12 mm envelope,CANDIDATE_PRINT_COUPON,Separate M4 pivot and M3 deployed lock; no electrical contact through pivot; thin-wall strength needs test
+PF-03,2,Dielectric boom section,Glass fibre tube 20 OD x 16 ID x 250 mm,CANDIDATE_STOCK,No conductive carbon-fibre substitution without RF redesign; commercial stock
+PF-04,1,Internal boom spigot,Glass fibre 15.7 OD x 80 mm with two pin holes,CANDIDATE_MACHINE,40 mm nominal overlap per side; tolerance and strength pending; not printed ASA
+PF-05,8,VHF inner radial rod,Aluminium tube 4 OD x 2 ID x 195 mm nominal,CANDIDATE_RF_TUNING,Four reflector and four driven inner rods; verify clamp crushing; feed braid and tip joints change electrical length
+PF-06,4,VHF reflector removable outer tip,Aluminium tube 4 OD x 2 ID x 249.309508 mm nominal,CANDIDATE_RF_TUNING,Derived nominal span; not a released cut length; leave trim allowance
+PF-07,4,VHF driven removable outer tip,Aluminium tube 4 OD x 2 ID x 225.532864 mm nominal,CANDIDATE_RF_TUNING,Mark driven versus reflector; do not interchange after tuning
+PF-08,4,UHF reflector radial rod,Aluminium tube 4 OD x 2 ID x 111.436503 mm nominal,CANDIDATE_RF_TUNING,No outer split; tune installed assembly with adjacent bands present
+PF-09,4,UHF driven radial rod,Aluminium tube 4 OD x 2 ID x 103.510955 mm nominal,CANDIDATE_RF_TUNING,No claimed match gain bandwidth or axial ratio
+PF-10,8,Conductive VHF tip coupler,Metal 8 OD x 4.3 ID x 30 mm with positive transverse retention,CANDIDATE_MACHINE,Not a 3D printed RF joint; 15 mm nominal insertion per side; fatigue/contact tests pending
+PF-11,16,Shoulder pivot and retention,Metal M4 pivot matching 16 mm clevis outside width,PART_SELECTION_HOLD,Use smooth shoulder through bearing surfaces; exact grip length nut and washer stack TBD
+PF-12,16,Deployed locking pin,Metal M3 with captive retention for 16 mm clevis width,PART_SELECTION_HOLD,Not a friction-only hinge; remove before folding; verify pin engagement
+PF-13,4,Cassette-to-boom indexing pin,Metal 3 mm pin through 3.4 mm pilot at hub z4,PART_SELECTION_HOLD,Exact drawing and retainer TBD; tune RF with installed hardware
+PF-14,2,Boom-spigot retention pin,Metal 3 mm pin at 20 mm from joint on each side,PART_SELECTION_HOLD,Pin holes and crushing strength require physical review
+PF-15,1 set,Fixed feed stubs and flexible RF bridges,Four independent driven half-arms per band and continuous opposing reflector pairs,RF_DESIGN_HOLD,No driven opposite-arm short; braid follows hinge and cannot carry structural load; no feed circuit released
+PF-16,1 set,Band-specific feed and matching networks,Two orthogonal feeds per band with measured matching,RF_DESIGN_HOLD,Reuse no unqualified hybrid; RHCP/LHCP network separate from POL roll
+PF-17,1 set,RF coax and SMA service loops,50 ohm standard-polarity SMA; lengths and phase TBD,RF_DESIGN_HOLD,Unplug labelled bulkheads before removing cassettes; no connector through boom or shaft assumed
+PF-18,1,Removable rotor or manual mount,20 mm structural boom interface with positive metal retention,LOAD_QUALIFICATION_HOLD,Position set from measured full moving CG; no automatic approval of legacy saddle or POL fit
+PF-19,1 set,Transport retainers and protective sleeve,Target 170 x 140 x 300 mm including reserved mesh packet,PACKING_TRIAL_HOLD,No released bag or tip rack; connectors RF boxes and deployed couplers packed separately
+PF-20,1 set,External radial rod clamp hardware,M3 screw and nut per root plus tip retention pins,PART_SELECTION_HOLD,No assumed thread strength in ASA; exact conductive clamps and pin edge distances require test
+PF-21,4,Flexible reflector mesh quadrant,Conductive square-grid mesh 20 mm pitch and 0.2 mm wire candidate,MATERIAL_RF_WIND_HOLD,Tinned-copper density used only as mass assumption; central diamond opening 120 mm diagonal; VHF outer diamond 998.619 mm diagonal; reflects UHF too; not wire cut instructions
+PF-22,1 set,Mesh perimeter and central attachment,Flexible edge binding with dielectric removable ties at structural arms,PART_SELECTION_HOLD,Keep reflector conductive continuity within mesh; do not bridge driven feeds; confirm fatigue and retention after repeated folding
+PF-23,1,Reserved folded mesh packet,120 x 80 x 12 mm allocation above dry mechanism,PACKING_TRIAL_HOLD,CAD box is reserved space not a textile folding simulation; select material and verify actual folded thickness and bend fatigue

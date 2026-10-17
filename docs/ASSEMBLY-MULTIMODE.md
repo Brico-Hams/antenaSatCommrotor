@@ -30,7 +30,7 @@ The mechanical target is now three controlled axes: azimuth (AZ), elevation
 third mechanical axis around the antenna boresight; a provisional planning
 guard of +/-90 degrees is proposed, but its actual travel, limits, reduction,
 motor, encoder, cable route, and homing method remain **TBD pending the
-mechanical agent's model and physical review**. Do not use +/-90 degrees as
+mechanical model and physical review**. Do not use +/-90 degrees as
 an approved command range or fabricate stops from it. Continuous POL rotation
 is out of scope unless a future design qualifies a suitable RF rotary joint
 and other rotating connections; none is selected or rated now.

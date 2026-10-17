@@ -75,7 +75,7 @@ identity, time, observer and units. Legacy `PassData.aos/peak/los` may be adapte
 Unix seconds, but does not by itself supply observer/NORAD/subpoint/groundtrack/RF
 state. Empty/unknown values are preferable to fabricated state.
 
-## Exact manifest request for the owning agent
+## Exact manifest integration requirements
 
 Under `<manifest>` (alongside existing permissions):
 

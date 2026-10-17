@@ -1,0 +1,151 @@
+{
+  "revision": "PF-01",
+  "status": "design-candidate-not-rf-or-load-qualified",
+  "warning": "Nominal geometric packing and partial stock mass only. No RF, swept-volume, tolerance, strength or complete-mass acceptance.",
+  "planes": [
+    {
+      "id": "VR",
+      "bandMHz": 145,
+      "role": "reflector",
+      "zMm": 0,
+      "clockDeg": 0,
+      "spanMm": 998.6190152689655
+    },
+    {
+      "id": "UR",
+      "bandMHz": 435,
+      "role": "reflector",
+      "zMm": 155.0650644827586,
+      "clockDeg": 45,
+      "spanMm": 332.8730050896552
+    },
+    {
+      "id": "UD",
+      "bandMHz": 435,
+      "role": "driven",
+      "zMm": 310.13012896551726,
+      "clockDeg": 45,
+      "spanMm": 317.0219096091954
+    },
+    {
+      "id": "VD",
+      "bandMHz": 145,
+      "role": "driven",
+      "zMm": 465.19519344827586,
+      "clockDeg": 0,
+      "spanMm": 951.0657288275862
+    }
+  ],
+  "arms": [
+    {
+      "plane": "VR",
+      "quantity": 4,
+      "innerRodMm": 195,
+      "outerRodMm": 249.30950763448277,
+      "nominalTipRadiusMm": 499.30950763448277
+    },
+    {
+      "plane": "UR",
+      "quantity": 4,
+      "innerRodMm": 111.43650254482759,
+      "outerRodMm": 0,
+      "nominalTipRadiusMm": 166.4365025448276
+    },
+    {
+      "plane": "UD",
+      "quantity": 4,
+      "innerRodMm": 103.5109548045977,
+      "outerRodMm": 0,
+      "nominalTipRadiusMm": 158.5109548045977
+    },
+    {
+      "plane": "VD",
+      "quantity": 4,
+      "innerRodMm": 195,
+      "outerRodMm": 225.5328644137931,
+      "nominalTipRadiusMm": 475.5328644137931
+    }
+  ],
+  "stowed": [
+    {
+      "plane": "VR",
+      "baseZmm": 0,
+      "clockDeg": 0,
+      "foldedTipZmm": 223
+    },
+    {
+      "plane": "VD",
+      "baseZmm": 20,
+      "clockDeg": 22.5,
+      "foldedTipZmm": 243
+    },
+    {
+      "plane": "UR",
+      "baseZmm": 40,
+      "clockDeg": 45,
+      "foldedTipZmm": 179.4365025448276
+    },
+    {
+      "plane": "UD",
+      "baseZmm": 60,
+      "clockDeg": 67.5,
+      "foldedTipZmm": 191.5109548045977
+    }
+  ],
+  "boom": {
+    "lengthMm": 500,
+    "splitZmm": 234,
+    "frontClearanceMm": 18.80480655172414,
+    "spigotOverlapMmPerSide": 40
+  },
+  "package": {
+    "nominalMm": [
+      142,
+      114,
+      272
+    ],
+    "withAllowanceMm": [
+      162,
+      134,
+      292
+    ],
+    "targetMm": [
+      170,
+      140,
+      300
+    ],
+    "fitsNominalTarget": true,
+    "longestLooseTipMm": 249.30950763448277,
+    "minNominalRodCenterSpacingMm": 14.436683829193491,
+    "method": "Four released cassettes stacked and clocked; VHF tips detached; one boom section through centers, spare alongside; assumed reserved mesh packet above. Not a one-motion collapse."
+  },
+  "reflectorMesh": {
+    "plane": "VR",
+    "pitchMm": 20,
+    "wireDiameterMm": 0.2,
+    "densityGcm3Assumed": 8.96,
+    "centralOpeningRadiusMm": 60,
+    "panels": 4,
+    "reservedFoldedPacketMm": [
+      120,
+      80,
+      12
+    ],
+    "packetBaseZmm": 260,
+    "status": "removable-flexible-conductive-screen-candidate-not-rf-or-wind-qualified",
+    "areaM2": 0.49141996882837924,
+    "diagonalMm": 998.6190152689655,
+    "wireLengthMApprox": 49.14199688283792,
+    "wireMassGApprox": 13.832818620531114,
+    "pitchToUhfWavelength": 0.029020076282239227,
+    "geometricOpenAreaFractionApprox": 0.9801,
+    "warning": "Reflects both bands; RF pattern, mesh contacts, wind and real folded thickness require tests. Reserved packet is a packing allocation, not a simulated textile fold."
+  },
+  "partialStockMassG": {
+    "boomTubes": 107.44246875277092,
+    "radialRods": 109.90921737280014,
+    "eightTipCouplers": 23.161768829709185,
+    "solidSpigot": 29.426104580967223,
+    "excluded": "Printed parts, feed stubs, braid, fasteners, collars, coax, hybrids, diplexers, RF switches, terminations, mount, bag and finish. This is not the antenna or complete moving mass."
+  }
+}

@@ -44,7 +44,7 @@ postes relativos, headroom, mallas y masa adicional; ajuste físico aún pendien
 
 ### Carrier PCB real180×130: caja modular estacionaria vigente
 
-El agente hardware reporta placa ruteada **180×130 mm**, agujeros
+El informe de hardware registra placa ruteada **180×130 mm**, agujeros
 **(5,5),(175,5),(5,125),(175,125)** desde esquinaPCB. **La caja antigua
 interior124×64 no cabe y no se debe comprar/imprimir para esa placa.**
 No se sustituye por una futuraPCB pequeña ficticia.
@@ -54,7 +54,7 @@ exterior188×138×43.6 mm más tapa2 mm, interior184×134, paredes/fondo2 mm,
 PCB a z8 (postes6 sobre fondo2), **32 mm libres encima de PCB1.6 provisional**,
 2 mm adicionales bajo tapa. PCB esquina(4,4), agujeros de carcasa
 (9,9),(179,9),(9,129),(179,129), distancias170×120 idénticas al reporte.
-El agentehardware confirma **PCB1.6 y taladros3.2mmM3**; CAD actualizado.
+El informe de hardware confirma **PCB1.6 y taladros3.2mmM3**; CAD actualizado.
 Verificar Gerber/drill y PCB fabricada antes de montar. OrigenPCB superior
 izquierdo con coordenadas positivas, patrón rectangular simétrico coincide;
 no invertir etiqueta/conectores al trasladar al CAD. M3 pasantes con arandelas y tuerca,
@@ -298,7 +298,7 @@ ni medición y sin nuevas modificaciones estructurales:
   **“About190g” publicado**,11.1 V3000mAh≈33.3 Wh nominal, salida
   **9–12.6 V /3 A máximo** y5 V/2 A máximo. No pesa190g garantizados:
   pesar unidad. Evitar lluvia/humedad, no abrir pack y usar cargador correcto.
-  Compatibilidad con protección/carrier/regulador pendiente del agentePCB;
+  Compatibilidad con protección/carrier/regulador pendiente de revision PCB;
   no alimentar motores desde salida5 V ni asumir12 V regulados. Reservar
   margen al undervoltage y simultaneidad de cargas.
 

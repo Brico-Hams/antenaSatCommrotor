@@ -82,7 +82,13 @@ y sus fuentes se citan para estudio.
 
 ## RF de potencia: bloqueo independiente
 
-Objetivos: 5 W FM, 5 W PEP USB y 1 W portadora AM. Lime entrega baja
+Actualizacion 2026-10-17: [AMSAT y techo de 25 W](SATELLITE-COMMS.md).
+El nuevo requisito es <=25 W FM/CW o <=25 W PEP SSB a la salida de la
+cadena, un solo TX activo, previa cualificacion fisica. Para los
+transpondedores inversores listados se requiere LSB TX/USB RX, no solo
+USB. No se habilita potencia por este cambio documental.
+
+Referencias anteriores: 5 W FM, 5 W PEP USB y 1 W portadora AM. Lime entrega baja
 potencia, aproximadamente +10 dBm maximo dependiente de revision/frecuencia;
 no potencia de varios vatios. PA lineales y filtros por banda siguen
 condicionados a seleccion y ensayos.
@@ -93,6 +99,12 @@ considerar maxima ganancia, compresion, IMD, transitorios y limitacion
 independiente del drive. AM a 1 W de portadora y modulacion 100% llega
 idealmente a 4 W PEP; la cadena requiere margen y verificacion espectral.
 No reutilizar un PA clase E HF como amplificador USB lineal.
+
+A 25 W se requieren unos 44 dBm de salida, 34 dB de ganancia ideal
+desde +10 dBm antes de perdidas. Es presupuesto, no ajuste seguro de
+ganancia ni especificacion del PA. Recalificar linealidad, refrigeracion,
+proteccion LNA, filtros, potencia DC y autonomia; AM a 100% no debe
+superar 6,25 W de portadora para mantener 25 W PEP ideales.
 
 145 MHz x 3 = 435 MHz: un armonico del TX VHF puede caer dentro del
 receptor UHF. Dos SDR, diplexor y seleccion RHCP/LHCP no prueban aislamiento.

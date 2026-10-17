@@ -56,10 +56,10 @@ A `firmware/platformio.ini` a **Hopperpop/Sgp4-Library** könyvtárat a
 
 ## A felhasználó helyi bizonyítékai
 
-Az eredetik helye: `C:\Users\anatol.lopez\Downloads`; a hat kivont szöveg
-**teljes egészében** át lett olvasva a táblákkal és ábrafeliratokkal együtt.
-Szövegek:
-`C:\Users\anatol.lopez\.copilot\session-state\93e9ed63-2da0-4d79-90a4-39add6c2b259\files\pdf-text`.
+A helyben atadott eredetik hat kivont szovege teljes egeszeben at lett
+olvasva a tablakkal es abrafeliratokkal egyutt. A kivont szovegek nem
+reszei a tarolonak; a tablazat hash-ertekei azonositjak a bizonyitekokat
+privat munkakonyvtar megadasa nelkul.
 
 | ID | Szövegfájl / dokumentum | Tartalmas oldalak | Kivont szöveg SHA-256 |
 |---|---|---:|---|

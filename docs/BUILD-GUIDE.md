@@ -1,5 +1,10 @@
 # Orden de construccion y adquisicion
 
+Acceso visual: [componentes por BOM](assembly/components/README.md),
+[montaje por modulos](assembly/README.md),
+[instalacion de software y conjunto](assembly/06-instalacion.md).
+La variante BASE vigente usa correa; el planetario solo es LEGACY.
+
 ## Antes de comprar o imprimir
 
 1. Leer ARCHITECTURE, MECHANICAL, CONTROL y RF-AND-RADIO.
@@ -18,13 +23,19 @@
 
 ### Iteracion A: engrane y montaje
 
-Imprimir cupones y una etapa planetaria. Ensamblar y girar manualmente.
-Confirmar fase, holgura, excentricidad y cadena de par.
+Imprimir cupones de los asientos BASE y presentar una transmision por
+correa con poleas compradas. Ensamblar y girar manualmente.
+Confirmar alineacion, holgura, excentricidad y cadena de par.
 No imprimir todo el conjunto antes de ajustar la primera etapa.
+Solo si se elige conscientemente LEGACY, ensayar la etapa planetaria y
+mantener sus parametros y BOM separados.
 
 ### Iteracion B: banco del controlador
 
 Montar ESP32, GNSS, sensores, limites y parada con motores descargados.
+Este paso corresponde solo a ESP32. Para CM5 seguir el perfil y los
+bloqueos de [instalacion](assembly/06-instalacion.md); no trasladar el
+pinout ESP32 a la auxiliar CM5.
 Compilar/cargar la revision exacta y probar todos los errores.
 El dispositivo debe permanecer desarmado al arrancar; verificar tambien
 que drivers y cableado no habilitan motores por un GPIO flotante.

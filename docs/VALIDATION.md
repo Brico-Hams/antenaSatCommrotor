@@ -1,5 +1,28 @@
 # Registro de validacion de la entrega
 
+Revision documental y repeticion de pruebas del 2026-10-17:
+[PROJECT-REVIEW.md](PROJECT-REVIEW.md). Los resultados siguientes son
+historicos de sus respectivas revisiones, no ejecuciones nuevas de hardware.
+
+## Expediente rellenable para ensayos fisicos
+
+Disponibles el [plan de bancos de laboratorio](testing/09-laboratorio.md),
+[cuaderno imprimible por ensayo](testing/laboratorio/cuaderno.html) y
+[plantillas CSV de resultados, lecturas, equipos, calibraciones y componentes](testing/laboratorio/README.md).
+Se incluyen procedimientos detallados de [NanoVNA](testing/10-nanovna.md),
+[RF activa y techo de 25 W](testing/11-rf-potencia.md) y
+[calibracion DC, sensores, mecanica y sistema](testing/12-calibraciones.md).
+Copiar plantillas a un expediente nuevo antes de rellenar.
+**Son formularios PENDIENTES, no mediciones realizadas ni liberacion
+de PCB/motores/TX.** El registro historico siguiente permanece intacto.
+
+Verificacion digital del paquete de laboratorio, 2026-10-17:
+101 fichas, 398 filas BOM trazables, regeneracion y enlaces comprobados.
+Cuaderno A4 de 186 mm de ancho util, 101 hojas sin desbordamiento de
+ancho/alto en emulacion de impresion del navegador. Suite completa:
+105 pruebas, 104 aprobadas, cero fallos y una omitida de OS/Linux.
+Estos resultados validan formularios y contratos, **no mediciones fisicas**.
+
 Fecha: 2026-10-10. Estado: base ESP32 digital validada; auxiliar CM5 rutada
 (revision digital) pero BLOQUEADA para fabricacion y energizacion; aceptacion
 fisica pendiente. Digital, fabricable y seguro operacionalmente son hitos distintos.
@@ -149,7 +172,7 @@ Correas reversibles: equilibrio y retencion mecanica independiente necesarios.
 
 Control compilado para ESP32-DevKitC V4/WROOM-32E, sin PSRAM:
 PlatformIO 6.1.18, plataforma espressif32 6.10.0, Arduino 2.0.17.
-El agente de control ejecuto 4 pruebas Unity y una comprobacion de
+La validacion del controlador registro 4 pruebas Unity y una comprobacion de
 SGP4 con vector Vallado, satisfactorias. La version de firmware comunicada
 con pinout PCB congelado tiene SHA-256
 `99B550AF144C31B5B7918F3A5E17D245F108D1C602CB234E8E79358E066045B3`.
@@ -310,4 +333,3 @@ Los limites pendientes estan descritos en ACCEPTANCE.md y RISKS.md.
 | Logica de control nativa (Unity, g++) | 6/6 | `tests/control_logic/test_native` |
 | Render OpenSCAD 2021.01 de las piezas con logo | estancas | 4 piezas |
 | JVM Android, KiCad ERC/DRC, `control_sgp4.cpp`, imagen OS | **no ejecutados** | sin red para Gradle, sin KiCad, sin libreria SGP4 fijada, sin Docker/espejos Debian |
-

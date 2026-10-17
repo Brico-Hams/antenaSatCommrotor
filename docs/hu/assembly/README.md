@@ -1,5 +1,11 @@
 # Illusztrált összeszerelési útmutató
 
+Aktualis spanyol kiegeszitesek:
+[alkatreszkatalogus](../../assembly/components/README.md),
+[szoftvertelepites](../../assembly/06-instalacion.md),
+[projektellenorzes](../../PROJECT-REVIEW.md).
+A korabbi magyar lepesek meg nincsenek szinkronizalva ezzel a bovitessel.
+
 Minden ábra tartalmazza a BricoHams-logót, a címblokkot és a szerzőket (Anatol EA5KAO, Diego EA5JEF, Pedro Roca Molina). A `scripts/make_assembly_figs.py` állítja elő őket az OpenSCAD-modellekből (`cad/`) és a Gerber-fájlokból, így nem térhetnek el a tervtől. Az ábrák szövege magyar (`*.hu.svg`); a spanyol és angol változat ugyanabban a mappában van.
 
 > **Állapot:** digitális prototípus, **fizikailag nem validált**. Az ábrák összeszerelési segédletek, nem megmunkálási rajzok és nem gyártási tűkiosztások. A jelenlegi BASE forgató a **GT2 szíjas** kialakítás (`cad/belt_station.scad`); a bolygókerekes (`cad/station.scad`) ÖRÖKÖLT (LEGACY).

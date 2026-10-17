@@ -135,7 +135,7 @@ belts require balance and independent mechanical retention.
 
 Control compiled for ESP32-DevKitC V4/WROOM-32E, no PSRAM:
 PlatformIO 6.1.18, espressif32 platform 6.10.0, Arduino 2.0.17. The control
-agent reported four Unity tests and an SGP4 Vallado-vector check passing.
+validation reported four Unity tests and an SGP4 Vallado-vector check passing.
 Firmware revision reported with frozen PCB pinout has SHA-256
 `99B550AF144C31B5B7918F3A5E17D245F108D1C602CB234E8E79358E066045B3`.
 LittleFS reported after attribution:

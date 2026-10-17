@@ -12,7 +12,7 @@ Las referencias analizadas aquí no se redistribuyen como assets originales: no 
 
 `firmware/platformio.ini` fija **Hopperpop/Sgp4-Library** al commit **`7c82d31f9d9a286acde5ef55da8308fc93d2ba96`**:
 
-- El agente controlador confirmó también la copia descargada: biblioteca **1.0.3**, mismo commit y licencia MIT, sin marcadores GPL en sus fuentes inspeccionadas. Esta comprobación local coincide con la consulta pública, no sustituye el inventario de licencias del resto del firmware.
+- La revision del controlador confirmó también la copia descargada: biblioteca **1.0.3**, mismo commit y licencia MIT, sin marcadores GPL en sus fuentes inspeccionadas. Esta comprobación local coincide con la consulta pública, no sustituye el inventario de licencias del resto del firmware.
 - Fuente/versionado: <https://github.com/Hopperpop/Sgp4-Library/tree/7c82d31f9d9a286acde5ef55da8308fc93d2ba96>.
 - `LICENSE` consultada directamente: <https://github.com/Hopperpop/Sgp4-Library/blob/7c82d31f9d9a286acde5ef55da8308fc93d2ba96/LICENSE>; blob **`853b46db127831eb9f8e8a7a8576e41c98619be4`**.
 - La licencia raíz es **MIT**, no GPL. Su línea de copyright dice literalmente «Copyright (c) 2016» sin titular nombrado; conservar el aviso original sin inventar autor. El README acredita código original de David Vallado y transformaciones de Grady Hillhouse bajo MIT. Antes de distribuir conservar también encabezados/avisos aplicables de fuentes incluidas.
@@ -22,7 +22,10 @@ Las referencias analizadas aquí no se redistribuyen como assets originales: no 
 
 ## Evidencia local del usuario
 
-Originales indicados en `C:\Users\anatol.lopez\Downloads`; se leyeron **íntegros los seis textos extraídos**, incluidas las tablas y las leyendas de figuras. Textos en `C:\Users\anatol.lopez\.copilot\session-state\93e9ed63-2da0-4d79-90a4-39add6c2b259\files\pdf-text`.
+Se leyeron **íntegros los seis textos extraídos** de los originales facilitados
+localmente, incluidas las tablas y las leyendas de figuras. Los textos extraidos
+no se distribuyen en este repositorio; la tabla conserva sus hashes para
+identificar la evidencia sin depender de una ruta privada de trabajo.
 
 | ID | Archivo de texto / documento | Páginas con contenido | SHA-256 del texto extraído |
 |---|---|---:|---|

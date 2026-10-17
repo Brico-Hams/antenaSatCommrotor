@@ -2,6 +2,12 @@
 
 Fecha2026-10-10. Fuentes/versiones en [SOURCES.md](SOURCES.md); análisis de PDF en [REFERENCE-ANALYSIS.md](REFERENCE-ANALYSIS.md). Objetivo nominal145/435MHz, no homologación del conjunto.
 
+**Actualización 2026-10-17:** [contraste AMSAT y techo solicitado de
+25 W](SATELLITE-COMMS.md). Los ratings y ensayos históricos siguientes
+no se elevan automáticamente: este diplexor QRP y los híbridos citados
+no están aprobados para 25 W. Revisar toda la cadena y el bypass del
+previo RX antes de seleccionar componentes.
+
 ## Tres conceptos diferentes
 
 | Elemento | Función | Lo que NO demuestra |

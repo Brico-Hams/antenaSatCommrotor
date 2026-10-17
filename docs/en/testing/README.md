@@ -1,5 +1,15 @@
 # Testing: components, behaviour and bench
 
+**Laboratory update 2026-10-17 (Spanish):**
+[current procedures and blank records](../../testing/09-laboratorio.md),
+[NanoVNA](../../testing/10-nanovna.md), [active RF](../../testing/11-rf-potencia.md)
+and [calibrations](../../testing/12-calibraciones.md).
+The 24 supplemental LAB tests and printable workbook are not translated here.
+Safety corrections in those current procedures take precedence over older
+actions below (including I2C identity, driver inhibit and current measurement).
+Do not use this historical translation alone as laboratory instructions.
+All physical results remain PENDING; no PCB or TX hold is lifted.
+
 This section describes HOW to test every PortableSatStation component **before the PCBs are manufactured** and before the station is integrated: test bench, checklists, expected behaviour and pass criteria. It complements gates G0-G4 in [ACCEPTANCE.md](../ACCEPTANCE.md) and the record in [VALIDATION.md](../VALIDATION.md).
 
 > **Status:** digital prototype, **not physically validated**. Nothing below has been measured yet: every test is PENDING until result, date and instrument are recorded. Criteria with a `Gn-m` reference come from ACCEPTANCE.md; the others are engineering values **proposed** by this review that must be confirmed or adjusted with the first prototype. Building or passing software tests does not validate wiring, mechanics or RF.

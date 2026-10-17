@@ -25,7 +25,7 @@ material is added later, record its origin, revision, license, and changes in
 `firmware/platformio.ini` pins **Hopperpop/Sgp4-Library** to commit
 **`7c82d31f9d9a286acde5ef55da8308fc93d2ba96`**:
 
-- The controller agent also checked the downloaded copy: library **1.0.3**,
+- The controller review also checked the downloaded copy: library **1.0.3**,
   same commit and MIT license, no GPL markers in inspected source. This local
   check agrees with public research; it does not replace inventorying the
   firmware's other licenses.
@@ -53,9 +53,10 @@ material is added later, record its origin, revision, license, and changes in
 
 ## User's local evidence
 
-Originals were indicated in `C:\Users\anatol.lopez\Downloads`; **all six
-extracted texts were read**, including tables and figure captions. Texts are
-in `C:\Users\anatol.lopez\.copilot\session-state\93e9ed63-2da0-4d79-90a4-39add6c2b259\files\pdf-text`.
+**All six extracted texts were read** from locally supplied originals,
+including tables and figure captions. Extracted texts are not distributed
+in this repository; the table retains their hashes to identify the evidence
+without depending on a private working directory.
 
 | ID | Text file / document | Pages with content | SHA-256 of extracted text |
 |---|---|---:|---|

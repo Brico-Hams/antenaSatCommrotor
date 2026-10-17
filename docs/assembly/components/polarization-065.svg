@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" lang="es" role="img" aria-labelledby="title desc" viewBox="0 0 1000 635" font-family="Arial, sans-serif">
+<title id="title">PWR-13 - Optional generic power-harness strain-relief plate - BricoHams</title>
+<desc id="desc">Ficha conceptual, no plano ni fotografia. Fijacion. Fuente bom/polarization.csv, fila 66. No validado fisicamente.</desc>
+<rect width="1000" height="635" fill="#fff"/>
+<rect x="8" y="8" width="984" height="619" fill="none" stroke="#12263f" stroke-width="2"/>
+<rect x="10" y="10" width="980" height="94" fill="#f4f7fa"/>
+<image href="../../../branding/bricohams_horizontal.png" x="24" y="24" width="218" height="56"/>
+<text x="270" y="50" font-size="25" fill="#12263f" font-weight="bold">BricoHams | Componentes</text>
+<text x="270" y="79" font-size="17" fill="#5b6b7b">polarization-065</text>
+<path d="M10 105H990" stroke="#e8871e" stroke-width="5"/>
+<g transform="translate(35 160)" fill="none" stroke="#12263f" stroke-width="5" stroke-linejoin="round"><path d="M85 30h70v35H85Zm15 35h40v145h-40Zm0 25 40 20m-40 10 40 20m-40 10 40 20m-40 10 40 20"/></g>
+<text x="35" y="435" font-size="15" fill="#5b6b7b">PICTOGRAMA NO A ESCALA</text>
+<text x="310" y="150" font-size="17" fill="#12263f">Optional generic power-harness strain-relief plate</text>
+<text x="310" y="173" font-size="17" fill="#12263f"></text>
+<text x="310" y="196" font-size="17" fill="#12263f">Referencia: PWR-13</text>
+<text x="310" y="219" font-size="17" fill="#12263f">Cantidad de la fila: 1</text>
+<text x="310" y="242" font-size="17" fill="#12263f">ASA plate 48 x 84 x 3 mm; four 3.4 mm panel fastener</text>
+<text x="310" y="265" font-size="17" fill="#12263f">holes and four 12 mm-pitch tie-hole pairs for input plus</text>
+<text x="310" y="288" font-size="17" fill="#12263f">three branch cable runs</text>
+<text x="310" y="311" font-size="17" fill="#12263f"></text>
+<text x="310" y="334" font-size="17" fill="#12263f">Optional source CAD pol_part=10;</text>
+<text x="310" y="357" font-size="17" fill="#12263f">polarization-power-strain-relief.stl rendered with</text>
+<text x="310" y="380" font-size="17" fill="#12263f">OpenSCAD 2021.01 and checked as a single closed oriented</text>
+<text x="310" y="403" font-size="17" fill="#12263f">3132-triangle mesh (11769.7 mm3). Cable tie-down only,</text>
+<text x="310" y="426" font-size="17" fill="#12263f">not a Powerpole connector mount; panel fit, installed</text>
+<text x="310" y="449" font-size="17" fill="#12263f">ties/fasteners, harness fit and pull test required; count</text>
+<text x="310" y="472" font-size="17" fill="#12263f">all fitted mass in station total</text>
+<rect x="20" y="523" width="960" height="36" fill="#fff0db"/>
+<text x="32" y="547" font-size="16" fill="#12263f">PROTOTIPO / NO FABRICAR NI CABLEAR DESDE ESTA FICHA</text>
+<text x="24" y="582" font-size="14" fill="#12263f">Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina | bricohams.org</text>
+<text x="24" y="606" font-size="13" fill="#5b6b7b">Fuente: bom/polarization.csv | fila 66 | Ver NOTICE y LICENSES</text>
+</svg>

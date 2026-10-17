@@ -1,5 +1,25 @@
 # Modulo independiente: antena portable 145/435 MHz
 
+Requisito actualizado: [comunicaciones AMSAT y techo de 25 W](SATELLITE-COMMS.md).
+Aplica a PF-01, Eggbeater y QFH TX/RX con previo solo en RX y bypass
+protegido. Es un techo de diseno pendiente de cualificacion, no potencia
+autorizada del hardware ni consigna habitual de operacion.
+
+Elegir entre las [tres alternativas](ANTENNA-OPTIONS.md):
+[PF-01](ANTENNA-PORTABLE.md), [Eggbeater](ANTENNA-EGGBEATER.md) y
+[QFH](ANTENNA-QFH.md). Guia comun de
+[previos RX y proteccion TX](ANTENNA-PREAMPS.md).
+
+## Candidata de rediseno PF-01
+
+El [diseno PF-01](ANTENNA-PORTABLE.md) desarrolla la nueva alternativa
+portable con un solo boom, cassettes plegables y puntas VHF desmontables.
+Ver [BOM independiente](../bom/antenna-portable.csv) y
+[vista de transporte](assembly/portable/PF-folded.svg).
+Las instrucciones siguientes describen la antena anterior de dos booms;
+no mezclar cortes, articulaciones ni puente de esa variante con PF-01.
+Ninguna de las dos tiene aceptacion RF/fisica implicita.
+
 ## Alcance y dependencias
 
 Se puede construir la antena sin rotor, CM5, SDR, bateria ni app.

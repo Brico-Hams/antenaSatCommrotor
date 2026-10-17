@@ -1,6 +1,6 @@
 param(
     [string]$OpenSCAD = "$PSScriptRoot\tools\openscad-2021.01\openscad.exe",
-    [string]$Node = "C:\Users\anatol.lopez\.copilot\session-state\93e9ed63-2da0-4d79-90a4-39add6c2b259\files\tools\node-v22.16.0-win-x64\node.exe",
+    [string]$Node = 'node',
     [string[]]$Only = @()
 )
 $ErrorActionPreference = 'Stop'

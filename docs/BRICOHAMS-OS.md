@@ -16,8 +16,9 @@ to Trixie. Debian package repositories remain live so security fixes can be
 installed; therefore this is a reproducible *recipe*, not a bit-for-bit
 reproducible binary image. Record the emitted SHA-256 for each build.
 
-The image intentionally retains Raspberry Pi OS `/etc/os-release`, upstream
-package documentation, and first-boot account creation. BricoHams is a
+The image intentionally retains Raspberry Pi OS `/etc/os-release` and upstream
+package documentation. The owner-selected initial account is documented under
+First boot below; its published password must be changed locally. BricoHams is a
 separate console/login banner and image name only. The name Raspberry Pi OS
 identifies the upstream base; it does not imply Raspberry Pi endorsement.
 The current project authors and upstream notices are copied into
@@ -58,8 +59,8 @@ distribution is acceptable.
 ## Included runtime
 
 The base image contains the local first-boot profile selector and build
-prerequisites, not either application stack. After the upstream first-user
-setup, its tty1 prompt requires an explicit choice: `rotor-only`, `radio-only`,
+prerequisites, not either application stack. After local login and the required
+initial password change, its tty1 prompt requires an explicit choice: `rotor-only`, `radio-only`,
 or `integrated`. It installs only that profile's Debian runtime packages and
 project packages into `/opt/bricohams/venv`; radio executables/configuration
 and the radio unit are installed only in profiles containing radio. Unselected

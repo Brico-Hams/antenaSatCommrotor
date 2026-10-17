@@ -5,18 +5,23 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const dirs = { es: "docs/testing", en: "docs/en/testing", hu: "docs/hu/testing" };
 const read = (p) => fs.readFileSync(path.join(root, p), "utf8");
-const ids = (dir) => {
+const ids = (dir, coreOnly = false) => {
   const found = [];
-  for (const f of fs.readdirSync(path.join(root, dir)).filter((n) => n.endsWith(".md")).sort())
+  for (const f of fs.readdirSync(path.join(root, dir)).filter((n) => n.endsWith(".md") && (!coreOnly || /^0[2-8]-/.test(n))).sort())
     for (const m of read(`${dir}/${f}`).matchAll(/^### ([A-Z]{2,3}-\d{2})$/gm)) found.push(m[1]);
   return found;
 };
 
-test("testing section exists in es/en/hu with identical test ids", () => {
-  const es = ids(dirs.es);
+test("historical core testing section retains identical test ids in es/en/hu", () => {
+  const es = ids(dirs.es, true);
   assert.ok(es.length >= 70, `expected >= 70 tests, got ${es.length}`);
   assert.equal(new Set(es).size, es.length, "duplicate test ids");
-  for (const lang of ["en", "hu"]) assert.deepEqual(ids(dirs[lang]), es, `${lang} ids differ`);
+  for (const lang of ["en", "hu"]) {
+    assert.deepEqual(ids(dirs[lang], true), es, `${lang} core ids differ`);
+    assert.ok(read(`${dirs[lang]}/README.md`).includes("../../testing/09-laboratorio.md"));
+  }
+  const supplemental = ids(dirs.es).filter((id) => !es.includes(id));
+  assert.deepEqual(supplemental, Array.from({ length: 24 }, (_, i) => `LAB-${String(i + 1).padStart(2, "0")}`));
 });
 
 test("every test has action, expected behaviour, criterion and a pending record line", () => {
@@ -33,9 +38,9 @@ test("every test has action, expected behaviour, criterion and a pending record 
   }
 });
 
-test("register CSV lists every test as PENDING", () => {
+test("historical register retains all core tests as PENDING; supplement uses separate workbook", () => {
   const rows = read(`${dirs.es}/registro-pruebas.csv`).trim().split("\n").slice(1);
-  const es = ids(dirs.es);
+  const es = ids(dirs.es, true);
   assert.equal(rows.length, es.length);
   for (const r of rows) assert.ok(r.includes("PENDIENTE"), "no test may start approved");
   for (const lang of ["en", "hu"]) assert.equal(read(`${dirs[lang]}/registro-pruebas.csv`), read(`${dirs.es}/registro-pruebas.csv`));

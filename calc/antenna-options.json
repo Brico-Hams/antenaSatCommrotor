@@ -1,0 +1,30 @@
+{
+  "revision": "EO-QO-01",
+  "status": "candidate-not-rf-or-load-qualified",
+  "frequenciesMHz": [145, 435],
+  "conductorDiameterMm": 4,
+  "mastDiameterMm": 20,
+  "feedGapMm": 30,
+  "eggbeater": {
+    "circumferenceWavelengths": 1,
+    "loopVerticalOffsetMm": 24,
+    "reflectorSpacingWavelengths": 0.2,
+    "reflectorRadialWavelengths": 0.25,
+    "segmentsPerLoop": 8
+  },
+  "qfh": {
+    "largeLoopWavelengths": 1.03,
+    "smallLoopWavelengths": 0.97,
+    "heightToDiameter": 1.6,
+    "turnsPerSide": 0.5,
+    "baseHeightMm": 40,
+    "segmentsPerHelicalSide": 4
+  },
+  "power": {
+    "maxConductedW": 25,
+    "maxSsbPepW": 25,
+    "maxAmCarrierWAt100Percent": 6.25,
+    "simultaneousTransmitters": 1,
+    "qualification": "HOLD-no-selected-PA-switch-LNA-or-feed-network"
+  }
+}

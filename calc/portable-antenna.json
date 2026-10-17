@@ -1,0 +1,56 @@
+{
+  "revision": "PF-01",
+  "status": "design-candidate-not-rf-or-load-qualified",
+  "reference": {
+    "sha256": "6bee19dcb67439f7770f4d1f7c5bf32033ee28b306b14fdd2a17201aa82b9601",
+    "durationSeconds": 28.48,
+    "inspectedSeconds": [0, 4, 8, 12, 16, 20, 24],
+    "limits": "Visual reference only. No known scale, frequency, feed network, material specification or complete folding cycle."
+  },
+  "mechanical": {
+    "boomOuterMm": 20,
+    "boomInnerMm": 16,
+    "boomSectionMm": 250,
+    "boomSections": 2,
+    "boomRearOverhangMm": 16,
+    "spigotOuterMm": 15.7,
+    "spigotLengthMm": 80,
+    "hubBoreClearanceMm": 0.5,
+    "hubRingRadiusMm": 24,
+    "hubHeightMm": 18,
+    "hubBaseHeightMm": 8,
+    "pivotRadiusMm": 37,
+    "pivotHeightMm": 10,
+    "clevisOuterRadiusMm": 57,
+    "rodStartRadiusMm": 55,
+    "rodDiameterMm": 4,
+    "rodInnerMm": 2,
+    "vhfSplitRadiusMm": 250,
+    "vhfCouplerLengthMm": 30,
+    "vhfCouplerOuterMm": 8,
+    "vhfCouplerInnerMm": 4.3,
+    "stowHubPitchMm": 20,
+    "stowHubClockingDeg": 22.5,
+    "stowSpareBoomXmm": 67,
+    "stowTipsXmm": -63,
+    "stowTipPitchMm": 6,
+    "packageTargetMm": [170, 140, 300],
+    "packingAllowanceMmPerSide": 10
+  },
+  "massAssumptions": {
+    "glassFibreDensityGcm3": 1.9,
+    "aluminiumDensityGcm3": 2.7,
+    "excluded": "Printed parts, feed stubs, braid, fasteners, collars, coax, hybrids, diplexers, RF switches, terminations, mount, bag and finish. This is not the antenna or complete moving mass."
+  },
+  "reflectorMesh": {
+    "plane": "VR",
+    "pitchMm": 20,
+    "wireDiameterMm": 0.2,
+    "densityGcm3Assumed": 8.96,
+    "centralOpeningRadiusMm": 60,
+    "panels": 4,
+    "reservedFoldedPacketMm": [120, 80, 12],
+    "packetBaseZmm": 260,
+    "status": "removable-flexible-conductive-screen-candidate-not-rf-or-wind-qualified"
+  }
+}

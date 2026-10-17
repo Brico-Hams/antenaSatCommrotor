@@ -1,5 +1,46 @@
 # PortableSatStation - estacion portable 145/435 MHz
 
+![BricoHams](branding/bricohams_horizontal.png)
+
+**BricoHams · documentacion de ingenieria y montaje**
+
+Accesos: [catalogo visual de todos los componentes inventariados](docs/assembly/components/README.md),
+[instalacion visual y configuracion](docs/assembly/06-instalacion.md),
+[montaje por modulos y conjunto](docs/assembly/README.md) y
+[revision del proyecto y limites de verificacion](docs/PROJECT-REVIEW.md).
+
+Laboratorio: [bancos y procedimientos reales](docs/testing/09-laboratorio.md),
+[101 hojas de ensayo imprimibles](docs/testing/laboratorio/cuaderno.html) y
+[registros CSV rellenables por ensayo/componente](docs/testing/laboratorio/README.md).
+Incluye [NanoVNA](docs/testing/10-nanovna.md) y calibraciones; sin resultados
+fisicos precargados ni autorizacion TX implicita.
+
+## Nueva antena portable PF-01
+
+El [rediseno PF-01](docs/ANTENNA-PORTABLE.md) toma como referencia visual
+el cuerpo axial y los elementos radiales del video facilitado, sin copiar
+medidas ni suponer compatibilidad RF. Propone boom dielectrico seccionado,
+cuatro cassettes plegables y ocho puntas VHF desmontables. Objetivo de
+paquete mecanico: **170 x 140 x 300 mm**, con verificacion geometrica
+nominal, no ensayo de una antena fabricada.
+
+![PF-01: diseno portable desplegado](docs/assembly/portable/PF-deployed.svg)
+
+Incluye [vista recogida](docs/assembly/portable/PF-folded.svg),
+[BOM propia](bom/antenna-portable.csv), CAD, mallas candidatas y pruebas.
+Es la nueva candidata de portabilidad; el rotor y los ejemplos anteriores
+mantienen la antena historica hasta cualificar RF, masa, CG y montaje PF-01.
+
+## Tres opciones TX/RX con previo de recepcion
+
+La [comparativa de antenas](docs/ANTENNA-OPTIONS.md) permite escoger PF-01,
+[Eggbeater](docs/ANTENNA-EGGBEATER.md) o [QFH](docs/ANTENNA-QFH.md).
+Se incluyen modelos separados 145/435 MHz, vistas, BOM y montaje.
+[Comunicaciones contrastadas con AMSAT](docs/SATELLITE-COMMS.md) y
+[previo con bypass TX](docs/ANTENNA-PREAMPS.md): **25 W como techo de
+diseno**, una sola cadena TX; sin homologacion ni habilitacion del PA.
+Las redes QRP anteriores no quedan aprobadas para esa potencia.
+
 ## Idiomas / Languages / Nyelvek
 
 La documentacion se prepara en espanol, ingles y hungaro. Las ediciones
@@ -257,9 +298,14 @@ no se presume compatible con 145/435 MHz.
 Requiere Node.js 22 o posterior para los calculos sin dependencias:
 
 ```powershell
-node --test tests\engineering.test.cjs
-node scripts\engineering-report.cjs
+.\scripts\validate.ps1
+node scripts\component-catalog.cjs --check
 ```
+
+El validador ejecuta todas las pruebas Node de primer nivel y el informe
+de calculo. No sustituye las suites Python, Android, firmware, KiCad,
+exportacion CAD ni ensayos fisicos; su cobertura actual se registra en
+[PROJECT-REVIEW.md](docs/PROJECT-REVIEW.md).
 
 El manual de control describe la compilacion del firmware y su carga.
 El manual mecanico describe la exportacion de cada pieza en OpenSCAD.

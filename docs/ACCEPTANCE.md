@@ -113,6 +113,16 @@ controlado sin viento. Revalidar cualquier antena alternativa.
 
 ## G4: transmision autorizada
 
+Requisito actualizado en [AMSAT y techo de 25 W](SATELLITE-COMMS.md):
+25 W es techo de diseno pendiente, no permiso de operacion. Registrar
+potencia conducida/PEP segun modo, ganancia/perdidas y restricciones
+del satelite. Comprobar LSB TX/USB RX en transpondedores inversores.
+Antes de subir potencia, confirmar ratings de toda la cadena, bypass
+fisico de LNA, enclavamiento/retorno y proteccion de la banda en RX
+durante TX cruzado. Medir fuga, desensibilizacion, armonicos, IMD,
+temperatura, ROE y transitorios en carga adecuada; fallo de retorno
+debe inhibir PA. No ensayar 25 W con el diplexor/hibrido QRP sin recalificar.
+
 Solo con licencia/autorizacion, frecuencias y satelite verificados.
 Comenzar con potencia minima y carga adecuada para ensayos en banco,
 revisar temperatura de redes y conectores. No transmitir con red

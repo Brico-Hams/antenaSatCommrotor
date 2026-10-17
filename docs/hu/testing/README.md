@@ -1,5 +1,15 @@
 # Tesztelés: komponensek, viselkedés és tesztpad
 
+**Laboratóriumi frissítés, 2026-10-17 (spanyolul):**
+[aktuális eljárások és üres adatlapok](../../testing/09-laboratorio.md),
+[NanoVNA](../../testing/10-nanovna.md), [aktív RF](../../testing/11-rf-potencia.md)
+és [kalibrálás](../../testing/12-calibraciones.md).
+A 24 kiegészítő LAB-teszt és a nyomtatható munkafüzet itt még nincs lefordítva.
+Az aktuális eljárások biztonsági javításai elsőbbséget élveznek a régi
+lépésekkel szemben (I2C-azonosítás, meghajtótiltás és árammérés).
+Ez a történeti fordítás önmagában nem használható laborutasításként.
+A fizikai eredmények továbbra is FÜGGŐ állapotúak; a PCB/TX tiltás érvényes.
+
 Ez a szakasz azt írja le, HOGYAN kell tesztelni a PortableSatStation minden komponensét **a PCB-k gyártása előtt** és az állomás integrálása előtt: tesztpad, ellenőrzőlisták, várt viselkedés és elfogadási kritériumok. Kiegészíti az [ACCEPTANCE.md](../ACCEPTANCE.md) G0-G4 kapuit és a [VALIDATION.md](../VALIDATION.md) nyilvántartását.
 
 > **Állapot:** digitális prototípus, **fizikailag nem validált**. Az alábbiak közül még semmit sem mértek meg: minden teszt FÜGGŐ, amíg az eredmény, a dátum és a műszer nincs feljegyezve. A `Gn-m` hivatkozású kritériumok az ACCEPTANCE.md-ből származnak; a többi ennek a felülvizsgálatnak a **javasolt** mérnöki értéke, amelyet az első prototípussal meg kell erősíteni vagy módosítani. A szoftverfordítás vagy az átmenő szoftvertesztek nem validálják a kábelezést, a mechanikát vagy az RF-et.

@@ -46,7 +46,7 @@ posts, headroom, meshes, and additional mass; physical fit remains pending.
 
 ### Actual 180x130 PCB carrier: current stationary modular enclosure
 
-Hardware agent reports routed board **180x130 mm**, holes at
+Hardware report records routed board **180x130 mm**, holes at
 **(5,5), (175,5), (5,125), (175,125)** from PCB corner. **The old enclosure,
 124x64 mm interior, does not fit and must not be bought/printed for this board.**
 It is not replaced by a fictitious future smaller PCB.
@@ -56,7 +56,7 @@ It is not replaced by a fictitious future smaller PCB.
 PCB at z=8 (6 mm posts above 2 mm base), **32 mm above the provisional 1.6 mm
 PCB**, plus 2 mm below the lid. PCB corner (4,4), case holes
 (9,9), (179,9), (9,129), (179,129), with 170x120 mm spacing matching report.
-Hardware agent confirms **1.6 mm PCB and 3.2 mm M3 holes**; CAD was updated.
+Hardware report confirms **1.6 mm PCB and 3.2 mm M3 holes**; CAD was updated.
 Verify Gerber/drill and fabricated PCB before assembly. PCB origin is upper-left
 with positive coordinates; symmetric rectangular pattern matches; do not invert
 labels/connectors when transferring into CAD. M3 through-bolts, washers, and
@@ -291,7 +291,7 @@ weighing, or additional structural modifications:
   manufacturer publishes **“About 190g”**, 11.1 V/3000 mAh ~=33.3 Wh nominal,
   output **9–12.6 V / 3 A maximum** and 5 V/2 A maximum. 190 g is not guaranteed:
   weigh unit. Keep away from rain/moisture, do not open pack, use correct charger.
-  Compatibility with protection/carrier/regulator pending PCB agent; do not
+  Compatibility with protection/carrier/regulator pending PCB review; do not
   power motors from 5 V output or assume regulated 12 V. Reserve margin for
   undervoltage and simultaneous loads.
 

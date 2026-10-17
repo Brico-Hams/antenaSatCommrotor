@@ -2,6 +2,13 @@
 
 El banco permite probar cada bloque con módulos reales y cableado de prototipo **antes** de fabricar las PCB: si el circuito equivalente no pasa en el banco, la placa no se pide.
 
+Detalle operativo y formularios en el [expediente de laboratorio](09-laboratorio.md).
+Separar B3a pequeña señal (NanoVNA sin PA), B3b RX activo y B3c TX
+en carga protegida. La carga nominal de 25 W sin margen térmico ni
+condiciones de montaje verificadas no autoriza un ensayo continuo a 25 W.
+Las fichas y límites exactos de los equipos prevalecen sobre esta lista
+orientativa. El banco no autoriza energizar placas en HOLD.
+
 ![T1](fig/T1-banco-pruebas.svg)
 
 *T1* — BricoHams · Anatol EA5KAO · Diego EA5JEF · Pedro Roca Molina · bricohams.org

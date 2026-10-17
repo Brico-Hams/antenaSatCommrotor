@@ -1,0 +1,5 @@
+﻿"calibracion_id","ensayo_id","ejecucion_id","equipo_id","fecha_utc","operador","patron_serie_certificado","metodo_revision","plano_cables_adaptadores","rango_inicio","rango_fin","puntos","nivel_ifbw_promedio","temperatura","valor_patron","tolerancia","as_found","ajuste","as_left","correccion","unidad","incertidumbre_expandida","factor_k","verificacion_independiente_antes","verificacion_despues","vigencia_condiciones","archivo_estado_cal","evidencia_id","estado","firma"
+"","LAB-02","","","","","","","","","","","","","","","","","","","","","","","","","","","PENDIENTE",""
+"","LAB-06","","","","","","","","","","","","","","","","","","","","","","","","","","","PENDIENTE",""
+"","LAB-12","","","","","","","","","","","","","","","","","","","","","","","","","","","PENDIENTE",""
+"","LAB-14","","","","","","","","","","","","","","","","","","","","","","","","","","","PENDIENTE",""

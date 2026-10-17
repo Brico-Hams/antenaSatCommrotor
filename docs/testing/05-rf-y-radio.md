@@ -2,6 +2,12 @@
 
 Cada ensayo es una casilla: márquela solo con medida, fecha e instrumento anotados en el registro.
 
+Ejecutar con el [procedimiento NanoVNA](10-nanovna.md) y las
+[hojas rellenables](laboratorio/README.md). Para LNA, protección, PA,
+aislamiento y 25 W usar el [banco RF activo](11-rf-potencia.md):
+el NanoVNA nunca se conecta a TX. La verificación con la misma carga
+de calibración no sustituye un patrón independiente.
+
 ## ANT — Antena y RF pasiva (VNA, híbrido, diplexor)
 
 **Comportamiento esperado del componente.** Con el rotor y los coaxiales en posición real, ROE ≤ 1,5 en la frecuencia central y ≤ 2 en los canales de operación. Una buena ROE NO demuestra polarización circular ni ganancia: se mide o simula el conjunto.
@@ -13,7 +19,7 @@ Cada ensayo es una casilla: márquela solo con medida, fecha e instrumento anota
 - _Resultado medido ____ · Fecha ____ · Instrumento ____ · Estado: PENDIENTE_
 
 ### ANT-02
-- [ ] **Acción:** Medir cada dipolo/reflector por banda (VHF 145 MHz, UHF 435 MHz) con el conjunto desplegado, coaxial y rotor en posiciones reales.
+- [ ] **Acción:** Medir cada puerto alimentado de antena por banda con balun/matching y conjunto desplegado, coaxial y rotor en posiciones reales; incluir canales y Doppler, no solo 145/435 MHz. Un reflector sin puerto se comprueba por geometría/continuidad y efecto instalado, no por S11 propio.
 - **Esperado:** Curva ROE y frecuencia de mínimo.
 - **Criterio de aprobación:** ROE ≤ 1,5 en la central y ≤ 2 en canales; documentar el ancho de banda sin extrapolar (G2-3).
 - _Resultado medido ____ · Fecha ____ · Instrumento ____ · Estado: PENDIENTE_

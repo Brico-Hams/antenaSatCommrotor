@@ -85,7 +85,7 @@ A régi `PassData.aos/peak/los` mező Unix-másodpercként átalakítható, de �
 nem ad megfigyelőt/NORAD-azonosítót/alpontot/földnyomot/RF-állapotot. Az üres/
 ismeretlen érték jobb, mint a kitalált állapot.
 
-## Pontos manifest-kérés a felelős agent számára
+## A manifest-integracio pontos kovetelmenyei
 
 A meglévő engedélyek mellé a `<manifest>` elem alá:
 
