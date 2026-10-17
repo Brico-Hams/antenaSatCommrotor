@@ -12,7 +12,7 @@ this is not certification of the complete assembly.
 | **Full-duplex operation** | Reception during transmission, with sufficient radio(s) and isolation | Two programmed frequencies or dual-watch are not enough |
 | **90-degree hybrid**, four electrical ports | Feeds two orthogonal dipoles/planes with appropriate amplitude and phase within its band; isolated fourth port is terminated | Does not separate 145/435 MHz or provide a good axial ratio out of band |
 
-The repository is named DuplexorSpaceQuad, but its README electrically
+The repository is named duplexor-spacequad, but its README electrically
 describes a **diplexer**. Do not infer “full duplex” from its name.
 
 ## Proposed topology, without assuming circular polarization or simultaneous RX

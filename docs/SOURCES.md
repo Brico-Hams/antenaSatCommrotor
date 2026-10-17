@@ -69,24 +69,24 @@ No se encontró declaración de copyright/licencia en encabezados OBJ/MTL inspec
 
 ### D — Diplexor del usuario
 
-<https://github.com/anatolbricoham/DuplexorSpaceQuad>
+<https://github.com/anatolbricoham/duplexor-spacequad>
 
 - Rama solicitada: `main`.
 - Commit consultado: **`f5c7dc375ed7b9882f52bd7757deaf44cd422b81`**, 2026-09-30.
 - Archivos leídos: `README.md`, `LICENSE`, `docs/MONTAJE.md`, `docs/PRUEBAS.md`, `BOM/BOM_SMA.csv`, `BOM/BOM_BNC.csv`.
-- Enlace estable: <https://github.com/anatolbricoham/DuplexorSpaceQuad/tree/f5c7dc375ed7b9882f52bd7757deaf44cd422b81>.
+- Enlace estable: <https://github.com/anatolbricoham/duplexor-spacequad/tree/f5c7dc375ed7b9882f52bd7757deaf44cd422b81>.
 - Licencia: MIT, copyright 2026 anatolbricoham. Permite adaptación y redistribución de material cubierto conservando aviso de copyright y licencia; revisar derechos de cualquier material externo. Aquí se documentan valores e interfaces, no se copia el circuito/CAD.
 - **No existe `bom/` minúsculo en esta revisión:** las listas están en `BOM/`. Una consulta a `bom/` falló; se corrigió al directorio real.
 - Los parámetros S del README son de **simulación ideal**, mientras que PRUEBAS define criterios pendientes. No se encontraron en los archivos leídos resultados de medición de una unidad física.
 
 ### L — LibreSat del usuario
 
-<https://github.com/anatolbricoham/libresat-rotator-HAM>
+<https://github.com/anatolbricoham/libresat-rotator>
 
 - Rama solicitada: `master`.
 - Commit: **`a23fe016108cf6d1209eb15140df74d0469e5e38`**, 2026-10-01.
 - Archivos leídos: `README.md`, `LICENSE`, `docs/MECHANICAL.md`, `docs/SIZING.md`.
-- Enlace estable: <https://github.com/anatolbricoham/libresat-rotator-HAM/tree/a23fe016108cf6d1209eb15140df74d0469e5e38>.
+- Enlace estable: <https://github.com/anatolbricoham/libresat-rotator/tree/a23fe016108cf6d1209eb15140df74d0469e5e38>.
 - Hardware: **CERN-OHL-S-2.0**, fuertemente recíproca. Firmware/software: **GPL-3.0-or-later**. Documentación/imágenes: **CC BY-SA 4.0**. Estas licencias externas permanecen intactas aunque el software original del proyecto nuevo sea MIT. Una derivación de su software no puede declararse simplemente MIT sin cumplir las obligaciones GPL. El directorio real y el ámbito de cada archivo deben comprobarse antes de reutilizarlo.
 - El README reconoce que **v1.0 todavía no ha sido construida y medida como conjunto**. Sus tests y simulaciones no certifican fabricación, par, autonomía ni seguridad física.
 - PortableSatStation adopta requisitos e ideas generales de referencia; la mecánica NEMA14 + planetaria 25:1 de diseño nuevo y el controlador autónomo se diseñan separadamente, sin trasladar sus piezas ni cifras como si fueran las del nuevo rotor.

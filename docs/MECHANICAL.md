@@ -554,7 +554,7 @@ RF según equipo. Evitar rebabas/cortos con separadores aislantes. No se promete
 EMC, hermeticidad ni blindaje con pintura plástica. Electrónica130×70×45 con
 tapa, pasacables y bucles antigoteo; no energizar bajo lluvia.
 
-Referencia opcional de envolvente: proyecto público `DuplexorSpaceQuad`,
+Referencia opcional de envolvente: proyecto público `duplexor-spacequad`,
 commit `f5c7dc375ed7b9882f52bd7757deaf44cd422b81`, publica PCB SMA37×23 mm,
 caja45.2×27.6×14.1 mm (Amphenol132289, dos M2×10), o PCB BNC55.5×33 mm,
 caja59.9×37.6×23.5 mm (AmphenolB6252HB-NPP3G-50, dos M2×12). Son datos

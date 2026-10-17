@@ -16,7 +16,7 @@ previo RX antes de seleccionar componentes.
 | **Operación full-duplex** | Recepción durante transmisión, con radio/radios y aislamiento suficientes | Dos frecuencias programadas o dual-watch no bastan |
 | **Híbrido de90°**, cuatro puertos eléctricos | Alimenta dos dipolos/planos ortogonales con amplitud y fase adecuadas dentro de su banda; cuarto puerto aislado terminado | No separa145/435MHz y no da buena relación axial fuera de banda |
 
-El repositorio se llama DuplexorSpaceQuad, pero su README describe eléctricamente un **diplexor**. No inferir «full duplex» de su nombre.
+El repositorio se llama duplexor-spacequad, pero su README describe eléctricamente un **diplexor**. No inferir «full duplex» de su nombre.
 
 ## Topología propuesta, sin suponer circular ni recepción simultánea
 

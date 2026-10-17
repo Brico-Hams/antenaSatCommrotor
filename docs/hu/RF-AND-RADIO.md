@@ -12,7 +12,7 @@ Névleges cél 145/435 MHz; a teljes rendszer nincs tanúsítva.
 | **Full-duplex működés** | Vétel adás közben, megfelelő rádióval/rádiókkal és leválasztással | Két beprogramozott frekvencia vagy dual-watch nem elegendő |
 | **90°-os hibrid**, négy elektromos port | Két ortogonális dipólus/sík megfelelő amplitúdójú és fázisú táplálása a saját sávjában; a negyedik, leválasztott port lezárt | Nem választja szét a 145/435 MHz-et és sávon kívül nem biztosít jó tengelyarányt |
 
-A tároló neve DuplexorSpaceQuad, de a README elektromosan **diplexert** ír
+A tároló neve duplexor-spacequad, de a README elektromosan **diplexert** ír
 le. Ne következtessen „full duplex” működésre a névből.
 
 ## Javasolt topológia, körpolarizáció vagy egyidejű vétel feltételezése nélkül

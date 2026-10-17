@@ -543,7 +543,7 @@ with insulating spacers. No EMC, weatherproofing, or plastic-paint shielding
 claim. Electronics enclosure 130x70x45 with lid, cable glands, drip loops; do
 not energize in rain.
 
-Optional envelope reference: public `DuplexorSpaceQuad` project,
+Optional envelope reference: public `duplexor-spacequad` project,
 commit `f5c7dc375ed7b9882f52bd7757deaf44cd422b81`, publishes SMA PCB 37x23 mm,
 box 45.2x27.6x14.1 mm (Amphenol 132289, two M2x10), or BNC PCB 55.5x33 mm,
 box 59.9x37.6x23.5 mm (Amphenol B6252HB-NPP3G-50, two M2x12). Published values,
