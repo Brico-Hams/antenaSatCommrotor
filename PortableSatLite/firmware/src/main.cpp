@@ -40,6 +40,7 @@ static long unix_offset = 0; static bool have_time = false;       // unix = mill
 static int tracking = -1; static bool flip_allowed = true;
 static double tgt_az = 0, tgt_el = 0, rot_az_cmd = 0, rot_el_cmd = 0, dop_rx = 0, dop_tx = 0, rr_now = 0, sat_az = 0, sat_el = 0;
 static String sta_ssid, sta_pass; static String ap_ssid;
+static String api_key;                        // required for API calls arriving over the home Wi-Fi (STA); the AP side stays open
 
 static unsigned long now_unix() { return (unsigned long)(millis() / 1000UL) + unix_offset; }
 static double az_now() { return azS ? azS->getCurrentPosition() / STEPS_PER_DEG : 0; }
@@ -66,7 +67,8 @@ static bool read_mag(satcore::V3 &m) {
   m = {v.x - mag_off.x, v.y - mag_off.y, v.z - mag_off.z}; return true;
 }
 static void update_orientation() {
-  satcore::V3 up, m; if (!read_imu(up)) return;
+  satcore::V3 up, m;
+  if (!read_imu(up)) { if (isnan(north_manual)) return; up = {0, 0, -1}; }   // fixed install without MPU6050: assume a levelled base
   roll_deg = atan2(up.y, up.z) * satcore::R2D; pitch_deg = atan2(-up.x, hypot(up.y, up.z)) * satcore::R2D;
   if (!isnan(north_manual)) {
     frame = satcore::frame_from_heading(up, north_manual);        // manual / sun-aligned north: rotor zero points to this true azimuth
@@ -155,8 +157,15 @@ static void tracking_step() {
 }
 
 // ---------------- web API ----------------
+static bool from_ap() { IPAddress c = server.client().remoteIP(), a = WiFi.softAPIP(); return c[0] == a[0] && c[1] == a[1] && c[2] == a[2]; }
+static bool authorized() {
+  if (from_ap()) return true;
+  if (api_key.length() >= 16 && server.arg("key") == api_key) return true;
+  server.send(403, "text/plain", "API key required from the home network (set it from the SatLite AP: /api/key)"); return false;
+}
 static void send_json(const String &s) { server.sendHeader("Cache-Control", "no-store"); server.send(200, "application/json", s); }
 static void api_state() {
+  if (!authorized()) return;
   String j = "{\"ssid\":\"" + ap_ssid + "\",";
   j += "\"unix\":" + String(now_unix()) + ",\"have_time\":" + String(have_time) + ",\"gps_fix\":" + String(gps.location.isValid() && gps.location.age() < 5000) + ",\"sats\":" + String(gps.satellites.isValid() ? gps.satellites.value() : 0);
   j += ",\"lat\":" + String(site_lat, 5) + ",\"lon\":" + String(site_lon, 5) + ",\"alt\":" + String(site_alt, 0) + ",\"site_manual\":" + String(site_manual);
@@ -168,12 +177,14 @@ static void api_state() {
   j += "]}"; send_json(j);
 }
 static void api_passes() {
+  if (!authorized()) return;
   String j = "["; bool first = true;
   for (int i = 0; i < N_CAT; i++) for (int k = 0; k < n_passes[i]; k++) { PassInfo &p = passes[i][k];
     j += String(first ? "" : ",") + "{\"sat\":" + i + ",\"id\":\"" + CAT_ID[i] + "\",\"aos\":" + p.aos + ",\"tca\":" + p.tca + ",\"los\":" + p.los + ",\"max_el\":" + String(p.max_el, 1) + ",\"az_aos\":" + String(p.az_aos, 0) + ",\"az_los\":" + String(p.az_los, 0) + "}"; first = false; }
   j += "]"; send_json(j);
 }
 static void api_cmd() {
+  if (!authorized()) return;
   String c = server.uri();
   if (c == "/api/track") { int i = server.arg("sat").toInt(); if (i >= 0 && i < N_CAT && trk[i].loaded) { tracking = i; send_json("{\"ok\":1}"); } else server.send(400, "text/plain", "no TLE for that satellite"); }
   else if (c == "/api/stop") { stop_all(); send_json("{\"ok\":1}"); }
@@ -183,7 +194,8 @@ static void api_cmd() {
   else if (c == "/api/location") { site_lat = server.arg("lat").toFloat(); site_lon = server.arg("lon").toFloat(); site_alt = server.arg("alt").toFloat(); site_manual = true; prefs.putDouble("lat", site_lat); prefs.putDouble("lon", site_lon); prefs.putDouble("alt", site_alt); load_tles(); send_json("{\"ok\":1}"); }
   else if (c == "/api/location_gps") { site_manual = false; send_json("{\"ok\":1}"); }
   else if (c == "/api/decl") { decl_deg = server.arg("deg").toFloat(); prefs.putDouble("decl", decl_deg); send_json("{\"ok\":1}"); }
-  else if (c == "/api/north") { if (server.arg("deg") == "auto") north_manual = NAN; else north_manual = server.arg("deg").toFloat(); send_json("{\"ok\":1}"); }
+  else if (c == "/api/north") { if (server.arg("deg") == "auto") north_manual = NAN; else north_manual = server.arg("deg").toFloat(); prefs.putDouble("north", north_manual); send_json("{\"ok\":1}"); }
+  else if (c == "/api/key") { String k = server.arg("key"); if (!from_ap()) server.send(403, "text/plain", "set the key from the SatLite AP"); else if (k.length() < 16) server.send(400, "text/plain", "key: 16 characters or more"); else { api_key = k; prefs.putString("apikey", api_key); send_json("{\"ok\":1}"); } }
   else if (c == "/api/time") { unix_offset = (long)server.arg("unix").toInt() - (long)(millis() / 1000UL); have_time = true; passes_dirty = true; send_json("{\"ok\":1}"); }
   else if (c == "/api/compass_cal") { if (server.arg("op") == "start") { mag_min = {1e9,1e9,1e9}; mag_max = {-1e9,-1e9,-1e9}; cal_running = true; } else { cal_running = false; mag_off = {(mag_min.x + mag_max.x) / 2, (mag_min.y + mag_max.y) / 2, (mag_min.z + mag_max.z) / 2}; prefs.putBytes("magoff", &mag_off, sizeof(mag_off)); } send_json("{\"ok\":1}"); }
   else if (c == "/api/wifi") { sta_ssid = server.arg("ssid"); sta_pass = server.arg("pass"); prefs.putString("ssid", sta_ssid); prefs.putString("spass", sta_pass); WiFi.begin(sta_ssid.c_str(), sta_pass.c_str()); send_json("{\"ok\":1}"); }
@@ -197,6 +209,7 @@ void setup() {
   site_lat = prefs.getDouble("lat", 38.0); site_lon = prefs.getDouble("lon", -1.3); site_alt = prefs.getDouble("alt", 100); decl_deg = prefs.getDouble("decl", 0);
   if (prefs.getBytesLength("magoff") == sizeof(mag_off)) prefs.getBytes("magoff", &mag_off, sizeof(mag_off));
   sta_ssid = prefs.getString("ssid", ""); sta_pass = prefs.getString("spass", "");
+  north_manual = prefs.getDouble("north", NAN); api_key = prefs.getString("apikey", "");
   Wire.begin(PIN_SDA0, PIN_SCL0, 400000); Wire1.begin(PIN_SDA1, PIN_SCL1, 400000);
   i2c_write(Wire, 0x68, 0x6B, 0x00); i2c_write(Wire, 0x0D, 0x0B, 0x01); i2c_write(Wire, 0x0D, 0x09, 0x1D);   // MPU6050 wake; QMC5883L 200 Hz continuous
   Serial2.begin(9600, SERIAL_8N1, PIN_GPS_RX, PIN_GPS_TX);
@@ -208,7 +221,7 @@ void setup() {
   WiFi.mode(WIFI_AP_STA); WiFi.softAP(ap_ssid.c_str(), AP_PASS); if (sta_ssid.length()) WiFi.begin(sta_ssid.c_str(), sta_pass.c_str());
   load_catalog(); load_tles();
   server.on("/", serve_index); server.on("/api/state", api_state); server.on("/api/passes", api_passes);
-  for (const char *p : {"/api/track", "/api/stop", "/api/goto", "/api/goto_true", "/api/home", "/api/location", "/api/location_gps", "/api/decl", "/api/north", "/api/time", "/api/compass_cal", "/api/wifi", "/api/tle_update", "/api/tle_upload"}) server.on(p, api_cmd);
+  for (const char *p : {"/api/track", "/api/stop", "/api/goto", "/api/goto_true", "/api/home", "/api/location", "/api/location_gps", "/api/decl", "/api/north", "/api/time", "/api/compass_cal", "/api/wifi", "/api/tle_update", "/api/tle_upload", "/api/key"}) server.on(p, api_cmd);
   server.begin();
   xTaskCreatePinnedToCore(passes_task, "passes", 12288, nullptr, 1, nullptr, 0);
 }

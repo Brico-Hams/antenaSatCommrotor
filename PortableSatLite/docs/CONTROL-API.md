@@ -18,5 +18,16 @@ Todas las rutas aceptan GET (y POST); respuestas JSON `{"ok":1}` salvo indicaci�
 | `/api/wifi` | `ssid`,`pass` | credenciales del hotspot para TLE |
 | `/api/tle_update` | — | descarga CelesTrak + AMSAT + PE0SAT (texto con el resultado) |
 | `/api/tle_upload` | cuerpo POST | TLE pegados a mano |
+| `/api/key` | `key` (16+ caracteres) | clave para la Wi-Fi de casa; **solo desde el punto de acceso** del ESP32 |
+
+## Acceso desde la Wi-Fi de casa (STA)
+Las peticiones que llegan por el punto de acceso «SatLite-XXXX» no piden clave (uso en campo con el móvil).
+Las que llegan por la Wi-Fi de casa exigen el parámetro `key` en **todas** las rutas `/api/`; mejor en el
+cuerpo de un POST (`application/x-www-form-urlencoded`) que en la URL. Sin clave puesta, por la red de casa
+se responde 403. La clave y el norte manual (`/api/north`) se guardan en la NVS y sobreviven al reinicio.
+Sin MPU6050, con norte manual se supone la base nivelada (instalación fija).
+
+El servicio `bricohams-rotor` del kit SDR (manual 49 de bricohams-sdr) usa `/api/goto_true` así para
+seguir los pases que graba `bricohams-satrec`.
 
 El mismo contrato lo implementa `tests/mock_server.py`, que se usa para probar la interfaz sin hardware.

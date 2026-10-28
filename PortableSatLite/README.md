@@ -36,4 +36,4 @@ tests/run_all.sh && python3 cad/build_all.py && python3 scripts/gen_docs.py
 Firmware: `cd firmware && pio run -t upload && pio run -t uploadfs`. Cambia `AP_PASS` en `firmware/src/config.h`.
 
 ## Puntos abiertos principales
-1. Compilar y probar el firmware en el ESP32. 2. Verificar la banda de los híbridos de SatcomRadio (ADR-004). 3. Imprimir y ajustar bisagras/bridas. 4. Ajuste con NanoVNA. 5. Leer los AS5600 y añadir un protocolo estándar de rotor (GS-232/Easycomm) si quieres usar Gpredict.
+1. Probar el firmware en el ESP32 (compila con PlatformIO: 20 % RAM, 83 % flash; sin probar en placa). 2. Verificar la banda de los híbridos de SatcomRadio (ADR-004). 3. Imprimir y ajustar bisagras/bridas. 4. Ajuste con NanoVNA. 5. Leer los AS5600 y añadir un protocolo estándar de rotor (GS-232/Easycomm) si quieres usar Gpredict.
