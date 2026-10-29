@@ -7,6 +7,8 @@ const os = require('node:os');
 const { entries, parseCsv } = require('../scripts/component-catalog.cjs');
 const root = path.resolve(__dirname, '..');
 const read = (file) => fs.readFileSync(path.join(root,file),'utf8');
+// Checkout may convert line endings (core.autocrlf); compare content only.
+const lf = (text) => text.replace(/\r\n/g, '\n');
 const readCsv = (name) => parseCsv(read(`docs/testing/laboratorio/${name}.csv`).replace(/^\ufeff/,''));
 
 test('lab workbook covers all existing test headings plus 24 complete supplemental procedures', () => {
@@ -73,7 +75,7 @@ test('printable workbook provides one blank evidence sheet per test and repeatab
 });
 
 test('generated lab templates regenerate exactly and generator refuses overwriting modified records', () => {
-  for(const [file,content] of outputs()) assert.equal(read(file),content,file);
+  for(const [file,content] of outputs()) assert.equal(lf(read(file)),lf(content),file);
   const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'bricohams-lab-test-'));
   try {
     const files=new Map([['resultados.csv','plantilla'],['lecturas.csv','blanco']]);

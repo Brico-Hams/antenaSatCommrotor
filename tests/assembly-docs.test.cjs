@@ -6,6 +6,8 @@ const { parseCsv, entries, artifacts, sources } = require('../scripts/component-
 
 const root = path.resolve(__dirname, '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+// Checkout may convert line endings (core.autocrlf); compare content only.
+const lf = (text) => text.replace(/\r\n/g, '\n');
 
 test('component CSV parser preserves commas, escaped quotes, CRLF and multiline fields', () => {
   assert.deepEqual(parseCsv('id,note\r\nA,"one, two"\r\nB,"say ""hello""\nnext"\r\n'), [
@@ -36,7 +38,7 @@ test('all component BOMs have exact columns and uniquely identified catalog rows
 
 test('every component image and catalog index exactly match their current BOM sources', () => {
   const expected = artifacts();
-  for (const [file, content] of expected) assert.equal(read(file), content, `Regenerate ${file}`);
+  for (const [file, content] of expected) assert.equal(lf(read(file)), lf(content), `Regenerate ${file}`);
   const images = fs.readdirSync(path.join(root, 'docs/assembly/components')).filter((name) => name.endsWith('.svg'));
   assert.equal(images.length, entries().length, 'stale or missing images');
 });

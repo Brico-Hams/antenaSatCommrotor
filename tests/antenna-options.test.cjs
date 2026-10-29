@@ -10,6 +10,8 @@ const config = require('../calc/antenna-options.json');
 const root = path.resolve(__dirname, '..');
 const models = calculate();
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+// Checkout may convert line endings (core.autocrlf); compare content only.
+const lf = (text) => text.replace(/\r\n/g, '\n');
 const near = (a,b,tolerance=1e-6) => assert.ok(Math.abs(a-b)<tolerance, `${a} != ${b}`);
 const sub = (a,b) => a.map((v,i) => v-b[i]);
 const dot = (a,b) => a.reduce((sum,v,i) => sum+v*b[i],0);
@@ -97,7 +99,7 @@ test('sampled paths approximate seed conductor lengths within tessellation error
 });
 
 test('CAD parameters, two BOMs, report and eight branded views exactly regenerate', () => {
-  for(const [file,content] of outputs()) assert.equal(read(file),content,file);
+  for(const [file,content] of outputs()) assert.equal(lf(read(file)),lf(content),file);
   for(const type of ['eggbeater','qfh']) {
     const rows=parseCsv(read(`bom/antenna-${type}.csv`));
     assert.equal(new Set(rows.map((r)=>r.id)).size,rows.length);

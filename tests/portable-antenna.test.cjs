@@ -11,6 +11,8 @@ const base = require('../calc/design.json');
 const report = calculate(config, base);
 const root = path.resolve(__dirname, '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+// Checkout may convert line endings (core.autocrlf); compare content only.
+const lf = (text) => text.replace(/\r\n/g, '\n');
 const near = (actual, expected) => assert.ok(Math.abs(actual - expected) < 1e-6, `${actual} != ${expected}`);
 
 test('PF-01 uses project RF formulas, not unscaled dimensions from the video', () => {
@@ -72,7 +74,7 @@ test('PF-01 partial mass accounts for hollow rods without claiming total antenna
 });
 
 test('PF-01 generated parameters, report and branded view frames are synchronized', () => {
-  for (const [file, content] of outputs()) assert.equal(read(file), content, file);
+  for (const [file, content] of outputs()) assert.equal(lf(read(file)), lf(content), file);
   for (const view of ['deployed', 'front', 'folded', 'hinge', 'reflector']) {
     const file = path.join(root, `docs/assembly/portable/PF-${view}.png`);
     validateRenderedPng(file);
