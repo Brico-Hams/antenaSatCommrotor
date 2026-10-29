@@ -4,8 +4,8 @@
 #include <cstring>
 namespace ControlBLE {
 constexpr uint32_t protocolVersion = 1;
-constexpr uint32_t apiVersion = 1;
-constexpr const char *firmwareVersion = "0.2.0-prototype";
+constexpr uint32_t apiVersion = 2; // 2: POST /api/time and mechanical profile in status
+constexpr const char *firmwareVersion = "0.3.0-prototype";
 constexpr size_t maxRequest = 2048;
 constexpr size_t frameBytes = 20, headerBytes = 4, payloadBytes = 16;
 constexpr uint8_t magic = 0x53, startFlag = 1, endFlag = 2;

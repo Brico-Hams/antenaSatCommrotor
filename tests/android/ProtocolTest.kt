@@ -82,7 +82,7 @@ class ProtocolTest {
         rejects("invalid_operation") { Protocol.request(1, "test", "enable", JSONObject()) }
     }
     fun status(): JSONObject = JSONObject("""{
-        "apiVersion":1,"protocolVersion":1,"firmwareVersion":"0.2.0-prototype",
+        "apiVersion":2,"protocolVersion":1,"firmwareVersion":"0.3.0-prototype",
         "mode":"READY","fault":"","azMechanical":-180.0,"el":0,"homed":true,
         "calibrated":false,"utcValid":true,"utc":1791626400,"siteValid":true,
         "lat":40.0,"lon":-3.0,"alt":600.0,"bleSecure":true,"bleConnected":true
@@ -97,11 +97,12 @@ class ProtocolTest {
         rejects("invalid_status") { RotorStatus.parse(status().apply { remove("utcValid") }) }
     }
     @Test fun handshakeRequiresExactFrozenApiProtocolAndFirmwareVersions() {
-        rejects("api_version_mismatch") { RotorStatus.parse(status().put("apiVersion", 2)) }
-        rejects("api_version_mismatch") { RotorStatus.parse(status().put("apiVersion", "1")) }
+        rejects("api_version_mismatch") { RotorStatus.parse(status().put("apiVersion", 1)) }
+        rejects("api_version_mismatch") { RotorStatus.parse(status().put("apiVersion", 3)) }
+        rejects("api_version_mismatch") { RotorStatus.parse(status().put("apiVersion", "2")) }
         rejects("api_version_mismatch") { RotorStatus.parse(status().apply { remove("apiVersion") }) }
         rejects("protocol_mismatch") { RotorStatus.parse(status().put("protocolVersion", 2)) }
-        rejects("firmware_version_mismatch") { RotorStatus.parse(status().put("firmwareVersion", "unknown")) }
+        rejects("firmware_version_mismatch") { RotorStatus.parse(status().put("firmwareVersion", "0.2.0-prototype")) }
         rejects("firmware_version_mismatch") { RotorStatus.parse(status().apply { remove("firmwareVersion") }) }
     }
 }

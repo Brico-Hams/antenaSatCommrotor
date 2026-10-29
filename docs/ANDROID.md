@@ -71,7 +71,7 @@ entrada no numérica/no finita, autenticación fallida, estado malformado,
 versiones incompatibles, orden de llamadas, catálogo paginado, checksum/epoch
 TLE, subconjunto explícito de proveedor con más de 100 entradas, caché atómica,
 allowlist HTTPS sin redirecciones y begin/chunk/commit/abort
-con offsets exactos. App **0.2.0-prototype**, versionCode **2**.
+con offsets exactos. App **0.3.0-prototype**, versionCode **3**.
 
 APK: `android\app\build\outputs\apk\debug\app-debug.apk`.
 SHA-256:
@@ -232,8 +232,8 @@ de END. Máximo petición 2048 bytes; respuesta 8192. Se rechazan secuencias
 fuera de orden, START repetidos, flags desconocidos, UTF-8 inválido, IDs
 ajenos y mensajes demasiado grandes.
 
-La respuesta completa de `status` exige **`apiVersion:1`,
-`protocolVersion:1`, `firmwareVersion:"0.2.0-prototype"`**, constantes
+La respuesta completa de `status` exige **`apiVersion:2`,
+`protocolVersion:1`, `firmwareVersion:"0.3.0-prototype"`**, constantes
 contrastadas con `firmware/include/ble_protocol.h`. Cualquier versión distinta,
 campo ausente o versión en forma de cadena deshabilita el control y desconecta.
 La comparación de firmware es deliberadamente exacta: una nueva versión,

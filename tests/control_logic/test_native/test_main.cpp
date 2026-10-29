@@ -6,6 +6,8 @@ void setUp() {}
 void tearDown() {}
 void ranges() {
   TEST_ASSERT_EQUAL_INT(80000,stepsPerRevolution);
+  TEST_ASSERT_FLOAT_WITHIN(.000001,2.25,maxDegreesPerSecond);
+  TEST_ASSERT_EQUAL_INT(0,stepsPerRevolution%800); // integral homing fractions
   TEST_ASSERT_TRUE(inRange(-180,0)); TEST_ASSERT_TRUE(inRange(180,90));
   TEST_ASSERT_FALSE(inRange(180.01,45)); TEST_ASSERT_FALSE(inRange(0,-.01));
   TEST_ASSERT_FALSE(inRange(NAN,0));

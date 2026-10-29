@@ -247,7 +247,8 @@ Handlers HTTP/BLE compartidos, callback ensambla/encola y no ejecuta
 filesystem/SGP4 pesado. TLE begin/chunk/commit/abort con longitud,
 SHA-256 y offsets secuenciales; lista de satelites paginada.
 Versiones congeladas: apiVersion=1, protocolVersion=1,
-firmwareVersion=0.2.0-prototype.
+firmwareVersion=0.2.0-prototype (la build 0.3.0-prototype con API 2 y el perfil
+`esp32_nema17` compila, pero no tiene medidas de placa ni rotor).
 Build controlador comunicado: flash 1199509 bytes, RAM estatica
 59084 bytes. SHA-256 firmware:
 `64194FB5A0FBDB16D5ECBB6233F56D88C587E91C998A8E8A4F621B9C6C185DD3`.

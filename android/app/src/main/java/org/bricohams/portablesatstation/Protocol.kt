@@ -15,8 +15,8 @@ object Protocol {
     val TX: UUID = UUID.fromString("c8200003-4e53-4253-9000-000000000001")
     val CCCD: UUID = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb")
     const val VERSION = 1
-    const val API_VERSION = 1
-    const val FIRMWARE_VERSION = "0.2.0-prototype"
+    const val API_VERSION = 2
+    const val FIRMWARE_VERSION = "0.3.0-prototype"
     const val REQUEST_LIMIT = 2048
     const val RESPONSE_LIMIT = 8192
     const val ALT_MIN = -500.0

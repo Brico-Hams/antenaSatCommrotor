@@ -70,8 +70,8 @@ exact MTU 23/185 framing, UTF-8, size/sequence limits, non-numeric/non-finite
 input, failed authentication, malformed status, incompatible versions, call
 ordering, paginated catalog, TLE checksum/epoch, an explicit provider subset
 with more than 100 entries, atomic cache, HTTPS allowlist without redirects,
-and begin/chunk/commit/abort with exact offsets. App **0.2.0-prototype**,
-versionCode **2**.
+and begin/chunk/commit/abort with exact offsets. App **0.3.0-prototype**,
+versionCode **3**.
 
 APK: `android\app\build\outputs\apk\debug\app-debug.apk`.
 SHA-256:
@@ -233,8 +233,8 @@ Maximum request 2048 bytes; response 8192. Out-of-order sequences, repeated
 START, unknown flags, invalid UTF-8, foreign IDs, and oversized messages are
 rejected.
 
-A complete `status` response requires **`apiVersion:1`,
-`protocolVersion:1`, `firmwareVersion:"0.2.0-prototype"`**; constants checked
+A complete `status` response requires **`apiVersion:2`,
+`protocolVersion:1`, `firmwareVersion:"0.3.0-prototype"`**; constants checked
 against `firmware/include/ble_protocol.h`. Any different version, missing field,
 or version represented as a string disables control and disconnects. Firmware
 comparison is deliberately exact: even a compatible new version requires

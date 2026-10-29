@@ -203,9 +203,18 @@ HTTPS solo HTTP en reposo. TLE por BLE admite subconjunto que quepa en2048bytes,
 no truncamiento silencioso. Firmware no copia una segunda lógica de movimiento.
 STATUS añade `controlOwner` (HTTP/BLE/none), `bleConfigured`, `bleConnected`,
 `bleSecure`, `encoderZeroVerified`.
-STATUS identifica compatibilidad con `apiVersion=1`, `protocolVersion=1` y
-`firmwareVersion="0.2.0-prototype"`; úselo como handshake autenticado, no existe
+STATUS identifica compatibilidad con `apiVersion=2`, `protocolVersion=1` y
+`firmwareVersion="0.3.0-prototype"`; úselo como handshake autenticado, no existe
 una ruta auth separada.
+
+API 2 (integración con la app Android Bricohams) añade `POST /api/time`
+(`{"utcMs":...}`, autenticado): sin GNSS, una app de confianza fija la UTC durante
+10 min; la UTC GNSS siempre tiene prioridad (409) y se rechazan saltos de más de
+2 s con motores activos. STATUS añade `timeSource` (`none`/`gnss`/`app`) y el
+perfil mecánico `microsteps`, `transmissionRatio`, `stepsPerDegree` y
+`maxDegPerSecond`. El entorno PlatformIO `esp32_nema17` compila el perfil de bajo
+coste: NEMA17 reutilizados con TMC2209 a 1/8, mismas correas 25:1, 40000
+micropasos/vuelta y 6,0 °/s máximos. Compilado; sin prueba en placa ni rotor.
 Mutaciones de otro transporte durante movimiento se rechazan409; STOP autenticado
 siempre accesible. Una desconexión
 BLE durante HOME/MOVE manual causa fallo e invalida homing; TRACK autónomo

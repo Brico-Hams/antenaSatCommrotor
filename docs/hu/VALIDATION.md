@@ -218,7 +218,8 @@ Közös HTTP/BLE handlerek; a callback összerak/queue-ba tesz, és nem futtat
 nehéz filesystem/SGP4 feladatot. TLE begin/chunk/commit/abort hossz-, SHA-256-
 és szekvenciális offset-ellenőrzéssel; lapozott műholdlista.
 Befagyasztott verziók: `apiVersion=1`, `protocolVersion=1`,
-`firmwareVersion=0.2.0-prototype`. Közölt vezérlőbuild: flash 1199509 bájt,
+`firmwareVersion=0.2.0-prototype` (a 0.3.0-prototype build API 2-vel és
+`esp32_nema17` profillal lefordul, de panel- és rotormérés nincs). Közölt vezérlőbuild: flash 1199509 bájt,
 statikus RAM 59084 bájt. Firmware SHA-256:
 `64194FB5A0FBDB16D5ECBB6233F56D88C587E91C998A8E8A4F621B9C6C185DD3`.
 Unity 6/6 és Node control 3/3 közölt siker. Fizikai párosítás, BLE-latencia

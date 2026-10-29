@@ -32,6 +32,14 @@ enum Mode { DISARMED, HOMING, READY, MOVING, TRACKING, FAULT };
 const char *modeNames[] = {"DISARMED","HOMING","READY","MOVING","TRACKING","FAULT"};
 Mode mode = DISARMED;
 Control::Axis az, el;
+// Homing travel as exact fractions of one output revolution (reference 80000).
+constexpr int32_t halfRevolution = Control::stepsPerRevolution / 2;             // 180 deg
+constexpr int32_t homeAzSearch = Control::stepsPerRevolution / 16 * 17;        // 382.5 deg
+constexpr int32_t homeElSearch = Control::stepsPerRevolution / 16 * 5;         // 112.5 deg
+constexpr int32_t homeBackOff = Control::stepsPerRevolution / 800 * 7;         // 3.15 deg
+constexpr int32_t homeApproach = Control::stepsPerRevolution / 160 * 3;        // 6.75 deg
+static_assert(halfRevolution != 40000 || (homeAzSearch == 85000 && homeElSearch == 25000 &&
+              homeBackOff == 700 && homeApproach == 1500), "Reference homing changed");
 bool hardware = false, homed = false, calibrated = false, level = false;
 bool encoderZero = false, fsOK = false;
 String apSsid, apPassword, apiToken, staSsid, staPassword;
@@ -97,8 +105,17 @@ void halt(bool hard, const String &reason = "") {
     mode = FAULT; fault = reason;
   } else mode = homed ? READY : DISARMED;
 }
+// GNSS keeps priority. A trusted app (token + secure link) may provide UTC when
+// no GNSS is fitted; the ESP32 clock is good enough for 10 min between syncs.
+enum TimeSource { NO_TIME, GNSS_TIME, CLIENT_TIME };
+const char *timeSourceNames[] = {"none","gnss","app"};
+TimeSource timeSource = NO_TIME;
+constexpr uint32_t gnssTimeWindow = 3000, clientTimeWindow = 600000;
 int64_t nowUTC() { return unixTime + uint32_t(millis() - timeStamp) / 1000; }
-bool validUTC() { return unixTime > 0 && uint32_t(millis() - timeStamp) < 3000; }
+bool validUTC() {
+  return unixTime > 0 && uint32_t(millis() - timeStamp) <
+    (timeSource == CLIENT_TIME ? clientTimeWindow : gnssTimeWindow);
+}
 bool validSite() {
   return siteValid && (manualSite || uint32_t(millis() - fixStamp) < 5000);
 }
@@ -107,7 +124,7 @@ String trackingBlocker() {
   if (mode == FAULT) return fault;
   if (!homed) return "Requiere homing";
   if (!calibrated || !level) return "Requiere norte verdadero y nivelacion";
-  if (!validUTC()) return "UTC GNSS invalida/caducada";
+  if (!validUTC()) return "UTC invalida/caducada (GNSS o app)";
   if (!validSite()) return "Ubicacion GNSS invalida/caducada";
   if (selected < 0 || selected >= int(satellites.size())) return "Seleccione satelite";
   if (!Control::fresh(nowUTC(), satellites[selected].epoch)) return "TLE caducado/futuro";
@@ -156,15 +173,15 @@ void motorTask(void *) {
             if (contact != switchStable) { switchStable = contact; switchSince = millis(); }
             if (uint32_t(millis() - switchSince) > 30) {
               if (homePhase == 0 && contact) {
-                axis.stop(); homePhase = 1; axis.target = axis.position + 700;
+                axis.stop(); homePhase = 1; axis.target = axis.position + homeBackOff;
               } else if (homePhase == 1 && !contact && std::fabs(axis.target - axis.position) < 1) {
-                homePhase = 2; axis.target = axis.position - 1500;
+                homePhase = 2; axis.target = axis.position - homeApproach;
               } else if (homePhase == 2 && contact) {
                 axis.stop();
-                axis.position = homeAxis == 0 ? -40000 : 0; axis.stop();
+                axis.position = homeAxis == 0 ? -halfRevolution : 0; axis.stop();
                 if (homeAxis == 0) {
                   homeAxis = 1; homePhase = 0; homeStarted = millis();
-                  el.target = el.position - 25000;
+                  el.target = el.position - homeElSearch;
                   changedAxis = true;
                 } else {
                   homed = true; mode = READY; enable(false);
@@ -207,7 +224,7 @@ void motorTask(void *) {
         bool ok = readEncoder(azBus, a) && readEncoder(elBus, e);
         if (ok) ok = std::fabs(Control::difference(
           Board::azEncoderDirection * (a - encoderAz),
-          (az.position + 40000) / Control::stepsPerDegree)) < 3 &&
+          (az.position + halfRevolution) / Control::stepsPerDegree)) < 3 &&
           std::fabs(Control::difference(Board::elEncoderDirection * (e - encoderEl),
           el.position / Control::stepsPerDegree)) < 3;
         badFeedback = ok ? 0 : badFeedback + 1;
@@ -417,7 +434,28 @@ void routes() {
     d["doppler435Hz"] = -rangeRate / 299792.458 * 435000000;
     d["trackingBlocker"] = trackingBlocker(); d["download"] = downloadStatus;
     d["staConnected"] = WiFi.status() == WL_CONNECTED; d["encoders"] = Board::encoders;
-    d["selected"] = selected; d["pttCat"] = false; json(d);
+    d["selected"] = selected; d["pttCat"] = false;
+    d["timeSource"] = validUTC() ? timeSourceNames[timeSource] : "none";
+    d["microsteps"] = Control::microsteps;
+    d["transmissionRatio"] = Control::transmissionRatio;
+    d["stepsPerDegree"] = Control::stepsPerDegree;
+    d["maxDegPerSecond"] = Control::maxDegreesPerSecond; json(d);
+  });
+  route("/api/time", HTTP_POST, [] {
+    if (!auth()) return;
+    DynamicJsonDocument d(256); if (!body(d)) return; Guard guard;
+    double ms;
+    if (!number(d["utcMs"], ms) || ms < 1704067200000.0 || ms >= 4102444800000.0) {
+      reply(400, "utcMs epoch Unix en milisegundos requerido"); return;
+    }
+    if (timeSource == GNSS_TIME && validUTC()) { reply(409, "UTC GNSS activa; tiene prioridad"); return; }
+    int64_t t = int64_t(ms / 1000);
+    uint32_t fraction = uint32_t(int64_t(ms) - t * 1000);
+    if (validUTC() && busy() && std::llabs(t - nowUTC()) > 2) {
+      reply(409, "Salto UTC >2 s con motores activos; detenga primero"); return;
+    }
+    unixTime = t; timeStamp = millis() - fraction; timeSource = CLIENT_TIME;
+    reply(200, "UTC de la app aceptada durante 10 min");
   });
   route("/api/stop", HTTP_POST, [] {
     if (!auth()) return; Guard guard;
@@ -438,7 +476,7 @@ void routes() {
     }
     homed = calibrated = encoderZero = false; az.stop(); el.stop();
     homeAxis = homePhase = 0; homeStarted = switchSince = millis();
-    switchStable = limit(Board::azMin); az.target = az.position - 85000;
+    switchStable = limit(Board::azMin); az.target = az.position - homeAzSearch;
     mode = HOMING; enable(true); reply(202, "Homing AZ y EL iniciado");
   });
   route("/api/move", HTTP_POST, [] {
@@ -464,7 +502,7 @@ void routes() {
     latitude=a; longitude=b; altitude=c; manualSite=d["manual"]; siteValid=manualSite;
     prefs.putDouble("lat",a); prefs.putDouble("lon",b); prefs.putDouble("alt",c);
     prefs.putBool("manual",manualSite); prefs.putBool("site",true);
-    orbitLoaded=false; predicting=predictionCached=false; passes.clear(); reply(200,"Sitio guardado; UTC siempre GNSS");
+    orbitLoaded=false; predicting=predictionCached=false; passes.clear(); reply(200,"Sitio guardado; UTC por GNSS o /api/time");
   });
   route("/api/calibrate", HTTP_POST, [] {
     if (!auth()) return;
@@ -869,7 +907,7 @@ void loop() {
         gps.time.hour(),gps.time.minute(),gps.time.second());
       if(t) {
         if(validUTC() && std::llabs(t-nowUTC())>2 && busy()) halt(true,"Salto UTC GNSS");
-        unixTime=t; timeStamp=millis();
+        unixTime=t; timeStamp=millis(); timeSource=GNSS_TIME;
       }
     }
     if(!manualSite && gps.location.isValid() && gps.location.age()<2000 &&

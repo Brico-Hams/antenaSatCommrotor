@@ -5,16 +5,40 @@
 #include <cstring>
 #include <initializer_list>
 
+// Build-time mechanical profile. Defaults are the reference NEMA14 build;
+// other profiles (e.g. env:esp32_nema17) override them with -D flags.
+#ifndef ROTOR_MICROSTEPS
+#define ROTOR_MICROSTEPS 16
+#endif
+#ifndef ROTOR_TRANSMISSION_RATIO
+#define ROTOR_TRANSMISSION_RATIO 25
+#endif
+#ifndef ROTOR_MAX_RATE_STEPS
+#define ROTOR_MAX_RATE_STEPS 500.0
+#endif
+#ifndef ROTOR_ACCELERATION_STEPS
+#define ROTOR_ACCELERATION_STEPS 300.0
+#endif
+
 namespace Control {
 constexpr int fullStepsPerRevolution = 200;
-constexpr int microsteps = 16;
-constexpr int transmissionRatio = 25; // two purchased 20:100 belt stages, 5 x 5
+constexpr int microsteps = ROTOR_MICROSTEPS;
+constexpr int transmissionRatio = ROTOR_TRANSMISSION_RATIO; // reference: two 20:100 belt stages, 5 x 5
 constexpr int stepsPerRevolution =
   fullStepsPerRevolution * microsteps * transmissionRatio;
-static_assert(stepsPerRevolution == 80000, "Recalibrate motion if gearing changes");
+static_assert(microsteps >= 1 && microsteps <= 256 &&
+              (microsteps & (microsteps - 1)) == 0, "Microsteps must be a power of two");
+static_assert(transmissionRatio >= 1 && transmissionRatio <= 100, "Unsupported transmission ratio");
+static_assert(stepsPerRevolution >= 3600, "Need at least 0.1 deg per microstep");
+// Homing offsets are exact fractions of a revolution; keep them integral.
+static_assert(stepsPerRevolution % 800 == 0, "Revolution must be divisible by 800 microsteps");
 constexpr double stepsPerDegree = stepsPerRevolution / 360.0;
-constexpr double maxRate = 500.0;  // microsteps/s; 2.25 deg/s
-constexpr double acceleration = 300.0; // microsteps/s^2
+constexpr double maxRate = ROTOR_MAX_RATE_STEPS;  // microsteps/s; reference 500 = 2.25 deg/s
+constexpr double acceleration = ROTOR_ACCELERATION_STEPS; // microsteps/s^2
+// Motor task runs near 1 kHz and emits at most one step per tick.
+static_assert(maxRate > 0 && maxRate <= 700.0, "maxRate must stay below the 1 kHz step tick");
+static_assert(acceleration > 0 && acceleration <= 2000.0, "Unsupported acceleration");
+constexpr double maxDegreesPerSecond = maxRate / stepsPerDegree;
 constexpr uint32_t maxTleAge = 14 * 86400;
 inline bool validCredentials(const char *ssid, const char *password, const char *token) {
   size_t s = std::strlen(ssid), p = std::strlen(password), t = std::strlen(token);

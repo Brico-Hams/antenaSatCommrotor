@@ -203,7 +203,8 @@ and token; passkey via USB, BLE initially disabled. Shared HTTP/BLE handlers;
 callback assembles/enqueues and does not run heavy filesystem/SGP4 work.
 TLE begin/chunk/commit/abort with length, SHA-256, sequential offsets; paginated
 satellite list. Frozen versions: apiVersion=1, protocolVersion=1,
-firmwareVersion=0.2.0-prototype.
+firmwareVersion=0.2.0-prototype (the 0.3.0-prototype build with API 2 and the
+`esp32_nema17` profile compiles but has no board or rotor measurements).
 Reported controller build: flash 1,199,509 bytes, static RAM 59,084 bytes.
 Firmware SHA-256:
 `64194FB5A0FBDB16D5ECBB6233F56D88C587E91C998A8E8A4F621B9C6C185DD3`.

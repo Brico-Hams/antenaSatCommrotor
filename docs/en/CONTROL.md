@@ -206,9 +206,18 @@ only a subset fitting in 2048 bytes; it never silently truncates. Firmware does
 not duplicate motion logic.
 STATUS adds `controlOwner` (HTTP/BLE/none), `bleConfigured`, `bleConnected`,
 `bleSecure`, and `encoderZeroVerified`.
-STATUS identifies compatibility using `apiVersion=1`, `protocolVersion=1`,
-and `firmwareVersion="0.2.0-prototype"`; use this authenticated handshake; there
+STATUS identifies compatibility using `apiVersion=2`, `protocolVersion=1`,
+and `firmwareVersion="0.3.0-prototype"`; use this authenticated handshake; there
 is no separate auth route.
+
+API 2 (Bricohams Android integration) adds `POST /api/time`
+(`{"utcMs":...}`, authenticated): without GNSS, a trusted app sets UTC for
+10 min; GNSS UTC always has priority (409) and jumps above 2 s are rejected
+while motors run. STATUS adds `timeSource` (`none`/`gnss`/`app`) and the
+mechanical profile `microsteps`, `transmissionRatio`, `stepsPerDegree` and
+`maxDegPerSecond`. The PlatformIO environment `esp32_nema17` builds the low-cost
+profile: reused NEMA17 with TMC2209 at 1/8, same 25:1 belts, 40000
+microsteps/rev and 6.0 deg/s maximum. Compiled; not tested on a board or rotor.
 Mutations from the other transport during movement return 409; authenticated
 STOP remains available. BLE disconnection during manual HOME/MOVE causes a
 fault and invalidates homing; autonomous TRACK continues subject to GNSS/TLE/

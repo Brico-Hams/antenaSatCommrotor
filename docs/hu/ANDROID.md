@@ -75,7 +75,7 @@ inkompatibilis verziót, hívássorrendet, lapozott katalógust,
 TLE-checksumot/epochot, 100-nál több elemű, kifejezetten kiválasztott
 szolgáltatói részhalmazt, atomikus cache-t, HTTPS-allowlistet
 átirányítás nélkül, valamint pontos offsetes begin/chunk/commit/abort
-folyamatot is tartalmazza. Alkalmazás: **0.2.0-prototype**, versionCode **2**.
+folyamatot is tartalmazza. Alkalmazás: **0.3.0-prototype**, versionCode **3**.
 
 APK: `android\app\build\outputs\apk\debug\app-debug.apk`.
 SHA-256:
@@ -248,8 +248,8 @@ Kérés maximum 2048, válasz 8192 bájt. Elutasítandó a sorrendhiba, ismétel
 START, ismeretlen flag, hibás UTF-8, idegen azonosító és túl nagy üzenet.
 
 A teljes `status` válasz kötelező értékei:
-**`apiVersion:1`, `protocolVersion:1`,
-`firmwareVersion:"0.2.0-prototype"`**, a
+**`apiVersion:2`, `protocolVersion:1`,
+`firmwareVersion:"0.3.0-prototype"`**, a
 `firmware/include/ble_protocol.h` fájllal összevetve. Más verzió, hiányzó
 mező vagy szöveg típusú verzió letiltja a vezérlést és bontja a kapcsolatot.
 A firmware-verzió összehasonlítása szándékosan pontos: új, akár kompatibilis
