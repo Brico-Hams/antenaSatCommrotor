@@ -76,9 +76,10 @@ jobs:
         run: |
           python -m platformio run -d firmware -e esp32
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          python -m platformio run -d firmware -e esp32 -t webflash-proof
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          # buildfs installs tool-mklittlefs, which the upload proof must record.
           python -m platformio run -d firmware -e esp32 -t buildfs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m platformio run -d firmware -e esp32 -t webflash-proof
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Generate and validate distributable binaries and local JS bundle
         shell: pwsh
