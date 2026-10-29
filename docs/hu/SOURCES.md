@@ -133,7 +133,7 @@ jogszövegek határozzák meg; ezek a magyar összefoglalók nem helyettesítik 
 
 ### D — A felhasználó diplexere
 
-<https://github.com/anatolbricoham/duplexor-spacequad>
+<https://github.com/Brico-Hams/duplexor-spacequad>
 
 - Kért ág: `main`.
 - Vizsgált commit: **`f5c7dc375ed7b9882f52bd7757deaf44cd422b81`**,
@@ -141,7 +141,7 @@ jogszövegek határozzák meg; ezek a magyar összefoglalók nem helyettesítik 
 - Olvasott fájlok: `README.md`, `LICENSE`, `docs/MONTAJE.md`,
   `docs/PRUEBAS.md`, `BOM/BOM_SMA.csv`, `BOM/BOM_BNC.csv`.
 - Rögzített hivatkozás:
-  <https://github.com/anatolbricoham/duplexor-spacequad/tree/f5c7dc375ed7b9882f52bd7757deaf44cd422b81>.
+  <https://github.com/Brico-Hams/duplexor-spacequad/tree/f5c7dc375ed7b9882f52bd7757deaf44cd422b81>.
 - Licenc: MIT, copyright 2026 anatolbricoham. A hatálya alá tartozó
   anyag adaptálását és terjesztését a szerzői jogi és licencértesítés
   megőrzésével engedi; a külső anyagok jogait külön kell ellenőrizni.
@@ -156,14 +156,14 @@ jogszövegek határozzák meg; ezek a magyar összefoglalók nem helyettesítik 
 
 ### LibreSat rotor (L)
 
-<https://github.com/anatolbricoham/libresat-rotator>
+<https://github.com/Brico-Hams/libresat-rotator>
 
 - Kért ág: `master`.
 - Commit: **`a23fe016108cf6d1209eb15140df74d0469e5e38`**, 2026-10-01.
 - Átolvasott fájlok: `README.md`, `LICENSE`, `docs/MECHANICAL.md`,
   `docs/SIZING.md`.
 - Stabil hivatkozás:
-  <https://github.com/anatolbricoham/libresat-rotator/tree/a23fe016108cf6d1209eb15140df74d0469e5e38>.
+  <https://github.com/Brico-Hams/libresat-rotator/tree/a23fe016108cf6d1209eb15140df74d0469e5e38>.
 - Hardver: **CERN-OHL-S-2.0**, erősen kölcsönös. Firmware/szoftver:
   **GPL-3.0-or-later**. Dokumentáció/képek: **CC BY-SA 4.0**. Ezek a külső
   licencek érintetlenek maradnak, még ha az új projekt eredeti szoftvere MIT

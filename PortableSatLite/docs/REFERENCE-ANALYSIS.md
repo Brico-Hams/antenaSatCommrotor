@@ -10,4 +10,4 @@
 | `blog.tomasbrincil.cz` (OK1BT, AV2040) | Concepto de antena SATCOM plegable impresa en 3D; fórmulas de longitudes para 449,55 MHz | Las fórmulas no se usaron (son para UHF 449,55); el diseño se hizo con NEC2 |
 | Ficha Cults3D AV2040-2 (imagen del usuario) | Concepto estético y de portabilidad | Licencia *Cults PU / No IA*: no se usó ningún archivo |
 | Thingiverse 5904442 | — | El sitio bloqueó la lectura (detección de bots); **no se pudo analizar**. Pásame los STL o la descripción si quieres que se tenga en cuenta |
-| `anatolbricoham/antenaSatCommrotor` + ZIP local (versión anterior) | Reparto del cálculo orbital en el rotor; interfaz de la radio independiente; idea de módulos separables; aprendizajes de masa | CM5, LimeSDR, Android, SO propio y 3 ejes (peso, complejidad y falta de validación física según su propio README) |
+| `Brico-Hams/antenaSatCommrotor` + ZIP local (versión anterior) | Reparto del cálculo orbital en el rotor; interfaz de la radio independiente; idea de módulos separables; aprendizajes de masa | CM5, LimeSDR, Android, SO propio y 3 ejes (peso, complejidad y falta de validación física según su propio README) |

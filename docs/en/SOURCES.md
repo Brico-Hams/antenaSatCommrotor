@@ -146,14 +146,14 @@ derivatives.
 
 ### D — User's diplexer
 
-<https://github.com/anatolbricoham/duplexor-spacequad>
+<https://github.com/Brico-Hams/duplexor-spacequad>
 
 - Requested branch: `main`.
 - Commit consulted: **`f5c7dc375ed7b9882f52bd7757deaf44cd422b81`**, 2026-09-30.
 - Files read: `README.md`, `LICENSE`, `docs/MONTAJE.md`, `docs/PRUEBAS.md`,
   `BOM/BOM_SMA.csv`, `BOM/BOM_BNC.csv`.
 - Stable link:
-  <https://github.com/anatolbricoham/duplexor-spacequad/tree/f5c7dc375ed7b9882f52bd7757deaf44cd422b81>.
+  <https://github.com/Brico-Hams/duplexor-spacequad/tree/f5c7dc375ed7b9882f52bd7757deaf44cd422b81>.
 - License: MIT, copyright 2026 anatolbricoham. Covered material may be
   adapted/redistributed while retaining copyright and license; check rights
   for any external material. This project records values/interfaces but does
@@ -165,14 +165,14 @@ derivatives.
 
 ### L — User's LibreSat
 
-<https://github.com/anatolbricoham/libresat-rotator>
+<https://github.com/Brico-Hams/libresat-rotator>
 
 - Requested branch: `master`.
 - Commit: **`a23fe016108cf6d1209eb15140df74d0469e5e38`**, 2026-10-01.
 - Files read: `README.md`, `LICENSE`, `docs/MECHANICAL.md`,
   `docs/SIZING.md`.
 - Stable link:
-  <https://github.com/anatolbricoham/libresat-rotator/tree/a23fe016108cf6d1209eb15140df74d0469e5e38>.
+  <https://github.com/Brico-Hams/libresat-rotator/tree/a23fe016108cf6d1209eb15140df74d0469e5e38>.
 - Hardware: **CERN-OHL-S-2.0**, strongly reciprocal. Firmware/software:
   **GPL-3.0-or-later**. Documentation/images: **CC BY-SA 4.0**. These
   external licenses remain unchanged even though new-project original

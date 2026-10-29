@@ -3,7 +3,7 @@
 **Estado:** Aceptada
 
 ## Contexto
-La versión anterior del usuario (ZIP `PortableSatStation-20261010`, repo `anatolbricoham/antenaSatCommrotor`) integraba Raspberry Pi CM5, dos LimeSDR Mini, Android, imagen de SO y 3 ejes; su propio README admite que el objetivo de ≤3 kg **no se cumplía** (3,13–3,20 kg antes de adicionales) y que casi nada está validado físicamente. El encargo actual pide un rotor + antena **ligeros, baratos y autónomos** con una radio RT3S/OpenGD77 independiente.
+La versión anterior del usuario (ZIP `PortableSatStation-20261010`, repo `Brico-Hams/antenaSatCommrotor`) integraba Raspberry Pi CM5, dos LimeSDR Mini, Android, imagen de SO y 3 ejes; su propio README admite que el objetivo de ≤3 kg **no se cumplía** (3,13–3,20 kg antes de adicionales) y que casi nada está validado físicamente. El encargo actual pide un rotor + antena **ligeros, baratos y autónomos** con una radio RT3S/OpenGD77 independiente.
 
 ## Decisión
 Un ESP32 hace todo lo que el rotor necesita: punto de acceso Wi-Fi y servidor web, SGP4, GNSS, sensores y pulsos de paso. La radio es un equipo aparte.
