@@ -406,3 +406,33 @@ real TX permission and an RF path; integrated Doppler must not silently fall
 back to manual. Rotor-only does not start SDR or depend on audio. Antenna-only
 does not require a computer. The integrated BOM avoids duplicating CM5,
 carrier, and power while keeping shared components traceable.
+
+## Security review (SonarQube 2026-11-13)
+
+### python:S5443 - Temporary files in publicly writable directories (HIGH)
+
+- Location: `scripts/_render3d.py:5`.
+- Flaw: the fixed path `/tmp/rend` in a public directory allows race
+  conditions: another user can pre-create it and read/alter the PNGs
+  (CWE-377, CWE-379; OWASP A1 Broken Access Control).
+- Change: `OUT` is now `tempfile.gettempdir()/rend-<user>` created with mode
+  `0o700`.
+- No functionality lost: `make_assembly_figs.py` imports and uses `OUT`
+  unchanged; only the intermediate directory name differs. Check: run
+  `python scripts/make_assembly_figs.py` (needs OpenSCAD/xvfb).
+
+### Not changed - requires decision
+
+javascript:S4036 (LOW, CWE-426/427): `scripts/build-webflash.cjs` lines 256,
+280, 282, 285 (`tar`) and 307, 310 (`git`). They use `execFileSync` with an
+argument array (no shell). Pinning absolute paths would break portability
+across Windows/Linux/macOS and CI, and inventing paths is not allowed; the
+mitigation is to build only with a trusted PATH. Needs owner decision (e.g. an
+environment variable giving the `tar`/`git` path).
+
+kotlin:S7204 (HIGH, Obfuscation should be enabled for release builds):
+`android/app/build.gradle.kts` (`android` block, no `buildTypes`) and
+`android/app/proguard-rules.pro`. The change (release minification/R8) was
+REVERTED: enabling R8 without a release build tested on a real device risks
+breaking the app at runtime, which violates "no functionality lost". Decision:
+enable R8 + keep rules after a release build is tested on a device.

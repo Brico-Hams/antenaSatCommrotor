@@ -1,11 +1,11 @@
 """Render OpenSCAD scenes headlessly (xvfb) and auto-crop to content."""
-import subprocess, pathlib, numpy as np
+import subprocess, pathlib, tempfile, getpass, numpy as np
 from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-OUT = pathlib.Path('/tmp/rend')
+OUT = pathlib.Path(tempfile.gettempdir()) / f'rend-{getpass.getuser()}'
 
 def render(name, scad, scene, rot=(60, 0, 30), center=(0, 0, 0), dist=1200, size=(1800, 1300), defs=()):
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(mode=0o700, exist_ok=True)
     png = OUT / f'{name}.png'
     cam = ','.join(str(v) for v in (*center, *rot, dist))
     cmd = ['xvfb-run', '-a', 'openscad', '-o', str(png), f'--imgsize={size[0]},{size[1]}', f'--camera={cam}',

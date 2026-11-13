@@ -446,3 +446,34 @@ eshet át csendben kézi módba. A rotor önállóan nem indít SDR-t és nem
 függ hangtól. Az antenna önállóan nem igényel számítógépet. Az integrált
 BOM megszünteti a CM5/hordozó/táp duplikálását, miközben a megosztott
 alkatrészek nyomon követhetők maradnak.
+
+## Security review (SonarQube 2026-11-13)
+
+### python:S5443 - Temporary files in publicly writable directories (HIGH)
+
+- Hely: `scripts/_render3d.py:5`.
+- Hiba: a nyilvános `/tmp/rend` fix útvonal versenyhelyzetet tesz lehetővé:
+  más felhasználó előre létrehozhatja, és olvashatja/módosíthatja a PNG-ket
+  (CWE-377, CWE-379; OWASP A1 Broken Access Control).
+- Változtatás: az `OUT` most `tempfile.gettempdir()/rend-<felhasználó>`,
+  `0o700` móddal létrehozva.
+- Funkció nem vész el: a `make_assembly_figs.py` változatlanul importálja és
+  használja az `OUT`-ot; csak a köztes könyvtár neve változik. Ellenőrzés:
+  `python scripts/make_assembly_figs.py` futtatása (OpenSCAD/xvfb szükséges).
+
+### Not changed - requires decision
+
+javascript:S4036 (LOW, CWE-426/427): `scripts/build-webflash.cjs` 256., 280.,
+282., 285. sor (`tar`) és 307., 310. sor (`git`). `execFileSync`-et használnak
+tömbös argumentumokkal (shell nélkül). Abszolút útvonalak rögzítése tönkretenné
+a Windows/Linux/macOS és CI közti hordozhatóságot, útvonalakat kitalálni pedig
+tilos; a mérséklés: a build csak megbízható PATH mellett fusson. Tulajdonosi
+döntést igényel (pl. környezeti változó a `tar`/`git` útvonalához).
+
+kotlin:S7204 (HIGH, Obfuscation should be enabled for release builds):
+`android/app/build.gradle.kts` (`android` blokk, `buildTypes` nélkül) és
+`android/app/proguard-rules.pro`. A változtatást (release minifikáció/R8)
+VISSZAVONTUK: az R8 bekapcsolása valós eszközön tesztelt release build nélkül
+azt kockáztatja, hogy az alkalmazás futásidőben elromlik, ami sérti a „funkció
+nem vész el” elvet. Döntés: az R8 bekapcsolása + keep szabályok megtartása,
+miután egy release buildet eszközön teszteltek.
