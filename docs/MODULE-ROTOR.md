@@ -62,3 +62,27 @@ Un sensor invalido no se sustituye por cero. Limites, fallo de seguimiento,
 perdida de posicion y parada se prueban en banco.
 La mano circular no se cambia mediante POL: el rotor solo no aporta
 red RF RHCP/LHCP. Una app o SBC no sustituyen parada fisica.
+
+## Backend rotctld para rotores LibreSat (LSR-1/LSR-2)
+
+Implementado en la rama feat/lsr-rotctld-backend: `rotor/rotctld_backend.py`.
+Permite que esta estacion use un rotor BricoHams LibreSat (LSR-1 o LSR-2)
+mediante Hamlib rotctld por TCP (puerto 4533) en lugar de sus propios ejes
+TMC5160. El comportamiento por defecto no cambia (`--backend tmc5160`).
+
+Uso:
+
+```
+python -m rotor --backend rotctld --host 192.168.1.50 --port 4533 [--model lsr-1|lsr-2]
+```
+
+- Solo comandos estandar: `p`, `P az el`, `S`, `K` y `_`.
+- El modelo se detecta con `_`; `--model` lo fuerza y se rechaza si no coincide.
+- Rangos: LSR-1 AZ 0..450, EL 0..180; LSR-2 AZ -360..360, EL -30..150.
+  Fuera de rango se rechaza (hasta 0,5 grados de exceso se recorta al limite).
+- Fail-closed: `RPRT -n`, respuestas mal formadas, modelo desconocido o
+  tiempo agotado generan error; se reintenta una sola reconexion.
+- Es un adaptador ligero (operaciones JSON-lines `status`, `goto`, `stop`,
+  `park`); no usa los sensores ni el controlador TMC5160.
+
+Autores: Anatol EA5KAO, Diego EA5JEF, Pedro Roca Molina - BricoHams.

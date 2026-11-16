@@ -58,21 +58,41 @@ def _arguments(argv: list[str] | None) -> argparse.Namespace:
     )
     parser.add_argument(
         "--config",
-        required=True,
-        help="locally provisioned rotor hardware configuration",
+        help="locally provisioned rotor hardware configuration (required for --backend tmc5160)",
     )
     parser.add_argument(
         "--local-console",
         action="store_true",
         help="grant this local stdin session the local commissioning principal",
     )
-    return parser.parse_args(argv)
+    parser.add_argument(
+        "--backend",
+        choices=("tmc5160", "rotctld"),
+        default="tmc5160",
+        help="axis backend: own TMC5160 axes (default) or a LibreSat LSR via Hamlib rotctld",
+    )
+    parser.add_argument("--host", default="127.0.0.1", help="rotctld host")
+    parser.add_argument("--port", type=int, default=4533, help="rotctld TCP port")
+    parser.add_argument(
+        "--model",
+        choices=("lsr-1", "lsr-2"),
+        help="override the LSR model detected through rotctld",
+    )
+    args = parser.parse_args(argv)
+    if args.backend == "tmc5160" and not args.config:
+        parser.error("--config is required for --backend tmc5160")
+    return args
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _arguments(argv)
     try:
-        adapter = open_adapter(args.config)
+        if args.backend == "rotctld":
+            from .rotctld_backend import open_rotctld_adapter
+
+            adapter = open_rotctld_adapter(args.host, args.port, args.model)
+        else:
+            adapter = open_adapter(args.config)
     except (OSError, RuntimeError, TypeError, ValueError) as exc:
         print(f"portable-sat-rotor: {exc}", file=sys.stderr)
         return 2
