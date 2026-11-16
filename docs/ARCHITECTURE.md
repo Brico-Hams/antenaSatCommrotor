@@ -424,3 +424,46 @@ conserva permiso TX y camino RF reales; Doppler integrado no cae
 silenciosamente a manual. Rotor solo no inicia SDR ni depende de audio.
 Antena sola no exige ordenador. La BOM integrada elimina duplicacion
 de CM5/portadora/energia y mantiene piezas compartidas trazables.
+
+## ADR-036: familia de rotores BricoHams LibreSat (LSR-1 y LSR-2)
+
+![BricoHams](../branding/bricohams_horizontal.png)
+
+Autores: Anatol EA5KAO, Diego EA5JEF, Pedro Roca Molina.
+
+**Contexto:** ademas del rotor de esta estacion, BricoHams mantiene la
+familia LibreSat en el repositorio
+[Brico-Hams/libresat-rotator](https://github.com/Brico-Hams/libresat-rotator).
+
+| Rotor | Uso | Mecanica y electronica |
+| --- | --- | --- |
+| LSR-1 | Portatil | Cicloidal impreso 25:1 + NEMA17, RP2040 LSR-CTL, cabeza Pi Zero 2 W, EasyComm II, rotctld |
+| LSR-2 | Estacion fija pesada | 2x NMRV030 sin fin 80:1 + NEMA23, AZ ±360°, EL −30…150°, 12°/s, encoders magneticos absolutos en los ejes de salida |
+
+**LSR-2:** rediseno propio, inspirado en la arquitectura que SARCNET
+publico para SARCTrac Mk5. No se copio ningun archivo de SARCNET (sus
+ficheros no llevan licencia). Objetivo de diseno: ligero y barato.
+Especificacion: `docs/superpowers/specs/2026-11-16-lsr2-heavy-rotator-design.md`
+en libresat-rotator.
+- Rodamientos AZ externos (2x 6206 + 51206): el reductor sin fin no
+  soporta el momento de vuelco.
+- Placas cortadas por CNC en 6061/5083; carcasa AZ y buje EL fundidos en
+  arena en A356. Primero se construye un prototipo 1:1 en PLA.
+
+**Dimensionado** (`calc/lsr2_sizing.py` en libresat-rotator):
+- NMRV030 vale para un par de Yagi cruzadas 145/435.
+- Un plato de malla de 1,2 m exige NMRV040.
+- Un plato de 1,8 m supera todas las tallas NMRV (hace falta corona de giro).
+
+```mermaid
+flowchart LR
+    EST[PortableSatStation] --> RC[rotctld / EasyComm II]
+    RC --> CTL[LSR-CTL]
+    CTL --> L1[LSR-1 portatil]
+    CTL --> L2[LSR-2 estacion fija]
+```
+
+**Integracion con este repositorio (planificada, aun NO implementada):**
+el paquete Python `rotor/` tendra un backend EasyComm II / rotctld para
+que PortableSatStation maneje LSR-1 o LSR-2. Hasta entonces no existe
+ese backend en este repo.

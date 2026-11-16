@@ -17,6 +17,9 @@ se conserva separada, no satisface automaticamente el tercer eje POL.
 Referencias propias: [CM5-ROTOR.md](CM5-ROTOR.md),
 [POLARIZATION-MECHANICAL.md](POLARIZATION-MECHANICAL.md),
 [MECHANICAL.md](MECHANICAL.md), [CM5-PCB.md](CM5-PCB.md).
+Familia de rotores BricoHams LibreSat (LSR-1 portatil, LSR-2 estacion
+fija) y backend EasyComm II/rotctld planificado, aun no implementado:
+ver [ADR-036](ARCHITECTURE.md#adr-036-familia-de-rotores-bricohams-libresat-lsr-1-y-lsr-2).
 Estas fuentes indican que esta implementado y que requiere banco;
 no comprar componentes de una revision no congelada como si estuviera liberada.
 
