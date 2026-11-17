@@ -271,17 +271,23 @@ Cifras principales publicadas en ese repositorio (LSR-2):
 
 - Motorizacion: 2 x reductor NMRV030 80:1 + motor NEMA23.
 - Recorrido: AZ ±360°, EL −30…150°; velocidad 12°/s.
-- Disposicion en dos bloques; piezas fundidas en aluminio A356.
+- Disposicion Mk5: placa vertical con el reductor EL arriba y el AZ abajo,
+  motores en el mismo lado, eje EL pasante con brackets, silla y boom
+  con brazos, antenas y contrapesos; caja lateral con la electronica.
+- Piezas en aluminio A356 fundido (ruta A) o mecanizado CNC (ruta B).
 - Autocalibracion con GPS/sol.
 - Precision objetivo < 0,1°, como el SARCTrac Mk5.
 
 LSR-2 es un rediseno propio que sigue los datos publicados del SARCTrac Mk5
 (credito a SARCNET); no se ha usado ningun archivo de SARCNET.
 
+![LSR-2: rotor sobre el mastil con boom, dos Yagis y contrapesos (render)](docs/img/lsr2_hero.png)
+
+![LSR-2: modelo de disposicion Mk5 en Fusion, placa vertical, reductores, motores y caja de electronica](docs/img/lsr2_mk5_layout_head.png)
+
 Esta estacion los controla con
 `python -m rotor --backend rotctld --host <ip> --port 4533 [--model lsr-1|lsr-2]`
-mediante `rotor/rotctld_backend.py` (implementado y probado en la rama
-`feat/lsr-rotctld-backend`). El backend habla Hamlib rotctld por TCP, detecta
+mediante `rotor/rotctld_backend.py` (implementado y probado). El backend habla Hamlib rotctld por TCP, detecta
 el modelo (`--model` lo fuerza y se rechaza si no coincide), aplica los
 limites de cada rotor, es fail-closed (error ante `RPRT -n`, respuestas mal
 formadas, modelo desconocido o tiempo agotado) y reintenta una sola

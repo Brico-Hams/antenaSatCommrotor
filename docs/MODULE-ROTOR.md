@@ -65,7 +65,7 @@ red RF RHCP/LHCP. Una app o SBC no sustituyen parada fisica.
 
 ## Backend rotctld para rotores LibreSat (LSR-1/LSR-2)
 
-Implementado en la rama feat/lsr-rotctld-backend: `rotor/rotctld_backend.py`.
+Implementado en `rotor/rotctld_backend.py`.
 Permite que esta estacion use un rotor BricoHams LibreSat (LSR-1 o LSR-2)
 mediante Hamlib rotctld por TCP (puerto 4533) en lugar de sus propios ejes
 TMC5160. El comportamiento por defecto no cambia (`--backend tmc5160`).
