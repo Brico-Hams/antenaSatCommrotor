@@ -261,6 +261,32 @@ La imagen comercial orienta el concepto de portabilidad, no se reproduce
 su geometria ni sus archivos. El diseno a 449,55 MHz de una referencia
 no se presume compatible con 145/435 MHz.
 
+## Rotores LibreSat (LSR-1 portátil / LSR-2 fijo pesado)
+
+La familia de rotores AZ/EL de BricoHams
+[libresat-rotator](https://github.com/Brico-Hams/libresat-rotator) se integra
+con esta estacion: LSR-1 es el modelo portatil y LSR-2 el fijo pesado.
+
+Cifras principales publicadas en ese repositorio (LSR-2):
+
+- Motorizacion: 2 x reductor NMRV030 80:1 + motor NEMA23.
+- Recorrido: AZ ±360°, EL −30…150°; velocidad 12°/s.
+- Disposicion en dos bloques; piezas fundidas en aluminio A356.
+- Autocalibracion con GPS/sol.
+- Precision objetivo < 0,1°, como el SARCTrac Mk5.
+
+LSR-2 es un rediseno propio que sigue los datos publicados del SARCTrac Mk5
+(credito a SARCNET); no se ha usado ningun archivo de SARCNET.
+
+Esta estacion los controla con
+`python -m rotor --backend rotctld --host <ip> --port 4533 [--model lsr-1|lsr-2]`
+mediante `rotor/rotctld_backend.py` (implementado y probado en la rama
+`feat/lsr-rotctld-backend`). El backend habla Hamlib rotctld por TCP, detecta
+el modelo (`--model` lo fuerza y se rechaza si no coincide), aplica los
+limites de cada rotor, es fail-closed (error ante `RPRT -n`, respuestas mal
+formadas, modelo desconocido o tiempo agotado) y reintenta una sola
+reconexion. Detalle en [docs/MODULE-ROTOR.md](docs/MODULE-ROTOR.md).
+
 ## Documentacion y archivos
 
 - [Antena independiente: materiales, montaje y ajuste](docs/MODULE-ANTENNA.md).
