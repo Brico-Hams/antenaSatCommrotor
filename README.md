@@ -4,8 +4,6 @@
 
 # PortableSatStation - estacion portable 145/435 MHz
 
-![BricoHams](branding/bricohams_horizontal.png)
-
 **BricoHams · documentacion de ingenieria y montaje**
 
 Accesos: [catalogo visual de todos los componentes inventariados](docs/assembly/components/README.md),
