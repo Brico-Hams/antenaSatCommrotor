@@ -269,21 +269,25 @@ con esta estacion: LSR-1 es el modelo portatil y LSR-2 el fijo pesado.
 
 Cifras principales publicadas en ese repositorio (LSR-2):
 
-- Motorizacion: 2 x reductor NMRV030 80:1 + motor NEMA23.
+- Motorizacion: 2 x reductor NMRV30 50:1 + motor NEMA23 23HS32-4004S
+  (2,4 N·m) con drivers DM542T a 48 V.
 - Recorrido: AZ ±360°, EL −30…150°; velocidad 12°/s.
-- Disposicion Mk5: placa vertical con el reductor EL arriba y el AZ abajo,
-  motores en el mismo lado, eje EL pasante con brackets, silla y boom
-  con brazos, antenas y contrapesos; caja lateral con la electronica.
-- Piezas en aluminio A356 fundido (ruta A) o mecanizado CNC (ruta B).
-- Autocalibracion con GPS/sol.
-- Precision objetivo < 0,1°, como el SARCTrac Mk5.
+- Diseno: replica del SARCTrac Mk4 de SARCNET. Placa de aluminio de 10 mm
+  con los dos reductores, cubierta de chapa de 2 mm cortada por laser,
+  silla con U-bolts, brazos de tubo cuadrado de 25 mm, rodamiento axial y
+  caja Deltron con Wemos D1 Mini Pro (WiFi) y sensores Hall de indice.
+- Coste estimado unos 901 EUR y 15,9 kg (cabeza y electronica, sin mastil
+  ni antenas). El diseno fundido/CNC anterior queda como
+  variante opcional.
+- Precision objetivo < 0,1°.
 
-LSR-2 es un rediseno propio que sigue los datos publicados del SARCTrac Mk5
-(credito a SARCNET); no se ha usado ningun archivo de SARCNET.
+LSR-2 usa los archivos FreeCAD del SARCTrac Mk4 de SARCNET bajo licencia
+MIT (credito a SARCNET; copia y procedencia en `third_party/sarctrac-mk4`
+de libresat-rotator).
 
-![LSR-2: rotor sobre el mastil con boom, dos Yagis y contrapesos (render)](docs/img/lsr2_hero.png)
+![LSR-2 (replica Mk4): rotor sobre el mastil con dos Yagis cruzadas (render)](docs/img/lsr2_hero.png)
 
-![LSR-2: modelo de disposicion Mk5 en Fusion, placa vertical, reductores, motores y caja de electronica](docs/img/lsr2_mk5_layout_head.png)
+![LSR-2 (replica Mk4): cabeza sin cubierta, reductores, silla y brazos (render)](docs/img/lsr2_head_closeup.png)
 
 Esta estacion los controla con
 `python -m rotor --backend rotctld --host <ip> --port 4533 [--model lsr-1|lsr-2]`
